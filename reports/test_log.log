@@ -5746,3 +5746,146 @@ Stacktrace:
 2025-03-11 16:32:34,183 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
 2025-03-11 16:32:34,288 - INFO - Ð\xe3 nh\u1ea5n nút Lýu.
 2025-03-11 16:32:34,365 - INFO - PASS: Hi\u1ec3n th\u1ecb ðúng thông báo l\u1ed7i: Vui l\xf2ng nh\u1eadp tiêu ð\u1ec1 tin t\u1ee9c.
+2025-03-12 00:07:20,882 - INFO - ====== WebDriver manager ======
+2025-03-12 00:07:23,009 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:07:24,783 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:07:26,607 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-12 00:07:27,880 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-12 00:07:28,626 - INFO - Nh\u1eadp username
+2025-03-12 00:07:28,747 - INFO - Nh\u1eadp password
+2025-03-12 00:07:28,852 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-12 00:07:34,452 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-12 00:07:34,548 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-12 00:07:35,462 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-12 00:07:35,970 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-12 00:07:37,049 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-12 00:07:37,059 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-12 00:07:42,210 - ERROR - L\u1ed7i khi nh\u1ea5n nút T\u1ea1o m\u1edbi ho\u1eb7c chuy\u1ec3n hý\u1edbng: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0042B5A3+24387]
+	(No symbol) [0x003B5904]
+	(No symbol) [0x00290753]
+	(No symbol) [0x002D8BA9]
+	(No symbol) [0x002D8EFB]
+	(No symbol) [0x003219C2]
+	(No symbol) [0x002FD894]
+	(No symbol) [0x0031F138]
+	(No symbol) [0x002FD646]
+	(No symbol) [0x002CC59F]
+	(No symbol) [0x002CD8E4]
+	GetHandleVerifier [0x0072D883+3179043]
+	GetHandleVerifier [0x00746CF9+3282585]
+	GetHandleVerifier [0x0074167C+3260444]
+	GetHandleVerifier [0x004C4330+650448]
+	(No symbol) [0x003BED0D]
+	(No symbol) [0x003BBAF8]
+	(No symbol) [0x003BBC99]
+	(No symbol) [0x003AE530]
+	BaseThreadInitThunk [0x760F5D49+25]
+	RtlInitializeExceptionChain [0x770EBD6B+107]
+	RtlGetAppContainerNamedObjectPath [0x770EBCF1+561]
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 69, in click_create_new_button
+    create_new_button = self.wait.until(EC.element_to_be_clickable(self.create_new_button))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x0042B5A3+24387]
+	(No symbol) [0x003B5904]
+	(No symbol) [0x00290753]
+	(No symbol) [0x002D8BA9]
+	(No symbol) [0x002D8EFB]
+	(No symbol) [0x003219C2]
+	(No symbol) [0x002FD894]
+	(No symbol) [0x0031F138]
+	(No symbol) [0x002FD646]
+	(No symbol) [0x002CC59F]
+	(No symbol) [0x002CD8E4]
+	GetHandleVerifier [0x0072D883+3179043]
+	GetHandleVerifier [0x00746CF9+3282585]
+	GetHandleVerifier [0x0074167C+3260444]
+	GetHandleVerifier [0x004C4330+650448]
+	(No symbol) [0x003BED0D]
+	(No symbol) [0x003BBAF8]
+	(No symbol) [0x003BBC99]
+	(No symbol) [0x003AE530]
+	BaseThreadInitThunk [0x760F5D49+25]
+	RtlInitializeExceptionChain [0x770EBD6B+107]
+	RtlGetAppContainerNamedObjectPath [0x770EBCF1+561]
+
+2025-03-12 00:07:42,271 - INFO - Ð\xe3 nh\u1eadp tiêu ð\u1ec1 trang: 
+2025-03-12 00:07:42,308 - INFO - Ð\xe3 nh\u1ea5n nút Lýu.
+2025-03-12 00:07:42,356 - INFO - Test Case 1 PASS: Hi\u1ec3n th\u1ecb ðúng thông báo l\u1ed7i khi không nh\u1eadp tiêu ð\u1ec1 trang.
+2025-03-12 00:07:44,755 - INFO - ====== WebDriver manager ======
+2025-03-12 00:07:46,810 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:07:48,005 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:07:49,851 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-12 00:07:51,125 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-12 00:07:52,024 - INFO - Nh\u1eadp username
+2025-03-12 00:07:52,119 - INFO - Nh\u1eadp password
+2025-03-12 00:07:52,197 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-12 00:07:57,615 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-12 00:07:57,710 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-12 00:07:58,576 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-12 00:07:59,089 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-12 00:08:00,172 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-12 00:08:00,183 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-12 00:08:00,954 - INFO - Ð\xe3 nh\u1eadp tiêu ð\u1ec1 trang: Trang ki\u1ec3m th\u1eed
+2025-03-12 00:08:01,018 - INFO - Ð\xe3 nh\u1ea5n nút Lýu.
+2025-03-12 00:08:02,409 - INFO - Tiêu ð\u1ec1 trang 'Trang ki\u1ec3m th\u1eed' ð\xe3 xu\u1ea5t hi\u1ec7n trong danh sách!
+2025-03-12 00:08:02,413 - INFO - Test Case 2 PASS: Lýu trang thành công và hi\u1ec3n th\u1ecb trong danh sách.
+2025-03-12 00:08:04,838 - INFO - ====== WebDriver manager ======
+2025-03-12 00:08:06,856 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:08:07,871 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:08:10,333 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-12 00:08:11,588 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-12 00:08:12,071 - INFO - Nh\u1eadp username
+2025-03-12 00:08:12,597 - INFO - Nh\u1eadp password
+2025-03-12 00:08:12,671 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-12 00:08:17,958 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-12 00:08:18,056 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-12 00:08:18,842 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-12 00:08:19,358 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-12 00:08:20,472 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-12 00:08:20,485 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-12 00:08:21,039 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
+2025-03-12 00:08:21,069 - INFO - Test Case 3 PASS: Pop-up thêm section hi\u1ec3n th\u1ecb thành công.
+2025-03-12 00:08:23,370 - INFO - ====== WebDriver manager ======
+2025-03-12 00:08:25,528 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:08:26,510 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:08:29,682 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-12 00:08:30,929 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-12 00:08:31,189 - INFO - Nh\u1eadp username
+2025-03-12 00:08:31,641 - INFO - Nh\u1eadp password
+2025-03-12 00:08:31,718 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-12 00:08:37,011 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-12 00:08:37,110 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-12 00:08:37,877 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-12 00:08:38,385 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-12 00:08:39,479 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-12 00:08:39,486 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-12 00:08:40,056 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
+2025-03-12 00:08:40,169 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
+2025-03-12 00:08:40,301 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
+2025-03-12 00:08:40,333 - INFO - Test Case 4 PASS: Section 'News' ð\xe3 ðý\u1ee3c thêm thành công và hi\u1ec3n th\u1ecb trong danh sách.
+2025-03-12 00:08:42,625 - INFO - ====== WebDriver manager ======
+2025-03-12 00:08:44,634 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:08:44,789 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-12 00:08:48,434 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-12 00:08:49,682 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-12 00:08:50,461 - INFO - Nh\u1eadp username
+2025-03-12 00:08:50,557 - INFO - Nh\u1eadp password
+2025-03-12 00:08:50,665 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-12 00:08:56,292 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-12 00:08:56,473 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-12 00:08:57,238 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-12 00:08:57,750 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-12 00:08:58,957 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-12 00:08:58,966 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-12 00:08:59,520 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
+2025-03-12 00:08:59,654 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
+2025-03-12 00:08:59,851 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
+2025-03-12 00:09:00,020 - INFO - Ð\xe3 nh\u1ea5n nút Lýu.
+2025-03-12 00:09:00,135 - INFO - PASS: Hi\u1ec3n th\u1ecb ðúng thông báo l\u1ed7i: Vui l\xf2ng nh\u1eadp tiêu ð\u1ec1 tin t\u1ee9c.

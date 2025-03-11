@@ -103,6 +103,7 @@ class PageV2:
         except Exception as e:
             logging.warning(f"Không tìm thấy thông báo lỗi: {e}")
             return None
+    
     # Kiểm tra tiêu đề trang có xuất hiện trong danh sách PageV2 không
     def is_page_title_in_list(self, expected_title):
         try:
