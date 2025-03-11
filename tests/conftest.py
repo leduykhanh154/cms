@@ -4,8 +4,12 @@ import base64
 from datetime import datetime
 
 # Cấu hình logging
-logging.basicConfig(filename="reports/test_log.log", level=logging.INFO, 
-                    format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    filename="test_log.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):

@@ -152,6 +152,24 @@ class PageV2:
             logging.error(f"Lỗi khi kiểm tra pop-up thêm section: {e}", exc_info=True)
             return False
 
+    def is_section_news_present(self):
+        try:
+            # Chờ phần tử xuất hiện trên giao diện
+            news_section = self.wait.until(
+                EC.presence_of_element_located(LocatorPageV2.SECTION_NEWS)
+            )
+            
+            if news_section.is_displayed():
+                logging.info("Section 'News' đã xuất hiện trên giao diện.")
+                return True
+            else:
+                logging.info("Section 'News' KHÔNG hiển thị trên giao diện.")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi khi tìm section 'News': {e}", exc_info=True)
+            return False
+
+
     # Nhấn checkbox "News" trong popup thêm section
     def click_section_news_checkbox(self):
         try:
@@ -214,13 +232,19 @@ class PageV2:
     # Nhấn nút "Lưu và tiếp tục cập nhật" để lưu trang PageV2
     def click_save_and_continue_button(self):
         try:
-            save_and_continue_button = self.wait.until(EC.element_to_be_clickable(self.save_and_continue_button))
+            logging.info("Đang tìm nút Lưu và tiếp tục cập nhật...")
+            save_and_continue_button = self.wait.until(
+                EC.element_to_be_clickable(self.save_and_continue_button)
+            )
+            logging.info("Tìm thấy nút, thực hiện click bằng JavaScript...")
+            
             self.driver.execute_script("arguments[0].click();", save_and_continue_button)
-            logging.info("Đã nhấn nút Lưu.")
+            logging.info("Đã nhấn nút Lưu và tiếp tục cập nhật.")
             return True
         except Exception as e:
-            logging.error(f"Lỗi khi nhấn nút Lưu: {e}", exc_info=True)
+            logging.error(f"Lỗi khi nhấn nút Lưu và tiếp tục cập nhật: {e}", exc_info=True)
             return False
+
     
     def perform_tag_operations(self):
         self.click_content_menu()

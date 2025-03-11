@@ -107,3 +107,78 @@ def test_news_section_title_validation(setup_driver, pagev2):
     else:
         logging.error(f"FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
         assert False, "Không tìm thấy hoặc thông báo lỗi không đúng."
+
+# Test Case 1.2: Verify khi không nhập Tiêu đề trang -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập tiêu đề trang
+def test_empty_page_title_2(pagev2, setup_driver):
+    pagev2.perform_tag_operations()
+    pagev2.click_create_new_button()
+    pagev2.enter_page_title("")
+    pagev2.click_save_and_continue_button()
+    error_message = pagev2.check_title_error_message()
+    if error_message == "Vui lòng nhập tiêu đề trang":
+        logging.info("Test Case 1 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.")
+    else:
+        logging.error(f"Test Case 1 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
+        assert False, "Thông báo lỗi không đúng hoặc không xuất hiện!"
+
+# Test Case 2.2: Verify khi nhập Tiêu đề trang -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
+def test_save_page_and_check_in_list_2(pagev2, setup_driver):
+    pagev2.perform_tag_operations()
+    valid_title = "Trang kiểm thử"
+    pagev2.enter_page_title(valid_title)
+    pagev2.click_save_and_continue_button()
+    try:
+        # Chờ tối đa 5 giây để tìm kiếm 'Chỉnh sửa trang' trên toàn bộ trang
+        WebDriverWait(setup_driver, 5).until(
+            EC.text_to_be_present_in_element((By.XPATH, '//*[@id="app-container"]/main/div/div[1]/div/nav/ol/li[3]'), "Chỉnh sửa trang")
+        )
+        logging.info("Test Case 2 PASS: 'Chỉnh sửa trang' xuất hiện trên trang sau khi lưu.")
+    except TimeoutException:
+        logging.error("Test Case 2 FAILED: 'Chỉnh sửa trang' không xuất hiện trên trang sau khi lưu!")
+        assert False, "'Chỉnh sửa trang' không xuất hiện trên trang!"
+
+# Test Case 3.2: Verify Add_button is disable
+def test_add_button_disable(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.click_add_section_button()
+    pagev2.is_add_section_popup_displayed()
+    assert pagev2.is_section_news_present()
+
+# Test Case 3.3: Verify Add_button is disable
+def test_add_button_disable(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.click_add_section_button()
+    pagev2.is_add_section_popup_displayed()
+
+    # Lấy phần tử nút "Add"
+    add_button = WebDriverWait(setup_driver, 10).until(
+        EC.presence_of_element_located(LocatorPageV2.ADD_BUTTON)
+    )
+
+    # Kiểm tra trạng thái của nút
+    if add_button.is_enabled():
+        logging.error("Test Case FAIL: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
+        assert False, "Nút 'Add' có thể click, testcase failed."
+    else:
+        logging.info("Test Case PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
+        assert True
+
+# Test Case 3.4: Verify Add_button is enable
+def test_add_button_enable(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.click_add_section_button()
+    pagev2.is_add_section_popup_displayed()
+    pagev2.click_section_news_checkbox()
+    
+    # Lấy phần tử nút "Add"
+    add_button = WebDriverWait(setup_driver, 10).until(
+        EC.presence_of_element_located(LocatorPageV2.ADD_BUTTON)
+    )
+
+    # Kiểm tra trạng thái của nút
+    if add_button.is_enabled():
+        logging.info("Test Case PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
+        assert True
+    else:
+        logging.error("Test Case FAIL: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
+        assert False, "Nút 'Add' có thể click, testcase failed."

@@ -14,7 +14,7 @@ class LocatorPageV2:
     ADD_SECTION_BUTTON = (By.XPATH, "//*[@id='accordionParent']/div[2]/div[1]/div[2]/button[5]")
     ADD_BUTTON = (By.XPATH, '//*[@id="app-container"]/div[12]/div/div/div[3]/button[2]')
     SAVE_BUTTON = (By.XPATH, '//*[@id="sticky-header"]/div[2]/div/div/div/button[1]')
-    SAVE_AND_CONTINUE_BUTTON = (By.XPATH, '//*[@id="app-container"]/div[12]/div/div/div[3]/button[1]')
+    SAVE_AND_CONTINUE_BUTTON = (By.XPATH, '//*[@id="sticky-header"]/div[2]/div/div/div/button[2]')
 
     # Inputs
     PAGE_TITLE_INPUT = (By.ID, "root_content_title-vi")
