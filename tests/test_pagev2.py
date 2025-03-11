@@ -79,8 +79,8 @@ def test_add_news_section_and_verify_display(setup_driver, pagev2):
     pagev2.is_add_section_popup_displayed()
     pagev2.click_section_news_checkbox()
     pagev2.click_add_button()
-    news_section_element = WebDriverWait(setup_driver, 5).until(
-        EC.presence_of_element_located(LocatorPageV2.NEWS_SECTION)
+    news_section_element = WebDriverWait(setup_driver, 10).until(
+        EC.visibility_of_element_located(LocatorPageV2.NEWS_SECTION)
     )
 
     if news_section_element and news_section_element.is_displayed():
