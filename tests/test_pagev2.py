@@ -108,9 +108,9 @@ def test_empty_page_title_2(pagev2, setup_driver):
     pagev2.click_save_and_continue_button()
     error_message = pagev2.check_title_error_message()
     if error_message == "Vui lòng nhập tiêu đề trang":
-        logging.info("Test Case 1 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.")
+        logging.info("Test Case 1.2 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.")
     else:
-        logging.error(f"Test Case 1 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
+        logging.error(f"Test Case 1.2 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
         assert False, "Thông báo lỗi không đúng hoặc không xuất hiện!"
 
 # Test Case 2.2: Verify khi nhập Tiêu đề trang -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
@@ -124,9 +124,9 @@ def test_save_page_and_check_in_list_2(pagev2, setup_driver):
         WebDriverWait(setup_driver, 5).until(
             EC.text_to_be_present_in_element((By.XPATH, '//*[@id="app-container"]/main/div/div[1]/div/nav/ol/li[3]'), "Chỉnh sửa trang")
         )
-        logging.info("Test Case 2 PASS: 'Chỉnh sửa trang' xuất hiện trên trang sau khi lưu.")
+        logging.info("Test Case 2.2 PASS: 'Chỉnh sửa trang' xuất hiện trên trang sau khi lưu.")
     except TimeoutException:
-        logging.error("Test Case 2 FAILED: 'Chỉnh sửa trang' không xuất hiện trên trang sau khi lưu!")
+        logging.error("Test Case 2.2 FAILED: 'Chỉnh sửa trang' không xuất hiện trên trang sau khi lưu!")
         assert False, "'Chỉnh sửa trang' không xuất hiện trên trang!"
 
 # Test Case 3.2: Verify Add_button is disable
@@ -149,10 +149,10 @@ def test_add_button_disable(setup_driver, pagev2):
 
     # Kiểm tra trạng thái của nút
     if add_button.is_enabled():
-        logging.error("Test Case FAIL: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
+        logging.error("Test Case 3.3 FAIL: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
         assert False, "Nút 'Add' có thể click, testcase failed."
     else:
-        logging.info("Test Case PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
+        logging.info("Test Case 3.3 PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
         assert True
 
 # Test Case 3.4: Verify Add_button is enable
@@ -169,10 +169,10 @@ def test_add_button_enable(setup_driver, pagev2):
 
     # Kiểm tra trạng thái của nút
     if add_button.is_enabled():
-        logging.info("Test Case PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
+        logging.info("Test Case 3.4 PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
         assert True
     else:
-        logging.error("Test Case FAIL: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
+        logging.error("Test Case 3.4 FAIL: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
         assert False, "Nút 'Add' có thể click, testcase failed."
     
 # Test Case 6: Verify khi click icon rename -> Hệ thống hiển thị pop-up Chỉnh sửa tên section
