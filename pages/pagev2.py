@@ -251,6 +251,7 @@ class PageV2:
             return actual_value == str(value)
         except Exception as e:
             logging.error(f"Lỗi khi nhập số vào input: {e}", exc_info=True)
+
             return False
     
     def get_number_of_articles_value(self):
@@ -275,7 +276,21 @@ class PageV2:
             return True
         except TimeoutException:
             logging.error(" Pop-up Rename vẫn hiển thị!")
+
             return False
+    
+    def get_number_of_articles_value(self):
+        try:
+            logging.info("Đang lấy giá trị từ input số lượng bài viết...")
+            input_element = self.wait.until(
+                EC.presence_of_element_located(self.NUMBER_OF_ARTICLES_INPUT)
+            )
+            actual_value = input_element.get_attribute("value").strip()
+            logging.info(f"Giá trị hiện tại trong input: '{actual_value}'")
+            return actual_value if actual_value else ""
+        except Exception as e:
+            logging.error(f"Lỗi khi lấy giá trị từ input: {e}", exc_info=True)
+            return ""
 
     
     # Click icon Close popup Rename

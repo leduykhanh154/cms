@@ -52,8 +52,10 @@ class LocatorPageV2:
 
     # Popup rename section
     RENAME_SECTION_POPUP = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div')
+
     ICON_CLOSE = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div/div[1]/button')
     RENAME_TEXT_INPUT = (By.XPATH, '//*[@id="rename-section"]')
     BUTTON_CLOSE = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div/div[3]/button[1]')
     BUTTON_SAVE_RENAME =(By.XPATH, '//*[@id="app-container"]/div[14]/div/div/div[3]/button[2]')
-    
+
+    NUMBER_OF_ARTICLES_INPUT = (By.XPATH, '//*[@id="root_47mwegrft4_quantity-vi"]')
