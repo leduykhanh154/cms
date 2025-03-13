@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 class LocatorPageV2:
     CONTENT_MENU = (By.XPATH, "//*[@id='left-menu']/ul/li[1]/a")
     MENU_PAGE_V2 = (By.XPATH, "//*[@id='left-menu']/ul/li[1]/ul/li[10]/a")
-    
+    TYPE_ARTICLE_BUTTON = (By.XPATH, '//*[@id="u486rctj29-section"]/div/div/div/div/div/div/div[4]/div/div/div/div/div[1]/button')
     PAGE_V2_LIST_URL = "https://mpire-cms-demo.mpire.asia/cms/admin-page-v2?page=1"
     PAGE_V2_CREATE_URL = "https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create"
     PAGE_LIST_WRAPPER = (By.XPATH, '//*[@id="page-v2-list_wrapper"]/div[2]')
@@ -22,11 +22,16 @@ class LocatorPageV2:
     # Error messages
     TITLE_ERROR_MESSAGE = (By.XPATH, "//*[@id='root_content_title__error-0']")
    
+   # Selects
+    SELECT_LIST_BY = (By.ID, 'react-select-6-input')
+    SELECT_LIST_BY_OPTION = (By.XPATH, '//*[@id="react-select-6-option-0"]')
+    SELECT_LIST_BY_TYPE_ARTICLE = (By.XPATH, '//*[@id="react-select-6-option-1"]')
 
     # Section-related locators
     NAME_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/text()')
     NAME_SECTION_RENAME = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/text()')
     SECTION_NEWS = (By.ID, "news")
+    NUMBER_SECTION_ERROR = (By.XPATH, '//*[@id="root_uo9rhj0nzz_quantity__error-0"]')
     ADD_SECTION_POPUP = (By.XPATH, '//*[@id="app-container"]/div[12]/div/div')
     NEWS_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]') 
     NEWS_SECTION_DISPLAY = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div')  
@@ -36,6 +41,12 @@ class LocatorPageV2:
     COLLAPSE_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/button')
     MENU_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[3]/button')
     SEARCHBAR_SECTION = (By.XPATH, '//*[@id="dt-search-section"]')
+    TYPE_ARTICLE_SELECT_ELEMENT = (By.ID, "react-select-9-input")
+    ADD_SECTION_POPUP = (By.XPATH, '//*[@id="app-container"]/div[12]/div/div') 
+    NEWS_LIST_POPUP = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div')
+    DROPDOWN_LIST_BY_DISPLAYED = (By.CLASS_NAME, 'css-11murdf-menu')
+    DROPDOWN_LIST_BY_TYPE_ARTICLE_DISPLAYED = (By.XPATH, '//*[@id="sdqh9emhe6-section"]/div/div/div/div/div/div/div[4]/div/div/div/div/label')
+    LIST_BY_OPTION_DISPLAYED = (By.XPATH, '//*[@id="ghd8pmbqdg-section"]/div/div/div/div/div/div/div[4]/div/div/div/div/div[1]/div') 
     
     # Menu item
     DELETE_BUTTON = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[3]/div/button[1]')

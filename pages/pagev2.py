@@ -38,6 +38,16 @@ class PageV2:
         self.rename_section_button = LocatorPageV2.RENAME_SECTION_BUTTON
         self.rename_section_popup = LocatorPageV2.RENAME_SECTION_POPUP
         self.rename_text_input = LocatorPageV2.RENAME_TEXT_INPUT
+        self.url_key_input = LocatorPageV2.URL_KEY_INPUT
+        self.type_article_button = LocatorPageV2.TYPE_ARTICLE_BUTTON
+        self.select_list_by = LocatorPageV2.SELECT_LIST_BY
+        self.select_list_by_option = LocatorPageV2.SELECT_LIST_BY_OPTION
+        self.select_list_by_type_article = LocatorPageV2.SELECT_LIST_BY_TYPE_ARTICLE
+        self.news_list_popup = LocatorPageV2.NEWS_LIST_POPUP
+        self.dropdown_list_by_displayed = LocatorPageV2.DROPDOWN_LIST_BY_DISPLAYED
+        self.dropdown_list_by_type_article_displayed = LocatorPageV2.DROPDOWN_LIST_BY_TYPE_ARTICLE_DISPLAYED
+        self.list_by_option_displayed = LocatorPageV2.LIST_BY_OPTION_DISPLAYED
+        self.number_section_error = LocatorPageV2.NUMBER_SECTION_ERROR
         NUMBER_OF_ARTICLES_INPUT = (By.ID, "root_47mwegrft4_quantity-vi")
 
     # Hàm nhấn vào một menu cụ thể trong CMS
@@ -540,6 +550,137 @@ class PageV2:
         except Exception as e:
             logging.error("Lỗi khi nhấn nút 'Duplicate': %s", e, exc_info=True)
             raise
+        
+
+# Nhập đường dẫn (URL key) cho trang PageV2
+    def enter_url_key_vi(self, url_key):
+        try:
+            url_input = self.wait.until(EC.visibility_of_element_located(LocatorPageV2.URL_KEY_VI_INPUT))
+            url_input.clear()
+            url_input.send_keys(url_key)
+            logging.info(f"Đã nhập đường dẫn: {url_key}")
+            return True
+        except Exception as e:
+            logging.error(f"Lỗi khi nhập đường dẫn: {e}", exc_info=True)
+            return False
+
+
+# Nhấn nút "Chọn bài viết" để mở popup "Danh sách tin tức"
+    def click_type_article_button(self):
+        try:
+            type_article_button = self.wait.until(EC.element_to_be_clickable(self.type_article_button))
+            self.driver.execute_script("arguments[0].click();", type_article_button)
+            logging.info("Đã nhấn nút 'Chọn bài viết'.")
+            return True
+           
+        except Exception as e:
+            logging.error(f"Lỗi khi nhấn nút 'Chọn bài viết': {e}", exc_info=True)
+            return False
+    
+    # Kiểm tra popup 'Danh sách tin tức' có hiển thị không
+    def is_news_list_popup_displayed(self):
+        try:
+            popup_element = self.wait.until(EC.visibility_of_element_located(self.news_list_popup))
+            return popup_element.is_displayed()
+        except Exception as e:
+            logging.error(f"Lỗi khi kiểm tra pop-up Danh sách tin tức: {e}", exc_info=True)
+            return False
+
+
+# Kiểm tra dropdown "Chọn danh sách theo" có hiển thị không
+    def is_dropdown_list_by_displayed(self):
+        try:
+            dropdown_list_by_element = self.wait.until(EC.visibility_of_element_located(self.dropdown_list_by_displayed))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", dropdown_list_by_element)
+            self.wait.until(EC.visibility_of(dropdown_list_by_element))
+            return dropdown_list_by_element
+        except TimeoutException:
+            logging.error("Dropdown 'Chọn danh sách theo' không hiển thị!")
+            return None
+        
+    # Kiểm tra dropdown "Chọn loại bài viết" có hiển thị không
+    def is_dropdown_list_by_type_article_displayed(self):
+        try:
+            dropdown_list_by_type_article_element = self.wait.until(EC.visibility_of_element_located(self.dropdown_list_by_type_article_displayed))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", dropdown_list_by_type_article_element)
+            self.wait.until(EC.visibility_of(dropdown_list_by_type_article_element))
+            return dropdown_list_by_type_article_element
+        except TimeoutException:
+            logging.error("Dropdown 'Chọn loại bài viết' không hiển thị!")
+            return None
+                
+    # Kiểm tra section "Danh sách bài viết hiển thị" có hiển thị không. Khi click vào select data "Tùy chọn"
+    def is_list_by_option_displayed(self):
+        try:
+            list_by_option_element = self.wait.until(EC.visibility_of_element_located(self.list_by_option_displayed))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", list_by_option_element)
+            self.wait.until(EC.visibility_of(list_by_option_element))
+            return list_by_option_element.is_displayed()
+        except TimeoutException:
+            logging.error("Section 'Danh sách bài viết hiển thị' không hiển thị!")
+            return None
+
+
+# Lấy thông báo lỗi của Số bài viết hiển thị trên slide
+    def get_number_section_error_message(self, news_section_element):
+        try:
+            error_message_element = WebDriverWait(news_section_element, 10).until(
+                EC.presence_of_element_located(self.number_section_error)
+            )
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", error_message_element)
+            self.wait.until(EC.visibility_of(error_message_element))
+            return error_message_element.text.strip()
+        except TimeoutException:
+            return None
+
+# Mở dropdown "Chọn danh sách theo"
+    def click_select_list_by(self):
+        try:
+            select_list_by = self.wait.until(EC.element_to_be_clickable(self.select_list_by))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", select_list_by)
+            time.sleep(2)
+            select_list_by.click()
+            logging.info("Đã nhấn mở dropdown 'Chọn danh sách theo'")
+            return True
+        except Exception as e:
+            logging.error(f"Lỗi khi nhấn mở dropdown 'Chọn danh sách theo': {e}", exc_info=True)
+            return False
+        
+        
+     # Nhấn chọn select "Tùy chọn" trong select "Chọn danh sách theo"
+    def click_select_list_by_option(self):
+        try:
+            select_list_by_option = self.wait.until(EC.element_to_be_clickable(self.select_list_by_option))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", select_list_by_option)
+            time.sleep(1)
+            select_list_by_option.click()
+            logging.info("Đã nhấn select: Tùy chọn")
+            return True
+        except Exception as e:
+            logging.error(f"Lỗi khi nhấn select: Tùy chọn: {e}", exc_info=True)
+            return False
+        
+    # Nhấn chọn select "Loại bài viết" trong select "Chọn danh sách theo"
+    def click_select_list_by_type_article(self):
+        try:
+            select_list_by_type_article = self.wait.until(EC.element_to_be_clickable(self.select_list_by_type_article))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", select_list_by_type_article)
+            time.sleep(1)
+            select_list_by_type_article.click()
+            logging.info("Đã nhấn select: Loại bài viết")
+            return True
+        except Exception as e:
+            logging.error(f"Lỗi khi nhấn select: Loại bài viết: {e}", exc_info=True)
+            return False
+    # Tìm kiếm "text" trên trang
+    def search_text_on_page(self, keyword, timeout=5):
+        try:
+            self.wait.until(lambda driver: keyword in driver.page_source, timeout)
+            logging.info(f"Tìm thấy từ khóa '{keyword}' trên trang.")
+            return True
+        except Exception as e:
+            logging.error(f"Không tìm thấy từ khóa '{keyword}' trên trang: {e}")
+            return False
     
     # Hàm thực hiện các bước mở menu 'Nội dung', vào 'Page V2' và tạo mới trang
     def perform_tag_operations(self):
