@@ -33,6 +33,7 @@ class LocatorPageV2:
     SECTION_LIST = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div')  
     NEWS_SECTION_ERROR = (By.XPATH, ".//div[starts-with(@id, 'root_') and contains(@id, '_title__error')]")  
     NEWS_SECTION_QUANTITY_ERROR = (By.XPATH, "//*[@id='root_bx6h2oef3e_quantity__error']")
+    COLLAPSE_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/button')
 
     # Nút rename của section
     RENAME_SECTION_BUTTON = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/button')
@@ -43,3 +44,4 @@ class LocatorPageV2:
     RENAME_TEXT_INPUT = (By.XPATH, '//*[@id="rename-section"]')
     BUTTON_CLOSE = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div/div[3]/button[1]')
     BUTTON_SAVE_RENAME =(By.XPATH, '//*[@id="app-container"]/div[14]/div/div/div[3]/button[2]')
+    

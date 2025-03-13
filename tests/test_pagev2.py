@@ -378,6 +378,58 @@ def log_success(message):
 #         logging.error("Test Case 7.2.4 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
 #         raise
 
+# # Test Case 8.1: Verify click icon Collapse -> Hệ thống thu gọn form Section News
+# def test_collapse_section(setup_driver, pagev2):
+#     try:
+#         logging.info("Bắt đầu Test Case 8.1: Click icon Collapse để thu gọn Section News")
+
+#         # Bước 1: Hiển thị section News nếu chưa có
+#         pagev2.perform_tag_operations()
+#         pagev2.add_news_section()
+#         assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+#         # Bước 2: Click icon collapse
+#         pagev2.click_collapse_section()
+#         time.sleep(2)  # Đợi UI cập nhật
+
+#         # Bước 3: Kiểm tra section đã thu gọn
+#         assert pagev2.is_section_collapsed(), "Section News không được thu gọn sau khi click icon Collapse!"
+
+#         logging.info("Test Case 8.1 PASS: Hệ thống đã thu gọn Section News thành công.")
+
+#     except Exception as e:
+#         logging.error("Test Case 8.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+#         raise
+
+# # Test Case 8.2: Verify click icon Expand -> Hệ thống mở rộng lại Section News
+# def test_expand_section(setup_driver, pagev2):
+#     try:
+#         logging.info("Bắt đầu Test Case 8.2: Click icon Expand để mở rộng lại Section News")
+
+#         # Bước 1: Hiển thị section News nếu chưa có
+#         pagev2.perform_tag_operations()
+#         pagev2.add_news_section()
+#         assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+#         # Bước 2: Click icon collapse để thu gọn section
+#         pagev2.click_collapse_section()
+#         time.sleep(2)
+#         assert pagev2.is_section_collapsed(), "Section News chưa được thu gọn!"
+
+#         # Bước 3: Click icon expand để mở rộng lại section
+#         pagev2.click_expand_section()
+#         time.sleep(2)
+
+#         # Bước 4: Kiểm tra section đã hiển thị lại
+#         assert pagev2.is_news_section_displayed(), "Section News không được mở rộng lại sau khi click icon Expand!"
+
+#         logging.info("Test Case 8.2 PASS: Hệ thống đã mở rộng lại Section News thành công.")
+
+#     except Exception as e:
+#         logging.error("Test Case 8.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+#         raise
+
+# Test Case 9.1: 
 
 
 

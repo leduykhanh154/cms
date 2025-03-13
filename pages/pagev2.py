@@ -340,8 +340,6 @@ class PageV2:
             logging.error(f"Không tìm thấy từ khóa '{keyword}' trên trang: {e}")
             return False
 
-
-
     # Click nut Luu ten section
     def click_save_rename(self):
         try:
@@ -353,6 +351,35 @@ class PageV2:
             logging.error("Lỗi khi nhấn nút Lưu: %s", e, exc_info=True)
             raise
 
+    # Click icon Collapse section
+    def click_collapse_section(self):
+        try:
+            collapse_icon = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.COLLAPSE_SECTION))
+            collapse_icon.click()
+            logging.info("Đã nhấn vào icon collapse để thu gọn section.")
+            
+        except Exception as e:
+            logging.error("Lỗi khi nhấn icon collapse: %s", e, exc_info=True)
+            raise
+
+    # kiem tra section co duoc thu gon khong
+    def is_section_collapsed(self):
+        try:
+            section_element = self.driver.find_element(*LocatorPageV2.NAME_SECTION)
+            return not section_element.is_displayed()  # Nếu bị ẩn thì trả về True
+        except Exception:
+            return True  # Nếu không tìm thấy element thì có thể nó đã bị ẩn/collapse
+
+    def click_expand_section(self):
+        try:
+            expand_icon = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.COLLAPSE_SECTION))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", expand_icon)
+            time.sleep(1)  # Đợi UI cập nhật
+            expand_icon.click()
+            logging.info("Đã nhấn vào icon expand để mở rộng section.")
+        except Exception as e:
+            logging.error("Lỗi khi mở rộng section: %s", e, exc_info=True)
+            raise
 
     
     def perform_tag_operations(self):
