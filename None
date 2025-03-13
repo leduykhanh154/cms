@@ -1,54 +1,54 @@
-ERROR    root:pagev2.py:83 Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: Message: 
-Stacktrace:
-	GetHandleVerifier [0x0097B5A3+24387]
-	(No symbol) [0x00905904]
-	(No symbol) [0x007E0753]
-	(No symbol) [0x00828BA9]
-	(No symbol) [0x00828EFB]
-	(No symbol) [0x008719C2]
-	(No symbol) [0x0084D894]
-	(No symbol) [0x0086F138]
-	(No symbol) [0x0084D646]
-	(No symbol) [0x0081C59F]
-	(No symbol) [0x0081D8E4]
-	GetHandleVerifier [0x00C7D883+3179043]
-	GetHandleVerifier [0x00C96CF9+3282585]
-	GetHandleVerifier [0x00C9167C+3260444]
-	GetHandleVerifier [0x00A14330+650448]
-	(No symbol) [0x0090ED0D]
-	(No symbol) [0x0090BAF8]
-	(No symbol) [0x0090BC99]
-	(No symbol) [0x008FE530]
-	BaseThreadInitThunk [0x75E57BA9+25]
-	RtlInitializeExceptionChain [0x7747C28B+107]
-	RtlClearBits [0x7747C20F+191]
-Traceback (most recent call last):
-  File "E:\cms\pages\pagev2.py", line 70, in click_create_new_button
-    create_new_button = self.wait.until(EC.element_to_be_clickable(self.create_new_button))
-  File "C:\Users\Duy khanh\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x0097B5A3+24387]
-	(No symbol) [0x00905904]
-	(No symbol) [0x007E0753]
-	(No symbol) [0x00828BA9]
-	(No symbol) [0x00828EFB]
-	(No symbol) [0x008719C2]
-	(No symbol) [0x0084D894]
-	(No symbol) [0x0086F138]
-	(No symbol) [0x0084D646]
-	(No symbol) [0x0081C59F]
-	(No symbol) [0x0081D8E4]
-	GetHandleVerifier [0x00C7D883+3179043]
-	GetHandleVerifier [0x00C96CF9+3282585]
-	GetHandleVerifier [0x00C9167C+3260444]
-	GetHandleVerifier [0x00A14330+650448]
-	(No symbol) [0x0090ED0D]
-	(No symbol) [0x0090BAF8]
-	(No symbol) [0x0090BC99]
-	(No symbol) [0x008FE530]
-	BaseThreadInitThunk [0x75E57BA9+25]
-	RtlInitializeExceptionChain [0x7747C28B+107]
-	RtlClearBits [0x7747C20F+191]
-
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:92 Đã nhập tiêu đề trang: Trang kiểm thử
+INFO     root:pagev2.py:244 Đã nhấn nút Lưu.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:92 Đã nhập tiêu đề trang: 
+INFO     root:pagev2.py:252 Đang tìm nút Lưu và tiếp tục cập nhật...
+INFO     root:pagev2.py:256 Tìm thấy nút, thực hiện click bằng JavaScript...
+INFO     root:pagev2.py:259 Đã nhấn nút Lưu và tiếp tục cập nhật.
+INFO     root:test_pagev2.py:110 Test Case 1.2 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:92 Đã nhập tiêu đề trang: Trang kiểm thử
+INFO     root:pagev2.py:252 Đang tìm nút Lưu và tiếp tục cập nhật...
+INFO     root:pagev2.py:256 Tìm thấy nút, thực hiện click bằng JavaScript...
+INFO     root:pagev2.py:259 Đã nhấn nút Lưu và tiếp tục cập nhật.
+ERROR    root:test_pagev2.py:128 Test Case 2.2 FAILED: 'Chỉnh sửa trang' không xuất hiện trên trang sau khi lưu!
