@@ -1,11 +1,13 @@
 import pytest
 import logging
+import time
 from utils.login import Login
 from pages.pagev2 import PageV2
 from utils.driver_setup import get_driver
 from locators.locator_pagev2 import LocatorPageV2
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+
  
 @pytest.fixture(scope="function")
 def setup_driver():
@@ -38,7 +40,7 @@ def test_empty_page_title(pagev2, setup_driver):
         logging.error(f"Test Case 1 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
         assert False, "Thông báo lỗi không đúng hoặc không xuất hiện!"
 
-# Test Case 2: Verify khi nhập Tiêu đề trang -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
+# (Error) Test Case 2: Verify khi nhập Tiêu đề trang -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
 def test_save_page_and_check_in_list(pagev2, setup_driver):
     pagev2.perform_tag_operations()
     valid_title = "Trang kiểm thử"
@@ -105,6 +107,84 @@ def test_news_section_title_validation(setup_driver, pagev2):
         logging.error(f"FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
         assert False, "Không tìm thấy hoặc thông báo lỗi không đúng."
 
+# Test Case 1.2: Verify khi không nhập Tiêu đề trang bam luu va tiep tuc cap nhat -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập tiêu đề trang
+def test_empty_page_title_2(pagev2, setup_driver):
+    pagev2.perform_tag_operations()
+    pagev2.enter_page_title("")
+    pagev2.click_save_and_continue_button()
+    error_message = pagev2.check_title_error_message()
+    if error_message == "Vui lòng nhập tiêu đề trang":
+        logging.info("Test Case 1.2 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.")
+    else:
+        logging.error(f"Test Case 1.2 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
+        assert False, "Thông báo lỗi không đúng hoặc không xuất hiện!"
+
+# (Error) Test Case 2.2: Verify khi nhập Tiêu đề trang bam luu va tiep tuc cap nhat -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
+def test_save_page_and_check_in_list_2(pagev2, setup_driver):
+    pagev2.perform_tag_operations()
+    valid_title = "Trang kiểm thử"
+    pagev2.enter_page_title(valid_title)
+    pagev2.click_save_and_continue_button()
+    try:
+        # Chờ tối đa 5 giây để tìm kiếm 'Chỉnh sửa trang' trên toàn bộ trang
+        WebDriverWait(setup_driver, 5).until(
+            EC.text_to_be_present_in_element((By.XPATH, '//*[@id="app-container"]/main/div/div[1]/div/nav/ol/li[3]'), "Chỉnh sửa trang")
+        )
+        logging.info("Test Case 2.2 PASS: 'Chỉnh sửa trang' xuất hiện trên trang sau khi lưu.")
+    except TimeoutException:
+        logging.error("Test Case 2.2 FAILED: 'Chỉnh sửa trang' không xuất hiện trên trang sau khi lưu!")
+        assert False, "'Chỉnh sửa trang' không xuất hiện trên trang!"
+
+# Test Case 3.2: Verify section News -> section News hien thi trong popup Them section
+def test_add_button_disable(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.click_add_section_button()
+    pagev2.is_add_section_popup_displayed()
+    if pagev2.is_section_news_present():
+        logging.info("Test Case 3.2 PASS: Section 'News' đã hiển thị trong popup 'Thêm section'.")
+    else:
+        logging.error("Test Case 3.2 FAILED: Section 'News' KHÔNG hiển thị trong popup 'Thêm section'!")
+    
+
+# Test Case 3.3: Verify Add_button is disable -> He thong enable Add_button trong popup Them section
+def test_add_button_disable(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.click_add_section_button()
+    pagev2.is_add_section_popup_displayed()
+
+    # Lấy phần tử nút "Add"
+    add_button = WebDriverWait(setup_driver, 10).until(
+        EC.presence_of_element_located(LocatorPageV2.ADD_BUTTON)
+    )
+
+    # Kiểm tra trạng thái của nút
+    if add_button.is_enabled():
+        logging.error("Test Case 3.3 FAILED: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
+        assert False, "Nút 'Add' có thể click, testcase failed."
+    else:
+        logging.info("Test Case 3.3 PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
+        assert True
+
+# Test Case 3.4: Verify Add_button is enable -> He thong enable Add_button trong popup Them section
+def test_add_button_enable(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.click_add_section_button()
+    pagev2.is_add_section_popup_displayed()
+    pagev2.click_section_news_checkbox()
+    
+    # Lấy phần tử nút "Add"
+    add_button = WebDriverWait(setup_driver, 10).until(
+        EC.presence_of_element_located(LocatorPageV2.ADD_BUTTON)
+    )
+
+    # Kiểm tra trạng thái của nút
+    if add_button.is_enabled():
+        logging.info("Test Case 3.4 PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
+        assert True
+    else:
+        logging.error("Test Case 3.4 FAILED: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
+        assert False, "Nút 'Add' có thể click, testcase failed."
+    
 # Test Case 6: Verify khi click icon rename -> Hệ thống hiển thị pop-up Chỉnh sửa tên section
 def test_rename_section_popup_display(setup_driver, pagev2):
     pagev2.perform_tag_operations()
@@ -119,3 +199,420 @@ def test_rename_section_popup_display(setup_driver, pagev2):
     else:
         logging.error("Test Case 6 FAILED: Pop-up Rename không hiển thị.")
         assert False, "Pop-up Rename không hiển thị."
+
+# Test Case 7.1.1: Verify click icon Dong tren pop-up Chinh sua ten section -> He thong dong pop-up  
+def test_click_icon_close_rename_section_popup(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 7.1.1: Verify click icon Đóng trên pop-up Chỉnh sửa tên section")
+
+        # Bước 1: Thực hiện thao tác để hiển thị pop-up Rename
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        pagev2.click_rename_section()
+        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
+
+        # Bước 2: Nhấn nút đóng pop-up
+        pagev2.click_icon_close_rename()
+        time.sleep(1)  # Đợi UI cập nhật
+
+        # Bước 3: Kiểm tra pop-up đã đóng
+        if pagev2.is_rename_popup_closed():
+            logging.info("Test Case 7.1.1 PASS: Đóng pop-up Rename thành công.")
+        else:
+            logging.error("Test Case 7.1.1 FAILED: Pop-up Rename vẫn hiển thị sau khi đóng!")
+            assert False, "Pop-up Rename vẫn hiển thị!"
+
+    except Exception as e:
+        logging.error("Test Case 7.1.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 7.2.1: Nhap ten moi cho section -> hien thi ten duoc nhap
+def test_rename_section_input(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.add_news_section()
+    
+    # Mở pop-up Rename
+    pagev2.click_rename_section()
+    assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
+
+    # Nhập và kiểm tra nội dung text input Rename
+    new_name = "Tên mới cho Section"
+    pagev2.enter_and_verify_rename_text(new_name)
+
+    logging.info("Test Case: Nhập và xác nhận nội dung Rename thành công.")
+
+# Test Case 7.1.2: Verify click nut Dong tren pop-up Chinh sua ten section -> He thong dong pop-up  
+def test_click_button_close_rename_section_popup(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 7.1.2: Verify click icon Đóng trên pop-up Chỉnh sửa tên section")
+
+        # Bước 1: Thực hiện thao tác để hiển thị pop-up Rename
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        pagev2.click_rename_section()
+        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
+
+        # Bước 2: Nhấn nút đóng pop-up
+        pagev2.click_button_close_rename()
+        time.sleep(1)  # Đợi UI cập nhật
+
+        # Bước 3: Kiểm tra pop-up đã đóng
+        if pagev2.is_rename_popup_closed():
+            logging.info("Test Case 7.1.2 PASS: Đóng pop-up Rename thành công.")
+        else:
+            logging.error("Test Case 7.1.2 FAILED: Pop-up Rename vẫn hiển thị sau khi đóng!")
+            assert False, "Pop-up Rename vẫn hiển thị!"
+
+    except Exception as e:
+        logging.error("Test Case 7 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 7.2.2 : Verify Nhap ten moi nhung click icon Dong -> He thong dong pop-up va ten khong duoc cap nhat
+def test_rename_section_cancel(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 7.2.2: Nhập tên nhưng đóng pop-up trước khi lưu")
+
+        # Bước 1: Thực hiện thao tác để hiển thị pop-up Rename
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Lấy tên section ban đầu
+        original_name = pagev2.get_section_name()
+
+        # Bước 2: Mở pop-up Rename và nhập tên mới
+        pagev2.click_rename_section()
+        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
+
+       # Nhập và kiểm tra nội dung text input Rename
+        new_name = "Tên mới cho Section"
+        pagev2.enter_and_verify_rename_text(new_name)
+
+        logging.info("Test Case: Nhập và xác nhận nội dung Rename thành công.")
+
+        # Bước 3: Đóng pop-up mà không nhấn nút Lưu
+        pagev2.click_icon_close_rename()
+        time.sleep(1)  # Đợi UI cập nhật
+
+        # Kiểm tra pop-up đã đóng
+        assert pagev2.is_rename_popup_closed(), "Pop-up Rename vẫn hiển thị sau khi đóng!"
+
+        # Bước 4: Kiểm tra tên section **không thay đổi**
+        updated_name = pagev2.get_section_name()
+        assert updated_name == original_name, f"Tên section đã thay đổi thành '{updated_name}', mong đợi '{original_name}'"
+
+        logging.info("Test Case 7.2.2 PASS: Tên section không bị thay đổi khi đóng pop-up trước khi lưu.")
+
+    except Exception as e:
+        logging.error("Test Case 7.2.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 7.2.3 : Verify Nhap ten moi nhung click nut Dong -> He thong dong pop-up va ten khong duoc cap nhat
+def test_rename_section_cancel(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 7.2.3: Nhập tên nhưng đóng pop-up trước khi lưu")
+
+        # Bước 1: Thực hiện thao tác để hiển thị pop-up Rename
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Lấy tên section ban đầu
+        original_name = pagev2.get_section_name()
+
+        # Bước 2: Mở pop-up Rename và nhập tên mới
+        pagev2.click_rename_section()
+        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
+
+       # Nhập và kiểm tra nội dung text input Rename
+        new_name = "Tên mới cho Section"
+        pagev2.enter_and_verify_rename_text(new_name)
+
+        logging.info("Test Case: Nhập và xác nhận nội dung Rename thành công.")
+
+        # Bước 3: Đóng pop-up mà không nhấn nút Lưu
+        pagev2.click_button_close_rename()
+        time.sleep(1)  # Đợi UI cập nhật
+
+        # Kiểm tra pop-up đã đóng
+        assert pagev2.is_rename_popup_closed(), "Pop-up Rename vẫn hiển thị sau khi đóng!"
+
+        # Bước 4: Kiểm tra tên section **không thay đổi**
+        updated_name = pagev2.get_section_name()
+        assert updated_name == original_name, f"Tên section đã thay đổi thành '{updated_name}', mong đợi '{original_name}'"
+
+        logging.info("Test Case 7.2.3 PASS: Tên section không bị thay đổi khi đóng pop-up trước khi lưu.")
+
+    except Exception as e:
+        logging.error("Test Case 7.2.3 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 7.2.4: Verify nhập tên mới và click nút Lưu -> Hệ thống lưu và hiển thị tên section mới
+def test_rename_section_and_check_name(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 7.2.4: Nhập tên mới, lưu và kiểm tra tên section")
+
+        # Bước 1: Hiển thị pop-up Rename
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        pagev2.click_rename_section()
+        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
+
+        # Bước 2: Nhập tên mới và lưu
+        expected_name = "Tên mới cho Section"
+        pagev2.enter_and_verify_rename_text(expected_name)
+        pagev2.click_save_rename()
+
+        # Bước 3: Kiểm tra pop-up đã đóng
+        assert pagev2.is_rename_popup_closed(), "Pop-up Rename vẫn còn hiển thị sau khi nhấn Lưu!"
+
+        # Bước 4: Chờ 3 giây để UI cập nhật trước khi tìm kiếm
+        time.sleep(3)
+
+        # Bước 5: Kiểm tra xem tên mới có hiển thị trên trang không
+        assert pagev2.search_text_on_page(expected_name), f"Từ khóa '{expected_name}' không tìm thấy trên trang!"
+
+        logging.info("Test Case 7.2.4 PASS: Tên section đã cập nhật thành công và hiển thị trên trang.")
+
+    except Exception as e:
+        logging.error("Test Case 7.2.4 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 8.1: Verify click icon Collapse -> Hệ thống thu gọn form Section News
+def test_collapse_section(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 8.1: Click icon Collapse để thu gọn Section News")
+
+        # Bước 1: Hiển thị section News nếu chưa có
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click icon collapse
+        pagev2.click_collapse_section()
+        time.sleep(2)  # Đợi UI cập nhật
+
+        # Bước 3: Kiểm tra section đã thu gọn
+        assert pagev2.is_section_collapsed(), "Section News không được thu gọn sau khi click icon Collapse!"
+
+        logging.info("Test Case 8.1 PASS: Hệ thống đã thu gọn Section News thành công.")
+
+    except Exception as e:
+        logging.error("Test Case 8.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 8.2: Verify click icon Expand -> Hệ thống mở rộng lại Section News
+def test_expand_section(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 8.2: Click icon Expand để mở rộng lại Section News")
+
+        # Bước 1: Hiển thị section News nếu chưa có
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click icon collapse để thu gọn section
+        pagev2.click_collapse_section()
+        time.sleep(2)
+        assert pagev2.is_section_collapsed(), "Section News chưa được thu gọn!"
+
+        # Bước 3: Click icon expand để mở rộng lại section
+        pagev2.click_expand_section()
+        time.sleep(2)
+
+        # Bước 4: Kiểm tra section đã hiển thị lại
+        assert pagev2.is_news_section_displayed(), "Section News không được mở rộng lại sau khi click icon Expand!"
+
+        logging.info("Test Case 8.2 PASS: Hệ thống đã mở rộng lại Section News thành công.")
+
+    except Exception as e:
+        logging.error("Test Case 8.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 9.1: Click icon '...' doc -> He thong hien thi cac menu-item
+def test_click_menu_icon_display_items(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 9.1: Click icon '...' để hiển thị menu-item")
+
+        # Bước 1: Đảm bảo Section News hiển thị
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click vào icon '...' (menu)
+        pagev2.click_menu_icon()
+        time.sleep(2)  # Đợi menu hiển thị
+
+        # Bước 3: Kiểm tra các menu-item Delete & Duplicate có hiển thị không
+        assert pagev2.is_delete_button_displayed(), "Nút Delete không hiển thị trong menu!"
+        assert pagev2.is_duplicate_button_displayed(), "Nút Duplicate không hiển thị trong menu!"
+
+        logging.info("Test Case 9.1 PASS: Hệ thống hiển thị đầy đủ menu-item sau khi click icon '...'.")
+    
+    except Exception as e:
+        logging.error("Test Case 9.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 9.2.1: Click menu-item Xoa -> He thong hien thi pop-up Confirm
+def test_check_delete_confirmation_popup(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 9.2.1: Kiểm tra pop-up xác nhận khi click Xóa")
+
+        # Bước 1: Đảm bảo Section News hiển thị
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click vào icon '...' (menu)
+        pagev2.click_menu_icon()
+        time.sleep(1)  # Đợi menu hiển thị
+
+        # Bước 3: Click vào menu-item Xóa
+        pagev2.click_delete_button()
+        time.sleep(1)  # Đợi pop-up hiển thị
+
+        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
+        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
+
+        logging.info("Test Case 9.2.1 PASS: Pop-up xác nhận hiển thị đúng khi click Xóa.")
+
+    except Exception as e:
+        logging.error("Test Case 9.2.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 9.2.2 Click icon Close tren pop-up Confirm
+def test_click_close_confirm_popup(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 9.2.2: Click icon 'X' để đóng pop-up xác nhận xóa.")
+
+        # Bước 1: Đảm bảo Section News hiển thị
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click vào icon '...' (menu)
+        pagev2.click_menu_icon()
+        time.sleep(1)  # Đợi menu hiển thị
+
+        # Bước 3: Click vào menu-item Xóa
+        pagev2.click_delete_button()
+        time.sleep(1)  # Đợi pop-up xác nhận hiển thị
+
+        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
+        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
+
+        # Bước 5: Click icon 'X' để đóng pop-up
+        pagev2.click_close_confirm_popup()
+        time.sleep(1)  # Đợi pop-up đóng
+
+        # Bước 6: Kiểm tra Section News vẫn còn trên giao diện
+        assert pagev2.is_news_section_displayed(), "Section News đã bị xóa sau khi đóng pop-up xác nhận!"
+
+        logging.info("Test Case 9.2.2 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.")
+
+    except Exception as e:
+        logging.error("Test Case 9.2.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+
+# Test Case 9.2.3: Click nut Yes trong pop-up Confirm  -> He thong xoa section
+def test_click_delete_section(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 9.2.3: Click menu-item Xóa để xóa Section News")
+
+        # Bước 1: Đảm bảo Section News hiển thị
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click vào icon '...' (menu)
+        pagev2.click_menu_icon()
+        time.sleep(1)  # Đợi menu hiển thị
+
+        # Bước 3: Click vào menu-item Xóa
+        pagev2.click_delete_button()
+        time.sleep(1)  # Đợi pop-up xác nhận hiển thị
+
+        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
+        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
+
+        # Bước 5: Click nút xác nhận Xóa trên pop-up
+        pagev2.confirm_delete_section()
+        time.sleep(2)  # Đợi hệ thống xử lý xóa
+
+        # Bước 6: Kiểm tra Section đã bị xóa bằng hàm is_section_news_deleted()
+        assert pagev2.is_section_news_deleted(), "Section News vẫn còn sau khi xác nhận xóa!"
+
+        logging.info("Test Case 9.2.3 PASS: Section đã được xóa thành công.")
+
+    except Exception as e:
+        logging.error("Test Case 9.2.3 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 9.2.4: Click nut No trong pop-up Confirm -> He thong huy xoa section
+def test_cancel_delete_section(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 9.2.5: Click nút 'No' để hủy xóa Section News.")
+
+        # Bước 1: Đảm bảo Section News hiển thị
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click vào icon '...' (menu)
+        pagev2.click_menu_icon()
+        time.sleep(1)  # Đợi menu hiển thị
+
+        # Bước 3: Click vào menu-item Xóa
+        pagev2.click_delete_button()
+        time.sleep(1)  # Đợi pop-up xác nhận hiển thị
+
+        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
+        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
+
+        # Bước 5: Click nút 'No' để hủy xóa
+        pagev2.cancel_delete_section()
+        time.sleep(1)  # Đợi pop-up đóng
+
+        # Bước 6: Kiểm tra Section News vẫn còn trên giao diện
+        assert pagev2.is_news_section_displayed(), "Section News đã bị xóa sau khi hủy xác nhận!"
+
+        logging.info("Test Case 9.2.5 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.")
+
+    except Exception as e:
+        logging.error("Test Case 9.2.5 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
+# Test Case 9.3: Click menu-item Duplicate -> Hệ thống tạo bản sao của Section News
+def test_duplicate_section(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 9.3: Click menu-item 'Duplicate' để tạo bản sao Section News")
+
+        # Bước 1: Đảm bảo Section News hiển thị
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click vào icon '...' (menu)
+        pagev2.click_menu_icon()
+        time.sleep(1)  # Đợi menu hiển thị
+
+        # Bước 3: Click vào menu-item Duplicate
+        pagev2.click_duplicate_button()
+        time.sleep(2)  # Đợi hệ thống xử lý sao chép
+
+        # Bước 4: Kiểm tra xem Section News đã được nhân bản hay chưa
+        assert pagev2.search_text_on_page('Copy of News')
+
+        logging.info("Test Case 9.3 PASS: Hệ thống đã tạo bản sao Section News thành công.")
+
+    except Exception as e:
+        logging.error("Test Case 9.3 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
+
