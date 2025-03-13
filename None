@@ -7,37 +7,17 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:test_pagev2.py:384 Bắt đầu Test Case 8.1: Click icon Collapse để thu gọn Section News
-INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
-INFO     root:pagev2.py:181 Checkbox 'News' đã được chọn.
-INFO     root:pagev2.py:194 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:pagev2.py:359 Đã nhấn vào icon collapse để thu gọn section.
-INFO     root:test_pagev2.py:398 Test Case 8.1 PASS: Hệ thống đã thu gọn Section News thành công.
-INFO     root:conftest.py:46 Test: test_collapse_section - PASSED
-INFO     WDM:logger.py:11 ====== WebDriver manager ======
-INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
-INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
-INFO     root:login.py:32 Nhập username
-INFO     root:login.py:38 Nhập password
-INFO     root:login.py:44 Nhấn nút đăng nhập
-INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:test_pagev2.py:407 Bắt đầu Test Case 8.2: Click icon Expand để mở rộng lại Section News
-INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
-INFO     root:pagev2.py:181 Checkbox 'News' đã được chọn.
-INFO     root:pagev2.py:194 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:pagev2.py:359 Đã nhấn vào icon collapse để thu gọn section.
-INFO     root:pagev2.py:379 Đã nhấn vào icon expand để mở rộng section.
-INFO     root:test_pagev2.py:426 Test Case 8.2 PASS: Hệ thống đã mở rộng lại Section News thành công.
-INFO     root:conftest.py:46 Test: test_expand_section - PASSED
+INFO     root:test_pagev2.py:555 Bắt đầu Test Case 9.2.5: Click nút 'No' để hủy xóa Section News.
+INFO     root:pagev2.py:47 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:47 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:63 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:74 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:79 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:143 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:392 Đã nhấn vào icon '...' để mở menu.
+INFO     root:pagev2.py:424 Đã nhấn vào nút Xóa trong menu.
+INFO     root:pagev2.py:475 Đã nhấn nút 'No' để hủy xóa section.
+INFO     root:test_pagev2.py:580 Test Case 9.2.5 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.
+INFO     root:conftest.py:46 Test: test_cancel_delete_section - PASSED

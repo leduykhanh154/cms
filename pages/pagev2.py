@@ -7,6 +7,7 @@ from locators.locator_pagev2 import LocatorPageV2
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException
 
 class PageV2:
     # Khởi tạo instance của PageV2 với driver và các locator
@@ -380,6 +381,113 @@ class PageV2:
         except Exception as e:
             logging.error("Lỗi khi mở rộng section: %s", e, exc_info=True)
             raise
+
+    # Click vào icon '...' để mở menu
+    def click_menu_icon(self):
+        try:
+            menu_icon = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.MENU_SECTION))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", menu_icon)  
+            time.sleep(1)  # Đợi UI ổn định trước khi click
+            menu_icon.click()
+            logging.info("Đã nhấn vào icon '...' để mở menu.")
+        except Exception as e:
+            logging.error("Lỗi khi nhấn vào icon menu: %s", e, exc_info=True)
+            raise
+
+    # Kiểm tra nút Delete có hiển thị không
+    def is_delete_button_displayed(self):
+        try:
+            delete_button = self.wait.until(EC.presence_of_element_located(LocatorPageV2.DELETE_BUTTON))
+            is_displayed = delete_button.is_displayed()
+            logging.info(f"Nút Xóa hiển thị: {is_displayed}")
+            return is_displayed
+        except Exception as e:
+            logging.error("Lỗi khi kiểm tra nút Xóa: %s", e, exc_info=True)
+            return False
+
+    # Kiểm tra nút Duplicate có hiển thị không
+    def is_duplicate_button_displayed(self):
+        try:
+            duplicate_button = self.wait.until(EC.presence_of_element_located(LocatorPageV2.DUPLICATE_BUTTON))
+            is_displayed = duplicate_button.is_displayed()
+            logging.info(f"Nút Sao chép hiển thị: {is_displayed}")
+            return is_displayed
+        except Exception as e:
+            logging.error("Lỗi khi kiểm tra nút Sao chép: %s", e, exc_info=True)
+            return False
+
+    # Click vào nút Delete trong menu
+    def click_delete_button(self):
+        try:
+            delete_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.DELETE_BUTTON))
+            delete_button.click()
+            logging.info("Đã nhấn vào nút Xóa trong menu.")
+        except Exception as e:
+            logging.error("Lỗi khi nhấn vào nút Xóa: %s", e, exc_info=True)
+            raise
+
+    # Click vào nút Duplicate trong menu
+    def click_duplicate_button(self):
+        try:
+            duplicate_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.DUPLICATE_BUTTON))
+            duplicate_button.click()
+            logging.info("Đã nhấn vào nút Sao chép trong menu.")
+        except Exception as e:
+            logging.error("Lỗi khi nhấn vào nút Sao chép: %s", e, exc_info=True)
+            raise
+
+    # Kiem tra pop-up Confirm delete co hien thi        
+    def is_delete_confirmation_popup_displayed(self):
+        try:
+            popup = self.wait.until(EC.visibility_of_element_located(LocatorPageV2.POPUP_CONFIRM))
+            return popup.is_displayed()
+        except:
+            return False
+    
+    # Click icon Dong popup Confirm
+    def click_close_confirm_popup(self):
+        try:
+            close_icon = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.ICON_CLOSE_CONFIRM))
+            close_icon.click()
+            logging.info("Đã nhấn icon 'X' để đóng pop-up xác nhận.")
+            time.sleep(1)  # Đợi pop-up đóng
+        except Exception as e:
+            logging.error("Lỗi khi đóng pop-up xác nhận: %s", e, exc_info=True)
+            raise
+
+    
+    # Xac nhan xoa
+    def confirm_delete_section(self):
+        try:
+            yes_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.BUTTON_YES))
+            yes_button.click()
+            logging.info("Đã nhấn nút 'Yes' để xác nhận xóa section.")
+            time.sleep(2)  # Đợi UI cập nhật sau khi xóa
+        except Exception as e:
+            logging.error("Lỗi khi xác nhận xóa section: %s", e, exc_info=True)
+            raise
+    
+    # Khong xoa
+    def cancel_delete_section(self):
+        try:
+            no_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.BUTTON_NO))
+            no_button.click()
+            logging.info("Đã nhấn nút 'No' để hủy xóa section.")
+            time.sleep(1)  # Đợi pop-up đóng
+        except Exception as e:
+            logging.error("Lỗi khi hủy xóa section: %s", e, exc_info=True)
+            raise
+
+    # Kiem tra section bi xoa chua
+    def is_section_news_deleted(self):
+        try:
+            # Kiểm tra xem phần tử có còn tồn tại hay không
+            self.driver.find_element(*LocatorPageV2.SECTION_NEWS)
+            logging.info("Section 'News' vẫn còn tồn tại trên giao diện.")
+            return False  # Nếu tìm thấy phần tử, tức là chưa bị xóa
+        except NoSuchElementException:
+            logging.info("Section 'News' đã bị xóa thành công.")
+            return True  # Nếu không tìm thấy phần tử, tức là đã bị xóa
 
     
     def perform_tag_operations(self):

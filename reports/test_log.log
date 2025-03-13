@@ -1,43 +1,23 @@
-2025-03-13 18:19:20,897 - INFO - ====== WebDriver manager ======
-2025-03-13 18:19:21,754 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-13 18:19:21,943 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-13 18:19:22,100 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
-2025-03-13 18:19:23,387 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
-2025-03-13 18:19:24,004 - INFO - Nh\u1eadp username
-2025-03-13 18:19:24,121 - INFO - Nh\u1eadp password
-2025-03-13 18:19:24,226 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
-2025-03-13 18:19:29,857 - INFO - Ðãng nh\u1eadp thành công!
-2025-03-13 18:19:29,858 - INFO - B\u1eaft ð\u1ea7u Test Case 8.1: Click icon Collapse ð\u1ec3 thu g\u1ecdn Section News
-2025-03-13 18:19:30,004 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
-2025-03-13 18:19:30,759 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
-2025-03-13 18:19:31,266 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
-2025-03-13 18:19:32,486 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
-2025-03-13 18:19:32,496 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-2025-03-13 18:19:33,084 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
-2025-03-13 18:19:33,254 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
-2025-03-13 18:19:33,488 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
-2025-03-13 18:19:33,814 - INFO - Ð\xe3 nh\u1ea5n vào icon collapse ð\u1ec3 thu g\u1ecdn section.
-2025-03-13 18:19:35,829 - INFO - Test Case 8.1 PASS: H\u1ec7 th\u1ed1ng ð\xe3 thu g\u1ecdn Section News thành công.
-2025-03-13 18:19:35,875 - INFO - Test: test_collapse_section - PASSED
-2025-03-13 18:19:38,135 - INFO - ====== WebDriver manager ======
-2025-03-13 18:19:38,923 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-13 18:19:39,445 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-13 18:19:40,064 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
-2025-03-13 18:19:41,423 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
-2025-03-13 18:19:42,045 - INFO - Nh\u1eadp username
-2025-03-13 18:19:42,157 - INFO - Nh\u1eadp password
-2025-03-13 18:19:42,313 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
-2025-03-13 18:19:47,611 - INFO - Ðãng nh\u1eadp thành công!
-2025-03-13 18:19:47,611 - INFO - B\u1eaft ð\u1ea7u Test Case 8.2: Click icon Expand ð\u1ec3 m\u1edf r\u1ed9ng l\u1ea1i Section News
-2025-03-13 18:19:47,748 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
-2025-03-13 18:19:48,474 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
-2025-03-13 18:19:48,984 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
-2025-03-13 18:19:50,093 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
-2025-03-13 18:19:50,132 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-2025-03-13 18:19:50,688 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
-2025-03-13 18:19:51,324 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
-2025-03-13 18:19:51,583 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
-2025-03-13 18:19:51,888 - INFO - Ð\xe3 nh\u1ea5n vào icon collapse ð\u1ec3 thu g\u1ecdn section.
-2025-03-13 18:19:54,987 - INFO - Ð\xe3 nh\u1ea5n vào icon expand ð\u1ec3 m\u1edf r\u1ed9ng section.
-2025-03-13 18:19:57,006 - INFO - Test Case 8.2 PASS: H\u1ec7 th\u1ed1ng ð\xe3 m\u1edf r\u1ed9ng l\u1ea1i Section News thành công.
-2025-03-13 18:19:57,067 - INFO - Test: test_expand_section - PASSED
+2025-03-13 19:43:17,769 - INFO - ====== WebDriver manager ======
+2025-03-13 19:43:18,483 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 19:43:19,263 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 19:43:20,185 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-13 19:43:21,376 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-13 19:43:21,720 - INFO - Nh\u1eadp username
+2025-03-13 19:43:22,249 - INFO - Nh\u1eadp password
+2025-03-13 19:43:22,378 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-13 19:43:28,966 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-13 19:43:28,967 - INFO - B\u1eaft ð\u1ea7u Test Case 9.2.5: Click nút 'No' ð\u1ec3 h\u1ee7y xóa Section News.
+2025-03-13 19:43:29,077 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-13 19:43:29,863 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-13 19:43:30,385 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-13 19:43:31,570 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-13 19:43:31,580 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-13 19:43:32,142 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
+2025-03-13 19:43:32,283 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
+2025-03-13 19:43:32,472 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
+2025-03-13 19:43:33,623 - INFO - Ð\xe3 nh\u1ea5n vào icon '...' ð\u1ec3 m\u1edf menu.
+2025-03-13 19:43:34,694 - INFO - Ð\xe3 nh\u1ea5n vào nút Xóa trong menu.
+2025-03-13 19:43:35,766 - INFO - Ð\xe3 nh\u1ea5n nút 'No' ð\u1ec3 h\u1ee7y xóa section.
+2025-03-13 19:43:37,802 - INFO - Test Case 9.2.5 PASS: Pop-up xác nh\u1eadn ð\xe3 ðóng, Section News v\u1eabn c\xf2n.
+2025-03-13 19:43:37,861 - INFO - Test: test_cancel_delete_section - PASSED

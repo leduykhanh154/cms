@@ -429,7 +429,156 @@ def log_success(message):
 #         logging.error("Test Case 8.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
 #         raise
 
-# Test Case 9.1: 
+# # Test Case 9.1: Click icon '...' doc -> He thong hien thi cac menu-item
+# def test_click_menu_icon_display_items(setup_driver, pagev2):
+#     try:
+#         logging.info("Bắt đầu Test Case 9.1: Click icon '...' để hiển thị menu-item")
+
+#         # Bước 1: Đảm bảo Section News hiển thị
+#         pagev2.perform_tag_operations()
+#         pagev2.add_news_section()
+#         assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+#         # Bước 2: Click vào icon '...' (menu)
+#         pagev2.click_menu_icon()
+#         time.sleep(2)  # Đợi menu hiển thị
+
+#         # Bước 3: Kiểm tra các menu-item Delete & Duplicate có hiển thị không
+#         assert pagev2.is_delete_button_displayed(), "Nút Delete không hiển thị trong menu!"
+#         assert pagev2.is_duplicate_button_displayed(), "Nút Duplicate không hiển thị trong menu!"
+
+#         logging.info("Test Case 9.1 PASS: Hệ thống hiển thị đầy đủ menu-item sau khi click icon '...'.")
+    
+#     except Exception as e:
+#         logging.error("Test Case 9.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+#         raise
+
+# # Test Case 9.2.1: Click menu-item Xoa -> He thong hien thi pop-up Confirm
+# def test_check_delete_confirmation_popup(setup_driver, pagev2):
+#     try:
+#         logging.info("Bắt đầu Test Case 9.2.1: Kiểm tra pop-up xác nhận khi click Xóa")
+
+#         # Bước 1: Đảm bảo Section News hiển thị
+#         pagev2.perform_tag_operations()
+#         pagev2.add_news_section()
+#         assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+#         # Bước 2: Click vào icon '...' (menu)
+#         pagev2.click_menu_icon()
+#         time.sleep(1)  # Đợi menu hiển thị
+
+#         # Bước 3: Click vào menu-item Xóa
+#         pagev2.click_delete_button()
+#         time.sleep(1)  # Đợi pop-up hiển thị
+
+#         # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
+#         assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
+
+#         logging.info("Test Case 9.2.1 PASS: Pop-up xác nhận hiển thị đúng khi click Xóa.")
+
+#     except Exception as e:
+#         logging.error("Test Case 9.2.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+#         raise
+
+# # Test Case 9.2.2 Click icon Close tren pop-up Confirm
+# def test_click_close_confirm_popup(setup_driver, pagev2):
+#     try:
+#         logging.info("Bắt đầu Test Case 9.2.2: Click icon 'X' để đóng pop-up xác nhận xóa.")
+
+#         # Bước 1: Đảm bảo Section News hiển thị
+#         pagev2.perform_tag_operations()
+#         pagev2.add_news_section()
+#         assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+#         # Bước 2: Click vào icon '...' (menu)
+#         pagev2.click_menu_icon()
+#         time.sleep(1)  # Đợi menu hiển thị
+
+#         # Bước 3: Click vào menu-item Xóa
+#         pagev2.click_delete_button()
+#         time.sleep(1)  # Đợi pop-up xác nhận hiển thị
+
+#         # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
+#         assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
+
+#         # Bước 5: Click icon 'X' để đóng pop-up
+#         pagev2.click_close_confirm_popup()
+#         time.sleep(1)  # Đợi pop-up đóng
+
+#         # Bước 6: Kiểm tra Section News vẫn còn trên giao diện
+#         assert pagev2.is_news_section_displayed(), "Section News đã bị xóa sau khi đóng pop-up xác nhận!"
+
+#         logging.info("Test Case 9.2.2 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.")
+
+#     except Exception as e:
+#         logging.error("Test Case 9.2.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+#         raise
 
 
+# # Test Case 9.2.3: Click nut Yes trong pop-up Confirm  -> He thong xoa section
+# def test_click_delete_section(setup_driver, pagev2):
+#     try:
+#         logging.info("Bắt đầu Test Case 9.2.3: Click menu-item Xóa để xóa Section News")
 
+#         # Bước 1: Đảm bảo Section News hiển thị
+#         pagev2.perform_tag_operations()
+#         pagev2.add_news_section()
+#         assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+#         # Bước 2: Click vào icon '...' (menu)
+#         pagev2.click_menu_icon()
+#         time.sleep(1)  # Đợi menu hiển thị
+
+#         # Bước 3: Click vào menu-item Xóa
+#         pagev2.click_delete_button()
+#         time.sleep(1)  # Đợi pop-up xác nhận hiển thị
+
+#         # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
+#         assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
+
+#         # Bước 5: Click nút xác nhận Xóa trên pop-up
+#         pagev2.confirm_delete_section()
+#         time.sleep(2)  # Đợi hệ thống xử lý xóa
+
+#         # Bước 6: Kiểm tra Section đã bị xóa bằng hàm is_section_news_deleted()
+#         assert pagev2.is_section_news_deleted(), "Section News vẫn còn sau khi xác nhận xóa!"
+
+#         logging.info("Test Case 9.2.3 PASS: Section đã được xóa thành công.")
+
+#     except Exception as e:
+#         logging.error("Test Case 9.2.3 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+#         raise
+
+# Test Case 9.2.4: Click nut No trong pop-up Confirm -> He thong huy xoa section
+def test_cancel_delete_section(setup_driver, pagev2):
+    try:
+        logging.info("Bắt đầu Test Case 9.2.5: Click nút 'No' để hủy xóa Section News.")
+
+        # Bước 1: Đảm bảo Section News hiển thị
+        pagev2.perform_tag_operations()
+        pagev2.add_news_section()
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
+
+        # Bước 2: Click vào icon '...' (menu)
+        pagev2.click_menu_icon()
+        time.sleep(1)  # Đợi menu hiển thị
+
+        # Bước 3: Click vào menu-item Xóa
+        pagev2.click_delete_button()
+        time.sleep(1)  # Đợi pop-up xác nhận hiển thị
+
+        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
+        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
+
+        # Bước 5: Click nút 'No' để hủy xóa
+        pagev2.cancel_delete_section()
+        time.sleep(1)  # Đợi pop-up đóng
+
+        # Bước 6: Kiểm tra Section News vẫn còn trên giao diện
+        assert pagev2.is_news_section_displayed(), "Section News đã bị xóa sau khi hủy xác nhận!"
+
+        logging.info("Test Case 9.2.5 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.")
+
+    except Exception as e:
+        logging.error("Test Case 9.2.5 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        raise
