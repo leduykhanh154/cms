@@ -216,7 +216,8 @@ class PageV2:
             return error_message_element.text.strip()
         except TimeoutException:
             return None
-    
+   
+    # Click icon Rename 
     def click_rename_section(self):
         try:
             rename_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.RENAME_SECTION_BUTTON))
@@ -227,7 +228,7 @@ class PageV2:
         except Exception as e:
             logging.error("Lỗi khi nhấn nút Rename section: %s", e, exc_info=True)
             raise
-
+    # Kiem tra popup Rename hien thi
     def is_rename_popup_displayed(self):
         try:
             popup = self.wait.until(EC.visibility_of_element_located(LocatorPageV2.RENAME_SECTION_POPUP))
