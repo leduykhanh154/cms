@@ -24,6 +24,8 @@ class LocatorPageV2:
    
 
     # Section-related locators
+    NAME_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/text()')
+    NAME_SECTION_RENAME = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/text()')
     SECTION_NEWS = (By.ID, "news")
     ADD_SECTION_POPUP = (By.XPATH, '//*[@id="app-container"]/div[12]/div/div')
     NEWS_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]') 
@@ -37,3 +39,7 @@ class LocatorPageV2:
 
     # Popup rename section
     RENAME_SECTION_POPUP = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div')
+    ICON_CLOSE = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div/div[1]/button')
+    RENAME_TEXT_INPUT = (By.XPATH, '//*[@id="rename-section"]')
+    BUTTON_CLOSE = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div/div[3]/button[1]')
+    BUTTON_SAVE_RENAME =(By.XPATH, '//*[@id="app-container"]/div[14]/div/div/div[3]/button[2]')

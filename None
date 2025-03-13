@@ -7,14 +7,20 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:141 Đã nhấn nút 'Thêm section'.
-INFO     root:pagev2.py:180 Checkbox 'News' đã được chọn.
-INFO     root:pagev2.py:193 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:pagev2.py:227 Đã nhấn nút Rename section.
-INFO     root:test_pagev2.py:186 Test Case 6 PASS: Pop-up Rename hiển thị thành công.
-INFO     root:conftest.py:46 Test: test_rename_section_popup_display - PASSED
+INFO     root:test_pagev2.py:352 Bắt đầu Test Case 7.2.4: Nhập tên mới, lưu và kiểm tra tên section
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:181 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:194 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:228 Đã nhấn nút Rename section.
+INFO     root:pagev2.py:310 Đã nhập 'Tên mới cho Section' vào ô Rename.
+INFO     root:pagev2.py:316  Xác nhận giá trị nhập vào đúng.
+INFO     root:pagev2.py:350 Đã nhấn nút Lưu trên pop-up Rename.
+INFO     root:pagev2.py:247  Pop-up Rename đã đóng.
+INFO     root:pagev2.py:337 Tìm thấy từ khóa 'Tên mới cho Section' trên trang.
+INFO     root:test_pagev2.py:376 Test Case 7.2.4 PASS: Tên section đã cập nhật thành công và hiển thị trên trang.
+INFO     root:conftest.py:46 Test: test_rename_section_and_check_name - PASSED

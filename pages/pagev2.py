@@ -36,6 +36,7 @@ class PageV2:
         self.news_section_error = LocatorPageV2.NEWS_SECTION_ERROR
         self.news_section_quantity_error = LocatorPageV2.NEWS_SECTION_QUANTITY_ERROR
         self.page_list_wrapper = LocatorPageV2.PAGE_LIST_WRAPPER
+        self.rename_text_input = LocatorPageV2.RENAME_TEXT_INPUT
 
     # Nhấn vào một mục menu bất kỳ trên giao diện
     def click_menu(self, locator, menu_name, timeout=10):
@@ -228,6 +229,7 @@ class PageV2:
         except Exception as e:
             logging.error("Lỗi khi nhấn nút Rename section: %s", e, exc_info=True)
             raise
+    
     # Kiem tra popup Rename hien thi
     def is_rename_popup_displayed(self):
         try:
@@ -237,6 +239,41 @@ class PageV2:
             logging.error("Popup Rename không hiển thị!")
             return False
 
+    # Kiem tra pop-up Rename dong hay chua
+    def is_rename_popup_closed(self):
+        try:
+            # Kiểm tra nếu phần tử pop-up không còn hiển thị
+            self.wait.until_not(EC.visibility_of_element_located(LocatorPageV2.RENAME_SECTION_POPUP))
+            logging.info(" Pop-up Rename đã đóng.")
+            return True
+        except TimeoutException:
+            logging.error(" Pop-up Rename vẫn hiển thị!")
+            return False
+
+    
+    # Click icon Close popup Rename
+    def click_icon_close_rename(self):
+        try:
+            icon_close = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.ICON_CLOSE))
+            icon_close.click()
+            logging.info("Đã nhấn icon 'Close' trong popup Rename.")
+            return True
+        except Exception as e:
+            logging.error(f"Lỗi khi nhấn icon 'Close' trong popup Rename: {e}", exc_info=True)
+            return False
+
+# Click button Close popup Rename
+    def click_button_close_rename(self):
+        try:
+            button_close = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.BUTTON_CLOSE))
+            button_close.click()
+            logging.info("Đã nhấn button 'Dong' trong popup Rename.")
+            return True
+        except Exception as e:
+            logging.error(f"Lỗi khi nhấn Button 'Dong' trong popup Rename: {e}", exc_info=True)
+            return False
+
+    # Click nut Luu
     def click_save_button(self):
         try:
             save_button = self.wait.until(EC.element_to_be_clickable(self.save_button))
@@ -247,6 +284,7 @@ class PageV2:
             logging.error(f"Lỗi khi nhấn nút Lưu: {e}", exc_info=True)
             return False
     
+    # Click nut Luu va tiep tuc cap nhat
     def click_save_and_continue_button(self):
         try:
             logging.info("Đang tìm nút Lưu và tiếp tục cập nhật...")
@@ -261,6 +299,60 @@ class PageV2:
         except Exception as e:
             logging.error(f"Lỗi khi nhấn nút Lưu và tiếp tục cập nhật: {e}", exc_info=True)
             return False
+
+    # Dien thong tin vao text-input Rename
+    def enter_and_verify_rename_text(self, new_name):
+        try:
+            # Tìm phần tử input và nhập dữ liệu
+            rename_input = self.wait.until(EC.presence_of_element_located(LocatorPageV2.RENAME_TEXT_INPUT))
+            rename_input.clear()  # Xóa nội dung cũ (nếu có)
+            rename_input.send_keys(new_name)
+            logging.info(f"Đã nhập '{new_name}' vào ô Rename.")
+
+            # Kiểm tra lại giá trị đã nhập
+            entered_text = rename_input.get_attribute("value")
+            assert entered_text == new_name, f" Giá trị nhập vào bị sai! Dự kiến: '{new_name}', Thực tế: '{entered_text}'"
+
+            logging.info(" Xác nhận giá trị nhập vào đúng.")
+
+        except Exception as e:
+            logging.error(" Lỗi khi nhập hoặc kiểm tra text input Rename: %s", e, exc_info=True)
+            raise
+    
+    # Lay ten section
+    def get_section_name(self):
+        try:
+            section_name_element = self.wait.until(EC.presence_of_element_located(LocatorPageV2.NAME_SECTION))
+            section_name = section_name_element.text.strip()
+            logging.info(f"Tên section hiện tại: {section_name}")
+            return section_name
+        except Exception as e:
+            logging.error("Lỗi khi lấy tên section: %s", e, exc_info=True)
+            return None
+
+    # tim kiem tren trang
+    def search_text_on_page(self, keyword, timeout=5):
+        try:
+            self.wait.until(lambda driver: keyword in driver.page_source, timeout)
+            logging.info(f"Tìm thấy từ khóa '{keyword}' trên trang.")
+            return True
+        except Exception as e:
+            logging.error(f"Không tìm thấy từ khóa '{keyword}' trên trang: {e}")
+            return False
+
+
+
+    # Click nut Luu ten section
+    def click_save_rename(self):
+        try:
+            save_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.BUTTON_SAVE_RENAME))
+            save_button.click()
+            logging.info("Đã nhấn nút Lưu trên pop-up Rename.")
+            time.sleep(2)  # Đợi UI cập nhật (tùy vào tốc độ hệ thống, có thể thay bằng WebDriverWait)
+        except Exception as e:
+            logging.error("Lỗi khi nhấn nút Lưu: %s", e, exc_info=True)
+            raise
+
 
     
     def perform_tag_operations(self):
