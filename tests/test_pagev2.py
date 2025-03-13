@@ -616,3 +616,126 @@ def test_duplicate_section(setup_driver, pagev2):
         logging.error("Test Case 9.3 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
         raise
 
+# # Test Case 7: Verify khi không nhập "Số bài viết hiển thị trên slide" & button "Lưu" -> Hệ thống hiển thị thông báo lỗi: "Vui lòng nhập số bài viết hiển thị trên slide"
+# def test_numberdisplay_button_section_validation(setup_driver, pagev2):
+#     try: 
+#         pagev2.click_content_menu()
+#         pagev2.click_page_v2_menu()
+#         assert pagev2.click_create_new_button()
+#         assert pagev2.click_add_section_button()
+#         assert pagev2.is_add_section_popup_displayed()
+#         assert pagev2.click_section_news_checkbox()
+#         assert pagev2.click_add_button()
+#         news_section_element = pagev2.is_news_section_displayed()
+#         assert news_section_element is not None
+#         assert pagev2.click_save_button()
+#         error_message = "Vui lòng nhập số bài viết hiển thị trên slide"
+#         assert pagev2.search_text_on_page(error_message)
+#         logging.info("Test Case 6 PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập số bài viết hiển thị trên slide")
+#     except Exception as e:
+#         logging.error(f"Test Case 6 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
+#         assert False, "Không tìm thấy hoặc thông báo lỗi không đúng."
+
+# # Test Case 8: Verify khi không nhập "Số bài viết hiển thị trên slide" & button "Lưu và Tiếp tục cập nhật" -> Hệ thống hiển thị thông báo lỗi: "Vui lòng nhập số bài viết hiển thị trên slide"
+# def test_numberdisplay_continue_button_section_validation(setup_driver, pagev2):
+#     try: 
+#         pagev2.click_content_menu()
+#         pagev2.click_page_v2_menu()
+#         assert pagev2.click_create_new_button()
+#         assert pagev2.click_add_section_button()
+#         assert pagev2.is_add_section_popup_displayed()
+#         assert pagev2.click_section_news_checkbox()
+#         assert pagev2.click_add_button()
+#         news_section_element = pagev2.is_news_section_displayed()
+#         assert news_section_element is not None
+#         assert pagev2.click_save_and_continue_button()
+#         error_message = "Vui lòng nhập số bài viết hiển thị trên slide"
+#         assert pagev2.search_text_on_page(error_message)
+#         logging.info("Test Case 7 PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập số bài viết hiển thị trên slide")
+#     except Exception as e:
+#         logging.error(f"Test Case 7 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
+#         assert False, "Không tìm thấy hoặc thông báo lỗi không đúng."
+
+# # Test Case 9: Verify khi không nhập Tiêu đề trang, nhấn Lưu và tiếp tục cập nhật -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập tiêu đề trang
+# def test_empty_page_title_button_continue(pagev2, setup_driver):
+#     pagev2.perform_tag_operations()
+#     pagev2.click_create_new_button()
+#     pagev2.enter_page_title("")
+#     pagev2.click_save_and_continue_button()
+#     error_message = pagev2.check_title_error_message()
+#     if error_message == "Vui lòng nhập tiêu đề trang":
+#         logging.info("Test Case 8 PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập tiêu đề trang.")
+#     else:
+#         logging.error(f"Test Case 8 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
+#         assert False, "Thông báo lỗi không đúng hoặc không xuất hiện!"   
+   
+
+# # Test Case 10: Verify click dropdown "Chọn danh sách theo" ở section "News", Hệ thống mở dropdown 
+# def test_list_by_section_displayed(setup_driver, pagev2):
+#     pagev2.click_content_menu()
+#     pagev2.click_page_v2_menu()
+#     assert pagev2.click_create_new_button()
+#     assert pagev2.click_add_section_button()
+#     assert pagev2.is_add_section_popup_displayed()
+#     assert pagev2.click_section_news_checkbox()
+#     assert pagev2.click_add_button()
+#     news_section_element = pagev2.is_news_section_displayed()
+#     assert news_section_element is not None
+#     assert pagev2.click_select_list_by()
+#     dropdown_list_by_element = pagev2.is_dropdown_list_by_displayed()
+#     dropdown_list_by_element = WebDriverWait(setup_driver, 10).until(
+#         EC.visibility_of_element_located(LocatorPageV2.DROPDOWN_LIST_BY_DISPLAYED)
+#     )
+
+#     if dropdown_list_by_element and dropdown_list_by_element.is_displayed():
+#         logging.info("Test Case 9 PASS: Dropdown 'Chọn danh sách theo' đã hiển thị.")
+#     else:
+#         logging.error("Test Case 9 FAILED: Dropdown 'Chọn danh sách theo' không hiển thị.")
+#         assert False, "Dropdown 'Chọn danh sách theo' không hiển thị sau khi click!"
+
+# # Test Case 11: Verify field "Chọn danh sách theo" ở section "News" & chọn "Tùy chọn". Hệ thống hiển thị form 'Danh sách bài viết hiển thị' và nút 'Chọn bài viết'
+# def test_list_by_option_section_displayed(setup_driver, pagev2):
+#     try:
+#         pagev2.click_content_menu()
+#         pagev2.click_page_v2_menu()
+#         assert pagev2.click_create_new_button()
+#         assert pagev2.click_add_section_button()
+#         assert pagev2.is_add_section_popup_displayed()
+#         assert pagev2.click_section_news_checkbox()
+#         assert pagev2.click_add_button()
+#         news_section_element = pagev2.is_news_section_displayed()
+#         assert news_section_element is not None
+#         assert pagev2.click_select_list_by()
+#         dropdown_list_by_element = pagev2.is_dropdown_list_by_displayed()
+#         assert dropdown_list_by_element is not None
+#         assert pagev2.click_select_list_by_option()
+#         expected_name = "Danh sách bài viết hiển thị"
+#         assert pagev2.search_text_on_page(expected_name)
+#         logging.info("Test Case 10 PASS: Section 'Danh sách bài viết hiển thị' đã hiển thị.")
+#     except Exception as e:
+#         logging.error("Test Case 10 FAILED: Section 'Danh sách bài viết hiển thị' không hiển thị.")
+#         assert False, "Section 'Danh sách bài viết hiển thị' không hiển thị sau khi click!"
+
+
+# # Test Case 12: Verify field "Chọn danh sách theo" ở section "News", chọn "Loại bài viết". Hệ thống hiển thị 2 dropdown "Chọn loại bài viết" & "Sắp xếp"
+# def test_list_by_type_article_section_displayed(setup_driver, pagev2):
+#     try:
+#         pagev2.click_content_menu()
+#         pagev2.click_page_v2_menu()
+#         assert pagev2.click_create_new_button()
+#         assert pagev2.click_add_section_button()
+#         assert pagev2.is_add_section_popup_displayed()
+#         assert pagev2.click_section_news_checkbox()
+#         assert pagev2.click_add_button()
+#         news_section_element = pagev2.is_news_section_displayed()
+#         assert news_section_element is not None
+#         assert pagev2.click_select_list_by()
+#         dropdown_list_by_element = pagev2.is_dropdown_list_by_displayed()
+#         assert dropdown_list_by_element is not None
+#         assert pagev2.click_select_list_by_type_article()
+#         expected_name = "Chọn loại bài viết"
+#         assert pagev2.search_text_on_page(expected_name)
+#         logging.info("Test Case 11 PASS: Dropdown 'Chọn loại bài viết' đã hiển thị.")
+#     except Exception as e:
+#         logging.error("Test Case 11 FAILED: Dropdown 'Chọn loại bài viết' không hiển thị.")
+#         assert False, "Dropdown 'Chọn loại bài viết' không hiển thị sau khi click!"
