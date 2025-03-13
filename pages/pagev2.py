@@ -24,7 +24,6 @@ class PageV2:
         self.create_new_button = LocatorPageV2.CREATE_NEW_BUTTON
         self.page_title_input = LocatorPageV2.PAGE_TITLE_INPUT
         self.title_error_message = LocatorPageV2.TITLE_ERROR_MESSAGE
-        self.url_key_input = LocatorPageV2.URL_KEY_INPUT
         self.add_section_button = LocatorPageV2.ADD_SECTION_BUTTON
         self.section_news = LocatorPageV2.SECTION_NEWS
         self.add_button = LocatorPageV2.ADD_BUTTON
@@ -35,24 +34,26 @@ class PageV2:
         self.section_list = LocatorPageV2.SECTION_LIST
         self.news_section_error = LocatorPageV2.NEWS_SECTION_ERROR
         self.page_list_wrapper = LocatorPageV2.PAGE_LIST_WRAPPER
+        self.rename_section_button = LocatorPageV2.RENAME_SECTION_BUTTON
+        self.rename_section_popup = LocatorPageV2.RENAME_SECTION_POPUP
 
-    # Nhấn vào một mục menu bất kỳ trên giao diện
-    def click_menu(self, locator, menu_name):
+    # Hàm nhấn vào một menu cụ thể trong CMS
+    def click_menu(self, locator, menu_name, timeout=10):
         try:
-            menu = self.wait.until(EC.element_to_be_clickable(locator))
+            menu = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
             menu.click()
             logging.info(f"Đã nhấn menu {menu_name}.")
             return self
-        except Exception as e:
-            logging.error(f"Lỗi khi nhấn menu {menu_name}: {e}", exc_info=True)
+        except TimeoutException as e:
+            logging.error(f"Không thể nhấn menu {menu_name}: {e}", exc_info=True)
             raise
     
-    # Nhấn vào menu "Nội dung" trong giao diện
+    # Hàm nhấn vào menu 'Nội dung' trong CMS
     def click_content_menu(self):
         self.click_menu(self.content_menu, "Nội dung")
         return self
     
-    # Nhấn vào menu "Page V2" trong giao diện
+    # Hàm nhấn vào menu 'Page V2' và kiểm tra xem danh sách Page V2 có hiển thị không
     def click_page_v2_menu(self):
         self.click_menu(self.page_v2_menu, "Page V2")
         try:
@@ -63,7 +64,7 @@ class PageV2:
             raise
         return self
     
-    # Nhấn nút "Tạo mới" để mở trang tạo PageV2
+    # Hàm nhấn vào nút 'Tạo mới' để tạo trang mới
     def click_create_new_button(self):
         try:
             create_new_button = self.wait.until(EC.element_to_be_clickable(self.create_new_button))
@@ -82,18 +83,18 @@ class PageV2:
             logging.error(f"Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: {e}", exc_info=True)
             return False
     
-    # Nhập tiêu đề cho trang PageV2
-    def enter_page_title(self, title):
+    # Hàm nhập tiêu đề trang
+    def enter_page_title(self, title, timeout=10):
         try:
-            title_input = self.wait.until(EC.visibility_of_element_located(self.page_title_input))
-            title_input.clear() 
+            title_input = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.page_title_input))
+            title_input.clear()
             title_input.send_keys(title)
             logging.info(f"Đã nhập tiêu đề trang: {title}")
         except Exception as e:
             logging.error(f"Lỗi khi nhập tiêu đề trang: {e}", exc_info=True)
             raise
 
-    # Kiểm tra và lấy thông báo lỗi của trường tiêu đề trang
+    # Hàm kiểm tra xem có thông báo lỗi nào xuất hiện khi nhập tiêu đề không
     def check_title_error_message(self):
         try:
             error_element = self.wait.until(
@@ -103,7 +104,8 @@ class PageV2:
         except Exception as e:
             logging.warning(f"Không tìm thấy thông báo lỗi: {e}")
             return None
-    # Kiểm tra tiêu đề trang có xuất hiện trong danh sách PageV2 không
+
+    # Hàm kiểm tra xem tiêu đề trang đã nhập có hiển thị trong danh sách hay không.
     def is_page_title_in_list(self, expected_title):
         try:
             page_list_wrapper = self.wait.until(
@@ -119,19 +121,7 @@ class PageV2:
             logging.error(f"Lỗi khi kiểm tra tiêu đề trang trong danh sách: {e}", exc_info=True)
             return False
     
-    # Nhập đường dẫn (URL key) cho trang PageV2
-    def enter_url_key_vi(self, url_key):
-        try:
-            url_input = self.wait.until(EC.visibility_of_element_located(LocatorPageV2.URL_KEY_VI_INPUT))
-            url_input.clear()
-            url_input.send_keys(url_key)
-            logging.info(f"Đã nhập đường dẫn: {url_key}")
-            return True
-        except Exception as e:
-            logging.error(f"Lỗi khi nhập đường dẫn: {e}", exc_info=True)
-            return False
-    
-    # Nhấn nút "Thêm section" để mở popup thêm section
+    # Hàm nhấn vào nút 'Thêm section' để mở popup thêm section
     def click_add_section_button(self):
         try:
             add_section_button = self.wait.until(EC.element_to_be_clickable(self.add_section_button))
@@ -142,7 +132,7 @@ class PageV2:
             logging.error(f"Lỗi khi nhấn nút 'Thêm section': {e}", exc_info=True)
             return False
     
-    # Kiểm tra popup thêm section có hiển thị không
+    # Hàm kiểm tra xem popup 'Thêm section' có hiển thị không
     def is_add_section_popup_displayed(self):
         try:
             popup_element = self.wait.until(EC.visibility_of_element_located(self.add_section_popup))
@@ -151,7 +141,7 @@ class PageV2:
             logging.error(f"Lỗi khi kiểm tra pop-up thêm section: {e}", exc_info=True)
             return False
 
-    # Nhấn checkbox "News" trong popup thêm section
+    # Hàm chọn checkbox 'News' để thêm section Tin tức
     def click_section_news_checkbox(self):
         try:
             checkbox = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.SECTION_NEWS))
@@ -164,8 +154,7 @@ class PageV2:
         except Exception as e:
             logging.error(f"Lỗi khi nhấn checkbox 'News': {e}", exc_info=True)
             return False
-    
-    # Nhấn nút "ADD" trong popup để thêm section
+    # Hàm nhấn nút 'ADD' để thêm section đã chọn vào trang
     def click_add_button(self):
         try:
             add_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.ADD_BUTTON))
@@ -176,7 +165,7 @@ class PageV2:
             logging.error(f"Lỗi khi nhấn nút 'ADD': {e}", exc_info=True)
             return False
     
-    # Kiểm tra section "News" có hiển thị trong danh sách section không
+    # Hàm kiểm tra xem section 'News' có xuất hiện trên trang không
     def is_news_section_displayed(self):
         try:
             news_section_element = self.wait.until(EC.visibility_of_element_located(self.news_section_display))
@@ -186,8 +175,8 @@ class PageV2:
         except TimeoutException:
             logging.error("Section 'News' không hiển thị!")
             return None
-
-    # Lấy thông báo lỗi của Tiêu đề tin tức
+    
+    # Hàm kiểm tra và lấy thông báo lỗi khi không nhập tiêu đề tin tức
     def get_news_section_error_message(self, news_section_element):
         try:
             error_message_element = WebDriverWait(news_section_element, 10).until(
@@ -198,8 +187,29 @@ class PageV2:
             return error_message_element.text.strip()
         except TimeoutException:
             return None
-    
-    # Nhấn nút "Lưu" để lưu trang PageV2
+        
+    # Hàm nhấn vào nút 'Rename section' để đổi tên section
+    def click_rename_section(self):
+        try:
+            rename_button = self.wait.until(EC.element_to_be_clickable(self.rename_section_button))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", rename_button)  
+            time.sleep(1) 
+            rename_button.click()
+            logging.info("Đã nhấn nút Rename section.")
+        except Exception as e:
+            logging.error("Lỗi khi nhấn nút Rename section: %s", e, exc_info=True)
+            raise
+
+    # Hàm kiểm tra xem popup đổi tên section có hiển thị không
+    def is_rename_popup_displayed(self):
+        try:
+            popup = self.wait.until(EC.visibility_of_element_located(self.rename_section_popup))
+            return popup.is_displayed()
+        except TimeoutException:
+            logging.error("Popup Rename không hiển thị!")
+            return False
+
+    # Hàm nhấn vào nút 'Lưu' để lưu trang hiện tại
     def click_save_button(self):
         try:
             save_button = self.wait.until(EC.element_to_be_clickable(self.save_button))
@@ -210,7 +220,7 @@ class PageV2:
             logging.error(f"Lỗi khi nhấn nút Lưu: {e}", exc_info=True)
             return False
     
-    # Nhấn nút "Lưu và tiếp tục cập nhật" để lưu trang PageV2
+    # Hàm nhấn vào nút 'Lưu và tiếp tục chỉnh sửa' để lưu mà không thoát trang
     def click_save_and_continue_button(self):
         try:
             save_and_continue_button = self.wait.until(EC.element_to_be_clickable(self.save_and_continue_button))
@@ -221,7 +231,15 @@ class PageV2:
             logging.error(f"Lỗi khi nhấn nút Lưu: {e}", exc_info=True)
             return False
     
+    # Hàm thực hiện các bước mở menu 'Nội dung', vào 'Page V2' và tạo mới trang
     def perform_tag_operations(self):
         self.click_content_menu()
         self.click_page_v2_menu()
         self.click_create_new_button()
+
+    # Hàm thực hiện các bước thêm section 'News' vào trang
+    def add_news_section(self):
+        self.click_add_section_button()
+        self.is_add_section_popup_displayed()
+        self.click_section_news_checkbox()
+        self.click_add_button()
