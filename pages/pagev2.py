@@ -154,6 +154,7 @@ class PageV2:
         except Exception as e:
             logging.error(f"Lỗi khi nhấn checkbox 'News': {e}", exc_info=True)
             return False
+        
     # Hàm nhấn nút 'ADD' để thêm section đã chọn vào trang
     def click_add_button(self):
         try:
