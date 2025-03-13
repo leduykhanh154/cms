@@ -739,3 +739,18 @@ def test_duplicate_section(setup_driver, pagev2):
 #     except Exception as e:
 #         logging.error("Test Case 11 FAILED: Dropdown 'Chọn loại bài viết' không hiển thị.")
 #         assert False, "Dropdown 'Chọn loại bài viết' không hiển thị sau khi click!"
+
+# Test Case 7: Verify khi nhập chữ vào field nhập số lượng slide -> Hệ thống không nhập dữ liệu chữ
+def test_number_of_articles_rejects_text(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.add_news_section()
+    try:
+        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!" 
+        invalid_input = "abc"
+        pagev2.enter_number_of_articles(invalid_input)
+        actual_value = pagev2.get_number_of_articles_value()
+        assert actual_value == "" or actual_value.isnumeric(), f"Input không hợp lệ nhưng vẫn giữ giá trị: '{actual_value}'"
+        print("Test Case 7 PASS: Nhập chữ vào field số lượng slide không thành công (đúng mong đợi)")
+    except Exception as e:
+        print(f"Test Case 7 FAIL: Hệ thống vẫn chấp nhận chữ! Lỗi: {str(e)}")
+        assert False
