@@ -75,10 +75,7 @@ def test_add_section_popup_displayed(setup_driver, pagev2):
 # Test Case 4: Verify sau khi thêm section News -> Hệ thống hiển thị section News bên ngoài Danh sách section
 def test_add_news_section_and_verify_display(setup_driver, pagev2):
     pagev2.perform_tag_operations()
-    pagev2.click_add_section_button()
-    pagev2.is_add_section_popup_displayed()
-    pagev2.click_section_news_checkbox()
-    pagev2.click_add_button()
+    pagev2.add_news_section()
     news_section_element = WebDriverWait(setup_driver, 10).until(
         EC.visibility_of_element_located(LocatorPageV2.NEWS_SECTION)
     )
@@ -86,26 +83,21 @@ def test_add_news_section_and_verify_display(setup_driver, pagev2):
     if news_section_element and news_section_element.is_displayed():
         logging.info("Test Case 4 PASS: Section 'News' đã được thêm thành công và hiển thị trong danh sách.")
     else:
-        logging.error("Test Case 4 PASS: Section 'News' không hiển thị trong danh sách.")
+        logging.error("Test Case 4 FAILED: Section 'News' không hiển thị trong danh sách.")
         assert False, "Section 'News' không hiển thị sau khi thêm!"
 
 # Test Case 5: Verify khi không nhập Tiêu đề tin tức -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập tiêu đề tin tức
 def test_news_section_title_validation(setup_driver, pagev2):
-    pagev2.click_content_menu()
-    pagev2.click_page_v2_menu()
-    assert pagev2.click_create_new_button()
-    assert pagev2.click_add_section_button()
-    assert pagev2.is_add_section_popup_displayed()
-    assert pagev2.click_section_news_checkbox()
-    assert pagev2.click_add_button()
+    pagev2.perform_tag_operations()
+    pagev2.add_news_section()
     news_section_element = pagev2.is_news_section_displayed()
     assert news_section_element is not None
     assert pagev2.click_save_button()
     error_message = pagev2.get_news_section_error_message(news_section_element)
     if error_message == "Vui lòng nhập tiêu đề tin tức":
-        logging.info("PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập tiêu đề tin tức.")
+        logging.info("Test Case 5 PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập tiêu đề tin tức.")
     else:
-        logging.error(f"FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
+        logging.error(f"Test Case 5 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
         assert False, "Không tìm thấy hoặc thông báo lỗi không đúng."
 
 # Test Case 1.2: Verify khi không nhập Tiêu đề trang -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập tiêu đề trang
@@ -182,3 +174,18 @@ def test_add_button_enable(setup_driver, pagev2):
     else:
         logging.error("Test Case FAIL: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
         assert False, "Nút 'Add' có thể click, testcase failed."
+    
+# Test Case 6: Verify khi click icon rename -> Hệ thống hiển thị pop-up Chỉnh sửa tên section
+def test_rename_section_popup_display(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.add_news_section()
+    news_section_element = pagev2.is_news_section_displayed()
+    assert news_section_element is not None
+    pagev2.click_rename_section()
+    popup_displayed = pagev2.is_rename_popup_displayed()
+    if popup_displayed:
+        logging.info("Test Case 6 PASS: Pop-up Rename hiển thị thành công.")
+    else:
+        logging.error("Test Case 6 FAILED: Pop-up Rename không hiển thị.")
+        assert False, "Pop-up Rename không hiển thị."
+    

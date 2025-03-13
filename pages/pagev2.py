@@ -34,17 +34,18 @@ class PageV2:
         self.news_section_display = LocatorPageV2.NEWS_SECTION_DISPLAY
         self.section_list = LocatorPageV2.SECTION_LIST
         self.news_section_error = LocatorPageV2.NEWS_SECTION_ERROR
+        self.news_section_quantity_error = LocatorPageV2.NEWS_SECTION_QUANTITY_ERROR
         self.page_list_wrapper = LocatorPageV2.PAGE_LIST_WRAPPER
 
     # Nhấn vào một mục menu bất kỳ trên giao diện
-    def click_menu(self, locator, menu_name):
+    def click_menu(self, locator, menu_name, timeout=10):
         try:
-            menu = self.wait.until(EC.element_to_be_clickable(locator))
+            menu = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
             menu.click()
             logging.info(f"Đã nhấn menu {menu_name}.")
             return self
-        except Exception as e:
-            logging.error(f"Lỗi khi nhấn menu {menu_name}: {e}", exc_info=True)
+        except TimeoutException as e:
+            logging.error(f"Không thể nhấn menu {menu_name}: {e}", exc_info=True)
             raise
     
     # Nhấn vào menu "Nội dung" trong giao diện
@@ -83,10 +84,10 @@ class PageV2:
             return False
     
     # Nhập tiêu đề cho trang PageV2
-    def enter_page_title(self, title):
+    def enter_page_title(self, title, timeout=10):
         try:
-            title_input = self.wait.until(EC.visibility_of_element_located(self.page_title_input))
-            title_input.clear() 
+            title_input = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.page_title_input))
+            title_input.clear()
             title_input.send_keys(title)
             logging.info(f"Đã nhập tiêu đề trang: {title}")
         except Exception as e:
@@ -195,7 +196,6 @@ class PageV2:
             logging.error(f"Lỗi khi nhấn nút 'ADD': {e}", exc_info=True)
             return False
     
-    # Kiểm tra section "News" có hiển thị trong danh sách section không
     def is_news_section_displayed(self):
         try:
             news_section_element = self.wait.until(EC.visibility_of_element_located(self.news_section_display))
@@ -205,8 +205,7 @@ class PageV2:
         except TimeoutException:
             logging.error("Section 'News' không hiển thị!")
             return None
-
-    # Lấy thông báo lỗi của Tiêu đề tin tức
+    
     def get_news_section_error_message(self, news_section_element):
         try:
             error_message_element = WebDriverWait(news_section_element, 10).until(
@@ -218,7 +217,25 @@ class PageV2:
         except TimeoutException:
             return None
     
-    # Nhấn nút "Lưu" để lưu trang PageV2
+    def click_rename_section(self):
+        try:
+            rename_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.RENAME_SECTION_BUTTON))
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", rename_button)  
+            time.sleep(1) 
+            rename_button.click()
+            logging.info("Đã nhấn nút Rename section.")
+        except Exception as e:
+            logging.error("Lỗi khi nhấn nút Rename section: %s", e, exc_info=True)
+            raise
+
+    def is_rename_popup_displayed(self):
+        try:
+            popup = self.wait.until(EC.visibility_of_element_located(LocatorPageV2.RENAME_SECTION_POPUP))
+            return popup.is_displayed()
+        except TimeoutException:
+            logging.error("Popup Rename không hiển thị!")
+            return False
+
     def click_save_button(self):
         try:
             save_button = self.wait.until(EC.element_to_be_clickable(self.save_button))
@@ -229,7 +246,6 @@ class PageV2:
             logging.error(f"Lỗi khi nhấn nút Lưu: {e}", exc_info=True)
             return False
     
-    # Nhấn nút "Lưu và tiếp tục cập nhật" để lưu trang PageV2
     def click_save_and_continue_button(self):
         try:
             logging.info("Đang tìm nút Lưu và tiếp tục cập nhật...")
@@ -250,3 +266,9 @@ class PageV2:
         self.click_content_menu()
         self.click_page_v2_menu()
         self.click_create_new_button()
+
+    def add_news_section(self):
+        self.click_add_section_button()
+        self.is_add_section_popup_displayed()
+        self.click_section_news_checkbox()
+        self.click_add_button()
