@@ -1282,3 +1282,57 @@ Stacktrace:
 2025-03-13 11:47:23 - INFO - T\xecm th\u1ea5y nút, th\u1ef1c hi\u1ec7n click b\u1eb1ng JavaScript...
 2025-03-13 11:47:23 - INFO - Ð\xe3 nh\u1ea5n nút Lýu và ti\u1ebfp t\u1ee5c c\u1eadp nh\u1eadt.
 2025-03-13 11:47:28 - ERROR - Test Case 2.2 FAILED: 'Ch\u1ec9nh s\u1eeda trang' không xu\u1ea5t hi\u1ec7n trên trang sau khi lýu!
+2025-03-13 12:03:34 - INFO - ====== WebDriver manager ======
+2025-03-13 12:03:35 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 12:03:36 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 12:03:37 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-13 12:03:39 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-13 12:03:39 - INFO - Nh\u1eadp username
+2025-03-13 12:03:40 - INFO - Nh\u1eadp password
+2025-03-13 12:03:40 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-13 12:03:45 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-13 12:03:45 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-13 12:03:46 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-13 12:03:47 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-13 12:03:48 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-13 12:03:48 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-13 12:03:49 - INFO - Ð\xe3 nh\u1eadp tiêu ð\u1ec1 trang: Trang ki\u1ec3m th\u1eed
+2025-03-13 12:03:49 - INFO - Ð\xe3 nh\u1ea5n nút Lýu.
+2025-03-13 12:03:57 - INFO - ====== WebDriver manager ======
+2025-03-13 12:03:57 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 12:03:59 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 12:04:00 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-13 12:04:01 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-13 12:04:02 - INFO - Nh\u1eadp username
+2025-03-13 12:04:02 - INFO - Nh\u1eadp password
+2025-03-13 12:04:02 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-13 12:04:07 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-13 12:04:08 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-13 12:04:08 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-13 12:04:09 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-13 12:04:10 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-13 12:04:10 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-13 12:04:10 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
+2025-03-13 12:04:11 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
+2025-03-13 12:04:11 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
+2025-03-13 12:04:12 - INFO - Ð\xe3 nh\u1ea5n nút Rename section.
+2025-03-13 12:04:12 - INFO - Test Case 6 PASS: Pop-up Rename hi\u1ec3n th\u1ecb thành công.
+2025-03-13 12:05:22 - INFO - ====== WebDriver manager ======
+2025-03-13 12:05:23 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 12:05:23 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 12:05:25 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-13 12:05:26 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-13 12:05:27 - INFO - Nh\u1eadp username
+2025-03-13 12:05:27 - INFO - Nh\u1eadp password
+2025-03-13 12:05:27 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-13 12:05:32 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-13 12:05:32 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-13 12:05:33 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-13 12:05:34 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-13 12:05:35 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-13 12:05:35 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-13 12:05:35 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
+2025-03-13 12:05:35 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
+2025-03-13 12:05:36 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
+2025-03-13 12:05:37 - INFO - Ð\xe3 nh\u1ea5n nút Rename section.
+2025-03-13 12:05:37 - INFO - Test Case 6 PASS: Pop-up Rename hi\u1ec3n th\u1ecb thành công.

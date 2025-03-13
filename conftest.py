@@ -1,53 +1,55 @@
 import pytest
 import pytest_html
+import logging
 import base64
 from datetime import datetime
 from selenium import webdriver
-import logging
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+
+# Cấu hình logging
+logging.basicConfig(
+    filename="reports/test_log.log",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    filemode="w"  # Ghi đè log file mỗi lần chạy
+)
 
 @pytest.fixture
 def setup_driver():
-    """Khởi tạo WebDriver và trả về instance."""
     driver = webdriver.Chrome()
     yield driver
     driver.quit()
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    """Hook Pytest để lưu kết quả test vào report (bao gồm log và ảnh chụp màn hình)."""
+    """ Chụp ảnh màn hình và nhúng trực tiếp vào report.html """
     outcome = yield
     report = outcome.get_result()
 
-    if report.when == "call":  # Chỉ chụp ảnh sau khi test case chạy xong
-        driver = item.funcargs.get("setup_driver", None)
+    if report.when == "call":
+        driver = item.funcargs.get("setup_driver", None)  # Lấy driver từ fixture
         test_name = item.name
-        log_output = getattr(report, "longrepr", "")
 
         if driver:
             try:
                 status = "FAILED" if report.failed else "PASSED"
                 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
 
-                # Chụp ảnh màn hình
+                # Chụp ảnh màn hình và chuyển thành base64
                 screenshot = driver.get_screenshot_as_png()
                 screenshot_base64 = base64.b64encode(screenshot).decode('utf-8')
+                img_html = f'<div><strong>{test_name} - {status}</strong><br><img src="data:image/png;base64,{screenshot_base64}" width="400px"/></div>'
 
-                # Thêm log vào report
-                log_html = f"<pre style='color: black; background: #f4f4f4; padding: 10px;'>{log_output}</pre>"
+                # Ghi log kết quả test
+                logging.info(f"Test: {test_name} - {status}")
 
-                # HTML hiển thị trong report
-                img_html = f"""
-                <div style="border: 2px solid {'red' if report.failed else 'green'}; padding: 10px; margin: 10px;">
-                    <img src="data:image/png;base64,{screenshot_base64}" width="400px"/><br>
-                    {log_html}  <!-- Thêm log vào HTML -->
-                </div>
-                """
-
-                # Thêm vào report pytest-html
+                # Thêm ảnh vào report.html
                 if item.config.pluginmanager.hasplugin("html"):
                     extra = getattr(report, "extra", [])
                     extra.append(pytest_html.extras.html(img_html))
                     report.extra = extra
 
             except Exception as e:
-                print(f"⚠ Lỗi khi chụp màn hình cho test {test_name}: {e}")
+                logging.error(f"Error capturing screenshot for test {test_name}: {e}", exc_info=True)

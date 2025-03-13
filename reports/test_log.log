@@ -1,20 +1,20 @@
-2025-03-12 15:49:36,465 - INFO - ====== WebDriver manager ======
-2025-03-12 15:49:38,049 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-12 15:49:38,502 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-12 15:49:38,668 - INFO - Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
-2025-03-12 15:49:40,032 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
-2025-03-12 15:49:42,884 - INFO - Nh\u1eadp username
-2025-03-12 15:49:43,042 - INFO - Nh\u1eadp password
-2025-03-12 15:49:43,165 - INFO - Nh\u1ea5n nút \u0111\u0103ng nh\u1eadp
-2025-03-12 15:49:48,880 - INFO - \u0110\u0103ng nh\u1eadp thành công!
-2025-03-12 15:49:48,988 - INFO - \u0110ã nh\u1ea5n menu N\u1ed9i dung.
-2025-03-12 15:49:49,823 - INFO - \u0110ã nh\u1ea5n menu Page V2.
-2025-03-12 15:49:50,333 - INFO - Chuy\u1ec3n h\u01b0\u1edbng thành công \u0111\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
-2025-03-12 15:49:51,726 - INFO - \u0110ã nh\u1ea5n nút T\u1ea1o m\u1edbi.
-2025-03-12 15:49:51,742 - INFO - Chuy\u1ec3n h\u01b0\u1edbng thành công \u0111\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-2025-03-12 15:49:52,308 - INFO - \u0110ã nh\u1ea5n nút 'Thêm section'.
-2025-03-12 15:49:52,531 - INFO - Checkbox 'News' \u0111ã \u0111\u01b0\u1ee3c ch\u1ecdn.
-2025-03-12 15:49:52,707 - INFO - \u0110ã nh\u1ea5n nút 'ADD' sau khi thêm section.
-2025-03-12 15:49:54,402 - INFO - \u0110ã nh\u1ea5n nút Rename section.
-2025-03-12 15:49:54,443 - INFO - Test Case 6 PASS: Pop-up Rename hi\u1ec3n th\u1ecb thành công.
-2025-03-12 15:49:54,574 - INFO - \u2705 Test Case PASSED: test_rename_section_popup_display
+2025-03-13 12:07:00,561 - INFO - ====== WebDriver manager ======
+2025-03-13 12:07:01,289 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 12:07:02,847 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 12:07:04,687 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-13 12:07:05,903 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-13 12:07:06,579 - INFO - Nh\u1eadp username
+2025-03-13 12:07:06,714 - INFO - Nh\u1eadp password
+2025-03-13 12:07:06,812 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-13 12:07:12,177 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-13 12:07:12,287 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-13 12:07:12,978 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-13 12:07:13,490 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-13 12:07:14,597 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-13 12:07:14,605 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-13 12:07:15,160 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
+2025-03-13 12:07:15,763 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
+2025-03-13 12:07:15,906 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
+2025-03-13 12:07:17,068 - INFO - Ð\xe3 nh\u1ea5n nút Rename section.
+2025-03-13 12:07:17,089 - INFO - Test Case 6 PASS: Pop-up Rename hi\u1ec3n th\u1ecb thành công.
+2025-03-13 12:07:17,189 - INFO - Test: test_rename_section_popup_display - PASSED
