@@ -40,7 +40,7 @@ def test_empty_page_title(pagev2, setup_driver):
         logging.error(f"Test Case 1 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
         assert False, "Thông báo lỗi không đúng hoặc không xuất hiện!"
 
-# (Error) Test Case 2: Verify khi nhập Tiêu đề trang -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
+# Test Case 2: Verify khi nhập Tiêu đề trang -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
 def test_save_page_and_check_in_list(pagev2, setup_driver):
     pagev2.perform_tag_operations()
     valid_title = "Trang kiểm thử"
@@ -136,7 +136,7 @@ def test_save_page_and_check_in_list_2(pagev2, setup_driver):
         assert False, "'Chỉnh sửa trang' không xuất hiện trên trang!"
 
 # Test Case 3.2: Verify section News -> section News hien thi trong popup Them section
-def test_add_button_disable(setup_driver, pagev2):
+def test_section_news_present(setup_driver, pagev2):
     pagev2.perform_tag_operations()
     pagev2.click_add_section_button()
     pagev2.is_add_section_popup_displayed()
@@ -228,21 +228,6 @@ def test_click_icon_close_rename_section_popup(setup_driver, pagev2):
         logging.error("Test Case 7.1.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
         raise
 
-# Test Case 7.2.1: Nhap ten moi cho section -> hien thi ten duoc nhap
-def test_rename_section_input(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.add_news_section()
-    
-    # Mở pop-up Rename
-    pagev2.click_rename_section()
-    assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
-
-    # Nhập và kiểm tra nội dung text input Rename
-    new_name = "Tên mới cho Section"
-    pagev2.enter_and_verify_rename_text(new_name)
-
-    logging.info("Test Case: Nhập và xác nhận nội dung Rename thành công.")
-
 # Test Case 7.1.2: Verify click nut Dong tren pop-up Chinh sua ten section -> He thong dong pop-up  
 def test_click_button_close_rename_section_popup(setup_driver, pagev2):
     try:
@@ -270,6 +255,21 @@ def test_click_button_close_rename_section_popup(setup_driver, pagev2):
     except Exception as e:
         logging.error("Test Case 7 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
         raise
+
+# Test Case 7.2.1: Nhap ten moi cho section -> hien thi ten duoc nhap
+def test_rename_section_input(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.add_news_section()
+    
+    # Mở pop-up Rename
+    pagev2.click_rename_section()
+    assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
+
+    # Nhập và kiểm tra nội dung text input Rename
+    new_name = "Tên mới cho Section"
+    pagev2.enter_and_verify_rename_text(new_name)
+
+    logging.info("Test Case: Nhập và xác nhận nội dung Rename thành công.")
 
 # Test Case 7.2.2 : Verify Nhap ten moi nhung click icon Dong -> He thong dong pop-up va ten khong duoc cap nhat
 def test_rename_section_cancel(setup_driver, pagev2):
@@ -558,7 +558,7 @@ def test_click_delete_section(setup_driver, pagev2):
 # Test Case 9.2.4: Click nut No trong pop-up Confirm -> He thong huy xoa section
 def test_cancel_delete_section(setup_driver, pagev2):
     try:
-        logging.info("Bắt đầu Test Case 9.2.5: Click nút 'No' để hủy xóa Section News.")
+        logging.info("Bắt đầu Test Case 9.2.4: Click nút 'No' để hủy xóa Section News.")
 
         # Bước 1: Đảm bảo Section News hiển thị
         pagev2.perform_tag_operations()
@@ -583,10 +583,10 @@ def test_cancel_delete_section(setup_driver, pagev2):
         # Bước 6: Kiểm tra Section News vẫn còn trên giao diện
         assert pagev2.is_news_section_displayed(), "Section News đã bị xóa sau khi hủy xác nhận!"
 
-        logging.info("Test Case 9.2.5 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.")
+        logging.info("Test Case 9.2.4 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.")
 
     except Exception as e:
-        logging.error("Test Case 9.2.5 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
+        logging.error("Test Case 9.2.4 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
         raise
 
 # Test Case 9.3: Click menu-item Duplicate -> Hệ thống tạo bản sao của Section News
