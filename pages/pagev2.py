@@ -489,6 +489,16 @@ class PageV2:
             logging.info("Section 'News' đã bị xóa thành công.")
             return True  # Nếu không tìm thấy phần tử, tức là đã bị xóa
 
+    # Click nut Duplicate
+    def click_duplicate_button(self):
+        try:
+            duplicate_button = self.wait.until(EC.element_to_be_clickable(LocatorPageV2.DUPLICATE_BUTTON))
+            duplicate_button.click()
+            logging.info("Đã nhấn nút 'Duplicate' để sao chép Section News.")
+            time.sleep(1)  # Đợi hệ thống xử lý sao chép
+        except Exception as e:
+            logging.error("Lỗi khi nhấn nút 'Duplicate': %s", e, exc_info=True)
+            raise
     
     def perform_tag_operations(self):
         self.click_content_menu()

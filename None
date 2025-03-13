@@ -7,17 +7,124 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:test_pagev2.py:555 Bắt đầu Test Case 9.2.5: Click nút 'No' để hủy xóa Section News.
+INFO     root:test_pagev2.py:614 Bắt đầu Test Case 3.1.2: Tìm kiếm Section News trong pop-up Thêm Section
 INFO     root:pagev2.py:47 Đã nhấn menu Nội dung.
 INFO     root:pagev2.py:47 Đã nhấn menu Page V2.
 INFO     root:pagev2.py:63 Chuyển hướng thành công đến trang tạo mới Page V2.
 INFO     root:pagev2.py:74 Đã nhấn nút Tạo mới.
 INFO     root:pagev2.py:79 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
 INFO     root:pagev2.py:143 Đã nhấn nút 'Thêm section'.
-INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
-INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:pagev2.py:392 Đã nhấn vào icon '...' để mở menu.
-INFO     root:pagev2.py:424 Đã nhấn vào nút Xóa trong menu.
-INFO     root:pagev2.py:475 Đã nhấn nút 'No' để hủy xóa section.
-INFO     root:test_pagev2.py:580 Test Case 9.2.5 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.
-INFO     root:conftest.py:46 Test: test_cancel_delete_section - PASSED
+INFO     root:pagev2.py:512 Đã nhập 'News' vào thanh tìm kiếm.
+ERROR    root:pagev2.py:526 Lỗi khi tìm kiếm với từ khóa 'News': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00DFB5A3+24387]
+	(No symbol) [0x00D85904]
+	(No symbol) [0x00C60753]
+	(No symbol) [0x00CA8BA9]
+	(No symbol) [0x00CA8EFB]
+	(No symbol) [0x00CF19C2]
+	(No symbol) [0x00CCD894]
+	(No symbol) [0x00CEF138]
+	(No symbol) [0x00CCD646]
+	(No symbol) [0x00C9C59F]
+	(No symbol) [0x00C9D8E4]
+	GetHandleVerifier [0x010FD883+3179043]
+	GetHandleVerifier [0x01116CF9+3282585]
+	GetHandleVerifier [0x0111167C+3260444]
+	GetHandleVerifier [0x00E94330+650448]
+	(No symbol) [0x00D8ED0D]
+	(No symbol) [0x00D8BAF8]
+	(No symbol) [0x00D8BC99]
+	(No symbol) [0x00D7E530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 517, in search_section
+    first_line = self.wait.until(EC.presence_of_element_located(LocatorPageV2.FIRST_LINE))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00DFB5A3+24387]
+	(No symbol) [0x00D85904]
+	(No symbol) [0x00C60753]
+	(No symbol) [0x00CA8BA9]
+	(No symbol) [0x00CA8EFB]
+	(No symbol) [0x00CF19C2]
+	(No symbol) [0x00CCD894]
+	(No symbol) [0x00CEF138]
+	(No symbol) [0x00CCD646]
+	(No symbol) [0x00C9C59F]
+	(No symbol) [0x00C9D8E4]
+	GetHandleVerifier [0x010FD883+3179043]
+	GetHandleVerifier [0x01116CF9+3282585]
+	GetHandleVerifier [0x0111167C+3260444]
+	GetHandleVerifier [0x00E94330+650448]
+	(No symbol) [0x00D8ED0D]
+	(No symbol) [0x00D8BAF8]
+	(No symbol) [0x00D8BC99]
+	(No symbol) [0x00D7E530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+
+ERROR    root:test_pagev2.py:631 Test Case 3.1.2 FAILED: Lỗi xảy ra - Message: 
+Stacktrace:
+	GetHandleVerifier [0x00DFB5A3+24387]
+	(No symbol) [0x00D85904]
+	(No symbol) [0x00C60753]
+	(No symbol) [0x00CA8BA9]
+	(No symbol) [0x00CA8EFB]
+	(No symbol) [0x00CF19C2]
+	(No symbol) [0x00CCD894]
+	(No symbol) [0x00CEF138]
+	(No symbol) [0x00CCD646]
+	(No symbol) [0x00C9C59F]
+	(No symbol) [0x00C9D8E4]
+	GetHandleVerifier [0x010FD883+3179043]
+	GetHandleVerifier [0x01116CF9+3282585]
+	GetHandleVerifier [0x0111167C+3260444]
+	GetHandleVerifier [0x00E94330+650448]
+	(No symbol) [0x00D8ED0D]
+	(No symbol) [0x00D8BAF8]
+	(No symbol) [0x00D8BC99]
+	(No symbol) [0x00D7E530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\tests\test_pagev2.py", line 621, in test_search_news_section_in_popup
+    pagev2.search_section("News")
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 517, in search_section
+    first_line = self.wait.until(EC.presence_of_element_located(LocatorPageV2.FIRST_LINE))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00DFB5A3+24387]
+	(No symbol) [0x00D85904]
+	(No symbol) [0x00C60753]
+	(No symbol) [0x00CA8BA9]
+	(No symbol) [0x00CA8EFB]
+	(No symbol) [0x00CF19C2]
+	(No symbol) [0x00CCD894]
+	(No symbol) [0x00CEF138]
+	(No symbol) [0x00CCD646]
+	(No symbol) [0x00C9C59F]
+	(No symbol) [0x00C9D8E4]
+	GetHandleVerifier [0x010FD883+3179043]
+	GetHandleVerifier [0x01116CF9+3282585]
+	GetHandleVerifier [0x0111167C+3260444]
+	GetHandleVerifier [0x00E94330+650448]
+	(No symbol) [0x00D8ED0D]
+	(No symbol) [0x00D8BAF8]
+	(No symbol) [0x00D8BC99]
+	(No symbol) [0x00D7E530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+
+INFO     root:conftest.py:46 Test: test_search_news_section_in_popup - FAILED

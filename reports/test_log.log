@@ -1,23 +1,130 @@
-2025-03-13 19:43:17,769 - INFO - ====== WebDriver manager ======
-2025-03-13 19:43:18,483 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-13 19:43:19,263 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-13 19:43:20,185 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
-2025-03-13 19:43:21,376 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
-2025-03-13 19:43:21,720 - INFO - Nh\u1eadp username
-2025-03-13 19:43:22,249 - INFO - Nh\u1eadp password
-2025-03-13 19:43:22,378 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
-2025-03-13 19:43:28,966 - INFO - Ðãng nh\u1eadp thành công!
-2025-03-13 19:43:28,967 - INFO - B\u1eaft ð\u1ea7u Test Case 9.2.5: Click nút 'No' ð\u1ec3 h\u1ee7y xóa Section News.
-2025-03-13 19:43:29,077 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
-2025-03-13 19:43:29,863 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
-2025-03-13 19:43:30,385 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
-2025-03-13 19:43:31,570 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
-2025-03-13 19:43:31,580 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-2025-03-13 19:43:32,142 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
-2025-03-13 19:43:32,283 - INFO - Checkbox 'News' ð\xe3 ðý\u1ee3c ch\u1ecdn.
-2025-03-13 19:43:32,472 - INFO - Ð\xe3 nh\u1ea5n nút 'ADD' sau khi thêm section.
-2025-03-13 19:43:33,623 - INFO - Ð\xe3 nh\u1ea5n vào icon '...' ð\u1ec3 m\u1edf menu.
-2025-03-13 19:43:34,694 - INFO - Ð\xe3 nh\u1ea5n vào nút Xóa trong menu.
-2025-03-13 19:43:35,766 - INFO - Ð\xe3 nh\u1ea5n nút 'No' ð\u1ec3 h\u1ee7y xóa section.
-2025-03-13 19:43:37,802 - INFO - Test Case 9.2.5 PASS: Pop-up xác nh\u1eadn ð\xe3 ðóng, Section News v\u1eabn c\xf2n.
-2025-03-13 19:43:37,861 - INFO - Test: test_cancel_delete_section - PASSED
+2025-03-13 20:32:20,718 - INFO - ====== WebDriver manager ======
+2025-03-13 20:32:21,627 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 20:32:23,442 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-13 20:32:25,288 - INFO - Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-13 20:32:26,677 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-13 20:32:27,448 - INFO - Nh\u1eadp username
+2025-03-13 20:32:27,583 - INFO - Nh\u1eadp password
+2025-03-13 20:32:27,692 - INFO - Nh\u1ea5n nút ðãng nh\u1eadp
+2025-03-13 20:32:33,237 - INFO - Ðãng nh\u1eadp thành công!
+2025-03-13 20:32:33,238 - INFO - B\u1eaft ð\u1ea7u Test Case 3.1.2: T\xecm ki\u1ebfm Section News trong pop-up Thêm Section
+2025-03-13 20:32:33,396 - INFO - Ð\xe3 nh\u1ea5n menu N\u1ed9i dung.
+2025-03-13 20:32:34,333 - INFO - Ð\xe3 nh\u1ea5n menu Page V2.
+2025-03-13 20:32:34,846 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-13 20:32:36,086 - INFO - Ð\xe3 nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-13 20:32:36,097 - INFO - Chuy\u1ec3n hý\u1edbng thành công ð\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-13 20:32:36,733 - INFO - Ð\xe3 nh\u1ea5n nút 'Thêm section'.
+2025-03-13 20:32:36,953 - INFO - Ð\xe3 nh\u1eadp 'News' vào thanh t\xecm ki\u1ebfm.
+2025-03-13 20:32:44,037 - ERROR - L\u1ed7i khi t\xecm ki\u1ebfm v\u1edbi t\u1eeb khóa 'News': Message: 
+Stacktrace:
+	GetHandleVerifier [0x00DFB5A3+24387]
+	(No symbol) [0x00D85904]
+	(No symbol) [0x00C60753]
+	(No symbol) [0x00CA8BA9]
+	(No symbol) [0x00CA8EFB]
+	(No symbol) [0x00CF19C2]
+	(No symbol) [0x00CCD894]
+	(No symbol) [0x00CEF138]
+	(No symbol) [0x00CCD646]
+	(No symbol) [0x00C9C59F]
+	(No symbol) [0x00C9D8E4]
+	GetHandleVerifier [0x010FD883+3179043]
+	GetHandleVerifier [0x01116CF9+3282585]
+	GetHandleVerifier [0x0111167C+3260444]
+	GetHandleVerifier [0x00E94330+650448]
+	(No symbol) [0x00D8ED0D]
+	(No symbol) [0x00D8BAF8]
+	(No symbol) [0x00D8BC99]
+	(No symbol) [0x00D7E530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 517, in search_section
+    first_line = self.wait.until(EC.presence_of_element_located(LocatorPageV2.FIRST_LINE))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00DFB5A3+24387]
+	(No symbol) [0x00D85904]
+	(No symbol) [0x00C60753]
+	(No symbol) [0x00CA8BA9]
+	(No symbol) [0x00CA8EFB]
+	(No symbol) [0x00CF19C2]
+	(No symbol) [0x00CCD894]
+	(No symbol) [0x00CEF138]
+	(No symbol) [0x00CCD646]
+	(No symbol) [0x00C9C59F]
+	(No symbol) [0x00C9D8E4]
+	GetHandleVerifier [0x010FD883+3179043]
+	GetHandleVerifier [0x01116CF9+3282585]
+	GetHandleVerifier [0x0111167C+3260444]
+	GetHandleVerifier [0x00E94330+650448]
+	(No symbol) [0x00D8ED0D]
+	(No symbol) [0x00D8BAF8]
+	(No symbol) [0x00D8BC99]
+	(No symbol) [0x00D7E530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+
+2025-03-13 20:32:44,045 - ERROR - Test Case 3.1.2 FAILED: L\u1ed7i x\u1ea3y ra - Message: 
+Stacktrace:
+	GetHandleVerifier [0x00DFB5A3+24387]
+	(No symbol) [0x00D85904]
+	(No symbol) [0x00C60753]
+	(No symbol) [0x00CA8BA9]
+	(No symbol) [0x00CA8EFB]
+	(No symbol) [0x00CF19C2]
+	(No symbol) [0x00CCD894]
+	(No symbol) [0x00CEF138]
+	(No symbol) [0x00CCD646]
+	(No symbol) [0x00C9C59F]
+	(No symbol) [0x00C9D8E4]
+	GetHandleVerifier [0x010FD883+3179043]
+	GetHandleVerifier [0x01116CF9+3282585]
+	GetHandleVerifier [0x0111167C+3260444]
+	GetHandleVerifier [0x00E94330+650448]
+	(No symbol) [0x00D8ED0D]
+	(No symbol) [0x00D8BAF8]
+	(No symbol) [0x00D8BC99]
+	(No symbol) [0x00D7E530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\tests\test_pagev2.py", line 621, in test_search_news_section_in_popup
+    pagev2.search_section("News")
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 517, in search_section
+    first_line = self.wait.until(EC.presence_of_element_located(LocatorPageV2.FIRST_LINE))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00DFB5A3+24387]
+	(No symbol) [0x00D85904]
+	(No symbol) [0x00C60753]
+	(No symbol) [0x00CA8BA9]
+	(No symbol) [0x00CA8EFB]
+	(No symbol) [0x00CF19C2]
+	(No symbol) [0x00CCD894]
+	(No symbol) [0x00CEF138]
+	(No symbol) [0x00CCD646]
+	(No symbol) [0x00C9C59F]
+	(No symbol) [0x00C9D8E4]
+	GetHandleVerifier [0x010FD883+3179043]
+	GetHandleVerifier [0x01116CF9+3282585]
+	GetHandleVerifier [0x0111167C+3260444]
+	GetHandleVerifier [0x00E94330+650448]
+	(No symbol) [0x00D8ED0D]
+	(No symbol) [0x00D8BAF8]
+	(No symbol) [0x00D8BC99]
+	(No symbol) [0x00D7E530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+
+2025-03-13 20:32:44,241 - INFO - Test: test_search_news_section_in_popup - FAILED

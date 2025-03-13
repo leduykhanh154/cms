@@ -35,6 +35,7 @@ class LocatorPageV2:
     NEWS_SECTION_QUANTITY_ERROR = (By.XPATH, "//*[@id='root_bx6h2oef3e_quantity__error']")
     COLLAPSE_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/button')
     MENU_SECTION = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[3]/button')
+    SEARCHBAR_SECTION = (By.XPATH, '//*[@id="dt-search-section"]')
     
     # Menu item
     DELETE_BUTTON = (By.XPATH, '//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[3]/div/button[1]')
