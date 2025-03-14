@@ -71,7 +71,7 @@ def test_news_section_title_validation(setup_driver, pagev2):
     pagev2.perform_tag_operations()
     pagev2.add_news_section()
     news_section_element = pagev2.is_news_section_displayed()
-    assert news_section_element is not None
+    assert news_section_element
     assert pagev2.click_save_button()
     error_message = pagev2.get_news_section_error_message(news_section_element)
     assert error_message == "Vui lòng nhập tiêu đề tin tức", f"Lỗi: {error_message}"
@@ -86,3 +86,14 @@ def test_rename_section_popup_display(setup_driver, pagev2):
     pagev2.click_rename_section() 
     assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị."
     logging.info("Test Case 6 PASS: Pop-up Rename hiển thị thành công.")
+
+# Test Case 7: Verify khi nhập chữ vào field nhập số lượng slide -> Hệ thống không nhập dữ liệu chữ
+def test_number_of_articles_rejects_text(setup_driver, pagev2):
+    pagev2.perform_tag_operations()
+    pagev2.add_news_section()
+    assert pagev2.is_news_section_displayed()
+    invalid_input = "abc"
+    pagev2.enter_number_of_articles(invalid_input)
+    actual_value = pagev2.get_number_of_articles_value()
+    assert actual_value == "" or actual_value.isnumeric(), f"Input không hợp lệ nhưng vẫn giữ giá trị: '{actual_value}'"
+    logging.info("Test Case 7 PASS: Input từ chối nhập chữ.")

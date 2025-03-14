@@ -36,6 +36,7 @@ class PageV2:
         self.page_list_wrapper = LocatorPageV2.PAGE_LIST_WRAPPER
         self.rename_section_button = LocatorPageV2.RENAME_SECTION_BUTTON
         self.rename_section_popup = LocatorPageV2.RENAME_SECTION_POPUP
+        NUMBER_OF_ARTICLES_INPUT = (By.ID, "root_47mwegrft4_quantity-vi")
 
     # Hàm nhấn vào một menu cụ thể trong CMS
     def click_menu(self, locator, menu_name, timeout=10):
@@ -208,7 +209,41 @@ class PageV2:
             return popup.is_displayed()
         except TimeoutException:
             logging.error("Popup Rename không hiển thị!")
+            return False 
+    
+    def enter_number_of_articles(self, value):
+        try:
+            logging.info(f"🔎 Đang tìm input số lượng bài viết: {self.NUMBER_OF_ARTICLES_INPUT}")
+            input_element = self.wait.until(
+                EC.presence_of_element_located(self.NUMBER_OF_ARTICLES_INPUT)
+            )
+            self.driver.execute_script("arguments[0].scrollIntoView(true);", input_element)
+            if not input_element.is_enabled():
+                logging.error("Input số lượng bài viết bị vô hiệu hóa!")
+                return False
+            input_element.clear()
+            time.sleep(0.5) 
+            input_element.send_keys(str(value))
+            time.sleep(1)
+            actual_value = input_element.get_attribute("value").strip()
+            logging.info(f"Giá trị nhập vào: '{actual_value}'")
+            return actual_value == str(value)
+        except Exception as e:
+            logging.error(f"Lỗi khi nhập số vào input: {e}", exc_info=True)
             return False
+    
+    def get_number_of_articles_value(self):
+        try:
+            logging.info("Đang lấy giá trị từ input số lượng bài viết...")
+            input_element = self.wait.until(
+                EC.presence_of_element_located(self.NUMBER_OF_ARTICLES_INPUT)
+            )
+            actual_value = input_element.get_attribute("value").strip()
+            logging.info(f"Giá trị hiện tại trong input: '{actual_value}'")
+            return actual_value if actual_value else ""
+        except Exception as e:
+            logging.error(f"Lỗi khi lấy giá trị từ input: {e}", exc_info=True)
+            return ""
 
     # Hàm nhấn vào nút 'Lưu' để lưu trang hiện tại
     def click_save_button(self):
