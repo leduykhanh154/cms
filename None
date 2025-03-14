@@ -1,68 +1,188 @@
-INFO     WDM:logger.py:11 xdist worker is: gw1
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\gw1\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
 INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
 INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-ERROR    root:pagev2.py:83 Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: Message: 
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+ERROR    root:pagev2.py:84 Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: Message: 
 Stacktrace:
-	GetHandleVerifier [0x009AB5A3+24387]
-	(No symbol)INFO     WDM:logger.py:11 xdist worker is: gw1
-INFO     WDM:logger.py:11 ====== WebDriver manager ======
-INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\gw1\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
-INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
-INFO     root:login.py:32 Nhập username
-INFO     root:login.py:38 Nhập password
-INFO     root:login.py:44 Nhấn nút đăng nhập
-INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:129 Đã nhấn nút 'Thêm section'.
-INFO     root:pagev2.py:150 Checkbox 'News' đã được chọn.
-INFO     root:pagev2.py:162 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:test_pagev2.py:84 Test Case 4 PASS: Section 'News' đã được thêm thành công và hiển thị trong danh sách.
-�n.
-INFO     root:pagev2.py:162 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:pagev2.py:198 Đã nhấn nút Rename section.
-INFO     root:test_pagev2.py:118 Test Case 6 PASS: Pop-up Rename hiển thị thành công.
-0093BAF8]
-	(No symbol) [0x0093BC99]
-	(No symbol) [0x0092E530]
+	GetHandleVerifier [0x009CB5A3+24387]
+	(No symbol) [0x00955904]
+	(No symbol) [0x00830753]
+	(No symbol) [0x00878BA9]
+	(No symbol) [0x00878EFB]
+	(No symbol) [0x008C19C2]
+	(No symbol) [0x0089D894]
+	(No symbol) [0x008BF138]
+	(No symbol) [0x0089D646]
+	(No symbol) [0x0086C59F]
+	(No symbol) [0x0086D8E4]
+	GetHandleVerifier [0x00CCD883+3179043]
+	GetHandleVerifier [0x00CE6CF9+3282585]
+	GetHandleVerifier [0x00CE167C+3260444]
+	GetHandleVerifier [0x00A64330+650448]
+	(No symbol) [0x0095ED0D]
+	(No symbol) [0x0095BAF8]
+	(No symbol) [0x0095BC99]
+	(No symbol) [0x0094E530]
+	BaseThreadInitThunk [0x764F7BA9+25]
+	RtlInitializeExceptionChain [0x7750C2EB+107]
+	RtlClearBits [0x7750C26F+191]
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 71, in click_create_new_button
+    create_new_button = self.wait.until(EC.element_to_be_clickable(self.create_new_button))
+  File "C:\Users\Duy khanh\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x009CB5A3+24387]
+	(No symbol) [0x00955904]
+	(No symbol) [0x00830753]
+	(No symbol) [0x00878BA9]
+	(No symbol) [0x00878EFB]
+	(No symbol) [0x008C19C2]
+	(No symbol) [0x0089D894]
+	(No symbol) [0x008BF138]
+	(No symbol) [0x0089D646]
+	(No symbol) [0x0086C59F]
+	(No symbol) [0x0086D8E4]
+	GetHandleVerifier [0x00CCD883+3179043]
+	GetHandleVerifier [0x00CE6CF9+3282585]
+	GetHandleVerifier [0x00CE167C+3260444]
+	GetHandleVerifier [0x00A64330+650448]
+	(No symbol) [0x0095ED0D]
+	(No symbol) [0x0095BAF8]
+	(No symbol) [0x0095BC99]
+	(No symbol) [0x0094E530]
 	BaseThreadInitThunk [0x764F7BA9+25]
 	RtlInitializeExceptionChain [0x7750C2EB+107]
 	RtlClearBits [0x7750C26F+191]
 
-INFO     root:pagev2.py:92 Đã nhập tiêu đề trang: 
-INFO     root:pagev2.py:217 Đã nhấn nút Lưu.
-INFO     root:test_pagev2.py:36 Test Case 1 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.
-INFO     WDM:logger.py:11 xdist worker is: gw0
+INFO     root:pagev2.py:93 Đã nhập tiêu đề trang: 
+INFO     root:pagev2.py:254 Đã nhấn nút Lưu.
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\gw0\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
 INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
 INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:92 Đã nhập tiêu đề trang: Trang kiểm thử
-INFO     root:pagev2.py:217 Đã nhấn nút Lưu.
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:93 Đã nhập tiêu đề trang: Trang kiểm thử
+INFO     root:pagev2.py:254 Đã nhấn nút Lưu.
+INFO     root:pagev2.py:116 Tiêu đề trang 'Trang kiểm thử' đã xuất hiện trong danh sách!
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+<<<<<<< Updated upstream
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:254 Đã nhấn nút Lưu.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:200 Đã nhấn nút Rename section.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
+ERROR    root:pagev2.py:233 Lỗi khi nhập số vào input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 217, in enter_number_of_articles
+    input_element = self.wait.until(
+    
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+INFO     root:pagev2.py:238 Đang lấy giá trị từ input số lượng bài viết...
+ERROR    root:pagev2.py:246 Lỗi khi lấy giá trị từ input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 240, in get_number_of_articles_value
+    )
+    
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+=======
+>>>>>>> Stashed changes
