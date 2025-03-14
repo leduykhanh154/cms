@@ -89,6 +89,7 @@ INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+<<<<<<< Updated upstream
 INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
 INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
@@ -183,3 +184,5 @@ Traceback (most recent call last):
     )
     
 AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+=======
+>>>>>>> Stashed changes

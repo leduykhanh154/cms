@@ -210,10 +210,11 @@ class PageV2:
         except TimeoutException:
             logging.error("Popup Rename không hiển thị!")
             return False 
-    
+        
+    # Hàm nhập số lượng bài viết 
     def enter_number_of_articles(self, value):
         try:
-            logging.info(f"🔎 Đang tìm input số lượng bài viết: {self.NUMBER_OF_ARTICLES_INPUT}")
+            logging.info(f"Đang tìm input số lượng bài viết: {self.NUMBER_OF_ARTICLES_INPUT}")
             input_element = self.wait.until(
                 EC.presence_of_element_located(self.NUMBER_OF_ARTICLES_INPUT)
             )
