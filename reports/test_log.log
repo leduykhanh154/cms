@@ -153,3 +153,33 @@ Stacktrace:
 2025-03-14 13:34:09,630 - INFO - Checkbox 'News' \u0111ã \u0111\u01b0\u1ee3c ch\u1ecdn.
 2025-03-14 13:34:09,787 - INFO - \u0110ã nh\u1ea5n nút 'ADD' sau khi thêm section.
 2025-03-14 13:34:10,912 - INFO - \u0110ã nh\u1ea5n nút Rename section.
+2025-03-14 13:34:15,020 - INFO - ====== WebDriver manager ======
+2025-03-14 13:34:16,288 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-14 13:34:17,125 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-14 13:34:17,816 - INFO - Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-14 13:34:19,001 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-14 13:34:21,852 - INFO - Nh\u1eadp username
+2025-03-14 13:34:21,949 - INFO - Nh\u1eadp password
+2025-03-14 13:34:22,063 - INFO - Nh\u1ea5n nút \u0111\u0103ng nh\u1eadp
+2025-03-14 13:34:27,489 - INFO - \u0110\u0103ng nh\u1eadp thành công!
+2025-03-14 13:34:27,587 - INFO - \u0110ã nh\u1ea5n menu N\u1ed9i dung.
+2025-03-14 13:34:28,330 - INFO - \u0110ã nh\u1ea5n menu Page V2.
+2025-03-14 13:34:28,861 - INFO - Chuy\u1ec3n h\u01b0\u1edbng thành công \u0111\u1ebfn trang t\u1ea1o m\u1edbi Page V2.
+2025-03-14 13:34:30,329 - INFO - \u0110ã nh\u1ea5n nút T\u1ea1o m\u1edbi.
+2025-03-14 13:34:30,339 - INFO - Chuy\u1ec3n h\u01b0\u1edbng thành công \u0111\u1ebfn https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+2025-03-14 13:34:30,927 - INFO - \u0110ã nh\u1ea5n nút 'Thêm section'.
+2025-03-14 13:34:31,208 - INFO - Checkbox 'News' \u0111ã \u0111\u01b0\u1ee3c ch\u1ecdn.
+2025-03-14 13:34:31,420 - INFO - \u0110ã nh\u1ea5n nút 'ADD' sau khi thêm section.
+2025-03-14 13:34:32,021 - ERROR - L\u1ed7i khi nh\u1eadp s\u1ed1 vào input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 217, in enter_number_of_articles
+    input_element = self.wait.until(
+    
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+2025-03-14 13:34:32,030 - INFO - \u0110ang l\u1ea5y giá tr\u1ecb t\u1eeb input s\u1ed1 l\u01b0\u1ee3ng bài vi\u1ebft...
+2025-03-14 13:34:32,030 - ERROR - L\u1ed7i khi l\u1ea5y giá tr\u1ecb t\u1eeb input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 240, in get_number_of_articles_value
+    )
+    
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'

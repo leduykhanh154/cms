@@ -153,3 +153,33 @@ INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
 INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
 INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
 INFO     root:pagev2.py:200 Đã nhấn nút Rename section.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
+ERROR    root:pagev2.py:233 Lỗi khi nhập số vào input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 217, in enter_number_of_articles
+    input_element = self.wait.until(
+    
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+INFO     root:pagev2.py:238 Đang lấy giá trị từ input số lượng bài viết...
+ERROR    root:pagev2.py:246 Lỗi khi lấy giá trị từ input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 240, in get_number_of_articles_value
+    )
+    
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
