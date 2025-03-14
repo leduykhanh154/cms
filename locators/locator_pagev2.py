@@ -31,3 +31,5 @@ class LocatorPageV2:
 
     # Popup rename section
     RENAME_SECTION_POPUP = (By.XPATH, '//*[@id="app-container"]/div[14]/div/div')
+
+    NUMBER_OF_ARTICLES_INPUT = (By.XPATH, '//*[@id="root_47mwegrft4_quantity-vi"]')

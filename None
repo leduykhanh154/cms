@@ -7,68 +7,67 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-ERROR    root:pagev2.py:83 Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: Message: 
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+ERROR    root:pagev2.py:84 Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: Message: 
 Stacktrace:
-	GetHandleVerifier [0x00A1B5A3+24387]
-	(No symbol) [0x009A5904]
-	(No symbol) [0x00880753]
-	(No symbol) [0x008C8BA9]
-	(No symbol) [0x008C8EFB]
-	(No symbol) [0x009119C2]
-	(No symbol) [0x008ED894]
-	(No symbol) [0x0090F138]
-	(No symbol) [0x008ED646]
-	(No symbol) [0x008BC59F]
-	(No symbol) [0x008BD8E4]
-	GetHandleVerifier [0x00D1D883+3179043]
-	GetHandleVerifier [0x00D36CF9+3282585]
-	GetHandleVerifier [0x00D3167C+3260444]
-	GetHandleVerifier [0x00AB4330+650448]
-	(No symbol) [0x009AED0D]
-	(No symbol) [0x009ABAF8]
-	(No symbol) [0x009ABC99]
-	(No symbol) [0x0099E530]
+	GetHandleVerifier [0x00E7B5A3+24387]
+	(No symbol) [0x00E05904]
+	(No symbol) [0x00CE0753]
+	(No symbol) [0x00D28BA9]
+	(No symbol) [0x00D28EFB]
+	(No symbol) [0x00D719C2]
+	(No symbol) [0x00D4D894]
+	(No symbol) [0x00D6F138]
+	(No symbol) [0x00D4D646]
+	(No symbol) [0x00D1C59F]
+	(No symbol) [0x00D1D8E4]
+	GetHandleVerifier [0x0117D883+3179043]
+	GetHandleVerifier [0x01196CF9+3282585]
+	GetHandleVerifier [0x0119167C+3260444]
+	GetHandleVerifier [0x00F14330+650448]
+	(No symbol) [0x00E0ED0D]
+	(No symbol) [0x00E0BAF8]
+	(No symbol) [0x00E0BC99]
+	(No symbol) [0x00DFE530]
 	BaseThreadInitThunk [0x764F7BA9+25]
 	RtlInitializeExceptionChain [0x7750C2EB+107]
 	RtlClearBits [0x7750C26F+191]
 Traceback (most recent call last):
-  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 70, in click_create_new_button
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 71, in click_create_new_button
     create_new_button = self.wait.until(EC.element_to_be_clickable(self.create_new_button))
   File "C:\Users\Duy khanh\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	GetHandleVerifier [0x00A1B5A3+24387]
-	(No symbol) [0x009A5904]
-	(No symbol) [0x00880753]
-	(No symbol) [0x008C8BA9]
-	(No symbol) [0x008C8EFB]
-	(No symbol) [0x009119C2]
-	(No symbol) [0x008ED894]
-	(No symbol) [0x0090F138]
-	(No symbol) [0x008ED646]
-	(No symbol) [0x008BC59F]
-	(No symbol) [0x008BD8E4]
-	GetHandleVerifier [0x00D1D883+3179043]
-	GetHandleVerifier [0x00D36CF9+3282585]
-	GetHandleVerifier [0x00D3167C+3260444]
-	GetHandleVerifier [0x00AB4330+650448]
-	(No symbol) [0x009AED0D]
-	(No symbol) [0x009ABAF8]
-	(No symbol) [0x009ABC99]
-	(No symbol) [0x0099E530]
+	GetHandleVerifier [0x00E7B5A3+24387]
+	(No symbol) [0x00E05904]
+	(No symbol) [0x00CE0753]
+	(No symbol) [0x00D28BA9]
+	(No symbol) [0x00D28EFB]
+	(No symbol) [0x00D719C2]
+	(No symbol) [0x00D4D894]
+	(No symbol) [0x00D6F138]
+	(No symbol) [0x00D4D646]
+	(No symbol) [0x00D1C59F]
+	(No symbol) [0x00D1D8E4]
+	GetHandleVerifier [0x0117D883+3179043]
+	GetHandleVerifier [0x01196CF9+3282585]
+	GetHandleVerifier [0x0119167C+3260444]
+	GetHandleVerifier [0x00F14330+650448]
+	(No symbol) [0x00E0ED0D]
+	(No symbol) [0x00E0BAF8]
+	(No symbol) [0x00E0BC99]
+	(No symbol) [0x00DFE530]
 	BaseThreadInitThunk [0x764F7BA9+25]
 	RtlInitializeExceptionChain [0x7750C2EB+107]
 	RtlClearBits [0x7750C26F+191]
 
-INFO     root:pagev2.py:92 Đã nhập tiêu đề trang: 
-INFO     root:pagev2.py:217 Đã nhấn nút Lưu.
-INFO     root:test_pagev2.py:36 Test Case 1 PASS: Hiển thị đúng thông báo lỗi.
+INFO     root:pagev2.py:93 Đã nhập tiêu đề trang: 
+INFO     root:pagev2.py:253 Đã nhấn nút Lưu.
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
@@ -78,15 +77,14 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:92 Đã nhập tiêu đề trang: Trang kiểm thử
-INFO     root:pagev2.py:217 Đã nhấn nút Lưu.
-INFO     root:pagev2.py:115 Tiêu đề trang 'Trang kiểm thử' đã xuất hiện trong danh sách!
-INFO     root:test_pagev2.py:47 Test Case 2 PASS: Lưu trang thành công.
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:93 Đã nhập tiêu đề trang: Trang kiểm thử
+INFO     root:pagev2.py:253 Đã nhấn nút Lưu.
+INFO     root:pagev2.py:116 Tiêu đề trang 'Trang kiểm thử' đã xuất hiện trong danh sách!
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
@@ -96,13 +94,12 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:129 Đã nhấn nút 'Thêm section'.
-INFO     root:test_pagev2.py:57 Test Case 3 PASS: Pop-up hiển thị thành công.
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
@@ -112,15 +109,14 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:129 Đã nhấn nút 'Thêm section'.
-INFO     root:pagev2.py:150 Checkbox 'News' đã được chọn.
-INFO     root:pagev2.py:162 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:test_pagev2.py:67 Test Case 4 PASS: Section 'News' hiển thị thành công.
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
@@ -130,16 +126,15 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:129 Đã nhấn nút 'Thêm section'.
-INFO     root:pagev2.py:150 Checkbox 'News' đã được chọn.
-INFO     root:pagev2.py:162 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:pagev2.py:217 Đã nhấn nút Lưu.
-INFO     root:test_pagev2.py:78 Test Case 5 PASS: Hiển thị đúng thông báo lỗi.
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:253 Đã nhấn nút Lưu.
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
@@ -149,13 +144,42 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:45 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:45 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:61 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:72 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:77 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:129 Đã nhấn nút 'Thêm section'.
-INFO     root:pagev2.py:150 Checkbox 'News' đã được chọn.
-INFO     root:pagev2.py:162 Đã nhấn nút 'ADD' sau khi thêm section.
-INFO     root:pagev2.py:198 Đã nhấn nút Rename section.
-INFO     root:test_pagev2.py:88 Test Case 6 PASS: Pop-up Rename hiển thị thành công.
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:200 Đã nhấn nút Rename section.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:151 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:164 Đã nhấn nút 'ADD' sau khi thêm section.
+ERROR    root:pagev2.py:232 Lỗi khi nhập số vào input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 216, in enter_number_of_articles
+    logging.info(f"🔎 Đang tìm input số lượng bài viết: {self.NUMBER_OF_ARTICLES_INPUT}")
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+INFO     root:pagev2.py:237 Đang lấy giá trị từ input số lượng bài viết...
+ERROR    root:pagev2.py:245 Lỗi khi lấy giá trị từ input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 239, in get_number_of_articles_value
+    EC.presence_of_element_located(self.NUMBER_OF_ARTICLES_INPUT)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
