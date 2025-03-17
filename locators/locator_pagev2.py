@@ -7,7 +7,7 @@ class LocatorPageV2:
     PAGE_V2_LIST_URL = "https://mpire-cms-demo.mpire.asia/cms/admin-page-v2?page=1"
     PAGE_V2_CREATE_URL = "https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create"
     PAGE_LIST_WRAPPER = (By.XPATH, '//*[@id="page-v2-list_wrapper"]/div[2]')
-
+    
     CREATE_NEW_BUTTON = (By.XPATH, "//*[@id='app-container']/main/div/div[2]/div[2]/div/a") 
     PAGE_TITLE_INPUT = (By.ID, "root_content_title-vi") 
     TITLE_ERROR_MESSAGE = (By.XPATH, "//*[@id='root_content_title__error-0']")
