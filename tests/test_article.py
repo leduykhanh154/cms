@@ -45,42 +45,35 @@ def enter_field(setup_driver):
 def select(setup_driver):
     return SelectArticle(setup_driver)
 
-# Test Case 16: Verify khi không nhập Thứ tự sắp xếp -> Hệ thống hiển thị thông báo lỗi 
-def test_ordering_error_message(article):
+
+
+# Test Case 28: Verify khi nhập Thứ tự sắp xếp > 7 số -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập không quá 7 số
+def test_ordering_max_lenght_error_message(article, enter_field, validation, select):
     article.perform_tag_operations()
     article.click_create_new_button()
     enter_field.enter_title_vi("Tiêu đề bài viết")
     enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
     enter_field.enter_content_vi("Nội dung bài viết")
     article.click_tab_general_info()
-    article.click_select()
-    article.select_article_type("Tin tức chuyên ngành")
-    article.ordering("")
-    article.click_save_button()
-    if article.is_ordering_error_displayed():
-        logging.info("Test Case 16 PASS: Hệ thống hiển thị lỗi đúng khi không nhập Thứ tự sắp xếp!")
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("123456789")
+    if validation.is_ordering_max_lenght_error_displayed():
+        logging.info("Test Case 17 PASS: Hệ thống hiển thị thông báo lỗi ")
     else:
-        logging.error("Test Case 16 FAIL: Hệ thống không hiển thị lỗi khi Thứ tự sắp xếp trống!")
+        logging.error("Test Case 17 FAIL: Hệ thống KHÔNG hiển thị lỗi khi Thứ tự sắp xếp trống!")
         assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Thứ tự sắp xếp'."
 
-
-
-    def test_save_article(article, enter_field, select):
-        article.perform_tag_operations()
-        article.click_create_new_button()
-        enter_field.enter_title_vi("Tiêu đề bài viết")
-        enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
-        enter_field.enter_content_vi("Nội dung bài viết")
-        article.click_en_tab()
-        article.click_translate_content_button()
-        enter_field.enter_title_en("Article Title")
-        enter_field.enter_short_description_en("Article Short Description")
-        enter_field.enter_content_en("Article Content")
-        article.click_tab_general_info()
-        select.click_select()
-        select.select_article_type("Tin tức chuyên ngành")
-        article.click_save_and_continue_button()
-        if article.wait_for_article_to_appear_in_list("Tiêu đề bài viết"):
-            logging.info("Test Case 23 PASS: Bài viết hiển thị đúng tên trong danh sách bài viết.")
-        else:
-            logging.error("Test Case 23 FAIL: Tên bài viết không xuất hiện trong danh sách bài viết.")
+# Test Case 18: Verify khi nhập chữ -> Hệ thống không chấp nhận
+def test_ordering_specific(article):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.enter_title("Bài viết kiểm thử")
+    article.enter_content("Đây là nội dung bài viết test")
+    article.click_tab_general_info()
+    article.click_select()
+    article.select_article_type("Tin tức chuyên ngành")
+    article.ordering("adcdfghtktgdadcdfght")
+    error_message = article.get_text(article.locators.ORDERING_ERROR_MESSAGE)
+    assert error_message is None or error_message == "", "Test Case FAIL: Hệ thống chấp nhận ký tự chữ!"
+    logging.info("Test Case PASS: Hệ thống không chấp nhận ký tự chữ!")

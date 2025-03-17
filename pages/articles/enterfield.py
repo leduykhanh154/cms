@@ -73,7 +73,11 @@ class EnterFieldArticle:
             logging.error(f"Lỗi khi nhập nội dung vào CKEditor (English): {e}")
             raise
 
-    
+    def ordering(self, ordering):
+        ordering_input = self.wait.until(EC.visibility_of_element_located(self.locators.ORDERING))
+        ordering_input.clear()
+        ordering_input.send_keys(ordering)
+        logging.info(f"Đã nhập tiêu đề: {ordering}")
 
 
     

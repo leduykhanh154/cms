@@ -40,7 +40,7 @@ def pytest_runtest_makereport(item, call):
     test_data = read_test_log()  # Đọc kết quả từ log
 
     if report.when == "call":
-        driver = item.funcargs.get("setup_driver", None)  # Lấy driver từ fixture
+        driver = item.funcargs.get("setup_driver")  # Lấy driver từ fixture
         test_name = item.name
         expected_result = test_data.get(test_name, {}).get("expected", "N/A")
         actual_result = test_data.get(test_name, {}).get("actual", "N/A")

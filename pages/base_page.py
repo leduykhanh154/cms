@@ -437,3 +437,56 @@ def test_select_status_from_dropdown(article, select):
         logging.error("Test Case 26 FAIL: Trạng thái đã chọn không đúng. Expected: 'Chờ xử lý'")
         assert False, "Lỗi: Trạng thái hiển thị không đúng."
     
+
+# Test Case 26: Verify khi không nhập Thứ tự sắp xếp -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'
+def test_ordering_error_message(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("")
+    article.click_save_button()
+    if validation.is_ordering_error_displayed():
+        logging.info("Test Case 26 PASS: Hệ thống hiển thị lỗi đúng khi không nhập Thứ tự sắp xếp!")
+    else:
+        logging.error("Test Case 26 FAIL: Hệ thống không hiển thị lỗi khi Thứ tự sắp xếp trống!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Thứ tự sắp xếp'."
+
+# Test Case 27: Verify khi nhập lại Thứ tự sắp xếp -> Hệ thống ẩn đi thông báo lỗi Vui lòng nhập Thứ tự sắp xếp
+def test_ordering_error_disappears(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("")
+    enter_field.ordering("2")
+    if not validation.is_ordering_error_displayed():
+        logging.info("Test Case 8 PASS: Thông báo lỗi bị ẩn sau khi nhập Thứ tự sắp xếp")
+    else:
+        logging.error("Test Case 8 FAIL: Thông báo lỗi vẫn còn sau khi nhập Thứ tự sắp xếp!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn sau khi nhập Thứ tự sắp xếp."
+
+# Test Case 28: Verify khi nhập Thứ tự sắp xếp > 7 số -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập không quá 7 số
+def test_ordering_max_lenght_error_message(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("123456789")
+    if validation.is_ordering_max_lenght_error_displayed():
+        logging.info("Test Case 17 PASS: Hệ thống hiển thị thông báo lỗi ")
+    else:
+        logging.error("Test Case 17 FAIL: Hệ thống KHÔNG hiển thị lỗi khi Thứ tự sắp xếp trống!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Thứ tự sắp xếp'."

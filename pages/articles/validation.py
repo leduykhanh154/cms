@@ -60,3 +60,27 @@ class ArticleValidation:
     
     def is_article_type_error_displayed(self):
         return self.is_error_message_displayed(self.locators.ARTICLE_TYPE_ERROR_MESSAGE, "Vui lòng nhập Loại bài viết")
+    
+    def is_ordering_error_displayed(self):
+        error_message = self.get_text(self.locators.ORDERING_ERROR_MESSAGE)
+        expected_message = "Vui lòng nhập Thứ tự sắp xếp"
+        if error_message == expected_message:
+            logging.info("Thông báo lỗi hiển thị đúng.")
+            return True
+        elif error_message == "global.validation.required":
+            logging.error("Lỗi: Hệ thống hiển thị key thay vì nội dung dịch.")
+        else:
+            logging.error(f"Lỗi: Thông báo không đúng, nhận được: {error_message}")
+        return False
+
+    def is_ordering_max_lenght_error_displayed(self):
+        error_message = self.get_text(self.locators.ORDERING_MAX_LENGHT_ERROR_MESSAGE)
+        expected_message = "Vui lòng nhập không quá 7 số"
+        if error_message == expected_message:
+            logging.info("Thông báo lỗi hiển thị đúng.")
+            return True
+        elif error_message == "global.validation.maxlength":
+            logging.error("Lỗi: Hệ thống hiển thị key thay vì nội dung dịch.")
+        else:
+            logging.error(f"Lỗi: Thông báo không đúng, nhận được: {error_message}")
+        return False
