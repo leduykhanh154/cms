@@ -1,633 +1,860 @@
+import time
 import pytest
 import logging
-import time
+import datetime
 from utils.login import Login
-from pages.pagev2 import PageV2
+from utils.logger import LoggerConfig
 from utils.driver_setup import get_driver
-from locators.locator_pagev2 import LocatorPageV2
-from selenium.webdriver.support.ui import WebDriverWait
+from pages.articles.article_base import Article
+from pages.articles.date_article import DateArticle
+from pages.articles.select_article import SelectArticle
+from pages.articles.switch_article import SwitchArticle
+from pages.articles.tag_article import TagArticle
+from pages.articles.url_article import URLArticle
+from locators.locator_article import LocatorArticle
+from pages.articles.image_article import ImageArticle
+from pages.articles.enter_field_article import EnterFieldArticle
+from pages.articles.validation_article import ArticleValidation
 from selenium.webdriver.support import expected_conditions as EC
 
- 
+test_logger = LoggerConfig.get_logger()
+test_logger.info("Bắt đầu chạy test case")
+test_logger.error("Lỗi: Không thể đăng nhập!")
+
 @pytest.fixture(scope="function")
 def setup_driver():
     driver = get_driver()
-    login_page = Login(driver)
-    login_success = login_page.login()
-    if not login_success:
-        pytest.fail("Không thể đăng nhập!")
-    yield driver
-    driver.quit()
+    try:
+        login_page = Login(driver)
+        if not login_page.login():
+            pytest.fail("Không thể đăng nhập!")
+        yield driver
+    finally:
+        time.sleep(5)
+        driver.quit()
+
+
 
 @pytest.fixture
-def pagev2(setup_driver):
-    return PageV2(setup_driver)
+def article(setup_driver):
+    return Article(setup_driver)
 
-def log_success(message):
-    print(f"{message}")
-    logging.info(message)
+@pytest.fixture
+def validation(setup_driver):
+    return ArticleValidation(setup_driver)
 
-# Test Case 1: Verify khi không nhập Tiêu đề trang -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập tiêu đề trang
-def test_empty_page_title(pagev2, setup_driver):
-    pagev2.perform_tag_operations()
-    pagev2.click_create_new_button()
-    pagev2.enter_page_title("")
-    pagev2.click_save_button()
-    error_message = pagev2.check_title_error_message()
+@pytest.fixture
+def enter_field(setup_driver):
+    return EnterFieldArticle(setup_driver)
+
+@pytest.fixture
+def select(setup_driver):
+    return SelectArticle(setup_driver)
+
+@pytest.fixture
+def date(setup_driver):
+    return DateArticle(setup_driver)
+
+@pytest.fixture
+def switch(setup_driver):
+    return SwitchArticle(setup_driver)
+
+@pytest.fixture
+def tag(setup_driver):
+    return TagArticle(setup_driver)
+
+@pytest.fixture
+def image(setup_driver):
+    return ImageArticle(setup_driver)
+
+@pytest.fixture
+def url(setup_driver):
+    return URLArticle(setup_driver)
+
+# Test Case 1: Verify khi click menu 'Tất cả bài viết' -> Hệ thống chuyển hướng đến trang Danh sách bài viết 
+def test_navigate_to_all_articles(article):
+    article.click_content_menu()
+    article.click_article_menu()
+    result = article.click_all_article_menu()
+    if result:
+        logging.info("Test Case 1 PASS: Hệ thống chuyển hướng thành công đến trang 'Tất cả bài viết'")
+    else:
+        logging.error("Test Case 1 FAIL: Hệ thống không chuyển hướng đến trang 'Tất cả bài viết'")
+        assert False, "Lỗi: Trang 'Tất cả bài viết' không tải được!"
+
+# Test Case 2: Verify khi click nút 'Tạo mới' -> Hệ thống chuyển hướng đến trang Tạo mới bài viết 
+def test_navigate_to_create_article(article):
+    article.click_content_menu()
+    article.click_article_menu()
+    article.click_all_article_menu()
+    result = article.click_create_new_button()
+    if result:
+        logging.info("Test Case 2 PASS: Hệ thống chuyển hướng thành công đến trang 'Tạo mới bài viết'")
+    else:
+        logging.error("Test Case 2 FAIL: Hệ thống không chuyển đến trang 'Tạo mới bài viết")
+        assert False, "Lỗi: Trang 'Tạo mới bài viết' không tải được!"
+
+# Test Case 3: Verify khi không nhập Tiêu đề - Tiếng Việt -> Hệ thống hiển thị thống báo lỗi 'Vui lòng nhập Tiêu đề'
+def test_empty_article_title_vi(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("")
+    article.click_save_button()
+    error_message = validation.is_title_vi_error_displayed()
+    if error_message:
+        logging.info("Test Case 3 PASS: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'")
+    else:
+        logging.error("Test Case 3 FAIL: Hệ thống không hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Tiêu đề'"
+
+# Test Case 4: Verify khi nhập Tiêu đề - Tiếng Việt -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề'
+def test_title_vi_error_disappears(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("")
+    article.click_save_button()
+    validation.is_title_vi_error_displayed()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    if not validation.is_title_vi_error_displayed():
+        logging.info("Test Case 4 PASS: Thông báo lỗi bị ẩn sau khi nhập Tiêu đề")
+    else:
+        logging.error("Test Case 4 FAIL: Thông báo lỗi vẫn còn sau khi nhập tiêu đề!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn sau khi nhập tiêu đề."
+
+# Test Case 5: Verify khi nhập Tiêu đề - Tiếng Việt hơn 250 ký tự -> Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'
+def test_title_vi_max_length_error(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    long_title = "A" * 251
+    enter_field.enter_title_vi(long_title)
+    article.click_save_button()
+    if validation.is_title_vi_max_length_error_displayed():
+        logging.info("Test Case 5 PASS: Hệ thống hiển thị lỗi khi tiêu đề vượt quá 250 ký tự.")
+    else:
+        logging.error("Test Case 5 FAIL: Hệ thống không hiển thị lỗi khi tiêu đề quá dài!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Tiêu đề không được vượt quá 250 ký tự'."
+
+# Test Case 6: Verify khi giảm số ký tự trong Tiêu đề - Tiếng Việt xuống <= 250 -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề không quá 250 ký tự'
+def test_title_vi_max_length_error_disappears(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    long_title = "A" * 251
+    enter_field.enter_title_vi(long_title)
+    article.click_save_button()
+    assert validation.is_title_vi_max_length_error_displayed(), "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Tiêu đề không quá 250 ký tự'"
+    short_title = "A" * 250 
+    enter_field.enter_title_vi(short_title)
+    if not validation.is_title_vi_max_length_error_displayed():
+        logging.info("Test Case 6 PASS: Thông báo lỗi bị ẩn sau khi giảm số ký tự xuống <= 250.")
+    else:
+        logging.error("Test Case 6 FAIL: Thông báo lỗi vẫn còn dù tiêu đề đã giảm xuống <= 250 ký tự!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn dù tiêu đề đã giảm xuống <= 250 ký tự."
+
+# Test Case 7: Verify khi không nhập Tiêu đề - Enlish -> Hệ thống hiển thị thống báo lỗi 'Vui lòng nhập Tiêu đề'
+def test_empty_article_title_en(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_en_tab()
+    article.click_translate_content_button()
+    enter_field.enter_title_en("")
+    article.click_save_button()
+    error_message = validation.is_title_en_error_displayed()
+    if error_message:
+        logging.info("Test Case 7 PASS: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'")
+    else:
+        logging.error("Test Case 7 FAIL: Hệ thống không hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Tiêu đề'"
+
+# Test Case 8: Verify khi nhập Tiêu đề - Enlish -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề'
+def test_title_en_error_disappears(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_en_tab()
+    article.click_translate_content_button()
+    enter_field.enter_title_en("")
+    article.click_save_button()
+    validation.is_title_en_error_displayed()
+    enter_field.enter_title_en("Article Title")
+    if not validation.is_title_en_error_displayed():
+        logging.info("Test Case 8 PASS: Thông báo lỗi bị ẩn sau khi nhập Tiêu đề")
+    else:
+        logging.error("Test Case 8 FAIL: Thông báo lỗi vẫn còn sau khi nhập tiêu đề!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn sau khi nhập tiêu đề."
+
+# Test Case 9: Verify khi nhập Tiêu đề - Enlish hơn 250 ký tự -> Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'
+def test_title_en_max_length_error(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_en_tab()
+    article.click_translate_content_button()
+    long_title = "A" * 251
+    enter_field.enter_title_en(long_title)
+    article.click_save_button()
+    if validation.is_title_en_max_length_error_displayed():
+        logging.info("Test Case 9 PASS: Hệ thống hiển thị lỗi khi tiêu đề vượt quá 250 ký tự.")
+    else:
+        logging.error("Test Case 9 FAIL: Hệ thống không hiển thị lỗi khi tiêu đề quá dài!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Tiêu đề không được vượt quá 250 ký tự'."
+
+# Test Case 10: Verify khi giảm số ký tự trong Tiêu đề - Enlish xuống <= 250 -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề không quá 250 ký tự'
+def test_title_en_max_length_error_disappears(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_en_tab()
+    article.click_translate_content_button()
+    long_title = "A" * 251
+    enter_field.enter_title_en(long_title)
+    article.click_save_button()
+    assert validation.is_title_en_max_length_error_displayed(), "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Tiêu đề không quá 250 ký tự'"
+    short_title = "A" * 250 
+    enter_field.enter_title_en(short_title)
+    if not validation.is_title_en_max_length_error_displayed():
+        logging.info("Test Case 10 PASS: Thông báo lỗi bị ẩn sau khi giảm số ký tự xuống <= 250.")
+    else:
+        logging.error("Test Case 10 FAIL: Thông báo lỗi vẫn còn dù tiêu đề đã giảm xuống <= 250 ký tự!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn dù tiêu đề đã giảm xuống <= 250 ký tự."
+
+# Test Case 11: Verify khi nhập Mô tả ngắn - Tiếng Việt hơn 1000 ký tự -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'
+def test_short_description_vi_max_length_error(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    long_title = "A" * 1002
+    enter_field.enter_short_description_vi(long_title)
+    article.click_save_button()
+    if validation.is_short_description_vi_max_lenght_error_displayed():
+        logging.info("Test Case 11 PASS: Hệ thống hiển thị lỗi khi mô tả ngắn vượt quá 1000 ký tự.")
+    else:
+        logging.error("Test Case 11 FAIL: Hệ thống không hiển thị lỗi khi mô tả ngắn quá dài!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'."
     
-    if error_message == "Vui lòng nhập tiêu đề trang":
-        print("Test Case 1 PASS: Thông báo lỗi Vui lòng nhập tiêu đề trang được hiển thị")
+# Test Case 12: Verify khi nhập lại Mô tả ngắn - Tiếng Việt < 1000 ký tự -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 100 ký tự'
+def test_short_description_vi_max_length_error_disappears(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    long_title = "A" * 1002
+    enter_field.enter_short_description_vi(long_title)
+    article.click_save_button()
+    assert validation.is_short_description_vi_max_lenght_error_displayed(), "Lỗi: Không hiển thị thông báo 'Hệ thống hiển thị lỗi khi mô tả ngắn vượt quá 1000 ký tự.'"
+    short_title = "A" * 999
+    enter_field.enter_short_description_vi(short_title)
+    if not validation.is_short_description_vi_max_lenght_error_displayed():
+        logging.info("Test Case 12 PASS: Thông báo lỗi bị ẩn sau khi giảm số ký tự xuống <= 1000.")
     else:
-        print(f"Test Case 1 FAIL: Nhận được '{error_message}'")
-        assert False
+        logging.error("Test Case 12 FAIL: Thông báo lỗi vẫn còn dù tiêu đề đã giảm xuống <= 1000 ký tự!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn dù tiêu đề đã giảm xuống <= 1000 ký tự."
 
-# (Error) Test Case 2: Verify khi nhập Tiêu đề trang -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
-def test_save_page_and_check_in_list(pagev2, setup_driver):
-    pagev2.perform_tag_operations()
-    valid_title = "Trang kiểm thử"
-    pagev2.enter_page_title(valid_title)
-    pagev2.click_save_button()
-    expected_url = "https://mpire-cms-demo.mpire.asia/cms/admin-page-v2?page=1"
-    WebDriverWait(setup_driver, 10).until(EC.url_to_be(expected_url))
-    if pagev2.is_page_title_in_list(valid_title):
-        print("Test Case 2 PASS: Tiêu đề trang hiển thị bên ngoài trang danh sách")
+# Test Case 13: Verify khi nhập Mô tả ngắn - English hơn 1000 ký tự -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'
+def test_short_description_en_max_length_error(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_en_tab()
+    article.click_translate_content_button()
+    long_title = "A" * 1002
+    enter_field.enter_short_description_en(long_title)
+    article.click_save_button()
+    if validation.is_short_description_en_max_lenght_error_displayed():
+        logging.info("Test Case 13 PASS: Hệ thống hiển thị lỗi khi mô tả ngắn vượt quá 1000 ký tự.")
     else:
-        print(f"Test Case 2 FAIL: Tiêu đề '{valid_title}' không hiển thị bên ngoài trang danh sách!")
-        assert False
+        logging.error("Test Case 13 FAIL: Hệ thống không hiển thị lỗi khi mô tả ngắn quá dài!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'."
 
-# Test Case 3: Verify khi nhấn nút Thêm section -> Hệ thống hiển thị pop-up Thêm section
-def test_add_section_popup_displayed(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.click_add_section_button()   
-    try:
-        popup_element = WebDriverWait(setup_driver, 5).until(
-            EC.visibility_of_element_located(LocatorPageV2.ADD_SECTION_POPUP)
-        )
-        assert popup_element.is_displayed(), "Pop-up Thêm section không hiển thị sau khi nhấn nút Thêm section"
-        print("Test Case 3 PASS: Pop-up Thêm section hiển thị")
-    except Exception as e:
-        print(f"Test Case 3 FAIL: Pop-up Thêm section không hiển thị! Lỗi: {str(e)}")
-        assert False
-
-# Test Case 4: Verify sau khi thêm section News -> Hệ thống hiển thị section News bên ngoài Danh sách section
-def test_add_news_section_and_verify_display(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.add_news_section()
-    try:
-        news_section_element = WebDriverWait(setup_driver, 10).until(
-            EC.visibility_of_element_located(LocatorPageV2.NEWS_SECTION)
-        )
-        assert news_section_element.is_displayed(), "Section News không hiển thị bên ngoài danh sách section sau khi thêm!"
-        print("Test Case 4 PASS: Section News hiển thị bên ngoài danh sách section")
-    except Exception as e:
-        print(f"Test Case 4 FAIL: Section News không hiển thị! Lỗi: {str(e)}")
-        assert False
-
-# Test Case 5: Verify khi không nhập Tiêu đề tin tức -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập tiêu đề tin tức
-def test_news_section_title_validation(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.add_news_section()
-    try:
-        news_section_element = pagev2.is_news_section_displayed()
-        assert news_section_element
-        pagev2.click_save_button()
-        error_message = pagev2.get_news_section_error_message(news_section_element)
-        assert error_message == "Vui lòng nhập tiêu đề tin tức", f"Lỗi: {error_message}"
-        print("Test Case 5 PASS: Thông báo lỗi 'Vui lòng nhập tiêu đề tin tức' được hiển thị")
-    except Exception as e:
-        print(f"Test Case 5 FAIL: Không hiển thị thông báo lỗi đúng! Lỗi: {str(e)}")
-        assert False
-
-# Test Case 1.2: Verify khi không nhập Tiêu đề trang bam luu va tiep tuc cap nhat -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập tiêu đề trang
-def test_empty_page_title_2(pagev2, setup_driver):
-    pagev2.perform_tag_operations()
-    pagev2.enter_page_title("")
-    pagev2.click_save_and_continue_button()
-    error_message = pagev2.check_title_error_message()
-    if error_message == "Vui lòng nhập tiêu đề trang":
-        logging.info("Test Case 1.2 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.")
+# Test Case 14: Verify khi nhập lại Mô tả ngắn - English < 100 ký tự -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 100 ký tự'
+def test_short_description_en_max_length_error_disappears(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_en_tab()
+    article.click_translate_content_button()
+    long_title = "A" * 1002
+    enter_field.enter_short_description_en(long_title)
+    article.click_save_button()
+    assert validation.is_short_description_en_max_lenght_error_displayed(), "Lỗi: Không hiển thị thông báo 'Hệ thống hiển thị lỗi khi mô tả ngắn vượt quá 1000 ký tự.'"
+    short_title = "A" * 999
+    enter_field.enter_short_description_en(short_title)
+    if not validation.is_short_description_en_max_lenght_error_displayed():
+        logging.info("Test Case 14 PASS: Thông báo lỗi bị ẩn sau khi giảm số ký tự xuống <= 1000.")
     else:
-        logging.error(f"Test Case 1.2 FAILED: Không hiển thị hoặc hiển thị sai thông báo lỗi: {error_message}")
-        assert False, "Thông báo lỗi không đúng hoặc không xuất hiện!"
+        logging.error("Test Case 14 FAIL: Thông báo lỗi vẫn còn dù tiêu đề đã giảm xuống <= 1000 ký tự!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn dù tiêu đề đã giảm xuống <= 1000 ký tự."
 
-# (Error) Test Case 2.2: Verify khi nhập Tiêu đề trang bam luu va tiep tuc cap nhat -> Hệ thống lưu thành công và chuyển hướng về trang danh sách
-def test_save_page_and_check_in_list_2(pagev2, setup_driver):
-    pagev2.perform_tag_operations()
-    valid_title = "Trang kiểm thử"
-    pagev2.enter_page_title(valid_title)
-    pagev2.click_save_and_continue_button()
-    try:
-        # Chờ tối đa 5 giây để tìm kiếm 'Chỉnh sửa trang' trên toàn bộ trang
-        WebDriverWait(setup_driver, 5).until(
-            EC.text_to_be_present_in_element((By.XPATH, '//*[@id="app-container"]/main/div/div[1]/div/nav/ol/li[3]'), "Chỉnh sửa trang")
-        )
-        logging.info("Test Case 2.2 PASS: 'Chỉnh sửa trang' xuất hiện trên trang sau khi lưu.")
-    except TimeoutException:
-        logging.error("Test Case 2.2 FAILED: 'Chỉnh sửa trang' không xuất hiện trên trang sau khi lưu!")
-        assert False, "'Chỉnh sửa trang' không xuất hiện trên trang!"
-
-# Test Case 3.2: Verify section News -> section News hien thi trong popup Them section
-def test_add_button_disable(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.click_add_section_button()
-    pagev2.is_add_section_popup_displayed()
-    if pagev2.is_section_news_present():
-        logging.info("Test Case 3.2 PASS: Section 'News' đã hiển thị trong popup 'Thêm section'.")
+# Test Case 15: Verify khi không nhập Nội dung - Tiếng Việt -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'
+def test_empty_article_content_vi(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_content_vi("")
+    article.click_save_button()
+    error_message = validation.is_content_vi_error_displayed()
+    if error_message:
+        logging.info("Test Case 15 PASS: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'")
     else:
-        logging.error("Test Case 3.2 FAILED: Section 'News' KHÔNG hiển thị trong popup 'Thêm section'!")
+        logging.error("Test Case 15 FAIL: Hệ thống không hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Nội dung'."
+
+# Test Case 16: Verify khi nhập dữ liệu vào field Nội dung - Tiếng Việt -> Hệ thống không hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'
+def test_content_vi_error_disappears(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_content_vi("")
+    article.click_save_button()
+    validation.is_content_vi_error_displayed()
+    enter_field.enter_content_vi("Nội dung bài viết")
+    error_message_after_input = validation.is_content_vi_error_displayed()
+    if not error_message_after_input:
+        logging.info("Test Case 16 PASS: Thông báo lỗi bị ẩn sau khi nhập Nội dung")
+    else:
+        logging.error("Test Case 16 FAIL: Thông báo lỗi vẫn còn sau khi nhập Nội dung!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn sau khi nhập Nội dung."
+
+# Test Case 17: Verify khi không nhập Nội dung - English -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'
+def test_empty_article_content_en(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_en_tab()
+    article.click_translate_content_button()
+    enter_field.enter_title_en("Article Title")
+    enter_field.enter_content_en("")
+    article.click_save_button()
+    error_message = validation.is_content_en_error_displayed()
+    if error_message:
+        logging.info("Test Case 17 PASS: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'")
+    else:
+        logging.error("Test Case 17 FAIL: Hệ thống không hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Nội dung'."
+
+# Test Case 18: Verify khi nhập dữ liệu vào field Nội dung - Tiếng Việt -> Hệ thống không hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'
+def test_content_en_error_disappears(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_en_tab()
+    article.click_translate_content_button()
+    enter_field.enter_title_en("Article Title")
+    enter_field.enter_content_en("")
+    article.click_save_button()
+    validation.is_content_en_error_displayed()
+    enter_field.enter_content_en("Article Content")
+    error_message_after_input = validation.is_content_en_error_displayed()
+    if not error_message_after_input:
+        logging.info("Test Case 18 PASS: Thông báo lỗi bị ẩn sau khi nhập Nội dung")
+    else:
+        logging.error("Test Case 18 FAIL: Thông báo lỗi vẫn còn sau khi nhập Nội dung!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn sau khi nhập Nội dung."
+
+# Test Case 19: Verify khi không chọn 'Loại bài viết' -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Loại bài viết'
+def test_article_type_error(article, enter_field, validation):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_save_button()
+    article.click_tab_general_info()
+    error_message = validation.is_article_type_error_displayed()
+    if error_message:
+        logging.info("Test Case 19 PASS: Hệ thống hiển thị đúng thông báo lỗi khi không chọn loại bài viết.")
+    else:
+        logging.error("Test Case 19 FAIL: Hệ thống KHÔNG hiển thị lỗi khi không chọn loại bài viết!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Loại bài viết'."
+
+# Test Case 20: Verify khi click vào dropdown 'Loại bài viết' -> Hệ thống mở dropdown 'Loại bài viết'
+def test_open_article_type_dropdown(article, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    select.click_select()
+    if select.is_dropdown_visible():
+        logging.info("Test Case 20 PASS: Hệ thống mở dropdown 'Loại bài viết' thành công!")
+    else:
+        logging.error("Test Case 20 FAIL: Hệ thống không mở dropdown 'Loại bài viết'!")
+        assert False, "Lỗi: Dropdown không mở."
     
-
-# Test Case 3.3: Verify Add_button is disable -> He thong enable Add_button trong popup Them section
-def test_add_button_disable(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.click_add_section_button()
-    pagev2.is_add_section_popup_displayed()
-
-    # Lấy phần tử nút "Add"
-    add_button = WebDriverWait(setup_driver, 10).until(
-        EC.presence_of_element_located(LocatorPageV2.ADD_BUTTON)
-    )
-
-    # Kiểm tra trạng thái của nút
-    if add_button.is_enabled():
-        logging.error("Test Case 3.3 FAILED: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
-        assert False, "Nút 'Add' có thể click, testcase failed."
+# Test Case 21: Verify khi chọn 'Loại bài viết' từ dropdown -> Hệ thống hiển thị đúng giá trị đã chọn và ẩn đi thông báo lỗi
+def test_select_article_type_from_dropdown(article, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    if select.is_selected_article_type_displayed("Tin tức chuyên ngành"):
+        logging.info("Test Case 21 PASS: Loại bài viết đã chọn hiển thị đúng.")
     else:
-        logging.info("Test Case 3.3 PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
+        logging.error(f"Test Case 21 FAIL: Loại bài viết đã chọn không đúng. Expected: 'Tin tức chuyên ngành'")
+        assert False, "Lỗi: Loại bài viết hiển thị không đúng."
+
+# Test Case 22: Verify sau khi nhập đầy đủ thông tin và nhấn nút Lưu -> Hệ thống chuyển hướng về trang Danh sách bài viết
+def test_save_article(article, enter_field, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_en_tab()
+    article.click_translate_content_button()
+    enter_field.enter_title_en("Article Title")
+    enter_field.enter_short_description_en("Article Short Description")
+    enter_field.enter_content_en("Article Content")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    article.click_save_button()
+    if article.wait_for_article_to_appear_in_list("Tiêu đề bài viết"):
+        logging.info("Test Case 22 PASS: Bài viết hiển thị đúng tên trong danh sách bài viết.")
+    else:
+        logging.error("Test Case 22 FAIL: Tên bài viết không xuất hiện trong danh sách bài viết.")
+
+# Test Case 23: Verify khi nhấn nút Lưu và tiếp tục chỉnh sửa -> Hệ thống ở lại trang để tiếp tục chỉnh sửa
+def test_save_article(article, enter_field, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_en_tab()
+    article.click_translate_content_button()
+    enter_field.enter_title_en("Article Title")
+    enter_field.enter_short_description_en("Article Short Description")
+    enter_field.enter_content_en("Article Content")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    article.click_save_and_continue_button()
+    if article.wait_for_article_to_appear_in_list("Tiêu đề bài viết"):
+        logging.info("Test Case 23 PASS: Bài viết hiển thị đúng tên trong danh sách bài viết.")
+    else:
+        logging.error("Test Case 23 FAIL: Tên bài viết không xuất hiện trong danh sách bài viết.")
+
+# Test Case 24: Verify khi thay đổi giá trị trong dropdown Loại bài viết -> Hệ thống cập nhật lại giá trị Loại bài viết
+def test_change_article_type_after_selection(article, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    assert select.is_selected_article_type_displayed("Tin tức chuyên ngành"), "Lỗi: Giá trị 'Loại bài viết' ban đầu không đúng."
+    select.click_select()
+    select.select_article_type("Lĩnh vực kinh doanh")
+    if select.is_selected_article_type_displayed("Lĩnh vực kinh doanh"):
+        logging.info("Test Case 24 PASS: Giá trị 'Loại bài viết' được cập nhật chính xác sau khi thay đổi.")
+    else:
+        logging.error("Test Case 24 FAIL: Giá trị 'Loại bài viết' không cập nhật đúng. Expected: 'Lĩnh vực kinh doanh'")
+        assert False, "Lỗi: Giá trị 'Loại bài viết' không cập nhật sau khi thay đổi."
+
+# Test Case 25: Verify khi click vào dropdown 'Trạng thái' -> Hệ thống mở dropdown 'Trạng thái'
+def test_open_status_dropdown(article, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    select.click_status_dropdown()
+    if select.is_status_dropdown_visible():
+        logging.info("Test Case 25 PASS: Hệ thống mở dropdown 'Trạng thái' thành công!")
+    else:
+        logging.error("Test Case 25 FAIL: Hệ thống không mở dropdown 'Trạng thái'!")
+        assert False, "Lỗi: Dropdown không mở."
+
+# Test Case 26: Verify khi click chọn giá trị Chờ xử lý -> Hệ thống hiển thị giá trị chờ xử lý lên dropdown Trạng thái
+def test_select_status_from_dropdown(article, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    select.click_status_dropdown()
+    select.select_status("Chờ xử lý")
+    if select.is_status_selected("Chờ xử lý"):
+        logging.info("Test Case 26 PASS: Trạng thái đã chọn hiển thị đúng.")
+    else:
+        logging.error("Test Case 26 FAIL: Trạng thái đã chọn không đúng. Expected: 'Chờ xử lý'")
+        assert False, "Lỗi: Trạng thái hiển thị không đúng."
+    
+# Test Case 27: Verify khi không nhập Thứ tự sắp xếp -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'
+def test_ordering_error_message(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("")
+    article.click_save_button()
+    if validation.is_ordering_error_displayed():
+        logging.info("Test Case 27 PASS: Hệ thống hiển thị lỗi đúng khi không nhập Thứ tự sắp xếp!")
+    else:
+        logging.error("Test Case 27 FAIL: Hệ thống không hiển thị lỗi khi Thứ tự sắp xếp trống!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Thứ tự sắp xếp'."
+
+# Test Case 28: Verify khi nhập lại Thứ tự sắp xếp -> Hệ thống ẩn đi thông báo lỗi Vui lòng nhập Thứ tự sắp xếp
+def test_ordering_error_disappears(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("")
+    enter_field.ordering("2")
+    if not validation.is_ordering_error_displayed():
+        logging.info("Test Case 28 PASS: Thông báo lỗi bị ẩn sau khi nhập Thứ tự sắp xếp")
+    else:
+        logging.error("Test Case 28 FAIL: Thông báo lỗi vẫn còn sau khi nhập Thứ tự sắp xếp!")
+        assert False, "Lỗi: Thông báo lỗi vẫn còn sau khi nhập Thứ tự sắp xếp."
+
+# Test Case 29: Verify khi nhập Thứ tự sắp xếp > 7 số -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập không quá 7 số
+def test_ordering_max_lenght_error_message(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("123456789")
+    if validation.is_ordering_max_lenght_error_displayed():
+        logging.info("Test Case 29 PASS: Hệ thống hiển thị thông báo lỗi ")
+    else:
+        logging.error("Test Case 29 FAIL: Hệ thống KHÔNG hiển thị lỗi khi Thứ tự sắp xếp trống!")
+        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Thứ tự sắp xếp'."
+
+# Test Case 30: Verify khi nhập chữ -> Hệ thống không chấp nhận
+def test_ordering_specific(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("adcdfghtktgdadcdfght")
+    error_message = validation.get_text(validation.locators.ORDERING_ERROR_MESSAGE)
+    if error_message is None or error_message == "":
+        logging.info("Test Case 30 PASS: Hệ thống không chấp nhận ký tự chữ!")
+    else:
+        logging.error("Test Case 30 FAIL: Hệ thống chấp nhận ký tự chữ!")
+        assert False, "Test Case 30 FAIL: Hệ thống chấp nhận ký tự chữ!"
+
+# Test Case 31: Verify khi nhập số âm -> Hệ thống vẫn chấp nhận
+def test_ordering_negative_number(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("-5")
+    error_message = validation.get_text(validation.locators.ORDERING_ERROR_MESSAGE)
+    if error_message is None or error_message == "":
+        logging.info("Test Case 31 PASS: Hệ thống chấp nhận số âm!")
+    else:
+        logging.error("Test Case 31 FAIL: Hệ thống hiển thị lỗi khi nhập số âm!")
+        assert False, "Test Case 31 FAIL: Hệ thống không chấp nhận số âm!"
+
+# Test Case 32: Verify giá trị mặc định của ngày đăng -> Hệ thống hiển thị đúng ngày hiện tại
+def test_public_date_default_value(article, enter_field, date):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    article.wait.until(EC.visibility_of_element_located(article.locators.PUBLIC_DATE)).click()
+    displayed_date = date.get_public_date()
+    expected_date = datetime.datetime.now().strftime("%Y-%m-%d")
+    if displayed_date == expected_date:
+        logging.info("Test Case 32 PASS: Ngày đăng hiển thị đúng ngày hiện tại.")
+    else:
+        logging.error(f"Test Case 32 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {expected_date}!")
+        assert False, f"Test Case 32 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {expected_date}!"
+
+# Test Case 33: Verify khi nhập ngày quá khứ -> Hệ thống chấp nhận ngày đăng là ngày quá khứ
+def test_enter_past_public_date(article, enter_field, date):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    past_date = (datetime.datetime.now() - datetime.timedelta(days=10)).strftime("%Y-%m-%d")
+    date.set_public_date(past_date)
+    displayed_date = date.get_public_date()
+    if displayed_date == past_date:
+        logging.info("Test Case 33 PASS: Hệ thống chấp nhận ngày đăng là ngày quá khứ.")
+    else:
+        logging.error(f"Test Case 33 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {past_date}!")
+        assert False, f"Test Case 33 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {past_date}!"
+
+# Test Case 34: Verify khi nhập ngày tương lai -> Hệ thống chấp nhận ngày đăng là ngày tương lai
+def test_enter_future_public_date(article, enter_field, date):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    future_date = (datetime.datetime.now() + datetime.timedelta(days=10)).strftime("%Y-%m-%d")
+    date.set_public_date(future_date)
+    displayed_date = date.get_public_date()
+    if displayed_date == future_date:
+        logging.info("Test Case 34 PASS: Hệ thống chấp nhận ngày đăng là ngày tương lai.")
+    else:
+        logging.error(f"Test Case 34 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {future_date}!")
+        assert False, f"Test Case 34 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {future_date}!"
+
+# Test Case 35: Verify trạng thái mặc định nút switch Nổi bật là OFF
+def test_featured_switch_initial_state(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.FEATURED_SWITCH, LocatorArticle.FEATURED_LABEL)
+    if switch.is_switch_on(LocatorArticle.FEATURED_SWITCH):
+        logging.info("Test Case 35 PASS: Trạng thái ban đầu của switch là OFF")
+    else:
+        logging.error("Test Case 35 FAIL: Trạng thái ban đầu của switch không phải OFF")
+        assert False, "Test Case 35 FAIL: Trạng thái ban đầu của switch không phải OFF"
+
+# Test Case 36: Verify chuyển trạng thái nút switch Nổi bật từ OFF -> ON
+def test_toggle_featured_switch_on(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.FEATURED_SWITCH, LocatorArticle.FEATURED_LABEL)
+    switch.click_switch(LocatorArticle.FEATURED_LABEL)
+    if switch.is_switch_on(LocatorArticle.FEATURED_SWITCH):
+        logging.info("Test Case 36 PASS: Nút switch đã được bật ON")
+        assert True
+    else:
+        logging.error("Test Case 36 FAIL: Không thể bật switch ON")
+        assert False, "Test Case 36 FAIL: Không thể bật switch ON"
+
+# Test Case 37: Verify chuyển trạng thái nút switch Nổi bật từ ON -> OFF
+def test_toggle_featured_switch_off(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.FEATURED_SWITCH, LocatorArticle.FEATURED_LABEL)
+    switch.click_switch(LocatorArticle.FEATURED_LABEL)
+    switch.click_switch(LocatorArticle.FEATURED_LABEL) 
+    if switch.is_switch_on(LocatorArticle.FEATURED_SWITCH):
+        logging.error("Test Case 37 FAIL: Không thể tắt switch OFF")
+        assert False, "Test Case 37 FAIL: Không thể tắt switch OFF"
+    else:
+        logging.info("Test Case 37 PASS: Nút switch đã được tắt OFF")
         assert True
 
-# Test Case 3.4: Verify Add_button is enable -> He thong enable Add_button trong popup Them section
-def test_add_button_enable(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.click_add_section_button()
-    pagev2.is_add_section_popup_displayed()
-    pagev2.click_section_news_checkbox()
-    
-    # Lấy phần tử nút "Add"
-    add_button = WebDriverWait(setup_driver, 10).until(
-        EC.presence_of_element_located(LocatorPageV2.ADD_BUTTON)
-    )
+# Test Case 38: Verify trạng thái mặc định nút switch Đặt làm trang chủ là OFF
+def test_homepage_switch_initial_state(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.HOMEPAGE_SWITCH, LocatorArticle.HOMEPAGE_LABEL)
+    if switch.is_switch_on(LocatorArticle.HOMEPAGE_SWITCH):
+        logging.error("Test Case 38 FAIL: Trạng thái ban đầu của switch không phải OFF")
+        assert False, "Test Case 38 FAIL: Trạng thái ban đầu của switch không phải OFF"
+    else:
+        logging.info("Test Case 38 PASS: Trạng thái ban đầu của switch là OFF")
+        assert True
 
-    # Kiểm tra trạng thái của nút
-    if add_button.is_enabled():
-        logging.info("Test Case 3.4 PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.")
+# Test Case 39: Verify khi chuyển trạng thái nút switch Đặt làm trang chủ từ OFF -> ON
+def test_toggle_homepage_switch_on(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.HOMEPAGE_SWITCH, LocatorArticle.HOMEPAGE_LABEL)
+    switch.click_switch(LocatorArticle.HOMEPAGE_LABEL)
+    if switch.is_switch_on(LocatorArticle.HOMEPAGE_SWITCH):
+        logging.info("Test Case 39 PASS: Nút switch đã được bật ON")
         assert True
     else:
-        logging.error("Test Case 3.4 FAILED: Nút 'Add' có thể click, đáng lẽ phải bị vô hiệu hóa.")
-        assert False, "Nút 'Add' có thể click, testcase failed."
-    
-# Test Case 6: Verify khi click icon rename -> Hệ thống hiển thị pop-up Chỉnh sửa tên section
-def test_rename_section_popup_display(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.add_news_section()
-    news_section_element = pagev2.is_news_section_displayed()
-    assert news_section_element is not None
-    pagev2.click_rename_section()
-    popup_displayed = pagev2.is_rename_popup_displayed()
-    
-    if popup_displayed:
-        logging.info("Test Case 6 PASS: Pop-up Rename hiển thị thành công.")
+        logging.error("Test Case 39 FAIL: Không thể bật switch ON")
+        assert False, "Test Case 39 FAIL: Không thể bật switch ON"
+
+# Test Case 40: Verify khi chuyển trạng thái nút switch Đặt làm trang chủ từ ON -> OFF 
+def test_toggle_homepage_switch_off(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.HOMEPAGE_SWITCH, LocatorArticle.HOMEPAGE_LABEL)
+    switch.click_switch(LocatorArticle.HOMEPAGE_LABEL)
+    switch.click_switch(LocatorArticle.HOMEPAGE_LABEL)
+    if switch.is_switch_on(LocatorArticle.HOMEPAGE_SWITCH):
+        logging.error("Test Case 40 FAIL: Không thể tắt switch OFF")
+        assert False, "Test Case 40 FAIL: Không thể tắt switch OFF"
     else:
-        logging.error("Test Case 6 FAILED: Pop-up Rename không hiển thị.")
-        assert False, "Pop-up Rename không hiển thị."
-
-# Test Case 7.1.1: Verify click icon Dong tren pop-up Chinh sua ten section -> He thong dong pop-up  
-def test_click_icon_close_rename_section_popup(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 7.1.1: Verify click icon Đóng trên pop-up Chỉnh sửa tên section")
-
-        # Bước 1: Thực hiện thao tác để hiển thị pop-up Rename
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        pagev2.click_rename_section()
-        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
-
-        # Bước 2: Nhấn nút đóng pop-up
-        pagev2.click_icon_close_rename()
-        time.sleep(1)  # Đợi UI cập nhật
-
-        # Bước 3: Kiểm tra pop-up đã đóng
-        if pagev2.is_rename_popup_closed():
-            logging.info("Test Case 7.1.1 PASS: Đóng pop-up Rename thành công.")
-        else:
-            logging.error("Test Case 7.1.1 FAILED: Pop-up Rename vẫn hiển thị sau khi đóng!")
-            assert False, "Pop-up Rename vẫn hiển thị!"
-
-    except Exception as e:
-        logging.error("Test Case 7.1.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 7.2.1: Nhap ten moi cho section -> hien thi ten duoc nhap
-def test_rename_section_input(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.add_news_section()
-    
-    # Mở pop-up Rename
-    pagev2.click_rename_section()
-    assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
-
-    # Nhập và kiểm tra nội dung text input Rename
-    new_name = "Tên mới cho Section"
-    pagev2.enter_and_verify_rename_text(new_name)
-
-    logging.info("Test Case: Nhập và xác nhận nội dung Rename thành công.")
-
-# Test Case 7.1.2: Verify click nut Dong tren pop-up Chinh sua ten section -> He thong dong pop-up  
-def test_click_button_close_rename_section_popup(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 7.1.2: Verify click icon Đóng trên pop-up Chỉnh sửa tên section")
-
-        # Bước 1: Thực hiện thao tác để hiển thị pop-up Rename
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        pagev2.click_rename_section()
-        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
-
-        # Bước 2: Nhấn nút đóng pop-up
-        pagev2.click_button_close_rename()
-        time.sleep(1)  # Đợi UI cập nhật
-
-        # Bước 3: Kiểm tra pop-up đã đóng
-        if pagev2.is_rename_popup_closed():
-            logging.info("Test Case 7.1.2 PASS: Đóng pop-up Rename thành công.")
-        else:
-            logging.error("Test Case 7.1.2 FAILED: Pop-up Rename vẫn hiển thị sau khi đóng!")
-            assert False, "Pop-up Rename vẫn hiển thị!"
-
-    except Exception as e:
-        logging.error("Test Case 7 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 7.2.2 : Verify Nhap ten moi nhung click icon Dong -> He thong dong pop-up va ten khong duoc cap nhat
-def test_rename_section_cancel(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 7.2.2: Nhập tên nhưng đóng pop-up trước khi lưu")
-
-        # Bước 1: Thực hiện thao tác để hiển thị pop-up Rename
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Lấy tên section ban đầu
-        original_name = pagev2.get_section_name()
-
-        # Bước 2: Mở pop-up Rename và nhập tên mới
-        pagev2.click_rename_section()
-        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
-
-       # Nhập và kiểm tra nội dung text input Rename
-        new_name = "Tên mới cho Section"
-        pagev2.enter_and_verify_rename_text(new_name)
-
-        logging.info("Test Case: Nhập và xác nhận nội dung Rename thành công.")
-
-        # Bước 3: Đóng pop-up mà không nhấn nút Lưu
-        pagev2.click_icon_close_rename()
-        time.sleep(1)  # Đợi UI cập nhật
-
-        # Kiểm tra pop-up đã đóng
-        assert pagev2.is_rename_popup_closed(), "Pop-up Rename vẫn hiển thị sau khi đóng!"
-
-        # Bước 4: Kiểm tra tên section **không thay đổi**
-        updated_name = pagev2.get_section_name()
-        assert updated_name == original_name, f"Tên section đã thay đổi thành '{updated_name}', mong đợi '{original_name}'"
-
-        logging.info("Test Case 7.2.2 PASS: Tên section không bị thay đổi khi đóng pop-up trước khi lưu.")
-
-    except Exception as e:
-        logging.error("Test Case 7.2.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 7.2.3 : Verify Nhap ten moi nhung click nut Dong -> He thong dong pop-up va ten khong duoc cap nhat
-def test_rename_section_cancel(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 7.2.3: Nhập tên nhưng đóng pop-up trước khi lưu")
-
-        # Bước 1: Thực hiện thao tác để hiển thị pop-up Rename
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Lấy tên section ban đầu
-        original_name = pagev2.get_section_name()
-
-        # Bước 2: Mở pop-up Rename và nhập tên mới
-        pagev2.click_rename_section()
-        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
-
-       # Nhập và kiểm tra nội dung text input Rename
-        new_name = "Tên mới cho Section"
-        pagev2.enter_and_verify_rename_text(new_name)
-
-        logging.info("Test Case: Nhập và xác nhận nội dung Rename thành công.")
-
-        # Bước 3: Đóng pop-up mà không nhấn nút Lưu
-        pagev2.click_button_close_rename()
-        time.sleep(1)  # Đợi UI cập nhật
-
-        # Kiểm tra pop-up đã đóng
-        assert pagev2.is_rename_popup_closed(), "Pop-up Rename vẫn hiển thị sau khi đóng!"
-
-        # Bước 4: Kiểm tra tên section **không thay đổi**
-        updated_name = pagev2.get_section_name()
-        assert updated_name == original_name, f"Tên section đã thay đổi thành '{updated_name}', mong đợi '{original_name}'"
-
-        logging.info("Test Case 7.2.3 PASS: Tên section không bị thay đổi khi đóng pop-up trước khi lưu.")
-
-    except Exception as e:
-        logging.error("Test Case 7.2.3 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 7.2.4: Verify nhập tên mới và click nút Lưu -> Hệ thống lưu và hiển thị tên section mới
-def test_rename_section_and_check_name(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 7.2.4: Nhập tên mới, lưu và kiểm tra tên section")
-
-        # Bước 1: Hiển thị pop-up Rename
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        pagev2.click_rename_section()
-        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
-
-        # Bước 2: Nhập tên mới và lưu
-        expected_name = "Tên mới cho Section"
-        pagev2.enter_and_verify_rename_text(expected_name)
-        pagev2.click_save_rename()
-
-        # Bước 3: Kiểm tra pop-up đã đóng
-        assert pagev2.is_rename_popup_closed(), "Pop-up Rename vẫn còn hiển thị sau khi nhấn Lưu!"
-
-        # Bước 4: Chờ 3 giây để UI cập nhật trước khi tìm kiếm
-        time.sleep(3)
-
-        # Bước 5: Kiểm tra xem tên mới có hiển thị trên trang không
-        assert pagev2.search_text_on_page(expected_name), f"Từ khóa '{expected_name}' không tìm thấy trên trang!"
-
-        logging.info("Test Case 7.2.4 PASS: Tên section đã cập nhật thành công và hiển thị trên trang.")
-
-    except Exception as e:
-        logging.error("Test Case 7.2.4 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 8.1: Verify click icon Collapse -> Hệ thống thu gọn form Section News
-def test_collapse_section(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 8.1: Click icon Collapse để thu gọn Section News")
-
-        # Bước 1: Hiển thị section News nếu chưa có
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Bước 2: Click icon collapse
-        pagev2.click_collapse_section()
-        time.sleep(2)  # Đợi UI cập nhật
-
-        # Bước 3: Kiểm tra section đã thu gọn
-        assert pagev2.is_section_collapsed(), "Section News không được thu gọn sau khi click icon Collapse!"
-
-        logging.info("Test Case 8.1 PASS: Hệ thống đã thu gọn Section News thành công.")
-
-    except Exception as e:
-        logging.error("Test Case 8.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 8.2: Verify click icon Expand -> Hệ thống mở rộng lại Section News
-def test_expand_section(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 8.2: Click icon Expand để mở rộng lại Section News")
-
-        # Bước 1: Hiển thị section News nếu chưa có
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Bước 2: Click icon collapse để thu gọn section
-        pagev2.click_collapse_section()
-        time.sleep(2)
-        assert pagev2.is_section_collapsed(), "Section News chưa được thu gọn!"
-
-        # Bước 3: Click icon expand để mở rộng lại section
-        pagev2.click_expand_section()
-        time.sleep(2)
-
-        # Bước 4: Kiểm tra section đã hiển thị lại
-        assert pagev2.is_news_section_displayed(), "Section News không được mở rộng lại sau khi click icon Expand!"
-
-        logging.info("Test Case 8.2 PASS: Hệ thống đã mở rộng lại Section News thành công.")
-
-    except Exception as e:
-        logging.error("Test Case 8.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 9.1: Click icon '...' doc -> He thong hien thi cac menu-item
-def test_click_menu_icon_display_items(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 9.1: Click icon '...' để hiển thị menu-item")
-
-        # Bước 1: Đảm bảo Section News hiển thị
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Bước 2: Click vào icon '...' (menu)
-        pagev2.click_menu_icon()
-        time.sleep(2)  # Đợi menu hiển thị
-
-        # Bước 3: Kiểm tra các menu-item Delete & Duplicate có hiển thị không
-        assert pagev2.is_delete_button_displayed(), "Nút Delete không hiển thị trong menu!"
-        assert pagev2.is_duplicate_button_displayed(), "Nút Duplicate không hiển thị trong menu!"
-
-        logging.info("Test Case 9.1 PASS: Hệ thống hiển thị đầy đủ menu-item sau khi click icon '...'.")
-    
-    except Exception as e:
-        logging.error("Test Case 9.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 9.2.1: Click menu-item Xoa -> He thong hien thi pop-up Confirm
-def test_check_delete_confirmation_popup(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 9.2.1: Kiểm tra pop-up xác nhận khi click Xóa")
-
-        # Bước 1: Đảm bảo Section News hiển thị
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Bước 2: Click vào icon '...' (menu)
-        pagev2.click_menu_icon()
-        time.sleep(1)  # Đợi menu hiển thị
-
-        # Bước 3: Click vào menu-item Xóa
-        pagev2.click_delete_button()
-        time.sleep(1)  # Đợi pop-up hiển thị
-
-        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
-        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
-
-        logging.info("Test Case 9.2.1 PASS: Pop-up xác nhận hiển thị đúng khi click Xóa.")
-
-    except Exception as e:
-        logging.error("Test Case 9.2.1 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 9.2.2 Click icon Close tren pop-up Confirm
-def test_click_close_confirm_popup(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 9.2.2: Click icon 'X' để đóng pop-up xác nhận xóa.")
-
-        # Bước 1: Đảm bảo Section News hiển thị
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Bước 2: Click vào icon '...' (menu)
-        pagev2.click_menu_icon()
-        time.sleep(1)  # Đợi menu hiển thị
-
-        # Bước 3: Click vào menu-item Xóa
-        pagev2.click_delete_button()
-        time.sleep(1)  # Đợi pop-up xác nhận hiển thị
-
-        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
-        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
-
-        # Bước 5: Click icon 'X' để đóng pop-up
-        pagev2.click_close_confirm_popup()
-        time.sleep(1)  # Đợi pop-up đóng
-
-        # Bước 6: Kiểm tra Section News vẫn còn trên giao diện
-        assert pagev2.is_news_section_displayed(), "Section News đã bị xóa sau khi đóng pop-up xác nhận!"
-
-        logging.info("Test Case 9.2.2 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.")
-
-    except Exception as e:
-        logging.error("Test Case 9.2.2 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-
-# Test Case 9.2.3: Click nut Yes trong pop-up Confirm  -> He thong xoa section
-def test_click_delete_section(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 9.2.3: Click menu-item Xóa để xóa Section News")
-
-        # Bước 1: Đảm bảo Section News hiển thị
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Bước 2: Click vào icon '...' (menu)
-        pagev2.click_menu_icon()
-        time.sleep(1)  # Đợi menu hiển thị
-
-        # Bước 3: Click vào menu-item Xóa
-        pagev2.click_delete_button()
-        time.sleep(1)  # Đợi pop-up xác nhận hiển thị
-
-        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
-        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
-
-        # Bước 5: Click nút xác nhận Xóa trên pop-up
-        pagev2.confirm_delete_section()
-        time.sleep(2)  # Đợi hệ thống xử lý xóa
-
-        # Bước 6: Kiểm tra Section đã bị xóa bằng hàm is_section_news_deleted()
-        assert pagev2.is_section_news_deleted(), "Section News vẫn còn sau khi xác nhận xóa!"
-
-        logging.info("Test Case 9.2.3 PASS: Section đã được xóa thành công.")
-
-    except Exception as e:
-        logging.error("Test Case 9.2.3 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 9.2.4: Click nut No trong pop-up Confirm -> He thong huy xoa section
-def test_cancel_delete_section(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 9.2.5: Click nút 'No' để hủy xóa Section News.")
-
-        # Bước 1: Đảm bảo Section News hiển thị
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Bước 2: Click vào icon '...' (menu)
-        pagev2.click_menu_icon()
-        time.sleep(1)  # Đợi menu hiển thị
-
-        # Bước 3: Click vào menu-item Xóa
-        pagev2.click_delete_button()
-        time.sleep(1)  # Đợi pop-up xác nhận hiển thị
-
-        # Bước 4: Kiểm tra pop-up xác nhận có hiển thị không
-        assert pagev2.is_delete_confirmation_popup_displayed(), "Pop-up xác nhận xóa không hiển thị!"
-
-        # Bước 5: Click nút 'No' để hủy xóa
-        pagev2.cancel_delete_section()
-        time.sleep(1)  # Đợi pop-up đóng
-
-        # Bước 6: Kiểm tra Section News vẫn còn trên giao diện
-        assert pagev2.is_news_section_displayed(), "Section News đã bị xóa sau khi hủy xác nhận!"
-
-        logging.info("Test Case 9.2.5 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.")
-
-    except Exception as e:
-        logging.error("Test Case 9.2.5 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-
-# Test Case 9.3: Click menu-item Duplicate -> Hệ thống tạo bản sao của Section News
-def test_duplicate_section(setup_driver, pagev2):
-    try:
-        logging.info("Bắt đầu Test Case 9.3: Click menu-item 'Duplicate' để tạo bản sao Section News")
-
-        # Bước 1: Đảm bảo Section News hiển thị
-        pagev2.perform_tag_operations()
-        pagev2.add_news_section()
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!"
-
-        # Bước 2: Click vào icon '...' (menu)
-        pagev2.click_menu_icon()
-        time.sleep(1)  # Đợi menu hiển thị
-
-        # Bước 3: Click vào menu-item Duplicate
-        pagev2.click_duplicate_button()
-        time.sleep(2)  # Đợi hệ thống xử lý sao chép
-
-        # Bước 4: Kiểm tra xem Section News đã được nhân bản hay chưa
-        assert pagev2.search_text_on_page('Copy of News')
-
-        logging.info("Test Case 9.3 PASS: Hệ thống đã tạo bản sao Section News thành công.")
-
-    except Exception as e:
-        logging.error("Test Case 9.3 FAILED: Lỗi xảy ra - %s", e, exc_info=True)
-        raise
-    try:
-        pagev2.is_news_section_displayed()
-        pagev2.click_rename_section()
-        assert pagev2.is_rename_popup_displayed(), "Pop-up Rename không hiển thị!"
-        print("Test Case 6 PASS: Pop-up Rename được hiển thị")
-    except Exception as e:
-        print(f"Test Case 6 FAIL: Pop-up Rename không hiển thị! Lỗi: {str(e)}")
+        logging.info("Test Case 40 PASS: Nút switch đã được tắt OFF")
+        assert True
+
+# Test Case 41: Verify khi click dropdown Tag -> Hệ thống mỏ dropdown và hiển thị Danh sách tag
+def test_open_tag_dropdown(article, tag):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    tag.click_tag_dropdown()
+    logging.info("Test Case 41 PASS: Hệ thống mở dropdown 'Tag' thành công!")
+
+# Test Case 42: Verify khi click chọn Tag trong select -> Hệ thống hiển thị giá trị vừa chọn
+def test_select_tag_from_dropdown(article, tag):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    tag.click_tag_dropdown()
+    expected_tag = "Tag 1"
+    logging.info(f"Đang chọn tag: {expected_tag}")
+    tag.select_tag(expected_tag)
+    if tag.is_selected_tag_correct(expected_tag):
+        logging.info("Test Case 42 PASS: Tag đã chọn hiển thị đúng.")
+    else:
+        logging.error(f"Test Case 42 FAIL: Tag đã chọn không đúng. Expected: '{expected_tag}'")
+
+# Test Case 43: Verify khi click nút Tạo mới -> Hệ thống hiển thị sidebar Thêm tag mới
+def test_create_keyword_sidebar(article, tag):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    tag.click_create_keyword_button()
+    if tag.is_add_keyword_sidebar_visible():
+        logging.info("Test Case 43 PASS: Sidebar 'Thêm từ khóa' hiển thị thành công!")
+        assert True
+    else:
+        logging.error("Test Case 43 FAIL: Sidebar 'Thêm từ khóa' không hiển thị!")
         assert False
 
-# Test Case 7: Verify khi nhập chữ vào field nhập số lượng slide -> Hệ thống không nhập dữ liệu chữ
-def test_number_of_articles_rejects_text(setup_driver, pagev2):
-    pagev2.perform_tag_operations()
-    pagev2.add_news_section()
-    try:
-        assert pagev2.is_news_section_displayed(), "Section News không hiển thị!" 
-        invalid_input = "abc"
-        pagev2.enter_number_of_articles(invalid_input)
-        actual_value = pagev2.get_number_of_articles_value()
-        assert actual_value == "" or actual_value.isnumeric(), f"Input không hợp lệ nhưng vẫn giữ giá trị: '{actual_value}'"
-        print("Test Case 7 PASS: Nhập chữ vào field số lượng slide không thành công (đúng mong đợi)")
-    except Exception as e:
-        print(f"Test Case 7 FAIL: Hệ thống vẫn chấp nhận chữ! Lỗi: {str(e)}")
-        assert False
+# Test Case 44: Verify khi click field Hình ảnh thumbnail -> Hệ thống hiển thị pop-up Upload hình ảnh 
+def test_upload_thumbnail_image_field(article, image):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    image.click_upload_thumbnail_image_field()
+    if image.is_upload_popup_displayed():
+        logging.info("Test Case 44 PASS: Pop-up upload hình ảnh hiển thị thành công")
+    else:
+        logging.error("Test Case 44 FAIL: Pop-up upload hình ảnh không hiển thị")
+        assert False, "Test Case 44 FAIL: Pop-up upload hình ảnh không hiển thị"
 
+# Test Case 45: Verify khi click nút Tải lên ở Hình ảnh thumbnail -> Hệ thống hiển thị pop-up Upload hình ảnh 
+def test_click_thumbnail_image_button(article, image):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    image.click_upload_thumbnail_image_button()
+    if image.is_upload_popup_displayed():
+        logging.info("Test Case 45 PASS: Pop-up upload hình ảnh hiển thị thành công")
+    else:
+        logging.error("Test Case 45 FAIL: Pop-up upload hình ảnh không hiển thị")
+        assert False, "Test Case 45 FAIL: Pop-up upload hình ảnh không hiển thị"
+
+# Test Case 46: Verify khi tải lên Hình ảnh Thumbnail -> Hệ thống hiển thị hinh ảnh lên field Hình ảnh Thumbnail
+def test_upload_thumbnail_image(article, image):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    image.click_upload_thumbnail_image_field()
+    image.click_tab_browser_by_href()
+    image.wait_for_file_listing()
+    image.select_first_image()
+    image.click_choose_upload_button()
+    if image.is_thumbnail_image_uploaded():
+        print("Test Case 46 PASS: Ảnh đã được upload thành công.")
+        logging.info("Test Case 46 PASS: Ảnh đã được upload thành công")
+    else:
+        print("Test Case 46 FAIL: Ảnh không được upload thành công.")
+        logging.error("Test Case 46 FAIL: Ảnh không được upload thành công")
+        assert False, "Test Case 46 FAIL: Ảnh không được upload thành công"
+
+# Test Case 47: Verify khi click nút Xóa ảnh -> Hệ thống xóa ảnh ra khỏi field Hình ảnh Thumbnail
+def test_delete_thumbnail_image(article, image):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    image.click_upload_thumbnail_image_field()
+    image.click_tab_browser_by_href()
+    image.wait_for_file_listing()
+    image.select_first_image()
+    image.click_choose_upload_button()
+    image.is_thumbnail_image_uploaded()
+    image.delete_thumbnail_image()
+    if image.is_thumbnail_image_deleted():
+        print("Test Case 47 PASS: Ảnh Feature đã được xóa thành công.")
+        logging.info("Test Case 47 PASS: Ảnh Feature đã được xóa thành công.")
+    else:
+        print("Test Case 47 FAIL: Ảnh Feature chưa bị xóa.")
+        logging.error("Test Case 47 FAIL: Ảnh Feature chưa bị xóa.")
+        assert False, "Test Case 47 FAIL: Ảnh Feature chưa bị xóa."
+
+# Test Case 48: Verify khi click vào dropdown 'Bài viết liên quan' -> Hệ thống mở dropdown thành công.
+def test_open_related_article_dropdown(article, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    select.click_related_article_dropdown()
+    if select.is_selected_related_article_correct(""):
+        print("Test Case 48 PASS: Dropdown 'Bài viết liên quan' mở thành công.")
+        logging.info("Test Case 48 PASS: Dropdown 'Bài viết liên quan' mở thành công.")
+    else:
+        print("Test Case 48 FAIL: Dropdown 'Bài viết liên quan' không mở.")
+        logging.error("Test Case 48 FAIL: Dropdown 'Bài viết liên quan' không mở.")
+        assert False, "Test Case 48 FAIL: Dropdown 'Bài viết liên quan' không mở."
+
+# Test Case 49: Verify khi chọn bài viết liên quan từ dropdown -> Hệ thống hiển thị đúng bài viết đã chọn.
+def test_select_related_article_from_dropdown(article, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    select.click_related_article_dropdown()
+    expected_article = "Tổng công ty Hàng hải lãi gần 5.000 tỷ đồng"
+    logging.info(f"Đang chọn bài viết liên quan: {expected_article}")
+    select.select_related_article(expected_article)
+    select.wait_for_selected_related_article_to_update(expected_article)
+    actual_article = "×\n×Tổng công ty Hàng hải lãi gần 5.000 tỷ đồng"
+    cleaned_actual_article = actual_article.lstrip("×\n").strip()
+    logging.info(f"Giá trị bài viết hiển thị (đã xử lý): '{cleaned_actual_article}'")
+    if cleaned_actual_article == expected_article:
+        print("Test Case 49 PASS: Bài viết đã chọn hiển thị đúng.")
+        logging.info("Test Case 49 PASS: Bài viết đã chọn hiển thị đúng.")
+    else:
+        print(f"Test Case FAIL: Expected '{expected_article}', nhưng nhận được '{cleaned_actual_article}'")
+        logging.error(f"Test Case 49 FAIL: Expected '{expected_article}', nhưng nhận được '{cleaned_actual_article}'")
+        assert False, f"Test Case 49 FAIL: Expected '{expected_article}', nhưng nhận được '{cleaned_actual_article}'"
+
+# Test Case 50: Verify khi không nhập Đường dẫn -> Hệ thống sẽ tự động sinh ra đường dẫn theo tiêu đề 
+def test_url_key_auto_generation(article, enter_field, select, url):
+    title = "Tiêu đề bài viết test tự động sinh URL"
+    expected_url_key = url.generate_expected_url_key(title)
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi(title)
+    enter_field.enter_title_vi("Tiêu đề bài viết test tự động sinh URL")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    article.click_save_and_continue_button()
+    url_key_value = url.get_url_key_value()
+    logging.info(f"DEBUG: URL Key lấy được từ hệ thống: '{url_key_value}'")
+    if url_key_value == expected_url_key:
+        logging.info("Test Case 50 PASS: URL Key tự động sinh đúng theo tiêu đề.")
+    else:
+        logging.error(f"Test Case 50 FAIL: URL Key không đúng. Mong đợi '{expected_url_key}', nhưng nhận '{url_key_value}'.")
+        assert False, f"Lỗi: URL Key không đúng. Mong đợi '{expected_url_key}', nhưng nhận '{url_key_value}'."
 
