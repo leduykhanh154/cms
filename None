@@ -1,110 +1,892 @@
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
 INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
 INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-ERROR    root:pagev2.py:84 Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: Message: 
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+ERROR    root:pagev2.py:96 Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: Message: 
 Stacktrace:
-	GetHandleVerifier [0x009CB5A3+24387]
-	(No symbol) [0x00955904]
-	(No symbol) [0x00830753]
-	(No symbol) [0x00878BA9]
-	(No symbol) [0x00878EFB]
-	(No symbol) [0x008C19C2]
-	(No symbol) [0x0089D894]
-	(No symbol) [0x008BF138]
-	(No symbol) [0x0089D646]
-	(No symbol) [0x0086C59F]
-	(No symbol) [0x0086D8E4]
-	GetHandleVerifier [0x00CCD883+3179043]
-	GetHandleVerifier [0x00CE6CF9+3282585]
-	GetHandleVerifier [0x00CE167C+3260444]
-	GetHandleVerifier [0x00A64330+650448]
-	(No symbol) [0x0095ED0D]
-	(No symbol) [0x0095BAF8]
-	(No symbol) [0x0095BC99]
-	(No symbol) [0x0094E530]
-	BaseThreadInitThunk [0x764F7BA9+25]
-	RtlInitializeExceptionChain [0x7750C2EB+107]
-	RtlClearBits [0x7750C26F+191]
+	GetHandleVerifier [0x00D2B5A3+24387]
+	(No symbol) [0x00CB5904]
+	(No symbol) [0x00B90753]
+	(No symbol) [0x00BD8BA9]
+	(No symbol) [0x00BD8EFB]
+	(No symbol) [0x00C219C2]
+	(No symbol) [0x00BFD894]
+	(No symbol) [0x00C1F138]
+	(No symbol) [0x00BFD646]
+	(No symbol) [0x00BCC59F]
+	(No symbol) [0x00BCD8E4]
+	GetHandleVerifier [0x0102D883+3179043]
+	GetHandleVerifier [0x01046CF9+3282585]
+	GetHandleVerifier [0x0104167C+3260444]
+	GetHandleVerifier [0x00DC4330+650448]
+	(No symbol) [0x00CBED0D]
+	(No symbol) [0x00CBBAF8]
+	(No symbol) [0x00CBBC99]
+	(No symbol) [0x00CAE530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
 Traceback (most recent call last):
-  File "C:\Users\Duy khanh\Documents\GitHub\cms\pages\pagev2.py", line 71, in click_create_new_button
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 83, in click_create_new_button
     create_new_button = self.wait.until(EC.element_to_be_clickable(self.create_new_button))
-  File "C:\Users\Duy khanh\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 146, in until
     raise TimeoutException(message, screen, stacktrace)
 selenium.common.exceptions.TimeoutException: Message: 
 Stacktrace:
-	GetHandleVerifier [0x009CB5A3+24387]
-	(No symbol) [0x00955904]
-	(No symbol) [0x00830753]
-	(No symbol) [0x00878BA9]
-	(No symbol) [0x00878EFB]
-	(No symbol) [0x008C19C2]
-	(No symbol) [0x0089D894]
-	(No symbol) [0x008BF138]
-	(No symbol) [0x0089D646]
-	(No symbol) [0x0086C59F]
-	(No symbol) [0x0086D8E4]
-	GetHandleVerifier [0x00CCD883+3179043]
-	GetHandleVerifier [0x00CE6CF9+3282585]
-	GetHandleVerifier [0x00CE167C+3260444]
-	GetHandleVerifier [0x00A64330+650448]
-	(No symbol) [0x0095ED0D]
-	(No symbol) [0x0095BAF8]
-	(No symbol) [0x0095BC99]
-	(No symbol) [0x0094E530]
-	BaseThreadInitThunk [0x764F7BA9+25]
-	RtlInitializeExceptionChain [0x7750C2EB+107]
-	RtlClearBits [0x7750C26F+191]
+	GetHandleVerifier [0x00D2B5A3+24387]
+	(No symbol) [0x00CB5904]
+	(No symbol) [0x00B90753]
+	(No symbol) [0x00BD8BA9]
+	(No symbol) [0x00BD8EFB]
+	(No symbol) [0x00C219C2]
+	(No symbol) [0x00BFD894]
+	(No symbol) [0x00C1F138]
+	(No symbol) [0x00BFD646]
+	(No symbol) [0x00BCC59F]
+	(No symbol) [0x00BCD8E4]
+	GetHandleVerifier [0x0102D883+3179043]
+	GetHandleVerifier [0x01046CF9+3282585]
+	GetHandleVerifier [0x0104167C+3260444]
+	GetHandleVerifier [0x00DC4330+650448]
+	(No symbol) [0x00CBED0D]
+	(No symbol) [0x00CBBAF8]
+	(No symbol) [0x00CBBC99]
+	(No symbol) [0x00CAE530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
 
-INFO     root:pagev2.py:93 Đã nhập tiêu đề trang: 
-INFO     root:pagev2.py:254 Đã nhấn nút Lưu.
+INFO     root:pagev2.py:105 Đã nhập tiêu đề trang: 
+INFO     root:pagev2.py:333 Đã nhấn nút Lưu.
+INFO     root:test_pagev2.py:38 Test Case 1 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
 INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
 INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:93 Đã nhập tiêu đề trang: Trang kiểm thử
-INFO     root:pagev2.py:254 Đã nhấn nút Lưu.
-INFO     root:pagev2.py:116 Tiêu đề trang 'Trang kiểm thử' đã xuất hiện trong danh sách!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:105 Đã nhập tiêu đề trang: Trang kiểm thử
+INFO     root:pagev2.py:333 Đã nhấn nút Lưu.
+INFO     root:pagev2.py:128 Tiêu đề trang 'Trang kiểm thử' đã xuất hiện trong danh sách!
+INFO     root:test_pagev2.py:52 Test Case 2 PASS: Lưu trang thành công và hiển thị trong danh sách.
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
 INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
 INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:pagev2.py:46 Đã nhấn menu Nội dung.
-INFO     root:pagev2.py:46 Đã nhấn menu Page V2.
-INFO     root:pagev2.py:62 Chuyển hướng thành công đến trang tạo mới Page V2.
-INFO     root:pagev2.py:73 Đã nhấn nút Tạo mới.
-INFO     root:pagev2.py:78 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
-INFO     root:pagev2.py:130 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:test_pagev2.py:69 Test Case 3 PASS: Pop-up thêm section hiển thị thành công.
 INFO     WDM:logger.py:11 ====== WebDriver manager ======
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
 INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
-INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
 INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
 INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:test_pagev2.py:86 Test Case 4 PASS: Section 'News' đã được thêm thành công và hiển thị trong danh sách.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:333 Đã nhấn nút Lưu.
+INFO     root:test_pagev2.py:105 PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập tiêu đề tin tức.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:105 Đã nhập tiêu đề trang: 
+INFO     root:pagev2.py:342 Đang tìm nút Lưu và tiếp tục cập nhật...
+INFO     root:pagev2.py:346 Tìm thấy nút, thực hiện click bằng JavaScript...
+INFO     root:pagev2.py:349 Đã nhấn nút Lưu và tiếp tục cập nhật.
+INFO     root:test_pagev2.py:117 Test Case 1.2 PASS: Hiển thị đúng thông báo lỗi khi không nhập tiêu đề trang.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:105 Đã nhập tiêu đề trang: Trang kiểm thử
+INFO     root:pagev2.py:342 Đang tìm nút Lưu và tiếp tục cập nhật...
+INFO     root:pagev2.py:346 Tìm thấy nút, thực hiện click bằng JavaScript...
+INFO     root:pagev2.py:349 Đã nhấn nút Lưu và tiếp tục cập nhật.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:166 Section 'News' đã xuất hiện trên giao diện.
+INFO     root:test_pagev2.py:144 Test Case 3.2 PASS: Section 'News' đã hiển thị trong popup 'Thêm section'.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:test_pagev2.py:165 Test Case 3.3 PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:test_pagev2.py:182 Test Case 3.4 PASS: Nút 'Add' bị vô hiệu hóa như mong đợi.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:231 Đã nhấn nút Rename section.
+INFO     root:test_pagev2.py:198 Test Case 6 PASS: Pop-up Rename hiển thị thành công.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:206 Bắt đầu Test Case 7.1.1: Verify click icon Đóng trên pop-up Chỉnh sửa tên section
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:231 Đã nhấn nút Rename section.
+INFO     root:pagev2.py:311 Đã nhấn icon 'Close' trong popup Rename.
+INFO     root:pagev2.py:285  Pop-up Rename đã đóng.
+INFO     root:test_pagev2.py:222 Test Case 7.1.1 PASS: Đóng pop-up Rename thành công.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:234 Bắt đầu Test Case 7.1.2: Verify click icon Đóng trên pop-up Chỉnh sửa tên section
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:231 Đã nhấn nút Rename section.
+INFO     root:pagev2.py:322 Đã nhấn button 'Dong' trong popup Rename.
+INFO     root:pagev2.py:285  Pop-up Rename đã đóng.
+INFO     root:test_pagev2.py:250 Test Case 7.1.2 PASS: Đóng pop-up Rename thành công.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:231 Đã nhấn nút Rename section.
+INFO     root:pagev2.py:362 Đã nhập 'Tên mới cho Section' vào ô Rename.
+INFO     root:pagev2.py:368  Xác nhận giá trị nhập vào đúng.
+INFO     root:test_pagev2.py:272 Test Case: Nhập và xác nhận nội dung Rename thành công.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:317 Bắt đầu Test Case 7.2.3: Nhập tên nhưng đóng pop-up trước khi lưu
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+ERROR    root:pagev2.py:382 Lỗi khi lấy tên section: Message: invalid selector: The result of the xpath expression "//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/text()" is: [object Text]. It should be an element.
+  (Session info: chrome=134.0.6998.89); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00D2B5A3+24387]
+	(No symbol) [0x00CB5904]
+	(No symbol) [0x00B90753]
+	(No symbol) [0x00B97137]
+	(No symbol) [0x00B993AA]
+	(No symbol) [0x00B99427]
+	(No symbol) [0x00BD8431]
+	(No symbol) [0x00BD8EFB]
+	(No symbol) [0x00C219C2]
+	(No symbol) [0x00BFD894]
+	(No symbol) [0x00C1F138]
+	(No symbol) [0x00BFD646]
+	(No symbol) [0x00BCC59F]
+	(No symbol) [0x00BCD8E4]
+	GetHandleVerifier [0x0102D883+3179043]
+	GetHandleVerifier [0x01046CF9+3282585]
+	GetHandleVerifier [0x0104167C+3260444]
+	GetHandleVerifier [0x00DC4330+650448]
+	(No symbol) [0x00CBED0D]
+	(No symbol) [0x00CBBAF8]
+	(No symbol) [0x00CBBC99]
+	(No symbol) [0x00CAE530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 377, in get_section_name
+    section_name_element = self.wait.until(EC.presence_of_element_located(LocatorPageV2.NAME_SECTION))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 137, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\expected_conditions.py", line 110, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\remote\webdriver.py", line 898, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector: The result of the xpath expression "//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/text()" is: [object Text]. It should be an element.
+  (Session info: chrome=134.0.6998.89); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00D2B5A3+24387]
+	(No symbol) [0x00CB5904]
+	(No symbol) [0x00B90753]
+	(No symbol) [0x00B97137]
+	(No symbol) [0x00B993AA]
+	(No symbol) [0x00B99427]
+	(No symbol) [0x00BD8431]
+	(No symbol) [0x00BD8EFB]
+	(No symbol) [0x00C219C2]
+	(No symbol) [0x00BFD894]
+	(No symbol) [0x00C1F138]
+	(No symbol) [0x00BFD646]
+	(No symbol) [0x00BCC59F]
+	(No symbol) [0x00BCD8E4]
+	GetHandleVerifier [0x0102D883+3179043]
+	GetHandleVerifier [0x01046CF9+3282585]
+	GetHandleVerifier [0x0104167C+3260444]
+	GetHandleVerifier [0x00DC4330+650448]
+	(No symbol) [0x00CBED0D]
+	(No symbol) [0x00CBBAF8]
+	(No symbol) [0x00CBBC99]
+	(No symbol) [0x00CAE530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+
+INFO     root:pagev2.py:231 Đã nhấn nút Rename section.
+INFO     root:pagev2.py:362 Đã nhập 'Tên mới cho Section' vào ô Rename.
+INFO     root:pagev2.py:368  Xác nhận giá trị nhập vào đúng.
+INFO     root:test_pagev2.py:335 Test Case: Nhập và xác nhận nội dung Rename thành công.
+INFO     root:pagev2.py:322 Đã nhấn button 'Dong' trong popup Rename.
+INFO     root:pagev2.py:285  Pop-up Rename đã đóng.
+ERROR    root:pagev2.py:382 Lỗi khi lấy tên section: Message: invalid selector: The result of the xpath expression "//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/text()" is: [object Text]. It should be an element.
+  (Session info: chrome=134.0.6998.89); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00D2B5A3+24387]
+	(No symbol) [0x00CB5904]
+	(No symbol) [0x00B90753]
+	(No symbol) [0x00B97137]
+	(No symbol) [0x00B993AA]
+	(No symbol) [0x00B99427]
+	(No symbol) [0x00BD8431]
+	(No symbol) [0x00BD8EFB]
+	(No symbol) [0x00C219C2]
+	(No symbol) [0x00BFD894]
+	(No symbol) [0x00C1F138]
+	(No symbol) [0x00BFD646]
+	(No symbol) [0x00BCC59F]
+	(No symbol) [0x00BCD8E4]
+	GetHandleVerifier [0x0102D883+3179043]
+	GetHandleVerifier [0x01046CF9+3282585]
+	GetHandleVerifier [0x0104167C+3260444]
+	GetHandleVerifier [0x00DC4330+650448]
+	(No symbol) [0x00CBED0D]
+	(No symbol) [0x00CBBAF8]
+	(No symbol) [0x00CBBC99]
+	(No symbol) [0x00CAE530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 377, in get_section_name
+    section_name_element = self.wait.until(EC.presence_of_element_located(LocatorPageV2.NAME_SECTION))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 137, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\expected_conditions.py", line 110, in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\remote\webdriver.py", line 898, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector: The result of the xpath expression "//*[@id="accordionParent"]/div[2]/div[2]/div[1]/div/div[1]/li/div/div/h2/div/div[2]/text()" is: [object Text]. It should be an element.
+  (Session info: chrome=134.0.6998.89); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00D2B5A3+24387]
+	(No symbol) [0x00CB5904]
+	(No symbol) [0x00B90753]
+	(No symbol) [0x00B97137]
+	(No symbol) [0x00B993AA]
+	(No symbol) [0x00B99427]
+	(No symbol) [0x00BD8431]
+	(No symbol) [0x00BD8EFB]
+	(No symbol) [0x00C219C2]
+	(No symbol) [0x00BFD894]
+	(No symbol) [0x00C1F138]
+	(No symbol) [0x00BFD646]
+	(No symbol) [0x00BCC59F]
+	(No symbol) [0x00BCD8E4]
+	GetHandleVerifier [0x0102D883+3179043]
+	GetHandleVerifier [0x01046CF9+3282585]
+	GetHandleVerifier [0x0104167C+3260444]
+	GetHandleVerifier [0x00DC4330+650448]
+	(No symbol) [0x00CBED0D]
+	(No symbol) [0x00CBBAF8]
+	(No symbol) [0x00CBBC99]
+	(No symbol) [0x00CAE530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+
+INFO     root:test_pagev2.py:348 Test Case 7.2.3 PASS: Tên section không bị thay đổi khi đóng pop-up trước khi lưu.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:357 Bắt đầu Test Case 7.2.4: Nhập tên mới, lưu và kiểm tra tên section
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:231 Đã nhấn nút Rename section.
+INFO     root:pagev2.py:362 Đã nhập 'Tên mới cho Section' vào ô Rename.
+INFO     root:pagev2.py:368  Xác nhận giá trị nhập vào đúng.
+INFO     root:pagev2.py:400 Đã nhấn nút Lưu trên pop-up Rename.
+INFO     root:pagev2.py:285  Pop-up Rename đã đóng.
+INFO     root:pagev2.py:679 Tìm thấy từ khóa 'Tên mới cho Section' trên trang.
+INFO     root:test_pagev2.py:381 Test Case 7.2.4 PASS: Tên section đã cập nhật thành công và hiển thị trên trang.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:390 Bắt đầu Test Case 8.1: Click icon Collapse để thu gọn Section News
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:411 Đã nhấn vào icon collapse để thu gọn section.
+INFO     root:test_pagev2.py:404 Test Case 8.1 PASS: Hệ thống đã thu gọn Section News thành công.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:413 Bắt đầu Test Case 8.2: Click icon Expand để mở rộng lại Section News
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:411 Đã nhấn vào icon collapse để thu gọn section.
+INFO     root:pagev2.py:431 Đã nhấn vào icon expand để mở rộng section.
+INFO     root:test_pagev2.py:432 Test Case 8.2 PASS: Hệ thống đã mở rộng lại Section News thành công.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:441 Bắt đầu Test Case 9.1: Click icon '...' để hiển thị menu-item
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:443 Đã nhấn vào icon '...' để mở menu.
+INFO     root:pagev2.py:453 Nút Xóa hiển thị: True
+INFO     root:pagev2.py:464 Nút Sao chép hiển thị: True
+INFO     root:test_pagev2.py:456 Test Case 9.1 PASS: Hệ thống hiển thị đầy đủ menu-item sau khi click icon '...'.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:465 Bắt đầu Test Case 9.2.1: Kiểm tra pop-up xác nhận khi click Xóa
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:443 Đã nhấn vào icon '...' để mở menu.
+INFO     root:pagev2.py:475 Đã nhấn vào nút Xóa trong menu.
+INFO     root:test_pagev2.py:483 Test Case 9.2.1 PASS: Pop-up xác nhận hiển thị đúng khi click Xóa.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:492 Bắt đầu Test Case 9.2.2: Click icon 'X' để đóng pop-up xác nhận xóa.
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:443 Đã nhấn vào icon '...' để mở menu.
+INFO     root:pagev2.py:475 Đã nhấn vào nút Xóa trong menu.
+INFO     root:pagev2.py:503 Đã nhấn icon 'X' để đóng pop-up xác nhận.
+INFO     root:test_pagev2.py:517 Test Case 9.2.2 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:527 Bắt đầu Test Case 9.2.3: Click menu-item Xóa để xóa Section News
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:443 Đã nhấn vào icon '...' để mở menu.
+INFO     root:pagev2.py:475 Đã nhấn vào nút Xóa trong menu.
+INFO     root:pagev2.py:515 Đã nhấn nút 'Yes' để xác nhận xóa section.
+INFO     root:pagev2.py:540 Section 'News' đã bị xóa thành công.
+INFO     root:test_pagev2.py:552 Test Case 9.2.3 PASS: Section đã được xóa thành công.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:561 Bắt đầu Test Case 9.2.4: Click nút 'No' để hủy xóa Section News.
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:443 Đã nhấn vào icon '...' để mở menu.
+INFO     root:pagev2.py:475 Đã nhấn vào nút Xóa trong menu.
+INFO     root:pagev2.py:526 Đã nhấn nút 'No' để hủy xóa section.
+INFO     root:test_pagev2.py:586 Test Case 9.2.4 PASS: Pop-up xác nhận đã đóng, Section News vẫn còn.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:test_pagev2.py:595 Bắt đầu Test Case 9.3: Click menu-item 'Duplicate' để tạo bản sao Section News
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:443 Đã nhấn vào icon '...' để mở menu.
+INFO     root:pagev2.py:548 Đã nhấn nút 'Duplicate' để sao chép Section News.
+INFO     root:pagev2.py:679 Tìm thấy từ khóa 'Copy of News' trên trang.
+INFO     root:test_pagev2.py:613 Test Case 9.3 PASS: Hệ thống đã tạo bản sao Section News thành công.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:333 Đã nhấn nút Lưu.
+INFO     root:pagev2.py:679 Tìm thấy từ khóa 'Vui lòng nhập số bài viết hiển thị trên slide' trên trang.
+INFO     root:test_pagev2.py:634 Test Case 6 PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập số bài viết hiển thị trên slide
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:342 Đang tìm nút Lưu và tiếp tục cập nhật...
+INFO     root:pagev2.py:346 Tìm thấy nút, thực hiện click bằng JavaScript...
+INFO     root:pagev2.py:349 Đã nhấn nút Lưu và tiếp tục cập nhật.
+INFO     root:pagev2.py:679 Tìm thấy từ khóa 'Vui lòng nhập số bài viết hiển thị trên slide' trên trang.
+INFO     root:test_pagev2.py:654 Test Case 7 PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập số bài viết hiển thị trên slide
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+ERROR    root:pagev2.py:96 Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00D2B5A3+24387]
+	(No symbol) [0x00CB5904]
+	(No symbol) [0x00B90753]
+	(No symbol) [0x00BD8BA9]
+	(No symbol) [0x00BD8EFB]
+	(No symbol) [0x00C219C2]
+	(No symbol) [0x00BFD894]
+	(No symbol) [0x00C1F138]
+	(No symbol) [0x00BFD646]
+	(No symbol) [0x00BCC59F]
+	(No symbol) [0x00BCD8E4]
+	GetHandleVerifier [0x0102D883+3179043]
+	GetHandleVerifier [0x01046CF9+3282585]
+	GetHandleVerifier [0x0104167C+3260444]
+	GetHandleVerifier [0x00DC4330+650448]
+	(No symbol) [0x00CBED0D]
+	(No symbol) [0x00CBBAF8]
+	(No symbol) [0x00CBBC99]
+	(No symbol) [0x00CAE530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 83, in click_create_new_button
+    create_new_button = self.wait.until(EC.element_to_be_clickable(self.create_new_button))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\diep\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00D2B5A3+24387]
+	(No symbol) [0x00CB5904]
+	(No symbol) [0x00B90753]
+	(No symbol) [0x00BD8BA9]
+	(No symbol) [0x00BD8EFB]
+	(No symbol) [0x00C219C2]
+	(No symbol) [0x00BFD894]
+	(No symbol) [0x00C1F138]
+	(No symbol) [0x00BFD646]
+	(No symbol) [0x00BCC59F]
+	(No symbol) [0x00BCD8E4]
+	GetHandleVerifier [0x0102D883+3179043]
+	GetHandleVerifier [0x01046CF9+3282585]
+	GetHandleVerifier [0x0104167C+3260444]
+	GetHandleVerifier [0x00DC4330+650448]
+	(No symbol) [0x00CBED0D]
+	(No symbol) [0x00CBBAF8]
+	(No symbol) [0x00CBBC99]
+	(No symbol) [0x00CAE530]
+	BaseThreadInitThunk [0x762A5D49+25]
+	RtlInitializeExceptionChain [0x7750CDEB+107]
+	RtlGetAppContainerNamedObjectPath [0x7750CD71+561]
+
+INFO     root:pagev2.py:105 Đã nhập tiêu đề trang: 
+INFO     root:pagev2.py:342 Đang tìm nút Lưu và tiếp tục cập nhật...
+INFO     root:pagev2.py:346 Tìm thấy nút, thực hiện click bằng JavaScript...
+INFO     root:pagev2.py:349 Đã nhấn nút Lưu và tiếp tục cập nhật.
+INFO     root:test_pagev2.py:667 Test Case 8 PASS: Hiển thị đúng thông báo lỗi: Vui lòng nhập tiêu đề trang.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:643 Đã nhấn mở dropdown 'Chọn danh sách theo'
+INFO     root:test_pagev2.py:691 Test Case 9 PASS: Dropdown 'Chọn danh sách theo' đã hiển thị.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:643 Đã nhấn mở dropdown 'Chọn danh sách theo'
+INFO     root:pagev2.py:657 Đã nhấn select: Tùy chọn
+INFO     root:pagev2.py:679 Tìm thấy từ khóa 'Danh sách bài viết hiển thị' trên trang.
+INFO     root:test_pagev2.py:714 Test Case 10 PASS: Section 'Danh sách bài viết hiển thị' đã hiển thị.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+INFO     root:pagev2.py:643 Đã nhấn mở dropdown 'Chọn danh sách theo'
+INFO     root:pagev2.py:670 Đã nhấn select: Loại bài viết
+INFO     root:pagev2.py:679 Tìm thấy từ khóa 'Chọn loại bài viết' trên trang.
+INFO     root:test_pagev2.py:738 Test Case 11 PASS: Dropdown 'Chọn loại bài viết' đã hiển thị.
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\diep\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:pagev2.py:58 Đã nhấn menu Nội dung.
+INFO     root:pagev2.py:58 Đã nhấn menu Page V2.
+INFO     root:pagev2.py:74 Chuyển hướng thành công đến trang tạo mới Page V2.
+INFO     root:pagev2.py:85 Đã nhấn nút Tạo mới.
+INFO     root:pagev2.py:90 Chuyển hướng thành công đến https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create
+INFO     root:pagev2.py:142 Đã nhấn nút 'Thêm section'.
+INFO     root:pagev2.py:182 Checkbox 'News' đã được chọn.
+INFO     root:pagev2.py:195 Đã nhấn nút 'ADD' sau khi thêm section.
+ERROR    root:pagev2.py:263 Lỗi khi nhập số vào input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 247, in enter_number_of_articles
+    logging.info(f"🔎 Đang tìm input số lượng bài viết: {self.NUMBER_OF_ARTICLES_INPUT}")
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+INFO     root:pagev2.py:294 Đang lấy giá trị từ input số lượng bài viết...
+ERROR    root:pagev2.py:302 Lỗi khi lấy giá trị từ input: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
+Traceback (most recent call last):
+  File "C:\Users\diep\Documents\GitHub\cms\pages\pagev2.py", line 296, in get_number_of_articles_value
+    EC.presence_of_element_located(self.NUMBER_OF_ARTICLES_INPUT)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PageV2' object has no attribute 'NUMBER_OF_ARTICLES_INPUT'
