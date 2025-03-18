@@ -36,10 +36,9 @@ class PageV2:
         self.page_list_wrapper = LocatorPageV2.PAGE_LIST_WRAPPER
         self.rename_section_button = LocatorPageV2.RENAME_SECTION_BUTTON
         self.rename_section_popup = LocatorPageV2.RENAME_SECTION_POPUP
-        NUMBER_OF_ARTICLES_INPUT = (By.ID, "root_47mwegrft4_quantity-vi")
 
     # Hàm nhấn vào một menu cụ thể trong CMS
-    def click_menu(self, locator, menu_name, timeout=10):
+    def click_menu(self, locator, menu_name, timeout=5):
         try:
             menu = WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
             menu.click()
@@ -85,7 +84,7 @@ class PageV2:
             return False
     
     # Hàm nhập tiêu đề trang
-    def enter_page_title(self, title, timeout=10):
+    def enter_page_title(self, title, timeout=5):
         try:
             title_input = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.page_title_input))
             title_input.clear()
@@ -210,10 +209,11 @@ class PageV2:
         except TimeoutException:
             logging.error("Popup Rename không hiển thị!")
             return False 
-    
+        
+    # Hàm nhập số lượng bài viết 
     def enter_number_of_articles(self, value):
         try:
-            logging.info(f"🔎 Đang tìm input số lượng bài viết: {self.NUMBER_OF_ARTICLES_INPUT}")
+            logging.info(f"Đang tìm input số lượng bài viết: {self.NUMBER_OF_ARTICLES_INPUT}")
             input_element = self.wait.until(
                 EC.presence_of_element_located(self.NUMBER_OF_ARTICLES_INPUT)
             )
