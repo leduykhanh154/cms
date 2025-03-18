@@ -607,14 +607,12 @@ def test_manual_url_key_entry(article):
         assert False, f"Lỗi: URL Key không đúng. Mong đợi '{manual_url_key}', nhưng nhận '{url_key_value}'."
 
 
-def test_delete_feature_image(article):
+def test_delete_feature_image(article, image):
     article.perform_tag_operations()
     article.click_create_new_button()
-    article.enter_title("Bài viết kiểm thử xóa Feature")
-    article.enter_content("Đây là nội dung bài viết test")
     article.click_tab_general_info()
-    article.click_upload_feature_image_field()
-    article.click_tab_browser_by_href()
+    image.click_upload_feature_image_field()
+    image.click_tab_browser_by_href()
     article.wait_for_file_listing()
     article.select_first_image()
     article.click_choose_upload_button()

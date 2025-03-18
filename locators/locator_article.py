@@ -29,8 +29,7 @@ class LocatorArticle:
     TITLE_EN_MAX_LENGTH_ERROR_LOCATOR = (By.XPATH, "//*[@id='en-content']/div[1]/div[2]/div/div")
 
     # Field Đường dẫn - VI
-
-    # Field Đường dẫn - EN
+    URL_KEY_INPUT = (By.XPATH, "//*[@id='languages[vi][url_key]']")
 
     # Field Mô tả ngắn - VI
     SHORT_DESCRIPTION_VI_INPUT = (By.XPATH, "//*[@id='languages[vi][short_description]']")
@@ -98,6 +97,10 @@ class LocatorArticle:
 
     DELETE_THUMBNAIL_IMAGE = (By.XPATH, "//*[@id='article-image-id_upload']/div/div[2]/a[2]")
     DELETE_FEATURE_IMAGE = (By.XPATH, '//*[@id="feature-image_upload"]/div/div[2]/a[2]')
+
+    RELATED_ARTICLE_DROPDOWN = (By.XPATH, '//*[@id="showSettingTab"]/div/div[13]/div/span/span[1]/span')
+    RELATED_ARTICLE_OPTIONS = (By.XPATH, '//ul[@id="select2-relatedArticle-results"]/li')
+    SELECTED_RELATED_ARTICLE_FIELD = (By.XPATH, '//*[@id="showSettingTab"]/div/div[13]/div/span')
 
     SAVE_BUTTON = (By.XPATH, '//*[@id="save-article"]/div[1]/div[2]/div/div/button[1]')
     SAVE_AND_CONTINUE_BUTTON = (By.XPATH, '//*[@id="save-article"]/div[1]/div[2]/div/div/button[2]')

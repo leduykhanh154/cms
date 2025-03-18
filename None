@@ -1,0 +1,28 @@
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:conftest.py:20 Đọc file log mới nhất: logs\test_results_20250318_121932.log
+INFO     root:conftest.py:30 Nội dung file log:
+INFO     test_logger:test_article.py:78 Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+INFO     root:article.py:22 Đã nhấn menu Nội dung.
+INFO     root:article.py:22 Đã nhấn menu Bài viết.
+INFO     root:article.py:22 Đã nhấn menu Tất cả bài viết.
+INFO     root:article.py:42 Trang 'Tất cả bài viết' đã load thành công.
+INFO     test_logger:test_article.py:87 Test Case 1 PASS: test_navigate_to_all_articles | Expected: He thong chuyen huong den trang Danh sach bai viet | Actual: He thong chuyen huong den trang Danh sach bai viet | Status: PASS
+INFO     root:conftest.py:20 Đọc file log mới nhất: logs\test_results_20250318_121932.log
+INFO     root:conftest.py:30 Nội dung file log:
+INFO     root:conftest.py:32 2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+WARNING  root:conftest.py:36 Dòng log sai định dạng: 2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+INFO     root:conftest.py:32 2025-03-18 12:19:46,802 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: He thong chuyen huong den trang Danh sach bai viet | Actual: He thong chuyen huong den trang Danh sach bai viet | Status: PASS
+INFO     root:conftest.py:66 DEBUG HOOK: test_navigate_to_all_articles | Expected = He thong chuyen huong den trang Danh sach bai viet | Actual = He thong chuyen huong den trang Danh sach bai viet | Status = PASS
+INFO     root:conftest.py:20 Đọc file log mới nhất: logs\test_results_20250318_121932.log
+INFO     root:conftest.py:30 Nội dung file log:
+INFO     root:conftest.py:32 2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+WARNING  root:conftest.py:36 Dòng log sai định dạng: 2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+INFO     root:conftest.py:32 2025-03-18 12:19:46,802 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: He thong chuyen huong den trang Danh sach bai viet | Actual: He thong chuyen huong den trang Danh sach bai viet | Status: PASS
