@@ -74,18 +74,21 @@ def image(setup_driver):
 def url(setup_driver):
     return URLArticle(setup_driver)
 
+# Test Case 1: Verify khi click menu 'Tất cả bài viết' -> Hệ thống chuyển hướng đến trang Danh sách bài viết 
 def test_navigate_to_all_articles(article):
-    test_logger.info("🔹 Bat dau test case: test_navigate_to_all_articles")
+    test_logger.info("Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet")
     article.click_content_menu()
     article.click_article_menu()
-    
-    expected_result = "Chuyen huong thanh cong den trang 'Tat ca bai viet'"
+    expected_result = "He thong chuyen huong den trang Danh sach bai viet"
     result = article.click_all_article_menu()
-    actual_result = expected_result if result else "Khong chuyen huong thanh cong"
-
+    actual_result = expected_result if result else "He thong khong chuyen huong den trang Danh sach bai viet"
     if result:
         test_logger.info(f"Test Case 1 PASS: test_navigate_to_all_articles | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
         test_logger.error(f"Test Case 1 FAIL: test_navigate_to_all_articles | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+
+
+
 

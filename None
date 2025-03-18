@@ -7,20 +7,22 @@ INFO     root:login.py:32 Nhập username
 INFO     root:login.py:38 Nhập password
 INFO     root:login.py:44 Nhấn nút đăng nhập
 INFO     root:login.py:62 Đăng nhập thành công!
-INFO     root:conftest.py:22 📌 Đọc file log mới nhất: logs\test_results_20250318_121004.log
-INFO     root:conftest.py:34 📌 Nội dung file log:
-INFO     test_logger:test_article.py:78 🔹 Bat dau test case: test_navigate_to_all_articles
+INFO     root:conftest.py:20 Đọc file log mới nhất: logs\test_results_20250318_121932.log
+INFO     root:conftest.py:30 Nội dung file log:
+INFO     test_logger:test_article.py:78 Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
 INFO     root:article.py:22 Đã nhấn menu Nội dung.
 INFO     root:article.py:22 Đã nhấn menu Bài viết.
 INFO     root:article.py:22 Đã nhấn menu Tất cả bài viết.
 INFO     root:article.py:42 Trang 'Tất cả bài viết' đã load thành công.
-INFO     test_logger:test_article.py:87 Test Case 1 PASS: test_navigate_to_all_articles | Expected: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status: PASS
-INFO     root:conftest.py:22 📌 Đọc file log mới nhất: logs\test_results_20250318_121004.log
-INFO     root:conftest.py:34 📌 Nội dung file log:
-INFO     root:conftest.py:36 2025-03-18 12:10:18,080 - INFO - 🔹 Bat dau test case: test_navigate_to_all_articles
-INFO     root:conftest.py:36 2025-03-18 12:10:19,495 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status: PASS
-INFO     root:conftest.py:75 📌 DEBUG HOOK: test_navigate_to_all_articles | Expected = Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual = Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status = PASS
-INFO     root:conftest.py:22 📌 Đọc file log mới nhất: logs\test_results_20250318_121004.log
-INFO     root:conftest.py:34 📌 Nội dung file log:
-INFO     root:conftest.py:36 2025-03-18 12:10:18,080 - INFO - 🔹 Bat dau test case: test_navigate_to_all_articles
-INFO     root:conftest.py:36 2025-03-18 12:10:19,495 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status: PASS
+INFO     test_logger:test_article.py:87 Test Case 1 PASS: test_navigate_to_all_articles | Expected: He thong chuyen huong den trang Danh sach bai viet | Actual: He thong chuyen huong den trang Danh sach bai viet | Status: PASS
+INFO     root:conftest.py:20 Đọc file log mới nhất: logs\test_results_20250318_121932.log
+INFO     root:conftest.py:30 Nội dung file log:
+INFO     root:conftest.py:32 2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+WARNING  root:conftest.py:36 Dòng log sai định dạng: 2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+INFO     root:conftest.py:32 2025-03-18 12:19:46,802 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: He thong chuyen huong den trang Danh sach bai viet | Actual: He thong chuyen huong den trang Danh sach bai viet | Status: PASS
+INFO     root:conftest.py:66 DEBUG HOOK: test_navigate_to_all_articles | Expected = He thong chuyen huong den trang Danh sach bai viet | Actual = He thong chuyen huong den trang Danh sach bai viet | Status = PASS
+INFO     root:conftest.py:20 Đọc file log mới nhất: logs\test_results_20250318_121932.log
+INFO     root:conftest.py:30 Nội dung file log:
+INFO     root:conftest.py:32 2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+WARNING  root:conftest.py:36 Dòng log sai định dạng: 2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
+INFO     root:conftest.py:32 2025-03-18 12:19:46,802 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: He thong chuyen huong den trang Danh sach bai viet | Actual: He thong chuyen huong den trang Danh sach bai viet | Status: PASS

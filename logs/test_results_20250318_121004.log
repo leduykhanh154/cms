@@ -1,2 +1,0 @@
-2025-03-18 12:10:18,080 - INFO - 🔹 Bat dau test case: test_navigate_to_all_articles
-2025-03-18 12:10:19,495 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status: PASS

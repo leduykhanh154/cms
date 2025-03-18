@@ -9,72 +9,61 @@ from selenium import webdriver
 logging.basicConfig(level=logging.INFO)
 
 def normalize_test_name(test_name):
-    """Chuẩn hóa tên test để khớp giữa pytest và log"""
-    return test_name.split(".")[-1]  # Bỏ prefix module/class nếu có
+    return test_name.split(".")[-1]
 
 def get_latest_log_file():
-    """Tìm log file mới nhất"""
     log_files = glob.glob("logs/test_results_*.log")
     if not log_files:
-        logging.error("❌ Không tìm thấy file log nào trong thư mục logs/")
+        logging.error("Không tìm thấy file log nào trong thư mục logs/")
         return None
     latest_log = max(log_files, key=os.path.getctime)
-    logging.info(f"📌 Đọc file log mới nhất: {latest_log}")
+    logging.info(f"Đọc file log mới nhất: {latest_log}")
     return latest_log
 
 def read_test_log():
-    """Đọc dữ liệu test từ log file mới nhất"""
     test_data = {}
     latest_log = get_latest_log_file()
     if not latest_log:
         return test_data
-
     try:
         with open(latest_log, "r", encoding="utf-8") as file:
-            logging.info("📌 Nội dung file log:")
+            logging.info("Nội dung file log:")
             for line in file.readlines():
                 logging.info(line.strip())
-                if "Test Case" in line:  # Chỉ lấy dòng chứa kết quả test
+                if "Test Case" in line:
                     parts = line.strip().split("|")
                     if len(parts) < 4:
-                        logging.warning(f"⚠️ Dòng log sai định dạng: {line.strip()}")
+                        logging.warning(f"Dòng log sai định dạng: {line.strip()}")
                         continue
                     raw_test_name = parts[0].split(": ")[1].strip()
-                    test_name = normalize_test_name(raw_test_name)  # Chuẩn hóa tên test
+                    test_name = normalize_test_name(raw_test_name) 
                     expected = parts[1].split(": ")[1].strip()
                     actual = parts[2].split(": ")[1].strip()
                     status = parts[3].split(": ")[1].strip()
                     test_data[test_name] = {"expected": expected, "actual": actual, "status": status}
     except FileNotFoundError:
-        logging.error(f"❌ Không tìm thấy file {latest_log}")
+        logging.error(f"Không tìm thấy file {latest_log}")
     return test_data
 
 @pytest.fixture(scope="function")
 def setup_driver():
-    """Khởi tạo trình duyệt"""
     driver = webdriver.Chrome()
     yield driver
     driver.quit()
 
 @pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item, call):
-    """Chụp ảnh màn hình và nhúng vào báo cáo pytest-html"""
     outcome = yield
     report = outcome.get_result()
     extra = getattr(report, "extra", [])
-
-    test_data = read_test_log()  # Đọc kết quả từ log
-
+    test_data = read_test_log()
     if report.when == "call":
-        driver = item.funcargs.get("setup_driver")  # Lấy driver từ fixture
-        test_name = normalize_test_name(item.name)  # Chuẩn hóa test name
+        driver = item.funcargs.get("setup_driver") 
+        test_name = normalize_test_name(item.name)
         expected_result = test_data.get(test_name, {}).get("expected", "N/A")
         actual_result = test_data.get(test_name, {}).get("actual", "N/A")
         test_status = test_data.get(test_name, {}).get("status", "N/A")
-
-        logging.info(f"📌 DEBUG HOOK: {test_name} | Expected = {expected_result} | Actual = {actual_result} | Status = {test_status}")
-
-        # ✅ Hiển thị kết quả test trong báo cáo HTML
+        logging.info(f"DEBUG HOOK: {test_name} | Expected = {expected_result} | Actual = {actual_result} | Status = {test_status}")
         result_html = f"""
         <div>
             <strong>Test Name:</strong> {test_name}<br>
