@@ -87,7 +87,6 @@ class Article:
         except Exception as e:
             print(f"Lỗi khi click vào tab 'Thông tin chung': {e}")
     
-    
     def is_article_title_in_list(self, expected_title):
         try:
             article_xpath = f"//td[contains(@class, 'article-title') and contains(text(), '{expected_title}')]"

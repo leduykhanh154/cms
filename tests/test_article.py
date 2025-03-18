@@ -5,9 +5,14 @@ import datetime
 from utils.login import Login
 from utils.driver_setup import get_driver
 from pages.articles.article import Article
+from pages.articles.date import DateArticle
 from pages.articles.select import SelectArticle
+from locators.locator_article import LocatorArticle
+from pages.articles.switch import SwitchArticle
 from pages.articles.enterfield import EnterFieldArticle
+from pages.articles.tag_article import TagArticle
 from pages.articles.validation import ArticleValidation
+from pages.articles.image_article import ImageArticle
 from selenium.webdriver.support import expected_conditions as EC
 
 test_logger = logging.getLogger("test_logger")
@@ -45,35 +50,30 @@ def enter_field(setup_driver):
 def select(setup_driver):
     return SelectArticle(setup_driver)
 
+@pytest.fixture
+def date(setup_driver):
+    return DateArticle(setup_driver)
 
+@pytest.fixture
+def switch(setup_driver):
+    return SwitchArticle(setup_driver)
 
-# Test Case 28: Verify khi nhập Thứ tự sắp xếp > 7 số -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập không quá 7 số
-def test_ordering_max_lenght_error_message(article, enter_field, validation, select):
+@pytest.fixture
+def tag(setup_driver):
+    return TagArticle(setup_driver)
+
+@pytest.fixture
+def image(setup_driver):
+    return ImageArticle(setup_driver)
+
+def test_upload_thumbnail_image_popup(article, enter_field, image):
     article.perform_tag_operations()
     article.click_create_new_button()
-    enter_field.enter_title_vi("Tiêu đề bài viết")
-    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
-    enter_field.enter_content_vi("Nội dung bài viết")
+    enter_field.enter_title_vi("Bài viết kiểm thử")
+    enter_field.enter_content_vi("Đây là nội dung bài viết test")
     article.click_tab_general_info()
-    select.click_select()
-    select.select_article_type("Tin tức chuyên ngành")
-    enter_field.ordering("123456789")
-    if validation.is_ordering_max_lenght_error_displayed():
-        logging.info("Test Case 17 PASS: Hệ thống hiển thị thông báo lỗi ")
-    else:
-        logging.error("Test Case 17 FAIL: Hệ thống KHÔNG hiển thị lỗi khi Thứ tự sắp xếp trống!")
-        assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Thứ tự sắp xếp'."
+    image.click_upload_thumbnail_image_field()
+    assert image.is_upload_popup_displayed(), "Test Case FAIL: Pop-up upload hình ảnh không hiển thị"
+    logging.info("Test Case PASS: Pop-up upload hình ảnh hiển thị thành công")
 
-# Test Case 18: Verify khi nhập chữ -> Hệ thống không chấp nhận
-def test_ordering_specific(article):
-    article.perform_tag_operations()
-    article.click_create_new_button()
-    article.enter_title("Bài viết kiểm thử")
-    article.enter_content("Đây là nội dung bài viết test")
-    article.click_tab_general_info()
-    article.click_select()
-    article.select_article_type("Tin tức chuyên ngành")
-    article.ordering("adcdfghtktgdadcdfght")
-    error_message = article.get_text(article.locators.ORDERING_ERROR_MESSAGE)
-    assert error_message is None or error_message == "", "Test Case FAIL: Hệ thống chấp nhận ký tự chữ!"
-    logging.info("Test Case PASS: Hệ thống không chấp nhận ký tự chữ!")
+

@@ -84,3 +84,4 @@ class ArticleValidation:
         else:
             logging.error(f"Lỗi: Thông báo không đúng, nhận được: {error_message}")
         return False
+    

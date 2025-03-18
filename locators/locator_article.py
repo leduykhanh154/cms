@@ -64,5 +64,40 @@ class LocatorArticle:
     ORDERING_ERROR_MESSAGE = (By.XPATH, '//*[@id="showSettingTab"]/div/div[5]/div/div')
     ORDERING_MAX_LENGHT_ERROR_MESSAGE = (By.XPATH, '//*[@id="showSettingTab"]/div/div[5]/div/div')
 
+    PUBLIC_DATE = (By.ID, "public_date")
+    PUBLIC_DATE_INPUT = (By.ID, "public_date")
+    DATE_PICKER = (By.XPATH, '//div[contains(@class,"datepicker")]')
+    DATE_PICKER_DAY = (By.XPATH, "//td[@class='day' and text()='{}']")
+
+    FEATURED_SWITCH = (By.ID, "is_feature")
+    FEATURED_LABEL = (By.CSS_SELECTOR, "label[for='is_feature']")  
+
+    HOMEPAGE_SWITCH = (By.XPATH, "//*[@id='showSettingTab']/div/div[10]/div/div[1]/input")
+    HOMEPAGE_LABEL = (By.XPATH, "//*[@id='showSettingTab']/div/div[10]/div/div[1]/label")
+
+    DROPDOWN_SELECT_TAG = (By.XPATH, "//*[@id='showSettingTab']/div/div[4]/div/div[1]/div/span/span[1]/span")
+    TAG_DROPDOWN_MENU = (By.XPATH, "//*[@id='app-container']/span/span")
+    DROPDOWN_SELECT_TAG_OPTION = (By.XPATH, "//li[contains(@class, 'select2-results__option') and text()='{}']")
+    DROPDOWN_TAG_SELECTED = (By.XPATH, "//*[@id='showSettingTab']/div/div[4]/div/div[1]/div/span/span[1]/span/span[1]") 
+    SELECTED_TAG_FIELD = (By.XPATH, "//*[@id='select2-article_keyword-result-tc40-676e10ba97097']")
+
+    CREATE_KEYWORD_BUTTON = (By.XPATH, '//*[@id="btnCreateKeyword"]')  
+    ADD_KEYWORD_SIDEBAR = (By.XPATH, '//*[@id="modal-AddNewKeyword"]/div[2]')
+
+    UPLOAD_THUMBNAIL_IMAGE_FIELD = (By.XPATH, "//*[@id='article-image-id_upload']/div/div[1]/a")
+    UPLOAD_THUMBNAIL_IMAGE_BUTTON = (By.XPATH, "//*[@id='article-image-id_upload']/div/div[2]/a[1]")
+
+    UPLOAD_FEATURE_IMAGE_FIELD = (By.XPATH, "//*[@id='feature-image_upload']/div/div[1]/a")
+    UPLOAD_FEATURE_IMAGE_BUTTON = (By.XPATH, "//*[@id='feature-image_upload']/div/div[2]/a[1]")
+
+    UPLOAD_IMAGE_POPUP = (By.XPATH, "//*[@id='article-image-id_upload-ModalUploadImage']/div/div")
+
+    BROWSER_TAB = (By.XPATH, "//*[@id='browse-tab']")
+    FILE_LISTING = (By.XPATH, "//*[@id='file-listing']//a")
+    CHOOSE_UPLOAD_BUTTON = (By.XPATH, "//*[@id='btn-choose-version']")
+
+    DELETE_THUMBNAIL_IMAGE = (By.XPATH, "//*[@id='article-image-id_upload']/div/div[2]/a[2]")
+    DELETE_FEATURE_IMAGE = (By.XPATH, '//*[@id="feature-image_upload"]/div/div[2]/a[2]')
+
     SAVE_BUTTON = (By.XPATH, '//*[@id="save-article"]/div[1]/div[2]/div/div/button[1]')
     SAVE_AND_CONTINUE_BUTTON = (By.XPATH, '//*[@id="save-article"]/div[1]/div[2]/div/div/button[2]')

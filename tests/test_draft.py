@@ -362,7 +362,7 @@ def test_featured_switch_initial_state(article):
     article.enter_title("Bài viết kiểm thử")
     article.enter_content("Đây là nội dung bài viết test")
     article.click_tab_general_info()
-    article.reset_switch(LocatorArticle.FEATURED_SWITCH, LocatorArticle.FEATURED_LABEL)  # Truyền đủ 2 tham số
+    article.reset_switch(LocatorArticle.FEATURED_SWITCH, LocatorArticle.FEATURED_LABEL)
     assert not article.is_switch_on(LocatorArticle.FEATURED_SWITCH), "Test Case FAIL: Trạng thái ban đầu của switch không phải OFF"
     logging.info("Test Case PASS: Trạng thái ban đầu của switch là OFF")
 
@@ -589,7 +589,6 @@ def test_url_key_auto_generation(article):
 def test_manual_url_key_entry(article):
     title = "Bài viết test nhập URL bằng tay"
     manual_url_key = "bai-viet-custom-url"  # URL Key nhập tay
-
     article.perform_tag_operations()
     article.click_create_new_button()
     article.enter_title(title)
@@ -599,14 +598,8 @@ def test_manual_url_key_entry(article):
     article.click_select()
     article.select_article_type("Tin tức chuyên ngành")
     article.click_save_and_continue_button()
-
-    # Chờ hệ thống cập nhật
-    time.sleep(2)
-
-    # Kiểm tra URL Key
     url_key_value = article.get_url_key_value()
     logging.info(f"DEBUG: URL Key lấy được từ hệ thống: '{url_key_value}'")
-
     if url_key_value == manual_url_key:
         logging.info("Test Case PASS: URL Key nhập tay đúng.")
     else:
@@ -621,11 +614,6 @@ def test_delete_feature_image(article):
     article.enter_content("Đây là nội dung bài viết test")
     article.click_tab_general_info()
     article.click_upload_feature_image_field()
-
-    # Đợi popup hiển thị xong trước khi click tab Browser
-    time.sleep(2)
-
-    # Thực hiện upload hình ảnh
     article.click_tab_browser_by_href()
     article.wait_for_file_listing()
     article.select_first_image()

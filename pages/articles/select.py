@@ -12,7 +12,7 @@ class SelectArticle:
             raise ValueError("Driver không được để trống hoặc None!")
         self.driver = driver
         self.wait = WebDriverWait(self.driver, timeout)
-        self.locators = LocatorArticle  # Định vị phần tử
+        self.locators = LocatorArticle 
 
     # Hàm nhấn vào dropdown Loại bài viết
     def click_select(self):

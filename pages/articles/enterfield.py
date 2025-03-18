@@ -79,6 +79,12 @@ class EnterFieldArticle:
         ordering_input.send_keys(ordering)
         logging.info(f"Đã nhập tiêu đề: {ordering}")
 
+    def enter_public_date(self, date_value):
+        date_input = self.wait.until(EC.visibility_of_element_located(self.locators.PUBLIC_DATE))
+        date_input.clear()
+        date_input.send_keys(date_value)
+        logging.info(f"Đã nhập Ngày đăng: {date_value}")
+
 
     
 

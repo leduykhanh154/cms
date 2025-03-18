@@ -5,7 +5,10 @@ import datetime
 from utils.login import Login
 from utils.driver_setup import get_driver
 from pages.articles.article import Article
+from pages.articles.date import DateArticle
 from pages.articles.select import SelectArticle
+from locators.locator_article import LocatorArticle
+from pages.articles.switch import SwitchArticle
 from pages.articles.enterfield import EnterFieldArticle
 from pages.articles.validation import ArticleValidation
 from selenium.webdriver.support import expected_conditions as EC
@@ -44,6 +47,14 @@ def enter_field(setup_driver):
 @pytest.fixture
 def select(setup_driver):
     return SelectArticle(setup_driver)
+
+@pytest.fixture
+def date(setup_driver):
+    return DateArticle(setup_driver)
+
+@pytest.fixture
+def switch(setup_driver):
+    return SwitchArticle(setup_driver)
 
 # Test Case 1: Verify khi click menu 'Tất cả bài viết' -> Hệ thống chuyển hướng đến trang Danh sách bài viết 
 def test_navigate_to_all_articles(article):
@@ -437,8 +448,7 @@ def test_select_status_from_dropdown(article, select):
         logging.error("Test Case 26 FAIL: Trạng thái đã chọn không đúng. Expected: 'Chờ xử lý'")
         assert False, "Lỗi: Trạng thái hiển thị không đúng."
     
-
-# Test Case 26: Verify khi không nhập Thứ tự sắp xếp -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'
+# Test Case 27: Verify khi không nhập Thứ tự sắp xếp -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'
 def test_ordering_error_message(article, enter_field, validation, select):
     article.perform_tag_operations()
     article.click_create_new_button()
@@ -451,12 +461,12 @@ def test_ordering_error_message(article, enter_field, validation, select):
     enter_field.ordering("")
     article.click_save_button()
     if validation.is_ordering_error_displayed():
-        logging.info("Test Case 26 PASS: Hệ thống hiển thị lỗi đúng khi không nhập Thứ tự sắp xếp!")
+        logging.info("Test Case 27 PASS: Hệ thống hiển thị lỗi đúng khi không nhập Thứ tự sắp xếp!")
     else:
-        logging.error("Test Case 26 FAIL: Hệ thống không hiển thị lỗi khi Thứ tự sắp xếp trống!")
+        logging.error("Test Case 27 FAIL: Hệ thống không hiển thị lỗi khi Thứ tự sắp xếp trống!")
         assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Thứ tự sắp xếp'."
 
-# Test Case 27: Verify khi nhập lại Thứ tự sắp xếp -> Hệ thống ẩn đi thông báo lỗi Vui lòng nhập Thứ tự sắp xếp
+# Test Case 28: Verify khi nhập lại Thứ tự sắp xếp -> Hệ thống ẩn đi thông báo lỗi Vui lòng nhập Thứ tự sắp xếp
 def test_ordering_error_disappears(article, enter_field, validation, select):
     article.perform_tag_operations()
     article.click_create_new_button()
@@ -469,12 +479,12 @@ def test_ordering_error_disappears(article, enter_field, validation, select):
     enter_field.ordering("")
     enter_field.ordering("2")
     if not validation.is_ordering_error_displayed():
-        logging.info("Test Case 8 PASS: Thông báo lỗi bị ẩn sau khi nhập Thứ tự sắp xếp")
+        logging.info("Test Case 28 PASS: Thông báo lỗi bị ẩn sau khi nhập Thứ tự sắp xếp")
     else:
-        logging.error("Test Case 8 FAIL: Thông báo lỗi vẫn còn sau khi nhập Thứ tự sắp xếp!")
+        logging.error("Test Case 28 FAIL: Thông báo lỗi vẫn còn sau khi nhập Thứ tự sắp xếp!")
         assert False, "Lỗi: Thông báo lỗi vẫn còn sau khi nhập Thứ tự sắp xếp."
 
-# Test Case 28: Verify khi nhập Thứ tự sắp xếp > 7 số -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập không quá 7 số
+# Test Case 29: Verify khi nhập Thứ tự sắp xếp > 7 số -> Hệ thống hiển thị thông báo lỗi Vui lòng nhập không quá 7 số
 def test_ordering_max_lenght_error_message(article, enter_field, validation, select):
     article.perform_tag_operations()
     article.click_create_new_button()
@@ -486,7 +496,266 @@ def test_ordering_max_lenght_error_message(article, enter_field, validation, sel
     select.select_article_type("Tin tức chuyên ngành")
     enter_field.ordering("123456789")
     if validation.is_ordering_max_lenght_error_displayed():
-        logging.info("Test Case 17 PASS: Hệ thống hiển thị thông báo lỗi ")
+        logging.info("Test Case 29 PASS: Hệ thống hiển thị thông báo lỗi ")
     else:
-        logging.error("Test Case 17 FAIL: Hệ thống KHÔNG hiển thị lỗi khi Thứ tự sắp xếp trống!")
+        logging.error("Test Case 29 FAIL: Hệ thống KHÔNG hiển thị lỗi khi Thứ tự sắp xếp trống!")
         assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Thứ tự sắp xếp'."
+
+# Test Case 30: Verify khi nhập chữ -> Hệ thống không chấp nhận
+def test_ordering_specific(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("adcdfghtktgdadcdfght")
+    error_message = validation.get_text(validation.locators.ORDERING_ERROR_MESSAGE)
+    if error_message is None or error_message == "":
+        logging.info("Test Case 30 PASS: Hệ thống không chấp nhận ký tự chữ!")
+    else:
+        logging.error("Test Case 30 FAIL: Hệ thống chấp nhận ký tự chữ!")
+        assert False, "Test Case 30 FAIL: Hệ thống chấp nhận ký tự chữ!"
+
+# Test Case 31: Verify khi nhập số âm -> Hệ thống vẫn chấp nhận
+def test_ordering_negative_number(article, enter_field, validation, select):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    select.click_select()
+    select.select_article_type("Tin tức chuyên ngành")
+    enter_field.ordering("-5")
+    error_message = validation.get_text(validation.locators.ORDERING_ERROR_MESSAGE)
+    if error_message is None or error_message == "":
+        logging.info("Test Case 31 PASS: Hệ thống chấp nhận số âm!")
+    else:
+        logging.error("Test Case 31 FAIL: Hệ thống hiển thị lỗi khi nhập số âm!")
+        assert False, "Test Case 31 FAIL: Hệ thống không chấp nhận số âm!"
+
+# Test Case 32: Verify giá trị mặc định của ngày đăng -> Hệ thống hiển thị đúng ngày hiện tại
+def test_public_date_default_value(article, enter_field, date):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    article.wait.until(EC.visibility_of_element_located(article.locators.PUBLIC_DATE)).click()
+    displayed_date = date.get_public_date()
+    expected_date = datetime.datetime.now().strftime("%Y-%m-%d")
+    if displayed_date == expected_date:
+        logging.info("Test Case 32 PASS: Ngày đăng hiển thị đúng ngày hiện tại.")
+    else:
+        logging.error(f"Test Case 32 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {expected_date}!")
+        assert False, f"Test Case 32 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {expected_date}!"
+
+# Test Case 33: Verify khi nhập ngày quá khứ -> Hệ thống chấp nhận ngày đăng là ngày quá khứ
+def test_enter_past_public_date(article, enter_field, date):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    past_date = (datetime.datetime.now() - datetime.timedelta(days=10)).strftime("%Y-%m-%d")
+    date.set_public_date(past_date)
+    displayed_date = date.get_public_date()
+    if displayed_date == past_date:
+        logging.info("Test Case 33 PASS: Hệ thống chấp nhận ngày đăng là ngày quá khứ.")
+    else:
+        logging.error(f"Test Case 33 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {past_date}!")
+        assert False, f"Test Case 33 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {past_date}!"
+
+# Test Case 34: Verify khi nhập ngày tương lai -> Hệ thống chấp nhận ngày đăng là ngày tương lai
+def test_enter_future_public_date(article, enter_field, date):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    future_date = (datetime.datetime.now() + datetime.timedelta(days=10)).strftime("%Y-%m-%d")
+    date.set_public_date(future_date)
+    displayed_date = date.get_public_date()
+    if displayed_date == future_date:
+        logging.info("Test Case 34 PASS: Hệ thống chấp nhận ngày đăng là ngày tương lai.")
+    else:
+        logging.error(f"Test Case 34 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {future_date}!")
+        assert False, f"Test Case 34 FAIL: Ngày hiển thị là {displayed_date}, mong đợi {future_date}!"
+
+# Test Case 35: Verify trạng thái mặc định nút switch Nổi bật là OFF
+def test_featured_switch_initial_state(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.FEATURED_SWITCH, LocatorArticle.FEATURED_LABEL)
+    if switch.is_switch_on(LocatorArticle.FEATURED_SWITCH):
+        logging.info("Test Case 35 PASS: Trạng thái ban đầu của switch là OFF")
+    else:
+        logging.error("Test Case 35 FAIL: Trạng thái ban đầu của switch không phải OFF")
+        assert False, "Test Case 35 FAIL: Trạng thái ban đầu của switch không phải OFF"
+
+# Test Case 36: Verify chuyển trạng thái nút switch Nổi bật từ OFF -> ON
+def test_toggle_featured_switch_on(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.FEATURED_SWITCH, LocatorArticle.FEATURED_LABEL)
+    switch.click_switch(LocatorArticle.FEATURED_LABEL)
+    if switch.is_switch_on(LocatorArticle.FEATURED_SWITCH):
+        logging.info("Test Case 36 PASS: Nút switch đã được bật ON")
+        assert True
+    else:
+        logging.error("Test Case 36 FAIL: Không thể bật switch ON")
+        assert False, "Test Case 36 FAIL: Không thể bật switch ON"
+
+# Test Case 37: Verify chuyển trạng thái nút switch Nổi bật từ ON -> OFF
+def test_toggle_featured_switch_off(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.FEATURED_SWITCH, LocatorArticle.FEATURED_LABEL)
+    switch.click_switch(LocatorArticle.FEATURED_LABEL)
+    switch.click_switch(LocatorArticle.FEATURED_LABEL) 
+    if switch.is_switch_on(LocatorArticle.FEATURED_SWITCH):
+        logging.error("Test Case 37 FAIL: Không thể tắt switch OFF")
+        assert False, "Test Case 37 FAIL: Không thể tắt switch OFF"
+    else:
+        logging.info("Test Case 37 PASS: Nút switch đã được tắt OFF")
+        assert True
+
+# Test Case 38: Verify trạng thái mặc định nút switch Đặt làm trang chủ là OFF
+def test_homepage_switch_initial_state(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.HOMEPAGE_SWITCH, LocatorArticle.HOMEPAGE_LABEL)
+    if switch.is_switch_on(LocatorArticle.HOMEPAGE_SWITCH):
+        logging.error("Test Case 38 FAIL: Trạng thái ban đầu của switch không phải OFF")
+        assert False, "Test Case 38 FAIL: Trạng thái ban đầu của switch không phải OFF"
+    else:
+        logging.info("Test Case 38 PASS: Trạng thái ban đầu của switch là OFF")
+        assert True
+
+# Test Case 39: Verify khi chuyển trạng thái nút switch Đặt làm trang chủ từ OFF -> ON
+def test_toggle_homepage_switch_on(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.HOMEPAGE_SWITCH, LocatorArticle.HOMEPAGE_LABEL)
+    switch.click_switch(LocatorArticle.HOMEPAGE_LABEL)
+    if switch.is_switch_on(LocatorArticle.HOMEPAGE_SWITCH):
+        logging.info("Test Case 39 PASS: Nút switch đã được bật ON")
+        assert True
+    else:
+        logging.error("Test Case 39 FAIL: Không thể bật switch ON")
+        assert False, "Test Case 39 FAIL: Không thể bật switch ON"
+
+# Test Case 40: Verify khi chuyển trạng thái nút switch Đặt làm trang chủ từ ON -> OFF 
+def test_toggle_homepage_switch_off(article, enter_field, switch):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    enter_field.enter_title_vi("Tiêu đề bài viết")
+    enter_field.enter_short_description_vi("Mô tả ngắn bài viết")
+    enter_field.enter_content_vi("Nội dung bài viết")
+    article.click_tab_general_info()
+    switch.reset_switch(LocatorArticle.HOMEPAGE_SWITCH, LocatorArticle.HOMEPAGE_LABEL)
+    switch.click_switch(LocatorArticle.HOMEPAGE_LABEL)
+    switch.click_switch(LocatorArticle.HOMEPAGE_LABEL)
+    if switch.is_switch_on(LocatorArticle.HOMEPAGE_SWITCH):
+        logging.error("Test Case 40 FAIL: Không thể tắt switch OFF")
+        assert False, "Test Case 40 FAIL: Không thể tắt switch OFF"
+    else:
+        logging.info("Test Case 40 PASS: Nút switch đã được tắt OFF")
+        assert True
+
+# Test Case 41: Verify khi click dropdown Tag -> Hệ thống mỏ dropdown và hiển thị Danh sách tag
+def test_open_tag_dropdown(article, tag):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    tag.click_tag_dropdown()
+    logging.info("Test Case 41 PASS: Hệ thống mở dropdown 'Tag' thành công!")
+
+# Test Case 42: Verify khi click chọn Tag trong select -> Hệ thống hiển thị giá trị vừa chọn
+def test_select_tag_from_dropdown(article, tag):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    tag.click_tag_dropdown()
+    expected_tag = "Tag 1"
+    logging.info(f"Đang chọn tag: {expected_tag}")
+    tag.select_tag(expected_tag)
+    if tag.is_selected_tag_correct(expected_tag):
+        logging.info("Test Case 42 PASS: Tag đã chọn hiển thị đúng.")
+    else:
+        logging.error(f"Test Case 42 FAIL: Tag đã chọn không đúng. Expected: '{expected_tag}'")
+
+# Test Case 43: Verify khi click nút Tạo mới -> Hệ thống hiển thị sidebar Thêm tag mới
+def test_create_keyword_sidebar(article, tag):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    tag.click_create_keyword_button()
+    if tag.is_add_keyword_sidebar_visible():
+        logging.info("Test Case 43 PASS: Sidebar 'Thêm từ khóa' hiển thị thành công!")
+        assert True
+    else:
+        logging.error("Test Case 43 FAIL: Sidebar 'Thêm từ khóa' không hiển thị!")
+        assert False
+
+# Test Case 44: Verify khi click field Hình ảnh thumbnail -> Hệ thống hiển thị pop-up Upload hình ảnh 
+def test_upload_image_popup(article, image):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    image.click_upload_thumbnail_image_field()
+    if image.is_upload_popup_displayed():
+        logging.info("Test Case 44 PASS: Pop-up upload hình ảnh hiển thị thành công")
+    else:
+        logging.error("Test Case 44 FAIL: Pop-up upload hình ảnh không hiển thị")
+        assert False, "Test Case 44 FAIL: Pop-up upload hình ảnh không hiển thị"
+
+# Test Case 45: Verify khi click nút Tải lên ở Hình ảnh thumbnail -> Hệ thống hiển thị pop-up Upload hình ảnh 
+def test_click_thumbnail_image_field(article, image):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    image.click_upload_thumbnail_image_button()
+    if image.is_upload_popup_displayed():
+        logging.info("Test Case 45 PASS: Pop-up upload hình ảnh hiển thị thành công")
+    else:
+        logging.error("Test Case 45 FAIL: Pop-up upload hình ảnh không hiển thị")
+        assert False, "Test Case 45 FAIL: Pop-up upload hình ảnh không hiển thị"
+    
+# Test Case 46: Verify khi click nút Tải lên ở Hình ảnh thumbnail -> Hệ thống hiển thị pop-up Upload hình ảnh 
+def test_click_thumbnail_image_button(article, image):
+    article.perform_tag_operations()
+    article.click_create_new_button()
+    article.click_tab_general_info()
+    image.click_upload_thumbnail_image_button()
+    if image.is_upload_popup_displayed():
+        logging.info("Test Case 46 PASS: Pop-up upload hình ảnh hiển thị thành công")
+    else:
+        logging.error("Test Case 46 FAIL: Pop-up upload hình ảnh không hiển thị")
+        assert False, "Test Case 46 FAIL: Pop-up upload hình ảnh không hiển thị"
