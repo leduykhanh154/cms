@@ -61,18 +61,20 @@ def log_success(message):
 #         print(f"Test Case 3 FAIL: Không hiển thị thông báo lỗi đúng! Lỗi: {error_message}")
 #         assert False
 
-# Test Case 4: Verify nhập thông tin bắt buộc và nhấn button 'Lưu' -> Hệ thống chuyển hướng sang trang 'Danh sách Tag' và hiển thị dữ liệu 'test-nh' trong table
-def test_save_tagname_and_check_in_list(tag, setup_driver):
-    tag.perform_tag_operations()
-    valid_tagname = 'test-nhan'
-    tag.enter_tag_name(valid_tagname)
-    tag.click_save_button()
-    expected_url = LocatorTag.TAG_LIST_URL
-    WebDriverWait(setup_driver, 10).until(EC.url_to_be(expected_url))
-    if tag.is_tag_name_in_list(valid_tagname):
-        print("Test Case 4 PASS: Tên tag đã hiển thị bên ngoài trang 'Danh sách Tag'")
-    else:
-        print(f"Test Case 4 FAIL: Tên tag '{valid_tagname}' không hiển thị bên ngoài trang 'Danh sách Tag'!")
-        assert False
+# # Test Case 4: Verify nhập thông tin bắt buộc và nhấn button 'Lưu' -> Hệ thống chuyển hướng sang trang 'Danh sách Tag' và hiển thị dữ liệu 'test-nh' trong table
+# def test_save_tagname_and_check_in_list(tag, setup_driver):
+#     tag.perform_tag_operations()
+#     tag.click_add_keyword_button()
+#     tag.is_add_keyword_popup_displayed()
+#     valid_tagname = 'test-nhan'
+#     tag.enter_tag_name(valid_tagname)
+#     tag.click_save_button()
+#     expected_url = LocatorTag.TAG_LIST_URL
+#     WebDriverWait(setup_driver, 10).until(EC.url_to_be(expected_url))
+#     if tag.is_tag_name_in_list(valid_tagname):
+#         print(f"Test Case 4 PASS: Tên tag '{valid_tagname}' đã hiển thị bên ngoài trang 'Danh sách Tag'")
+#     else:
+#         print(f"Test Case 4 FAIL: Tên tag '{valid_tagname}' không hiển thị bên ngoài trang 'Danh sách Tag'!")
+#         assert False
 
     

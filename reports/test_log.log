@@ -1,67 +1,17 @@
-2025-03-17 17:37:53,257 - INFO - ====== WebDriver manager ======
-2025-03-17 17:37:54,177 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-17 17:37:54,334 - INFO - Get LATEST chromedriver version for google-chrome
-2025-03-17 17:37:54,490 - INFO - Driver [C:\Users\mpire\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
-2025-03-17 17:37:55,802 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
-2025-03-17 17:37:58,589 - INFO - Nh\u1eadp username
-2025-03-17 17:37:58,721 - INFO - Nh\u1eadp password
-2025-03-17 17:37:58,831 - INFO - Nh\u1ea5n nút \u0111\u0103ng nh\u1eadp
-2025-03-17 17:38:04,298 - INFO - \u0110\u0103ng nh\u1eadp thành công!
-2025-03-17 17:38:05,428 - INFO - \u0110ã nh\u1ea5n menu N\u1ed9i dung.
-2025-03-17 17:38:06,534 - INFO - \u0110ã nh\u1ea5n menu Bài vi\u1ebft.
-2025-03-17 17:38:08,326 - INFO - \u0110ã nh\u1ea5n menu Tag.
-2025-03-17 17:38:08,847 - INFO - Chuy\u1ec3n h\u01b0\u1edbng thành công \u0111\u1ebfn trang Danh sách Tag.
-2025-03-17 17:38:19,297 - ERROR - L\u1ed7i khi nh\u1eadp tiêu \u0111\u1ec1 trang: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00F5B5A3+24387]
-	(No symbol) [0x00EE5904]
-	(No symbol) [0x00DC0753]
-	(No symbol) [0x00E08BA9]
-	(No symbol) [0x00E08EFB]
-	(No symbol) [0x00E519C2]
-	(No symbol) [0x00E2D894]
-	(No symbol) [0x00E4F138]
-	(No symbol) [0x00E2D646]
-	(No symbol) [0x00DFC59F]
-	(No symbol) [0x00DFD8E4]
-	GetHandleVerifier [0x0125D883+3179043]
-	GetHandleVerifier [0x01276CF9+3282585]
-	GetHandleVerifier [0x0127167C+3260444]
-	GetHandleVerifier [0x00FF4330+650448]
-	(No symbol) [0x00EEED0D]
-	(No symbol) [0x00EEBAF8]
-	(No symbol) [0x00EEBC99]
-	(No symbol) [0x00EDE530]
-	BaseThreadInitThunk [0x760C7BA9+25]
-	RtlInitializeExceptionChain [0x7781C2EB+107]
-	RtlClearBits [0x7781C26F+191]
-Traceback (most recent call last):
-  File "C:\Users\mpire\Documents\GitHub\cms\pages\tag.py", line 106, in enter_tag_name
-    tag_name_input = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.tag_name_input))
-  File "C:\Users\mpire\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00F5B5A3+24387]
-	(No symbol) [0x00EE5904]
-	(No symbol) [0x00DC0753]
-	(No symbol) [0x00E08BA9]
-	(No symbol) [0x00E08EFB]
-	(No symbol) [0x00E519C2]
-	(No symbol) [0x00E2D894]
-	(No symbol) [0x00E4F138]
-	(No symbol) [0x00E2D646]
-	(No symbol) [0x00DFC59F]
-	(No symbol) [0x00DFD8E4]
-	GetHandleVerifier [0x0125D883+3179043]
-	GetHandleVerifier [0x01276CF9+3282585]
-	GetHandleVerifier [0x0127167C+3260444]
-	GetHandleVerifier [0x00FF4330+650448]
-	(No symbol) [0x00EEED0D]
-	(No symbol) [0x00EEBAF8]
-	(No symbol) [0x00EEBC99]
-	(No symbol) [0x00EDE530]
-	BaseThreadInitThunk [0x760C7BA9+25]
-	RtlInitializeExceptionChain [0x7781C2EB+107]
-	RtlClearBits [0x7781C26F+191]
-
+2025-03-18 09:43:41,659 - INFO - ====== WebDriver manager ======
+2025-03-18 09:43:42,724 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-18 09:43:42,914 - INFO - Get LATEST chromedriver version for google-chrome
+2025-03-18 09:43:43,084 - INFO - Driver [C:\Users\mpire\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+2025-03-18 09:43:44,353 - INFO - M\u1edf trang login: https://mpire-cms-demo.mpire.asia/cms/login
+2025-03-18 09:43:47,098 - INFO - Nh\u1eadp username
+2025-03-18 09:43:47,232 - INFO - Nh\u1eadp password
+2025-03-18 09:43:47,329 - INFO - Nh\u1ea5n nút \u0111\u0103ng nh\u1eadp
+2025-03-18 09:43:52,963 - INFO - \u0110\u0103ng nh\u1eadp thành công!
+2025-03-18 09:43:54,053 - INFO - \u0110ã nh\u1ea5n menu N\u1ed9i dung.
+2025-03-18 09:43:55,150 - INFO - \u0110ã nh\u1ea5n menu Bài vi\u1ebft.
+2025-03-18 09:43:57,365 - INFO - \u0110ã nh\u1ea5n menu Tag.
+2025-03-18 09:43:57,879 - INFO - Chuy\u1ec3n h\u01b0\u1edbng thành công \u0111\u1ebfn trang Danh sách Tag.
+2025-03-18 09:43:59,033 - INFO - \u0110ã nh\u1ea5n nút 'Thêm t\u1eeb khóa'.
+2025-03-18 09:44:00,235 - INFO - \u0110ã nh\u1eadp tiêu \u0111\u1ec1 trang: test-nhan
+2025-03-18 09:44:00,278 - INFO - \u0110ã nh\u1ea5n nút L\u01b0u.
+2025-03-18 09:44:02,387 - INFO - Tên tag 'test-nhan' \u0111ã xu\u1ea5t hi\u1ec7n trong danh sách!

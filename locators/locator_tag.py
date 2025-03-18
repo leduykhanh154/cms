@@ -11,7 +11,7 @@ class LocatorTag:
     PAGE_V2_CREATE_URL = "https://mpire-cms-demo.mpire.asia/cms/admin-page-v2/create"
 
     PAGE_LIST_WRAPPER = (By.XPATH, '//*[@id="page-v2-list_wrapper"]/div[2]')
-    TAG_LIST_WRAPPER = (By.XPATH, '//*[@id="app-container"]/main/div/div[4]/div/div/div/div')
+    TAG_LIST_WRAPPER = (By.XPATH, '//*[@id="table-keyword-list"]/tbody')
     
 
     TAG_NAME_ERROR_MESSAGE = (By.XPATH, '//*[@id="tabs-listTag"]/div/div[2]/div/div/div')

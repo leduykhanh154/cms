@@ -11,57 +11,7 @@ INFO     root:tag.py:44 Đã nhấn menu Nội dung.
 INFO     root:tag.py:44 Đã nhấn menu Bài viết.
 INFO     root:tag.py:44 Đã nhấn menu Tag.
 INFO     root:tag.py:64 Chuyển hướng thành công đến trang Danh sách Tag.
-ERROR    root:tag.py:111 Lỗi khi nhập tiêu đề trang: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00F5B5A3+24387]
-	(No symbol) [0x00EE5904]
-	(No symbol) [0x00DC0753]
-	(No symbol) [0x00E08BA9]
-	(No symbol) [0x00E08EFB]
-	(No symbol) [0x00E519C2]
-	(No symbol) [0x00E2D894]
-	(No symbol) [0x00E4F138]
-	(No symbol) [0x00E2D646]
-	(No symbol) [0x00DFC59F]
-	(No symbol) [0x00DFD8E4]
-	GetHandleVerifier [0x0125D883+3179043]
-	GetHandleVerifier [0x01276CF9+3282585]
-	GetHandleVerifier [0x0127167C+3260444]
-	GetHandleVerifier [0x00FF4330+650448]
-	(No symbol) [0x00EEED0D]
-	(No symbol) [0x00EEBAF8]
-	(No symbol) [0x00EEBC99]
-	(No symbol) [0x00EDE530]
-	BaseThreadInitThunk [0x760C7BA9+25]
-	RtlInitializeExceptionChain [0x7781C2EB+107]
-	RtlClearBits [0x7781C26F+191]
-Traceback (most recent call last):
-  File "C:\Users\mpire\Documents\GitHub\cms\pages\tag.py", line 106, in enter_tag_name
-    tag_name_input = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.tag_name_input))
-  File "C:\Users\mpire\AppData\Local\Programs\Python\Python313\Lib\site-packages\selenium\webdriver\support\wait.py", line 95, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-Stacktrace:
-	GetHandleVerifier [0x00F5B5A3+24387]
-	(No symbol) [0x00EE5904]
-	(No symbol) [0x00DC0753]
-	(No symbol) [0x00E08BA9]
-	(No symbol) [0x00E08EFB]
-	(No symbol) [0x00E519C2]
-	(No symbol) [0x00E2D894]
-	(No symbol) [0x00E4F138]
-	(No symbol) [0x00E2D646]
-	(No symbol) [0x00DFC59F]
-	(No symbol) [0x00DFD8E4]
-	GetHandleVerifier [0x0125D883+3179043]
-	GetHandleVerifier [0x01276CF9+3282585]
-	GetHandleVerifier [0x0127167C+3260444]
-	GetHandleVerifier [0x00FF4330+650448]
-	(No symbol) [0x00EEED0D]
-	(No symbol) [0x00EEBAF8]
-	(No symbol) [0x00EEBC99]
-	(No symbol) [0x00EDE530]
-	BaseThreadInitThunk [0x760C7BA9+25]
-	RtlInitializeExceptionChain [0x7781C2EB+107]
-	RtlClearBits [0x7781C26F+191]
-
+INFO     root:tag.py:88 Đã nhấn nút 'Thêm từ khóa'.
+INFO     root:tag.py:109 Đã nhập tiêu đề trang: test-nhan
+INFO     root:tag.py:119 Đã nhấn nút Lưu.
+INFO     root:tag.py:144 Tên tag 'test-nhan' đã xuất hiện trong danh sách!

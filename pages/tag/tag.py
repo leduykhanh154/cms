@@ -117,6 +117,7 @@ class Tag:
             save_button = self.wait.until(EC.element_to_be_clickable(self.save_button))
             self.driver.execute_script("arguments[0].click();", save_button)
             logging.info("Đã nhấn nút Lưu.")
+            time.sleep(2)
             return True
         except Exception as e:
             logging.error(f"Lỗi khi nhấn nút Lưu: {e}", exc_info=True)
