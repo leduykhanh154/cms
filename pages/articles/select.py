@@ -1,4 +1,5 @@
 import logging
+import time
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
@@ -98,3 +99,89 @@ class SelectArticle:
     def is_status_selected(self, expected_status):
         selected_status = self.driver.find_element(self.locators.DROPDOWN_STATUS_SELECTED[0], self.locators.DROPDOWN_STATUS_SELECTED[1]).text.strip()
         return selected_status == expected_status
+
+    def scroll_to_element(self, locator):
+        element = self.wait.until(EC.presence_of_element_located(locator))
+        self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", element)
+        time.sleep(0.5)
+        return element
+
+    def click_related_article_dropdown(self):
+        try:
+            dropdown = self.wait.until(EC.element_to_be_clickable(LocatorArticle.RELATED_ARTICLE_DROPDOWN))
+            self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", dropdown)
+            time.sleep(0.5)
+            dropdown.click()
+            logging.info("Đã mở dropdown 'Bài viết liên quan'.")
+        except TimeoutException:
+            logging.error("Không thể mở dropdown 'Bài viết liên quan'.")
+            raise
+
+    def select_related_article(self, article_name):
+        try:
+            self.wait.until(EC.presence_of_element_located((By.XPATH, "//li[contains(@class, 'select2-results__option')]")))
+            articles = self.driver.find_elements(By.XPATH, "//li[contains(@class, 'select2-results__option')]")
+            logging.info(f"Danh sách bài viết trong dropdown: {[article.text for article in articles]}")
+            for article in articles:
+                if article_name.strip() in article.text.strip():
+                    self.driver.execute_script("arguments[0].scrollIntoView(true);", article)
+                    time.sleep(1)
+                    article.click()
+                    logging.info(f"Đã chọn bài viết: {article_name}")
+                    return
+            logging.error(f"Không tìm thấy bài viết: {article_name}. Kiểm tra lại tên hoặc dropdown.")
+            raise TimeoutException(f"Không tìm thấy bài viết: {article_name}")
+        except TimeoutException:
+            logging.error(f"Timeout khi tìm bài viết: {article_name}")
+            raise
+
+    def is_selected_related_article_correct(self, expected_article):
+        try:
+            selected_article_element = self.wait.until(
+                EC.presence_of_element_located(LocatorArticle.SELECTED_RELATED_ARTICLE_FIELD)
+            )
+            selected_article_text = selected_article_element.text.strip()
+            logging.info(f"Bài viết hiển thị sau khi chọn: '{selected_article_text}'")
+            logging.info(f"Expected: '{expected_article}'")
+            return selected_article_text.strip() == expected_article.strip()
+        except TimeoutException:
+            logging.error("Không thể lấy giá trị bài viết đã chọn.")
+            return False
+
+    def is_related_article_dropdown_visible(self):
+        try:
+            dropdown_element = self.wait.until(
+                EC.visibility_of_element_located(LocatorArticle.RELATED_ARTICLE_DROPDOWN)
+            )
+            logging.info("Dropdown 'Bài viết liên quan' đã mở.")
+            return True
+        except TimeoutException:
+            logging.error("Dropdown 'Bài viết liên quan' không hiển thị!")
+            return False
+
+    def print_related_articles_list(self):
+        try:
+            articles = self.driver.find_elements(By.XPATH, "//li[contains(@class, 'select2-results__option')]")
+            logging.info(f"Danh sách bài viết trong dropdown: {[article.text for article in articles]}")
+        except Exception as e:
+            logging.error(f"Lỗi khi lấy danh sách bài viết: {str(e)}")
+
+    def get_selected_related_article(self):
+        try:
+            selected_article_element = self.wait.until(
+                EC.presence_of_element_located(LocatorArticle.SELECTED_RELATED_ARTICLE_FIELD)
+            )
+            selected_article_text = selected_article_element.text.strip()
+
+            logging.info(f"Giá trị bài viết hiển thị: '{selected_article_text}'")
+            return selected_article_text
+        except TimeoutException:
+            logging.error("Không thể lấy giá trị bài viết đã chọn.")
+            return ""
+    
+    def wait_for_selected_related_article_to_update(self, expected_text, timeout=5):
+        try:
+            self.wait.until(lambda driver: self.get_selected_related_article() == expected_text, f"Không tìm thấy bài viết mong đợi: {expected_text}")
+            logging.info("Bài viết đã chọn hiển thị đúng.")
+        except TimeoutException:
+            logging.error(f"Bài viết đã chọn không cập nhật đúng. Expected: '{expected_text}'")

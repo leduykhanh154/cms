@@ -3,24 +3,28 @@ import pytest
 import logging
 import datetime
 from utils.login import Login
+from utils.logger import LoggerConfig
 from utils.driver_setup import get_driver
 from pages.articles.article import Article
 from pages.articles.date import DateArticle
 from pages.articles.select import SelectArticle
-from locators.locator_article import LocatorArticle
 from pages.articles.switch import SwitchArticle
-from pages.articles.enterfield import EnterFieldArticle
 from pages.articles.tag_article import TagArticle
-from pages.articles.validation import ArticleValidation
+from pages.articles.url_article import URLArticle
+from locators.locator_article import LocatorArticle
 from pages.articles.image_article import ImageArticle
+from pages.articles.enterfield import EnterFieldArticle
+from pages.articles.validation import ArticleValidation
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 
-test_logger = logging.getLogger("test_logger")
-test_logger.setLevel(logging.INFO)
-file_handler = logging.FileHandler("reports/test_results.log", mode="w")
-formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-file_handler.setFormatter(formatter)
-test_logger.addHandler(file_handler)
+# Khởi tạo logger
+test_logger = LoggerConfig.get_logger()
+
+@pytest.fixture(scope="session", autouse=True)
+def setup_logging():
+    global test_logger
+    test_logger = LoggerConfig.get_logger()
 
 @pytest.fixture(scope="function")
 def setup_driver():
@@ -31,7 +35,7 @@ def setup_driver():
             pytest.fail("Không thể đăng nhập!")
         yield driver
     finally:
-        time.sleep(5)
+        time.sleep(3)
         driver.quit()
 
 @pytest.fixture
@@ -66,14 +70,22 @@ def tag(setup_driver):
 def image(setup_driver):
     return ImageArticle(setup_driver)
 
-def test_upload_thumbnail_image_popup(article, enter_field, image):
-    article.perform_tag_operations()
-    article.click_create_new_button()
-    enter_field.enter_title_vi("Bài viết kiểm thử")
-    enter_field.enter_content_vi("Đây là nội dung bài viết test")
-    article.click_tab_general_info()
-    image.click_upload_thumbnail_image_field()
-    assert image.is_upload_popup_displayed(), "Test Case FAIL: Pop-up upload hình ảnh không hiển thị"
-    logging.info("Test Case PASS: Pop-up upload hình ảnh hiển thị thành công")
+@pytest.fixture
+def url(setup_driver):
+    return URLArticle(setup_driver)
 
+def test_navigate_to_all_articles(article):
+    test_logger.info("🔹 Bat dau test case: test_navigate_to_all_articles")
+    article.click_content_menu()
+    article.click_article_menu()
+    
+    expected_result = "Chuyen huong thanh cong den trang 'Tat ca bai viet'"
+    result = article.click_all_article_menu()
+    actual_result = expected_result if result else "Khong chuyen huong thanh cong"
+
+    if result:
+        test_logger.info(f"Test Case 1 PASS: test_navigate_to_all_articles | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 1 FAIL: test_navigate_to_all_articles | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 

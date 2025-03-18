@@ -1,4 +1,6 @@
+import logging
 import time
+import selenium
 from locators.locator_article import LocatorArticle
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
@@ -24,9 +26,13 @@ class ImageArticle:
     
     def click_upload_feature_image_field(self):
         upload_field = self.wait.until(EC.element_to_be_clickable(self.locators.UPLOAD_FEATURE_IMAGE_FIELD))
-        self.driver.execute_script("window.scrollTo({top: arguments[0].getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth'});", upload_field) 
-        WebDriverWait(self.driver, 5).until(EC.visibility_of(upload_field))
-        ActionChains(self.driver).move_to_element(upload_field).click().perform()
+        self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", upload_field)
+        WebDriverWait(self.driver, 2).until(EC.visibility_of(upload_field))
+        try:
+            ActionChains(self.driver).move_to_element(upload_field).click().perform()
+        except selenium.common.exceptions.ElementClickInterceptedException:
+            logging.error("Element click bị chặn, thử click bằng JavaScript")
+            self.driver.execute_script("arguments[0].click();", upload_field)
 
     def click_upload_feature_image_button(self):
         feature_button = self.wait.until(EC.element_to_be_clickable(self.locators.UPLOAD_FEATURE_IMAGE_BUTTON))

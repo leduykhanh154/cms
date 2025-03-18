@@ -1,0 +1,26 @@
+INFO     WDM:logger.py:11 ====== WebDriver manager ======
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Get LATEST chromedriver version for google-chrome
+INFO     WDM:logger.py:11 Driver [C:\Users\Duy khanh\.wdm\drivers\chromedriver\win64\134.0.6998.88\chromedriver-win32/chromedriver.exe] found in cache
+INFO     root:login.py:28 Mở trang login: https://mpire-cms-demo.mpire.asia/cms/login
+INFO     root:login.py:32 Nhập username
+INFO     root:login.py:38 Nhập password
+INFO     root:login.py:44 Nhấn nút đăng nhập
+INFO     root:login.py:62 Đăng nhập thành công!
+INFO     root:conftest.py:22 📌 Đọc file log mới nhất: logs\test_results_20250318_121004.log
+INFO     root:conftest.py:34 📌 Nội dung file log:
+INFO     test_logger:test_article.py:78 🔹 Bat dau test case: test_navigate_to_all_articles
+INFO     root:article.py:22 Đã nhấn menu Nội dung.
+INFO     root:article.py:22 Đã nhấn menu Bài viết.
+INFO     root:article.py:22 Đã nhấn menu Tất cả bài viết.
+INFO     root:article.py:42 Trang 'Tất cả bài viết' đã load thành công.
+INFO     test_logger:test_article.py:87 Test Case 1 PASS: test_navigate_to_all_articles | Expected: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status: PASS
+INFO     root:conftest.py:22 📌 Đọc file log mới nhất: logs\test_results_20250318_121004.log
+INFO     root:conftest.py:34 📌 Nội dung file log:
+INFO     root:conftest.py:36 2025-03-18 12:10:18,080 - INFO - 🔹 Bat dau test case: test_navigate_to_all_articles
+INFO     root:conftest.py:36 2025-03-18 12:10:19,495 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status: PASS
+INFO     root:conftest.py:75 📌 DEBUG HOOK: test_navigate_to_all_articles | Expected = Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual = Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status = PASS
+INFO     root:conftest.py:22 📌 Đọc file log mới nhất: logs\test_results_20250318_121004.log
+INFO     root:conftest.py:34 📌 Nội dung file log:
+INFO     root:conftest.py:36 2025-03-18 12:10:18,080 - INFO - 🔹 Bat dau test case: test_navigate_to_all_articles
+INFO     root:conftest.py:36 2025-03-18 12:10:19,495 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Actual: Chuyen huong thanh cong den trang 'Tat ca bai viet' | Status: PASS

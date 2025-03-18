@@ -24,6 +24,11 @@ class EnterFieldArticle:
         title_input.clear()
         title_input.send_keys(title)
         logging.info(f"Đã nhập tiêu đề: {title}")
+    
+    def enter_url_key(self, url_key):
+        url_input = self.driver.find_element(self.locators.URL_KEY_INPUT)
+        url_input.clear()
+        url_input.send_keys(url_key)
 
     def enter_short_description_vi(self, title):
         title_input = self.wait.until(EC.visibility_of_element_located(self.locators.SHORT_DESCRIPTION_VI_INPUT))

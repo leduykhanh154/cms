@@ -87,6 +87,7 @@ class Article:
         except Exception as e:
             print(f"Lỗi khi click vào tab 'Thông tin chung': {e}")
     
+    # Hàm kiểm tra Tiêu đề bài viết bên ngoài trang Danh sách bài viết 
     def is_article_title_in_list(self, expected_title):
         try:
             article_xpath = f"//td[contains(@class, 'article-title') and contains(text(), '{expected_title}')]"
@@ -97,6 +98,7 @@ class Article:
             logging.error(f"Tiêu đề bài viết '{expected_title}' không xuất hiện trong danh sách.")
             return False
 
+    # Hàm chờ đợi Tiêu đề bài viết xuất hiện ngoài trang Danh sách
     def wait_for_article_to_appear_in_list(self, article_title):
         try:
             WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, f"//div[@class='article-list']//h3[text()='{article_title}']")))
