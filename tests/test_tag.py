@@ -1,10 +1,14 @@
+import time
 import pytest
 import logging
+import datetime
 from utils.login import Login
-from pages.tag import Tag
+from utils.logger import LoggerConfig
 from utils.driver_setup import get_driver
+from pages.tag.tag import Tag
 from locators.locator_tag import LocatorTag
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 
 @pytest.fixture(scope="function")
@@ -25,7 +29,7 @@ def log_success(message):
     print(f"{message}")
     logging.info(message)
 
-# # Test Case 1: Verify breadcrumb 'Trang chủ -> Tag'. Hệ thống chuyển hướng sang trang chủ
+# Test Case 1: Verify breadcrumb 'Trang chủ -> Tag'. Hệ thống chuyển hướng sang trang chủ
 # def test_home_action(tag, setup_driver):
 #     try:
 #         tag.perform_tag_operations()
@@ -61,20 +65,84 @@ def log_success(message):
 #         print(f"Test Case 3 FAIL: Không hiển thị thông báo lỗi đúng! Lỗi: {error_message}")
 #         assert False
 
-# # Test Case 4: Verify nhập thông tin bắt buộc và nhấn button 'Lưu' -> Hệ thống chuyển hướng sang trang 'Danh sách Tag' và hiển thị dữ liệu 'test-nh' trong table
-# def test_save_tagname_and_check_in_list(tag, setup_driver):
+# Test Case 4: Verify nhập thông tin bắt buộc và nhấn button 'Lưu' -> Hệ thống chuyển hướng sang trang 'Danh sách Tag' và hiển thị dữ liệu 'test-nhan' trong table
+def test_save_tagname_and_check_in_list(tag, setup_driver):
+    tag.perform_tag_operations()
+    tag.click_add_keyword_button()
+    tag.is_add_keyword_popup_displayed()
+    valid_tagname = 'test-nhan'
+    tag.enter_tag_name(valid_tagname)
+    tag.click_save_button()
+    expected_url = LocatorTag.TAG_LIST_URL
+    WebDriverWait(setup_driver, 10).until(EC.url_to_be(expected_url))
+    if tag.is_tag_name_in_list(valid_tagname):
+        print(f"Test Case 4 PASS: Tên tag '{valid_tagname}' đã hiển thị bên ngoài trang 'Danh sách Tag'")
+    else:
+        print(f"Test Case 4 FAIL: Tên tag '{valid_tagname}' không hiển thị bên ngoài trang 'Danh sách Tag'!")
+        assert False
+
+# Test Case 5: Verify khi click vào dropdown 'Trạng thái' -> Hệ thống mở dropdown 'Trạng thái'
+# def test_open_status_dropdown(tag):
 #     tag.perform_tag_operations()
-#     tag.click_add_keyword_button()
-#     tag.is_add_keyword_popup_displayed()
-#     valid_tagname = 'test-nhan'
-#     tag.enter_tag_name(valid_tagname)
-#     tag.click_save_button()
-#     expected_url = LocatorTag.TAG_LIST_URL
-#     WebDriverWait(setup_driver, 10).until(EC.url_to_be(expected_url))
-#     if tag.is_tag_name_in_list(valid_tagname):
-#         print(f"Test Case 4 PASS: Tên tag '{valid_tagname}' đã hiển thị bên ngoài trang 'Danh sách Tag'")
+#     tag.click_status_dropdown()
+#     if tag.is_status_dropdown_visible():
+#         logging.info("Test Case 5 PASS: Hệ thống mở dropdown 'Trạng thái' thành công!")
 #     else:
-#         print(f"Test Case 4 FAIL: Tên tag '{valid_tagname}' không hiển thị bên ngoài trang 'Danh sách Tag'!")
+#         logging.error("Test Case 5 FAIL: Hệ thống không mở dropdown 'Trạng thái'!")
+#         assert False, "Lỗi: Dropdown không mở."
+
+# Test Case 6: Verify khi click vào dropdown 'Trang' -> Hệ thống mở dropdown 'Trang'
+# FAIL không select được dropdown
+
+# Test Case 7: Verify khi click số lượng trong dropdown 'Trang' -> Hệ thống hiển thị 2 trường thông tin trong table
+# FAIL không select được khi hiển thị 2 trường thông tin  
+# def test_click_quantity_page_dropdown(tag):
+#     tag.perform_tag_operations()
+#     tag.click_quantity_page()
+
+# Test Case 8: Verify button 'Thao tác' -> Hệ thống hiển thị dropdown của button 'Thao tác'
+# def test_operation_button(tag):
+#     tag.perform_tag_operations()
+#     tag.click_operation_button()
+#     if tag.is_operation_button_dropdown_visible():
+#         logging.info("Test Case 8 PASS: Hệ thống mở dropdown của button 'Thao tác' thành công!")
+#     else:
+#         logging.error("Test Case 8 FAIL: Hệ thống không mở dropdown của button 'Thao tác'!")
+#         assert False, "Lỗi: Dropdown không mở."
+
+# Test Case 9: Verify click dropdown 'Xóa' trong button 'Thao tác' -> Hệ thống hiển thị toggle
+
+# Test Case 10: Verify chọn checkbox và click dropdown 'Xóa' trong button 'Thao tác' -> Hệ thống hiển thị pop-up
+# def test_delete_popup_display(tag, setup_driver):
+#     tag.perform_tag_operations()
+#     try:
+#         tag.click_checkbox_first()
+#         tag.click_operation_button()
+#         tag.click_delete_dropdown()
+#         assert tag.is_delete_popup_displayed(), "Pop-up không hiển thị!"
+#         print("Test Case 10 PASS: Pop-up được hiển thị")
+#     except Exception as e:
+#         print(f"Test Case 10 FAIL: Pop-up không hiển thị! Lỗi: {str(e)}")
 #         assert False
 
-    
+# Test Case 11: Verify chọn checkbox và click dropdown 'Xóa', chọn button 'Có' trong button 'Thao tác' -> Hệ thống quay lại trang 'Danh sách Tag' và dữ liệu được xóa
+def test_button_yes_and_verify_display(tag, setup_driver):
+    tag.perform_tag_operations()
+    try:
+        tag.click_checkbox_first()
+        tag.click_operation_button()
+        tag.click_delete_dropdown()
+        tag.is_delete_popup_displayed()
+        tag.click_yes_button()
+        valid_tagname = 'test-nhan'
+        if tag.is_delete_tag_name_in_list(valid_tagname):
+            print(f"Test Case 11 PASS: Tên tag '{valid_tagname}' không hiển thị bên ngoài trang 'Danh sách Tag'")
+        else:
+            print(f"Test Case 11 FAIL: Tên tag '{valid_tagname}' có hiển thị bên ngoài trang 'Danh sách Tag'!")
+            assert False
+    except Exception as e:
+        print(f"Test Case 11 FAIL: Lỗi không hiển thị! Lỗi: {str(e)}")
+        assert False
+
+# Test Case 12: Verify chọn checkbox và click dropdown 'Xóa', chọn button 'Không' trong button 'Thao tác' -> Hệ thống quay lại trang 'Danh sách Tag' và dữ liệu không được xóa
+

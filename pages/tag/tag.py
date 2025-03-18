@@ -3,6 +3,7 @@ import logging
 from utils.login import Login
 from utils.driver_setup import get_driver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
 from locators.locator_tag import LocatorTag
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -26,14 +27,23 @@ class Tag:
         self.page_v2_create_url = LocatorTag.PAGE_V2_CREATE_URL
         self.page_list_wrapper = LocatorTag.PAGE_LIST_WRAPPER
         self.tag_list_wrapper = LocatorTag.TAG_LIST_WRAPPER
+        self.dropdown_status = LocatorTag.DROPDOWN_STATUS
+        self.dropdown_status_display = LocatorTag.DROPDOWN_STATUS_DISPLAY
+        self.dropdown_page = LocatorTag.DROPDOWN_PAGE
+
+        self.operation_button = LocatorTag.OPERATION_BUTTON
+        self.yes_button = LocatorTag.YES_BUTTON
+        self.dropdown_operation_display = LocatorTag.DROPDOWN_OPERATION_DISPLAY
+        
         self.add_keyword_button = LocatorTag.ADD_KEYWORD_BUTTON
         self.add_keyword_popup = LocatorTag.ADD_KEYWORD_POPUP
+        self.delete_popup = LocatorTag.DELETE_POPUP
         self.tag_name_input = LocatorTag.TAG_NAME_INPUT
         self.save_button = LocatorTag.SAVE_BUTTON
         self.tag_name_error_message = LocatorTag.TAG_NAME_ERROR_MESSAGE
+        self.tag_name_valid = LocatorTag.TAG_NAME_VALID
 
-
-
+        self.checkbox_first = LocatorTag.CHECKBOX_FIRST
 
     
     # Hàm nhấn vào một menu cụ thể trong CMS
@@ -149,9 +159,123 @@ class Tag:
         except Exception as e:
             logging.error(f"Lỗi khi kiểm tra tên tag trong danh sách: {e}", exc_info=True)
             return False
+        
+    # Hàm kiểm tra xem 'Tên tag' có xóa trong 'Danh sách Tag' hay không.
+    def is_delete_tag_name_in_list(self, expected_tagname):
+        try:
+            tag_list_wrapper = self.wait.until(
+                EC.visibility_of_element_located(self.tag_list_wrapper)
+            )
+            if not expected_tagname in tag_list_wrapper.text:
+                logging.info(f"Tên tag '{expected_tagname}' không xuất hiện trong danh sách!")
+                return True
+            else:
+                logging.info(f"Tên tag '{expected_tagname}' xuất hiện trong danh sách!")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi khi kiểm tra tên tag trong danh sách: {e}", exc_info=True)
+            return False
+        
+    # Hàm nhấn vào dropdown 'Trạng thái'
+    def click_status_dropdown(self):
+        try:
+            select_element = self.wait.until(EC.element_to_be_clickable(self.dropdown_status))
+            select_element.click()
+            logging.info("Đã mở dropdown 'Trạng thái'.")
+        except TimeoutException:
+            logging.error("Không thể mở dropdown 'Trạng thái'.")
+            raise
+
+    # Hàm kiểm tra dropdown 'Trạng thái' có hiển thị không
+    def is_status_dropdown_visible(self):
+        try:
+            dropdown_element = self.wait.until(EC.visibility_of_element_located(self.dropdown_status_display))
+            return dropdown_element.is_displayed()
+        except TimeoutException:
+            return False
+        
+    # Hàm nhấn vào dropdown 'Trang'
+    def click_quantity_page(self):
+        try:
+            select_element = self.wait.until(EC.element_to_be_clickable(self.dropdown_page))
+            select_element.click()
+            logging.info("Đã mở dropdown 'Trang'.")
+            time.sleep(1)
+            select_quantityPage = Select(select_element)
+            select_quantityPage.select_by_value('2')
+            logging.info("Đã select '2/TRANG' trong dropdown 'Trang'.")
+        except TimeoutException:
+            logging.error("Không thể mở dropdown 'Trang'.")
+            raise
+
+    # Hàm nhấn vào button 'Thao tác'
+    def click_operation_button(self):
+        try:
+            operation_button = self.wait.until(EC.element_to_be_clickable(self.operation_button))
+            operation_button.click()
+            logging.info("Đã nhấn vào button 'Thao tác'.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào 'Thao tác'.")
+            raise
+
+    # Hàm kiểm tra dropdown của button 'Thao tác' có hiển thị không
+    def is_operation_button_dropdown_visible(self):
+        try:
+            dropdown_element = self.wait.until(EC.visibility_of_element_located(self.dropdown_operation_display))
+            return dropdown_element.is_displayed()
+        except TimeoutException:
+            return False 
+        
+        
+    # Hàm chọn checkbox 'đầu tiên'
+    def click_checkbox_first(self):
+        try:
+            checkbox = self.wait.until(EC.element_to_be_clickable(self.checkbox_first))
+            if not checkbox.is_selected():
+                checkbox.click()
+                logging.info("Checkbox 'đầu tiên' đã được chọn.")
+            else:
+                logging.info("Checkbox 'đầu tiên' đã được chọn từ trước.")
+            return checkbox.is_selected()
+        except Exception as e:
+            logging.error(f"Lỗi khi nhấn checkbox 'đầu tiên': {e}", exc_info=True)
+            return False
+        
+    # Hàm select dropdown 'Xóa' trong button 'Thao tác'
+    def click_delete_dropdown(self):
+        try:
+            delete_dropdown = self.wait.until(EC.element_to_be_clickable(self.dropdown_operation_display))
+            delete_dropdown.click()
+            logging.info("Đã nhấn vào dropdown 'Xóa'.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào dropdown 'Xóa'.")
+            raise
+     
+    # Hàm kiểm tra xem popup 'Xóa' có hiển thị không
+    def is_delete_popup_displayed(self):
+        try:
+            time.sleep(1)
+            popup_element = self.wait.until(EC.visibility_of_element_located(self.delete_popup))
+            return popup_element.is_displayed()
+        except Exception as e:
+            logging.error(f"Lỗi khi kiểm tra pop-up 'Xóa': {e}", exc_info=True)
+            return False
+    
+    # Hàm nhấn vào button 'Có' trong popup 'Xóa'
+    def click_yes_button(self):
+        try:
+            yes_button = self.wait.until(EC.element_to_be_clickable(self.yes_button))
+            yes_button.click()
+            time.sleep(1)
+            logging.info("Đã nhấn vào button 'Có'.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào button'Có'.")
+            raise
+        
 
 
-    # Hàm thực hiện các bước mở menu 'Nội dung', vào 'Page V2' và tạo mới trang
+
+    # Hàm thực hiện các bước mở menu 'Nội dung', vào menu 'Bài viết -> Tag'
     def perform_tag_operations(self):
         self.click_content_menu()
         self.click_tag_menu()
