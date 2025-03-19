@@ -33,6 +33,8 @@ def setup_driver():
         time.sleep(5)
         driver.quit()
 
+
+
 @pytest.fixture
 def article(setup_driver):
     return Article(setup_driver)
