@@ -1,2 +1,0 @@
-2025-03-18 12:19:45,785 - INFO - Bat dau Test Case 1 : Verify khi click menu Tat ca bai viet -> He thong chuyen huong den trang Danh sach bai viet
-2025-03-18 12:19:46,802 - INFO - Test Case 1 PASS: test_navigate_to_all_articles | Expected: He thong chuyen huong den trang Danh sach bai viet | Actual: He thong chuyen huong den trang Danh sach bai viet | Status: PASS

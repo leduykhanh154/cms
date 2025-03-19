@@ -5,16 +5,16 @@ import datetime
 from utils.login import Login
 from utils.logger import LoggerConfig
 from utils.driver_setup import get_driver
-from pages.articles.article import Article
-from pages.articles.date import DateArticle
-from pages.articles.select import SelectArticle
-from pages.articles.switch import SwitchArticle
+from pages.articles.article_base import Article
+from pages.articles.date_article import DateArticle
+from pages.articles.select_article import SelectArticle
+from pages.articles.switch_article import SwitchArticle
 from pages.articles.tag_article import TagArticle
 from pages.articles.url_article import URLArticle
 from locators.locator_article import LocatorArticle
 from pages.articles.image_article import ImageArticle
-from pages.articles.enterfield import EnterFieldArticle
-from pages.articles.validation import ArticleValidation
+from pages.articles.enter_field_article import EnterFieldArticle
+from pages.articles.validation_article import ArticleValidation
 from selenium.webdriver.support import expected_conditions as EC
 
 test_logger = LoggerConfig.get_logger()
@@ -225,7 +225,7 @@ def test_short_description_vi_max_length_error(article, enter_field, validation)
         logging.error("Test Case 11 FAIL: Hệ thống không hiển thị lỗi khi mô tả ngắn quá dài!")
         assert False, "Lỗi: Không hiển thị thông báo 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'."
     
-# Test Case 12: Verify khi nhập lại Mô tả ngắn - Tiếng Việt < 100 ký tự -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 100 ký tự'
+# Test Case 12: Verify khi nhập lại Mô tả ngắn - Tiếng Việt < 1000 ký tự -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 100 ký tự'
 def test_short_description_vi_max_length_error_disappears(article, enter_field, validation):
     article.perform_tag_operations()
     article.click_create_new_button()

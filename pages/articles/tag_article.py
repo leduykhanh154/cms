@@ -25,6 +25,14 @@ class TagArticle:
     def is_dropdown_open(self):
         dropdown_menu = self.driver.find_elements(self.locators.TAG_DROPDOWN_MENU)
         return len(dropdown_menu) > 0 
+
+    def is_tag_dropdown_visible(self):
+        try:
+            dropdown = self.wait.until(EC.visibility_of_element_located(self.locators.TAG_DROPDOWN_MENU))
+            return dropdown.is_displayed()
+        except TimeoutException:
+            logging.error("Dropdown 'Tag' không hiển thị.")
+            return False
     
     def select_tag(self, tag_name):
         try:
@@ -35,6 +43,9 @@ class TagArticle:
             option = self.wait.until(EC.element_to_be_clickable(option_locator))
             option.click()
             logging.info(f"Đã chọn tag: {tag_name}")
+
+            # Chờ một chút để UI cập nhật
+            self.wait.until(lambda driver: self.get_selected_tag() == tag_name)
         except TimeoutException:
             logging.error(f"Không tìm thấy tag: {tag_name}. Kiểm tra lại tên hoặc dropdown.")
             raise
@@ -45,7 +56,7 @@ class TagArticle:
                 EC.presence_of_element_located(self.locators.SELECTED_TAG_FIELD)
             )
             selected_tag_text = selected_tag_element.text.strip()
-            logging.info(f"Tag hiển thị sau khi chọn: '{selected_tag_text}'")
+            logging.info(f"Tag hiển thị sau khi chọn: '{selected_tag_text}' (Expected: '{expected_tag}')")
 
             return selected_tag_text == expected_tag
         except TimeoutException:
@@ -62,5 +73,15 @@ class TagArticle:
         except:
             logging.error("Sidebar 'Thêm từ khóa' không hiển thị!")
             return False
+
+    def get_selected_tag(self):
+        try:
+            selected_tag_element = self.wait.until(
+                EC.presence_of_element_located(self.locators.SELECTED_TAG_FIELD)
+            )
+            return selected_tag_element.text.strip()
+        except TimeoutException:
+            logging.error("Không thể lấy giá trị 'Tag' đã chọn.")
+            return None
 
     
