@@ -26,7 +26,6 @@ class LocatorTag:
     OPERATION_BUTTON = (By.XPATH, '//*[@id="dropdownMenuButton"]')
     YES_BUTTON = (By.XPATH, '//*[@id="app-container"]/div[3]/div/div[3]/button[1]')
     NO_BUTTON = (By.XPATH, '//*[@id="app-container"]/div[3]/div/div[3]/button[3]')
-
     
     # POP-UP
     ADD_KEYWORD_POPUP = (By.XPATH, '//*[@id="formKeyword"]/div[1]')

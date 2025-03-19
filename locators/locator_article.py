@@ -21,7 +21,7 @@ class LocatorArticle:
     # Field Tiêu đề - VI 
     TITLE_INPUT = (By.XPATH, "//*[@id='languages[vi][title]']")
     TITLE_ERROR_MESSAGE = (By.XPATH, "//*[@id='vi-content']/div[1]/div[2]/div/div/div")
-    TITLE_MAX_LENGTH_ERROR_LOCATOR = (By.XPATH, "//*[@id='vi-content']/div[1]/div[2]/div/div/div")
+    TITLE_MAX_LENGTH_ERROR_MESSAGE = (By.XPATH, "//*[@id='vi-content']/div[1]/div[2]/div/div/div")
 
     # Field Tiêu đề - EN
     TITLE_EN_INPUT = (By.XPATH, "//*[@id='languages[en][title]']")
@@ -52,6 +52,7 @@ class LocatorArticle:
     DROPDOWN_ARTICLE_TYPE = (By.XPATH, '//*[@id="showSettingTab"]/div/div[2]/div/span/span[1]/span')
     DROPDOWN_ARTICLE_TYPE_DISPLAY = (By.XPATH, '//*[@id="showSettingTab"]/div/div[2]/div/span/span[1]') 
     ARTICLE_TYPE_ERROR_MESSAGE = (By.XPATH, "//*[@id='showSettingTab']/div/div[2]/div/div/div")
+    HEADER_SECTION = (By.XPATH, "//*[@id='save-article']/div[2]/div/div/div/div[1]")
 
     # Select Trạng thái 
     DROPDOWN_STATUS = (By.XPATH, "//*[@id='showSettingTab']/div/div[3]/div/span/span[1]/span")
@@ -60,47 +61,57 @@ class LocatorArticle:
 
     # Field Thứ tự sắp xếp
     ORDERING = (By.XPATH, '//*[@id="ordering"]')
-    ORDERING_ERROR_MESSAGE = (By.XPATH, '//*[@id="showSettingTab"]/div/div[5]/div/div')
+    ORDERING_ERROR_MESSAGE = (By.XPATH, '//*[@id="showSettingTab"]/div/div[5]/div/div/div')
     ORDERING_MAX_LENGHT_ERROR_MESSAGE = (By.XPATH, '//*[@id="showSettingTab"]/div/div[5]/div/div')
 
+    # Field Ngày đăng
     PUBLIC_DATE = (By.ID, "public_date")
     PUBLIC_DATE_INPUT = (By.ID, "public_date")
     DATE_PICKER = (By.XPATH, '//div[contains(@class,"datepicker")]')
     DATE_PICKER_DAY = (By.XPATH, "//td[@class='day' and text()='{}']")
 
+    # Nút switch Nổi bật
     FEATURED_SWITCH = (By.ID, "is_feature")
     FEATURED_LABEL = (By.CSS_SELECTOR, "label[for='is_feature']")  
 
+    # Nút switch Đặt làm trang chủ
     HOMEPAGE_SWITCH = (By.XPATH, "//*[@id='showSettingTab']/div/div[10]/div/div[1]/input")
     HOMEPAGE_LABEL = (By.XPATH, "//*[@id='showSettingTab']/div/div[10]/div/div[1]/label")
 
+    # Dropdown Tag
     DROPDOWN_SELECT_TAG = (By.XPATH, "//*[@id='showSettingTab']/div/div[4]/div/div[1]/div/span/span[1]/span")
     TAG_DROPDOWN_MENU = (By.XPATH, "//*[@id='app-container']/span/span")
     DROPDOWN_SELECT_TAG_OPTION = (By.XPATH, "//li[contains(@class, 'select2-results__option') and text()='{}']")
     DROPDOWN_TAG_SELECTED = (By.XPATH, "//*[@id='showSettingTab']/div/div[4]/div/div[1]/div/span/span[1]/span/span[1]") 
     SELECTED_TAG_FIELD = (By.XPATH, "//*[@id='select2-article_keyword-result-tc40-676e10ba97097']")
-
     CREATE_KEYWORD_BUTTON = (By.XPATH, '//*[@id="btnCreateKeyword"]')  
     ADD_KEYWORD_SIDEBAR = (By.XPATH, '//*[@id="modal-AddNewKeyword"]/div[2]')
 
+    # Field Hình ảnh Thumbnail
     UPLOAD_THUMBNAIL_IMAGE_FIELD = (By.XPATH, "//*[@id='article-image-id_upload']/div/div[1]/a")
     UPLOAD_THUMBNAIL_IMAGE_BUTTON = (By.XPATH, "//*[@id='article-image-id_upload']/div/div[2]/a[1]")
 
+    # Field Hình ảnh Feature
     UPLOAD_FEATURE_IMAGE_FIELD = (By.XPATH, "//*[@id='feature-image_upload']/div/div[1]/a")
     UPLOAD_FEATURE_IMAGE_BUTTON = (By.XPATH, "//*[@id='feature-image_upload']/div/div[2]/a[1]")
 
+    # Pop-up Upload hình ảnh
     UPLOAD_IMAGE_POPUP = (By.XPATH, "//*[@id='article-image-id_upload-ModalUploadImage']/div/div")
-
     BROWSER_TAB = (By.XPATH, "//*[@id='browse-tab']")
     FILE_LISTING = (By.XPATH, "//*[@id='file-listing']//a")
     CHOOSE_UPLOAD_BUTTON = (By.XPATH, "//*[@id='btn-choose-version']")
 
+    # Nút Xóa ảnh
     DELETE_THUMBNAIL_IMAGE = (By.XPATH, "//*[@id='article-image-id_upload']/div/div[2]/a[2]")
     DELETE_FEATURE_IMAGE = (By.XPATH, '//*[@id="feature-image_upload"]/div/div[2]/a[2]')
 
+    # Dropdown Bài viết liên quan
     RELATED_ARTICLE_DROPDOWN = (By.XPATH, '//*[@id="showSettingTab"]/div/div[13]/div/span/span[1]/span')
     RELATED_ARTICLE_OPTIONS = (By.XPATH, '//ul[@id="select2-relatedArticle-results"]/li')
     SELECTED_RELATED_ARTICLE_FIELD = (By.XPATH, '//*[@id="showSettingTab"]/div/div[13]/div/span')
 
+    # Nút Lưu
     SAVE_BUTTON = (By.XPATH, '//*[@id="save-article"]/div[1]/div[2]/div/div/button[1]')
+
+    # Nút Lưu và tiếp tục cập nhật
     SAVE_AND_CONTINUE_BUTTON = (By.XPATH, '//*[@id="save-article"]/div[1]/div[2]/div/div/button[2]')

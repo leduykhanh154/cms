@@ -95,6 +95,23 @@ class SelectArticle:
         except TimeoutException:
             logging.error("Không thể lấy giá trị 'Trạng thái' đã chọn.")
             return False
+    
+    # Hàm đóng dropdown khi click chuột bên ngoài
+    def close_dropdown_if_open(self):
+        try:
+            outside_element = self.wait.until(EC.element_to_be_clickable(self.locators.HEADER_SECTION))
+            outside_element.click()
+            time.sleep(1)
+            if not self.is_dropdown_visible():
+                logging.info("Dropdown 'Loại bài viết' đã đóng sau khi click bên ngoài.")
+                return True
+            else:
+                logging.warning("Dropdown 'Loại bài viết' vẫn mở sau khi click bên ngoài.")
+                return False
+        except TimeoutException:
+            logging.error("Không thể thực hiện thao tác đóng dropdown.")
+            return False
+
 
     def is_status_selected(self, expected_status):
         selected_status = self.driver.find_element(self.locators.DROPDOWN_STATUS_SELECTED[0], self.locators.DROPDOWN_STATUS_SELECTED[1]).text.strip()

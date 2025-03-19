@@ -10,9 +10,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
 
+
 class Tag:
     # Khởi tạo instance của Tag với driver và các locator
-    def __init__(self, driver, timeout=5):
+    def init(self, driver, timeout=5):
         if not driver: 
             raise ValueError("Driver không được để trống hoặc None!")
         self.driver = driver
@@ -48,7 +49,6 @@ class Tag:
         self.edit_tag_first = LocatorTag.EDIT_TAG_FIRST
 
         self.checkbox_first = LocatorTag.CHECKBOX_FIRST
-
     
     # Hàm nhấn vào một menu cụ thể trong CMS
     def click_menu(self, locator, menu_name, timeout=10):
@@ -385,11 +385,6 @@ class Tag:
         except TimeoutException:
             logging.error("Không thể nhấn vào *Tên tag* đầu tiên.")
             raise
-
-    
-        
-
-
 
     # Hàm thực hiện các bước mở menu 'Nội dung', vào menu 'Bài viết -> Tag'
     def perform_tag_operations(self):

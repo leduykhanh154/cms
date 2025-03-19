@@ -1,0 +1,68 @@
+2025-03-19 11:13:53,118 - INFO - Bắt đầu Test Case 3: Verify khi không nhập Tiêu đề - Tiếng Việt -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'.
+2025-03-19 11:13:56,265 - INFO - Test Case 3 PASS: test_empty_article_title_vi | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Actual: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Status: PASS
+2025-03-19 11:14:13,881 - INFO - Bắt đầu Test Case 4: Verify khi nhập lại Tiêu đề - Tiếng Việt -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề'.
+2025-03-19 11:14:21,914 - INFO - Test Case 4 PASS: test_title_vi_error_disappears | Expected: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Actual: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Status: PASS
+2025-03-19 11:14:39,279 - INFO - Bắt đầu Test Case 5: Verify khi nhập Tiêu đề - Tiếng Việt hơn 250 ký tự -> Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'.
+2025-03-19 11:14:42,707 - INFO - Test Case 5 PASS: test_title_vi_max_length_error | Expected: Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Actual: Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Status: PASS
+2025-03-19 11:15:01,007 - INFO - Bắt đầu Test Case 6: erify khi giảm số ký tự trong Tiêu đề - Tiếng Việt xuống < 250 -> Hệ thống ẩn đi thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'.
+2025-03-19 11:15:10,406 - INFO - Test Case 6 PASS: test_title_vi_max_length_error_disappears | Expected: Hệ thống ẩn đi thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Actual: Hệ thống ẩn đi thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Status: PASS
+2025-03-19 11:15:27,970 - INFO - Bắt đầu Test Case 11: Verify khi nhập Mô tả ngắn - Tiếng Việt hơn 1000 ký tự -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'.
+2025-03-19 11:15:32,642 - INFO - Test Case 7 PASS: test_short_description_vi_max_length_error | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'. | Actual: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'. | Status: PASS
+2025-03-19 11:15:49,506 - INFO - Bắt đầu Test Case 12: Verify khi nhập lại Mô tả ngắn - Tiếng Việt < 1000 ký tự -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'.
+2025-03-19 11:16:01,916 - INFO - Test Case 8 PASS: test_short_description_vi_max_length_error_disappears | Expected: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'. | Actual: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'. | Status: PASS
+2025-03-19 11:16:19,070 - INFO - Bắt đầu Test Case 15: Verify khi không nhập Nội dung - Tiếng Việt -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'.
+2025-03-19 11:16:26,710 - INFO - Test Case 9 PASS: test_empty_article_content_vi | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'. | Actual: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'. | Status: PASS
+2025-03-19 11:16:43,815 - INFO - Bắt đầu Test Case 10: Verify khi nhập lại dữ liệu vào field Nội dung - Tiếng Việt -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Nội dung'.
+2025-03-19 11:16:57,031 - INFO - Test Case 10 PASS: test_content_vi_error_disappears | Expected: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Nội dung'. | Actual: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Nội dung'. | Status: PASS
+2025-03-19 11:17:13,525 - INFO - Bắt đầu Test Case 11: Verify khi không nhập Tiêu đề - Enlish -> Hệ thống hiển thị thống báo lỗi 'Vui lòng nhập Tiêu đề'.
+2025-03-19 11:17:16,631 - INFO - Test Case 11 PASS: test_empty_article_title_en | Expected: Hệ thống hiển thị thống báo lỗi 'Vui lòng nhập Tiêu đề'. | Actual: Hệ thống hiển thị thống báo lỗi 'Vui lòng nhập Tiêu đề'. | Status: PASS
+2025-03-19 11:17:33,430 - INFO - Bắt đầu Test Case 12: Verify khi nhập Tiêu đề - Enlish hơn 250 ký tự -> Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'.
+2025-03-19 11:17:43,540 - INFO - Test Case 12 PASS: test_title_en_max_length_error | Expected: Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Actual: Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Status: PASS
+2025-03-19 11:18:37,397 - INFO - Bắt đầu Test Case 13: Verify khi nhập Mô tả ngắn - English hơn 1000 ký tự -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'.
+2025-03-19 11:18:48,712 - INFO - Test Case 13 PASS: test_short_description_en_max_length_error | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'. | Actual: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Mô tả ngắn không quá 1000 ký tự'. | Status: PASS
+2025-03-19 11:19:05,626 - INFO - Bắt đầu Test Case 14: Verify khi không nhập Nội dung - English -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'.
+2025-03-19 11:19:14,143 - INFO - Test Case 14 PASS: test_empty_article_content_en | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'. | Actual: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Nội dung'. | Status: PASS
+2025-03-19 11:19:30,939 - INFO - Bắt đầu Test Case 15: Verify khi không chọn 'Loại bài viết' -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Loại bài viết'.
+2025-03-19 11:19:33,802 - INFO - Test Case 15 PASS: test_article_type_error | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Loại bài viết'. | Actual: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Loại bài viết'. | Status: PASS
+2025-03-19 11:19:50,438 - INFO - Bắt đầu Test Case 16: Verify khi click vào dropdown 'Loại bài viết' -> Hệ thống mở dropdown 'Loại bài viết'.
+2025-03-19 11:19:53,275 - INFO - Test Case 16 PASS: test_open_article_type_dropdown | Expected: True | Actual: Hệ thống mở dropdown 'Loại bài viết'. | Status: PASS
+2025-03-19 11:20:09,757 - INFO - Bắt đầu Test Case 17: Verify khi chọn lại 'Loại bài viết' từ dropdown -> Hệ thống ẩn đi thông báo lỗi.
+2025-03-19 11:20:12,761 - INFO - Test Case 17 PASS: test_select_article_type_from_dropdown | Expected: Tin tức chuyên ngành | Actual: Tin tức chuyên ngành | Status: PASS
+2025-03-19 11:20:29,463 - INFO - Bắt đầu Test Case 18: Verify khi click vào dropdown 'Trạng thái' -> Hệ thống mở dropdown 'Trạng thái'.
+2025-03-19 11:20:32,456 - INFO - Test Case 18 PASS: test_open_status_dropdown | Expected: Hệ thống mở dropdown 'Trạng thái'. | Actual: Hệ thống mở dropdown 'Trạng thái'. | Status: PASS
+2025-03-19 11:20:49,261 - INFO - Bắt đầu Test Case 19: Verify khi click chọn giá trị 'Chờ xử lý' -> Hệ thống hiển thị giá trị 'Chờ xử lý' lên dropdown Trạng thái.
+2025-03-19 11:20:52,559 - INFO - Test Case 19 PASS: test_select_status_from_dropdown | Expected: Chờ xử lý | Actual: Chờ xử lý | Status: PASS
+2025-03-19 11:21:09,296 - INFO - Bắt đầu Test Case 20: Verify khi click dropdown Tag -> Hệ thống mở dropdown và hiển thị Danh sách tag.
+2025-03-19 11:21:12,512 - INFO - Test Case 20 PASS: test_open_tag_dropdown | Expected: Hệ thống mở dropdown và hiển thị Danh sách tag. | Actual: Hệ thống mở dropdown và hiển thị Danh sách tag. | Status: PASS
+2025-03-19 11:21:29,539 - INFO - Bắt đầu Test Case 21: Verify khi click nút Tạo mới -> Hệ thống hiển thị sidebar 'Thêm tag mới'.
+2025-03-19 11:21:33,415 - INFO - Test Case 21 PASS: test_create_keyword_sidebar | Expected: Hệ thống hiển thị sidebar 'Thêm tag mới'. | Actual: Hệ thống hiển thị sidebar 'Thêm tag mới'. | Status: PASS
+2025-03-19 11:21:50,049 - INFO - Bắt đầu Test Case 22: Verify khi không nhập Thứ tự sắp xếp -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'.
+2025-03-19 11:21:53,090 - ERROR - Test Case 26 FAIL: test_ordering_error_message | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'. | Actual: Hệ thống không hiển thị thông báo lỗi Vui lòng nhập Thứ tự sắp xếp | Status: FAIL
+2025-03-19 11:22:47,261 - INFO - Bắt đầu Test Case 23: Verify khi nhập lại Thứ tự sắp xếp -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'.
+2025-03-19 11:22:55,329 - INFO - Test Case 23 PASS: test_ordering_error_disappears | Expected: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'. | Actual: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Thứ tự sắp xếp'. | Status: PASS
+2025-03-19 11:23:12,175 - INFO - Bắt đầu Test Case 24: Verify khi nhập Thứ tự sắp xếp > 7 số -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập không quá 7 số'.
+2025-03-19 11:23:14,874 - ERROR - Test Case 24 FAIL: test_ordering_max_length_error_message | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập không quá 7 số'. | Actual: Hệ thống không hiển thị thông báo lỗi 'Vui lòng nhập không quá 7 số'. | Status: FAIL
+2025-03-19 11:23:35,759 - INFO - Bắt đầu Test Case 25: Verify khi nhập số âm -> Hệ thống chấp nhận số âm và không hiển thị thông báo lỗi.
+2025-03-19 11:23:43,752 - INFO - Test Case 25 PASS: test_ordering_negative_number | Expected: Hệ thống chấp nhận số âm và không hiển thị thông báo lỗi | Actual: Hệ thống không chấp nhận số âm và không hiển thị thông báo lỗi | Status: PASS
+2025-03-19 11:24:00,346 - INFO - Bắt đầu Test Case 26: Verify khi nhập chữ -> Hệ thống không chấp nhận ký tự chữ
+2025-03-19 11:24:08,323 - INFO - Test Case 26 PASS: test_ordering_specific | Expected: Hệ thống không chấp nhận. | Actual: Hệ thống chấp nhận. | Status: PASS
+2025-03-19 11:24:25,022 - INFO - Bắt đầu Test Case 27: Verify khi nhập ký tự đặc biệt -> Hệ thống không chấp nhận ký tự đặc biệt
+2025-03-19 11:24:32,993 - INFO - Test Case 27 PASS: test_ordering_special_characters | Expected: Hệ thống không chấp nhận. | Actual: Hệ thống chấp nhận. | Status: PASS
+2025-03-19 11:24:49,805 - INFO - Bắt đầu Test Case 28: Verify khi click vào Ngày đăng -> Hệ thống hiển thị đúng ngày hiện tại.
+2025-03-19 11:24:53,912 - INFO - Test Case 28 PASS: test_public_date_default_value | Expected: Ngày đăng hiển thị đúng ngày hiện tại | Actual: Ngày đăng hiển thị đúng ngày hiện tại | Status: PASS
+2025-03-19 11:25:11,415 - INFO - Bắt đầu Test Case 29: Verify khi nhập Ngày đăng -> Hệ thống chấp nhận và hiển thị Ngày đăng.
+2025-03-19 11:25:14,564 - INFO - Test Case 29 PASS: test_enter_past_public_date | Expected: Hệ thống chấp nhận và hiển thị Ngày đăng. | Actual: Hệ thống chấp nhận và hiển thị Ngày đăng. | Status: PASS
+2025-03-19 11:25:31,496 - INFO - Bắt đầu Test Case 30: Verify trạng thái mặc định nút switch Nổi bật -> Hệ thống hiển thị trạng thái mặc định của nút switch Nổi bật là OFF.
+2025-03-19 11:25:33,735 - INFO - Test Case 30 PASS: test_featured_switch_initial_state | Expected: Hệ thống hiển thị trạng thái mặc định của nút switch Nổi bật là OFF | Actual: Hệ thống hiển thị trạng thái mặc định của nút switch Nổi bật là OFF | Status: PASS
+2025-03-19 11:25:50,905 - INFO - Bắt đầu Test Case 31: Verify chuyển trạng thái nút switch Nổi bật từ OFF -> ON.
+2025-03-19 11:25:53,811 - INFO - Test Case 31 PASS: test_toggle_featured_switch_on | Expected: Trạng thái switch Nổi bật đã chuyển từ OFF sang ON | Actual: Trạng thái switch Nổi bật đã chuyển sang ON | Status: PASS
+2025-03-19 11:26:10,547 - INFO - Bắt đầu Test Case 32: Verify chuyển trạng thái nút switch Nổi bật từ ON -> OFF
+2025-03-19 11:26:13,762 - INFO - Test Case 32 PASS: test_toggle_featured_switch_off | Expected: Trạng thái switch Nổi bật đã chuyển từ ON về OFF | Actual: Trạng thái switch Nổi bật đã chuyển về OFF | Status: PASS
+2025-03-19 11:26:30,697 - INFO - Bắt đầu Test Case 33: Verify khi click field Hình ảnh thumbnail -> Hệ thống hiển thị pop-up Upload hình ảnh
+2025-03-19 11:26:34,286 - INFO - Test Case 33 PASS: test_upload_thumbnail_image_field | Expected: Pop-up upload hình ảnh phải hiển thị sau khi click vào trường Hình ảnh thumbnail | Actual: Pop-up upload hình ảnh hiển thị thành công | Status: PASS
+2025-03-19 11:26:50,899 - INFO - Bắt đầu Test Case 34: Verify khi click nút Tải lên ở Hình ảnh thumbnail -> Hệ thống hiển thị pop-up Upload hình ảnh
+2025-03-19 11:26:54,879 - INFO - Test Case 34 PASS: test_click_thumbnail_image_button | Expected: Pop-up upload hình ảnh phải hiển thị sau khi click nút Tải lên ở trường Hình ảnh thumbnail | Actual: Pop-up upload hình ảnh hiển thị thành công | Status: PASS
+2025-03-19 11:27:13,076 - INFO - Bắt đầu Test Case 35: Verify khi tải lên Hình ảnh Thumbnail -> Hệ thống hiển thị hình ảnh lên field Hình ảnh Thumbnail.
+2025-03-19 11:27:29,291 - INFO - Test Case 35 PASS: test_upload_thumbnail_image | Expected: Hình ảnh phải được upload và hiển thị thành công trên field Hình ảnh Thumbnail. | Actual: Hình ảnh hiển thị thành công | Status: PASS
+2025-03-19 11:28:27,345 - INFO - Bắt đầu Test Case 36: Verify khi click nút Xóa ảnh -> Hệ thống xóa ảnh ra khỏi field Hình ảnh Thumbnail
+2025-03-19 11:28:46,401 - INFO - Test Case 36 PASS: test_delete_thumbnail_image | Expected: Hình ảnh phải được xóa khỏi field Hình ảnh Thumbnail | Actual: Hình ảnh đã bị xóa thành công | Status: PASS

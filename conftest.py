@@ -57,34 +57,53 @@ def pytest_runtest_makereport(item, call):
     report = outcome.get_result()
     extra = getattr(report, "extra", [])
     test_data = read_test_log()
+    
     if report.when == "call":
         driver = item.funcargs.get("setup_driver") 
         test_name = normalize_test_name(item.name)
         expected_result = test_data.get(test_name, {}).get("expected", "N/A")
         actual_result = test_data.get(test_name, {}).get("actual", "N/A")
         test_status = test_data.get(test_name, {}).get("status", "N/A")
+        
         logging.info(f"DEBUG HOOK: {test_name} | Expected = {expected_result} | Actual = {actual_result} | Status = {test_status}")
+
+        # Bảng kết quả
         result_html = f"""
-        <div>
-            <strong>Test Name:</strong> {test_name}<br>
-            <strong>Expected Result:</strong> {expected_result}<br>
-            <strong>Actual Result:</strong> {actual_result}<br>
-            <strong>Status:</strong> {test_status}
-        </div>
+            <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+                <tr>
+                    <th style="padding: 8px; background-color: #f2f2f2;">Test Name</th>
+                    <td style="padding: 8px;">{test_name}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 8px; background-color: #f2f2f2;">Expected Result</th>
+                    <td style="padding: 8px;">{expected_result}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 8px; background-color: #f2f2f2;">Actual Result</th>
+                    <td style="padding: 8px;">{actual_result}</td>
+                </tr>
+                <tr>
+                    <th style="padding: 8px; background-color: #f2f2f2;">Status</th>
+                    <td style="padding: 8px; font-weight: bold; color: {'green' if test_status == 'PASS' else 'red'};">
+                        {test_status}
+                    </td>
+                </tr>
+            </table>
         """
         extra.append(pytest_html.extras.html(result_html))
 
-        # Chụp ảnh màn hình nếu test fail
+        # Chụp ảnh màn hình nếu test FAIL
         if driver:
             try:
-                status_text = "FAILED" if report.failed else "PASSED"
+                if report.failed:
+                    status_text = "FAILED"
+                else:
+                    status_text = "PASSED"
 
-                # Chụp ảnh màn hình & convert sang base64
                 screenshot = driver.get_screenshot_as_png()
                 screenshot_base64 = base64.b64encode(screenshot).decode('utf-8')
                 img_html = f'<div><strong>{test_name} - {status_text}</strong><br><img src="data:image/png;base64,{screenshot_base64}" width="400px"/></div>'
 
-                # ✅ Thêm ảnh chụp màn hình vào report
                 if item.config.pluginmanager.hasplugin("html"):
                     extra.append(pytest_html.extras.html(img_html))
 
@@ -92,3 +111,8 @@ def pytest_runtest_makereport(item, call):
                 logging.error(f"Error capturing screenshot for test {test_name}: {e}", exc_info=True)
 
     report.extra = extra
+
+# Ẩn dòng PASSED trong output pytest
+def pytest_report_teststatus(report, config):
+    if report.when == "call" and report.outcome == "passed":
+        return "", "", ""  # Ẩn dòng "PASSED"
