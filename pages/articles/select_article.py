@@ -1,10 +1,10 @@
-import logging
 import time
+import logging
 from selenium.webdriver.common.by import By
+from locators.locator_article import LocatorArticle
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from locators.locator_article import LocatorArticle
 
 class SelectArticle:
     # Hàm khởi tạo driver
@@ -15,7 +15,6 @@ class SelectArticle:
         self.wait = WebDriverWait(self.driver, timeout)
         self.locators = LocatorArticle 
 
-    # Hàm nhấn vào dropdown Loại bài viết
     def click_select(self):
         try:
             select_element = self.wait.until(EC.element_to_be_clickable(self.locators.DROPDOWN_ARTICLE_TYPE))
@@ -25,7 +24,6 @@ class SelectArticle:
             logging.error("Không thể mở dropdown 'Loại bài viết'.")
             raise
 
-    # Hàm kiểm tra dropdown Loại bài viết có hiển thị không
     def is_dropdown_visible(self):
         try:
             dropdown_element = self.wait.until(EC.visibility_of_element_located(self.locators.DROPDOWN_ARTICLE_TYPE))
@@ -33,7 +31,6 @@ class SelectArticle:
         except TimeoutException:
             return False
 
-    # Hàm chọn một Loại bài viết trong dropdown
     def select_article_type(self, article_type):
         try:
             article_type_element = self.wait.until(
@@ -44,8 +41,7 @@ class SelectArticle:
         except TimeoutException:
             logging.error(f"Không thể chọn loại bài viết: {article_type}")
             raise
-
-    # Hàm kiểm tra Loại bài viết đã chọn có đúng không
+    
     def is_selected_article_type_displayed(self, expected_article_type):
         try:
             selected_article_type = self.wait.until(
@@ -56,7 +52,6 @@ class SelectArticle:
             logging.error("Không thể lấy loại bài viết đã chọn.")
             return False
 
-    # Hàm nhấn vào dropdown Trạng thái
     def click_status_dropdown(self):
         try:
             dropdown = self.wait.until(EC.element_to_be_clickable(self.locators.DROPDOWN_STATUS))
@@ -66,7 +61,6 @@ class SelectArticle:
             logging.error("Không thể mở dropdown 'Trạng thái'.")
             raise
 
-    # Hàm kiểm tra dropdown Trạng thái có hiển thị không
     def is_status_dropdown_visible(self):
         try:
             dropdown = self.wait.until(EC.visibility_of_element_located(self.locators.DROPDOWN_STATUS))
@@ -74,7 +68,6 @@ class SelectArticle:
         except TimeoutException:
             return False
 
-    # Hàm chọn Trạng thái trong dropdown
     def select_status(self, status_name):
         try:
             option_locator = (By.XPATH, f"//li[contains(@class, 'select2-results__option') and text()='{status_name}']")
@@ -85,7 +78,6 @@ class SelectArticle:
             logging.error(f"Không thể chọn trạng thái: {status_name}")
             raise
 
-    # Hàm kiểm tra Trạng thái đã chọn có đúng không
     def is_selected_status_correct(self, expected_status):
         try:
             selected_text = self.wait.until(
@@ -96,7 +88,6 @@ class SelectArticle:
             logging.error("Không thể lấy giá trị 'Trạng thái' đã chọn.")
             return False
     
-    # Hàm đóng dropdown khi click chuột bên ngoài
     def close_dropdown_if_open(self):
         try:
             outside_element = self.wait.until(EC.element_to_be_clickable(self.locators.HEADER_SECTION))
@@ -111,7 +102,6 @@ class SelectArticle:
         except TimeoutException:
             logging.error("Không thể thực hiện thao tác đóng dropdown.")
             return False
-
 
     def is_status_selected(self, expected_status):
         selected_status = self.driver.find_element(self.locators.DROPDOWN_STATUS_SELECTED[0], self.locators.DROPDOWN_STATUS_SELECTED[1]).text.strip()
