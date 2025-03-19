@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
+
 class Tag:
     # Khởi tạo instance của Tag với driver và các locator
     def __init__(self, driver, timeout=5):
@@ -33,15 +34,18 @@ class Tag:
 
         self.operation_button = LocatorTag.OPERATION_BUTTON
         self.yes_button = LocatorTag.YES_BUTTON
+        self.no_button = LocatorTag.NO_BUTTON
         self.dropdown_operation_display = LocatorTag.DROPDOWN_OPERATION_DISPLAY
         
         self.add_keyword_button = LocatorTag.ADD_KEYWORD_BUTTON
         self.add_keyword_popup = LocatorTag.ADD_KEYWORD_POPUP
         self.delete_popup = LocatorTag.DELETE_POPUP
+        self.edit_tag_popup = LocatorTag.EDIT_TAG_POPUP
         self.tag_name_input = LocatorTag.TAG_NAME_INPUT
+        self.search_input = LocatorTag.SEARCH_INPUT
         self.save_button = LocatorTag.SAVE_BUTTON
         self.tag_name_error_message = LocatorTag.TAG_NAME_ERROR_MESSAGE
-        self.tag_name_valid = LocatorTag.TAG_NAME_VALID
+        self.edit_tag_first = LocatorTag.EDIT_TAG_FIRST
 
         self.checkbox_first = LocatorTag.CHECKBOX_FIRST
 
@@ -110,18 +114,40 @@ class Tag:
             logging.error("Pop-up 'Thêm từ khóa' không hiển thị!")
             return False
         
-    # Hàm nhập Tên tag*
+    # Hàm nhập thông tin 'Tên tag*'
     def enter_tag_name(self, title, timeout=10):
         try:
             tag_name_input = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.tag_name_input))
             tag_name_input.clear()
             tag_name_input.send_keys(title)
-            logging.info(f"Đã nhập tiêu đề trang: {title}")
+            logging.info(f"Đã nhập Tên tag*: {title}")
         except Exception as e:
-            logging.error(f"Lỗi khi nhập tiêu đề trang: {e}", exc_info=True)
+            logging.error(f"Lỗi khi nhập Tên tag*: {e}", exc_info=True)
             raise
 
-    # Hàm nhấn vào nút 'Lưu' để lưu trong pop-up 'Thêm từ khóa'
+    # Hàm sửa thông tin 'Tên tag*'
+    def edit_tag_name(self, title, timeout=10):
+        try:
+            tag_name_input = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.tag_name_input))
+            tag_name_input.clear()
+            tag_name_input.send_keys(title)
+            logging.info(f"Đã sửa thông tin Tên tag* thành: {title}")
+        except Exception as e:
+            logging.error(f"Lỗi khi sửa thông tin Tên tag*: {e}", exc_info=True)
+            raise
+
+    # Hàm nhập thông tin trong field 'Tìm kiếm'
+    def enter_in_search(self, title, timeout=10):
+        try:
+            search_input = WebDriverWait(self.driver, timeout).until(EC.visibility_of_element_located(self.search_input))
+            search_input.clear()
+            search_input.send_keys(title)
+            logging.info(f"Đã nhập thông tin tìm kiếm: {title}")
+        except Exception as e:
+            logging.error(f"Lỗi khi nhập thông tin tìm kiếm: {e}", exc_info=True)
+            raise
+
+    # Hàm nhấn vào nút 'Lưu' 
     def click_save_button(self):
         try:
             save_button = self.wait.until(EC.element_to_be_clickable(self.save_button))
@@ -133,7 +159,7 @@ class Tag:
             logging.error(f"Lỗi khi nhấn nút Lưu: {e}", exc_info=True)
             return False
         
-    # Hàm kiểm tra xem có thông báo lỗi nào xuất hiện khi nhập 'Tên tag' không
+    # Hàm kiểm tra và lấy thông báo lỗi khi nhập 'Tên tag*'
     def check_tag_name_error_message(self):
         try:
             error_element = self.wait.until(
@@ -160,7 +186,7 @@ class Tag:
             logging.error(f"Lỗi khi kiểm tra tên tag trong danh sách: {e}", exc_info=True)
             return False
         
-    # Hàm kiểm tra xem 'Tên tag' có xóa trong 'Danh sách Tag' hay không.
+    # Hàm kiểm tra xem 'Tên tag' đã xóa trong 'Danh sách Tag' hay không.
     def is_delete_tag_name_in_list(self, expected_tagname):
         try:
             tag_list_wrapper = self.wait.until(
@@ -174,6 +200,61 @@ class Tag:
                 return False
         except Exception as e:
             logging.error(f"Lỗi khi kiểm tra tên tag trong danh sách: {e}", exc_info=True)
+            return False
+        
+    # Hàm kiểm tra xem 'giá trị không hợp lệ' trong field 'Tìm kiếm' có hiển thị trong 'Danh sách Tag' hay không.
+    def is_invalid_search_in_list(self, expected_input):
+        try:
+            tag_list_wrapper = self.wait.until(
+                EC.visibility_of_element_located(self.tag_list_wrapper)
+            )
+            if not expected_input in tag_list_wrapper.text:
+                time.sleep(1)
+                logging.info(f"Giá trị '{expected_input}' vừa tìm kiếm không có trong danh sách!")
+                return True
+            else:
+                time.sleep(1)
+                logging.info(f"Giá trị '{expected_input}' vừa tìm kiếm có trong danh sách!")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi khi kiểm tra giá trị vừa tìm kiếm trong danh sách: {e}", exc_info=True)
+            return False
+        
+    # Hàm kiểm tra xem 'giá trị hợp lệ' trong field 'Tìm kiếm' có hiển thị trong 'Danh sách Tag' hay không.
+    def is_valid_search_in_list(self, expected_input):
+        try:
+            tag_list_wrapper = self.wait.until(
+                EC.visibility_of_element_located(self.tag_list_wrapper)
+            )
+            if expected_input in tag_list_wrapper.text:
+                time.sleep(1)
+                logging.info(f"Giá trị '{expected_input}' vừa tìm kiếm có trong danh sách!")
+                return True
+            else:
+                time.sleep(1)
+                logging.info(f"Giá trị '{expected_input}' vừa tìm kiếm không có trong danh sách!")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi khi kiểm tra giá trị vừa tìm kiếm trong danh sách: {e}", exc_info=True)
+            return False
+        
+
+    # Hàm kiểm tra xem 'dữ liệu' vừa sửa có hiển thị trong 'Danh sách Tag' hay không.
+    def is_edit_tag_name_in_list(self, expected_input):
+        try:
+            tag_list_wrapper = self.wait.until(
+                EC.visibility_of_element_located(self.tag_list_wrapper)
+            )
+            if expected_input in tag_list_wrapper.text:
+                time.sleep(1)
+                logging.info(f"Dữ liệu '{expected_input}' vừa sửa có trong Danh sách Tag!")
+                return True
+            else:
+                time.sleep(1)
+                logging.info(f"Dữ liệu '{expected_input}' vừa sửa không có trong Danh sách Tag!")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi khi kiểm tra giá trị vừa sửa trong danh sách: {e}", exc_info=True)
             return False
         
     # Hàm nhấn vào dropdown 'Trạng thái'
@@ -260,6 +341,17 @@ class Tag:
         except Exception as e:
             logging.error(f"Lỗi khi kiểm tra pop-up 'Xóa': {e}", exc_info=True)
             return False
+        
+    # Hàm kiểm tra xem popup 'Sửa từ khóa' có hiển thị không
+    def is_edit_tag_popup_displayed(self):
+        try:
+            time.sleep(1)
+            popup_element = self.wait.until(EC.visibility_of_element_located(self.edit_tag_popup))
+            logging.info('Popup được hiển thị!')
+            return popup_element.is_displayed()
+        except Exception as e:
+            logging.error(f"Lỗi khi kiểm tra pop-up 'Sửa từ khóa': {e}", exc_info=True)
+            return False
     
     # Hàm nhấn vào button 'Có' trong popup 'Xóa'
     def click_yes_button(self):
@@ -271,6 +363,30 @@ class Tag:
         except TimeoutException:
             logging.error("Không thể nhấn vào button'Có'.")
             raise
+
+    # Hàm nhấn vào button 'Không' trong popup 'Xóa'
+    def click_no_button(self):
+        try:
+            no_button = self.wait.until(EC.element_to_be_clickable(self.no_button))
+            no_button.click()
+            time.sleep(1)
+            logging.info("Đã nhấn vào button 'Không'.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào button'Không'.")
+            raise
+
+    # Hàm nhấn vào thẻ A 'Tên tag*' đầu tiên trong Danh sách Tag
+    def click_edit_tag_first(self):
+        try:
+            edit_tag_first = self.wait.until(EC.element_to_be_clickable(self.edit_tag_first))
+            edit_tag_first.click()
+            time.sleep(1)
+            logging.info("Đã nhấn vào *Tên tag* đầu tiên.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào *Tên tag* đầu tiên.")
+            raise
+
+    
         
 
 
