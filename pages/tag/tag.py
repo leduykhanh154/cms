@@ -13,7 +13,7 @@ from selenium.common.exceptions import TimeoutException
 
 class Tag:
     # Khởi tạo instance của Tag với driver và các locator
-    def init(self, driver, timeout=5):
+    def __init__(self, driver, timeout=5):
         if not driver: 
             raise ValueError("Driver không được để trống hoặc None!")
         self.driver = driver

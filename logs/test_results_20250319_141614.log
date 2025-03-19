@@ -1,0 +1,4 @@
+2025-03-19 14:16:25,869 - INFO - Bắt đầu Test Case 3: Verify khi nhập Tiêu đề - Tiếng Việt hơn 250 ký tự -> Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'.
+2025-03-19 14:16:29,859 - INFO - Test Case 3 PASS: test_title_vi_max_length_error | Expected: Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Actual: Hệ thống hiển thị thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Status: PASS
+2025-03-19 14:16:48,809 - INFO - Bắt đầu Test Case 4: erify khi giảm số ký tự trong Tiêu đề - Tiếng Việt xuống < 250 -> Hệ thống ẩn đi thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'.
+2025-03-19 14:16:58,520 - INFO - Test Case 4 PASS: test_title_vi_max_length_error_disappears | Expected: Hệ thống ẩn đi thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Actual: Hệ thống ẩn đi thông báo lỗi 'Tiêu đề không được vượt quá 250 ký tự'. | Status: PASS
