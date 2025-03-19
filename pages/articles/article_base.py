@@ -5,7 +5,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class Article:
+class ArticleBase:
     # Hàm khởi tạo driver
     def __init__(self, driver, timeout=5):
         if not driver:
