@@ -1,4 +1,0 @@
-2025-03-19 14:39:39,515 - INFO - Bắt đầu Test Case 1: Verify khi không nhập Tiêu đề - Tiếng Việt -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'.
-2025-03-19 14:39:42,216 - INFO - Test Case 1 PASS: test_empty_article_title_vi | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Actual: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Status: PASS
-2025-03-19 14:39:59,455 - INFO - Bắt đầu Test Case 2: Verify khi nhập lại Tiêu đề - Tiếng Việt -> Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề'.
-2025-03-19 14:40:07,542 - INFO - Test Case 2 PASS: test_title_vi_error_disappears | Expected: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Actual: Hệ thống ẩn đi thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Status: PASS
