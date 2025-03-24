@@ -52,7 +52,7 @@ class ImageArticle:
         try:
             tab_browser = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "a[href='#browse-content']")))
             tab_browser.click()
-            print("Click tab Browse thành công (Cách 2 - Click bằng href).")
+            print("Click tab Browse thành công.")
         except Exception as e:
             print(f"Không thể click vào tab Browse bằng href: {e}")
 
@@ -77,7 +77,7 @@ class ImageArticle:
                     print("Đã chọn ảnh đầu tiên (Click thường).")
                 except:
                     self.driver.execute_script("arguments[0].click();", first_image)
-                    print("Đã chọn ảnh đầu tiên (Click JS).")
+                    print("Đã chọn ảnh đầu tiên.")
             else:
                 print("Không tìm thấy ảnh nào trong danh sách.")
         except Exception as e:
