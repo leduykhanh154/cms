@@ -1,2 +1,0 @@
-2025-03-19 13:54:03,120 - INFO - Bắt đầu Test Case 3: Verify khi không nhập Tiêu đề - Tiếng Việt -> Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'.
-2025-03-19 13:54:05,896 - INFO - Test Case 3 PASS: test_empty_article_title_vi | Expected: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Actual: Hệ thống hiển thị thông báo lỗi 'Vui lòng nhập Tiêu đề'. | Status: PASS

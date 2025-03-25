@@ -322,7 +322,7 @@ class Tag:
             logging.error(f"Lỗi khi nhấn checkbox 'đầu tiên': {e}", exc_info=True)
             return False
         
-    # Hàm select dropdown 'Xóa' trong button 'Thao tác'
+    # Hàm click vào select 'Xóa' trong button 'Thao tác'
     def click_delete_dropdown(self):
         try:
             delete_dropdown = self.wait.until(EC.element_to_be_clickable(self.dropdown_operation_display))

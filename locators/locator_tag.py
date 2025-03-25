@@ -38,7 +38,7 @@ class LocatorTag:
     SEARCH_INPUT = (By.XPATH, '//*[@id="dt-search-0"]')
 
     # CHECKBOX
-    CHECKBOX_FIRST = (By.CLASS_NAME, 'styled.ck.selectable-item')
+    CHECKBOX_FIRST = (By.XPATH, '//*[@id="table-keyword-list"]/tbody/tr[1]/td[1]/div/input')
 
     # TAG 'A'
     EDIT_TAG_FIRST = (By.XPATH, '//*[@id="table-keyword-list"]/tbody/tr[1]/td[2]/a')

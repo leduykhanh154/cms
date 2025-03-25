@@ -31,25 +31,25 @@ def log_success(message):
     logging.info(message)
 
 # Test Case 1: Verify breadcrumb 'Trang chủ -> Tag'. Hệ thống chuyển hướng sang trang chủ
-def test_home_action(tag, setup_driver):
-    try:
-        tag.perform_tag_operations()
-        tag.click_home_page()
-        print('Test Case 1 PASS: Chuyển hướng lại: Trang chủ')
-    except Exception as e:
-        print(f"Test Case 1 FAIL: Không chuyển hướng lại Trang chủ! Lỗi: {str(e)}")
-        assert False
+# def test_home_action(tag, setup_driver):
+#     try:
+#         tag.perform_tag_operations()
+#         tag.click_home_page()
+#         print('Test Case 1 PASS: Chuyển hướng lại: Trang chủ')
+#     except Exception as e:
+#         print(f"Test Case 1 FAIL: Không chuyển hướng lại Trang chủ! Lỗi: {str(e)}")
+#         assert False
 
 # Test Case 2: Verify button 'Thêm từ khóa'. Hệ thống hiển thị pop-up
-def test_add_keyword_popup_display(tag, setup_driver):
-    tag.perform_tag_operations()
-    try:
-        tag.click_add_keyword_button()
-        assert tag.is_add_keyword_popup_displayed(), "Pop-up Thêm từ khóa không hiển thị!"
-        print("Test Case 2 PASS: Pop-up Thêm từ khóa được hiển thị")
-    except Exception as e:
-        print(f"Test Case 2 FAIL: Pop-up Thêm từ khóa không hiển thị! Lỗi: {str(e)}")
-        assert False
+# def test_add_keyword_popup_display(tag, setup_driver):
+#     tag.perform_tag_operations()
+#     try:
+#         tag.click_add_keyword_button()
+#         assert tag.is_add_keyword_popup_displayed(), "Pop-up Thêm từ khóa không hiển thị!"
+#         print("Test Case 2 PASS: Pop-up Thêm từ khóa được hiển thị")
+#     except Exception as e:
+#         print(f"Test Case 2 FAIL: Pop-up Thêm từ khóa không hiển thị! Lỗi: {str(e)}")
+#         assert False
 
 # # Test Case 3: Verify bỏ trống 'Tên tag*' và nhấn button 'Lưu' -> Hệ thống hiển thị thông báo lỗi: 'Vui lòng nhập Tên tag'
 # def test_empty_tag_name(tag, setup_driver):
@@ -111,17 +111,17 @@ def test_add_keyword_popup_display(tag, setup_driver):
 # # Test Case 9: Verify click dropdown 'Xóa' trong button 'Thao tác' -> Hệ thống hiển thị toggle
 
 # # Test Case 10: Verify chọn checkbox và click dropdown 'Xóa' trong button 'Thao tác' -> Hệ thống hiển thị pop-up
-# def test_delete_popup_display(tag, setup_driver):
-#     tag.perform_tag_operations()
-#     try:
-#         tag.click_checkbox_first()
-#         tag.click_operation_button()
-#         tag.click_delete_dropdown()
-#         assert tag.is_delete_popup_displayed(), "Pop-up không hiển thị!"
-#         print("Test Case 10 PASS: Pop-up được hiển thị")
-#     except Exception as e:
-#         print(f"Test Case 10 FAIL: Pop-up không hiển thị! Lỗi: {str(e)}")
-#         assert False
+def test_delete_popup_display(tag, setup_driver):
+    tag.perform_tag_operations()
+    try:
+        tag.click_checkbox_first()
+        tag.click_operation_button()
+        tag.click_delete_dropdown()
+        assert tag.is_delete_popup_displayed(), "Pop-up không hiển thị!"
+        print("Test Case 10 PASS: Pop-up được hiển thị")
+    except Exception as e:
+        print(f"Test Case 10 FAIL: Pop-up không hiển thị! Lỗi: {str(e)}")
+        assert False
 
 # # Test Case 11: Verify chọn checkbox và click dropdown 'Xóa', chọn button 'Có' trong button 'Thao tác' -> Hệ thống quay lại trang 'Danh sách Tag' và dữ liệu được xóa
 # def test_button_yes_and_verify_display(tag, setup_driver):
