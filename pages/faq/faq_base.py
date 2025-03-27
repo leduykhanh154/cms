@@ -1,4 +1,5 @@
 import logging
+import time
 from selenium.webdriver.common.by import By
 from locators.faq.locator_faq import LocatorFAQ
 from selenium.common.exceptions import TimeoutException
@@ -23,11 +24,9 @@ class FAQBase:
             logging.error(f"Không thể nhấn menu {menu_name}: {e}", exc_info=True)
             raise
 
-    
     # Hàm nhấn menu 'Nội dung'
     def click_content_menu(self):
         return self.click_menu(self.locators.CONTENT_MENU, "Nội dung")
-
 
     # Hàm nhấn menu 'FAQ'
     def click_faq_menu(self):
@@ -36,9 +35,52 @@ class FAQBase:
     # Hàm nhấn vào breadcrumb 'Trang chủ'
     def click_home_page(self):
         return self.click_menu(self.locators.HOME_PAGE, "Trang chủ")
-        
     
+    # Hàm nhấn vào button 'Tạo mới'
+    def click_create_new_button(self):
+        try:
+            create_new_button = self.wait.until(EC.element_to_be_clickable(self.locators.CREATE_NEW_BUTTON))
+            create_new_button.click()
+            time.sleep(1)
+            logging.info("Đã nhấn vào button 'Tạo mới'.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào button 'Tạo mới'.")
+            raise
+    
+    # Hàm nhấn vào Edit Tag: thẻ a 'đầu tiên'
+    def click_edit_tag_first(self):
+        try:
+            edit_tag_first = self.wait.until(EC.element_to_be_clickable(self.locators.EDIT_TAG_FIRST))
+            edit_tag_first.click()
+            time.sleep(1)
+            logging.info("Đã nhấn vào dòng 'đầu tiên' của cột 'Câu hỏi'.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào dòng 'đầu tiên' của cột 'Câu hỏi'.")
+            raise
+    
+    # Hàm nhấn vào button 'Thao tác'
+    def click_operation_button(self):
+        try:
+            operation_button = self.wait.until(EC.element_to_be_clickable(self.locators.OPERATION_BUTTON))
+            operation_button.click()
+            logging.info("Đã nhấn vào button 'Thao tác'.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào button 'Thao tác'.")
+            raise
 
+    # Hàm chọn checkbox 'đầu tiên'
+    def click_checkbox_first(self):
+        try:
+            checkbox = self.wait.until(EC.element_to_be_clickable(self.locators.CHECKBOX_FIRST))
+            if not checkbox.is_selected():
+                checkbox.click()
+                logging.info("Checkbox 'đầu tiên' đã được chọn.")
+            else:
+                logging.info("Checkbox 'đầu tiên' đã được chọn từ trước.")
+            return checkbox.is_selected()
+        except Exception as e:
+            logging.error(f"Lỗi khi nhấn checkbox 'đầu tiên': {e}", exc_info=True)
+            return False
 
     # Hàm thực hiện thao tác nhấn menu Nội dung -> menu FAQ
     def navigate_to_faq(self):
