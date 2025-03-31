@@ -1,0 +1,6 @@
+2025-03-27 20:11:02,180 - INFO - Bắt đầu Test Case 6: Kiểm tra tab 'Tiếng Việt'.
+2025-03-27 20:11:07,622 - INFO - Đã nhấn vào tab 'Tiếng Anh'.
+2025-03-27 20:11:07,707 - INFO - Nút 'Dịch nội dung' hiển thị đúng.
+2025-03-27 20:11:07,808 - INFO - Đã nhấn vào tab 'Tiếng Việt'.
+2025-03-27 20:11:08,372 - INFO - Tab 'Tiếng Việt' hiển thị đúng.
+2025-03-27 20:11:08,372 - INFO - Test Case 6 PASS: test_click_tabs_english_vietnamese_and_check_labels | Expected: Tab 'Tiếng Việt' hoạt động đúng. | Actual: Tab 'Tiếng Việt' hoạt động đúng. | Status: PASS

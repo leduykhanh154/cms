@@ -1,0 +1,2 @@
+2025-03-31 17:01:50,715 - INFO - Bắt đầu Test Case 22: Nhập 255 ký tự vào ô 'Liên kết bài viết' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 17:02:03,614 - ERROR - Test Case 22 | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Liên kết bài viết không quá 254 ký tự'. | Actual: Thông báo lỗi không xuất hiện! | Status: FAIL

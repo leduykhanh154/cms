@@ -1,0 +1,4 @@
+2025-03-27 11:45:48,822 - INFO - Bắt đầu Test Case 18: Verify có thể nhấn vào icon '...' rồi chọn nút 'Xóa'.
+2025-03-27 11:45:51,563 - INFO - Đã nhấn vào icon '...' thành công.
+2025-03-27 11:45:52,678 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-03-27 11:45:52,827 - ERROR - Test Case 18 FAIL: test_click_menu_and_delete_button | Expected: Hệ thống hiển thị cảnh báo: 'Bạn có chắc chắn muốn xóa ?' khi nhấn 'Xóa'. | Actual: Cảnh báo không đúng. | Status: FAIL

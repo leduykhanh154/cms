@@ -1,0 +1,6 @@
+2025-03-27 19:42:28,350 - INFO - Bắt đầu Test Case 4: Kiểm tra tab 'Thông tin chung' & 'Nội dung chính' và các label tương ứng.
+2025-03-27 19:42:33,796 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-03-27 19:42:34,349 - INFO - LABEL_STATUS hiển thị đúng là 'Hiển thị'.
+2025-03-27 19:42:34,463 - INFO - Đã nhấn vào tab 'Nội dung chính'.
+2025-03-27 19:42:34,999 - INFO - LABEL_ARTICLE_TYPE hiển thị đúng là 'Loại bài viết*'.
+2025-03-27 19:42:34,999 - INFO - Test Case 4 PASS: test_click_tabs_and_check_labels | Expected: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng, các label hiển thị chính xác. | Actual: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng, các label hiển thị chính xác. | Status: PASS

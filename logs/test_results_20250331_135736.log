@@ -1,0 +1,2 @@
+2025-03-31 13:57:47,059 - INFO - Bắt đầu Test Case 18: Click tab Browser -> Chọn ảnh -> Click Upload -> Kiểm tra ảnh hiển thị.
+2025-03-31 13:57:58,060 - INFO - Test Case 18 PASS: test_upload_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS

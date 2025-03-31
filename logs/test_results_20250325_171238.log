@@ -1,0 +1,2 @@
+2025-03-25 17:12:49,123 - INFO - Bắt đầu Test Case 2: Verify khi nhấn vào nút 'Tạo mới loại bài viết' -> Hệ thống điều hướng về trang tạo mới thành công.
+2025-03-25 17:12:54,322 - INFO - Test Case 2 PASS: test_click_create_new_article_type | Expected: Hệ thống điều hướng thành công đến trang 'Tạo mới loại bài viết'. | Actual: Hệ thống điều hướng thành công đến trang 'Tạo mới loại bài viết'. | Status: PASS

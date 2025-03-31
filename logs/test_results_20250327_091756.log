@@ -1,0 +1,2 @@
+2025-03-27 09:18:08,234 - INFO - Bắt đầu Test Case 15: Verify khi nhấn vào nút 'Thao tác' rồi nhấn 'Xóa'.
+2025-03-27 09:18:12,246 - INFO - Test Case 15 PASS: test_click_operate_and_delete_button | Expected: Nút 'Xóa' được nhấn thành công. | Actual: Nút 'Xóa' được nhấn thành công. | Status: PASS

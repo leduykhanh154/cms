@@ -1,0 +1,2 @@
+2025-03-27 22:07:03,668 - INFO - Bắt đầu Test Case 7: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết'.
+2025-03-27 22:07:12,711 - INFO - Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu.

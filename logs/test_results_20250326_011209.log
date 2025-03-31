@@ -1,0 +1,2 @@
+2025-03-26 01:12:17,642 - INFO - Bắt đầu Test Case 7: Verify khi nhấn vào nút 'Tai lai'.
+2025-03-26 01:12:20,848 - INFO - Test Case PASS 7: test_click_reset_button | Expected: Nút 'Tai lai' được nhấn thành công. | Actual: Nút 'Tai lai' được nhấn thành công. | Status: PASS

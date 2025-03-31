@@ -1,0 +1,2 @@
+2025-03-27 09:33:17,422 - INFO - Bắt đầu Test Case 15: Verify khi nhấn vào nút 'Xóa' mà không chọn loai bài viết.
+2025-03-27 09:33:22,130 - INFO - Test Case 15 PASS: test_click_operate_and_delete_without_selection | Expected: Thông báo 'Vui lòng chọn Loại bài viết để xóa.' xuất hiện. | Actual: Thông báo 'Vui lòng chọn Loại bài viết để xóa.' xuất hiện. | Status: PASS

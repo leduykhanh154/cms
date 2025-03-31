@@ -1,0 +1,2 @@
+2025-03-26 01:34:37,519 - INFO - Bắt đầu Test Case 10: Verify có thể nhập từ khóa vào ô tìm kiếm.
+2025-03-26 01:34:40,085 - INFO - Test Case 10 PASS: test_enter_search_keyword | Expected: Đã nhập 'Test Article' vào ô tìm kiếm và thực hiện tìm kiếm. | Actual: Đã nhập 'Test Article' vào ô tìm kiếm và thực hiện tìm kiếm. | Status: PASS

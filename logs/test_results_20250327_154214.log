@@ -1,0 +1,5 @@
+2025-03-27 15:42:23,923 - INFO - Bắt đầu Test Case 13: Kiểm tra liên kết đầu tiên và sự xuất hiện của text trên trang đích.
+2025-03-27 15:42:25,647 - INFO - Text của liên kết đầu tiên: 'Loai bai viet cho xu ly'.
+2025-03-27 15:42:26,393 - INFO - Đã nhấn vào liên kết đầu tiên thành công.
+2025-03-27 15:42:28,402 - INFO - Text 'Loai bai viet cho xu ly' hiển thị đúng trên trang đích.
+2025-03-27 15:42:28,402 - INFO - Test Case 13 PASS: test_click_first_link | Expected: Text 'Loai bai viet cho xu ly' hiển thị đúng trên trang. | Actual: Text 'Loai bai viet cho xu ly' hiển thị đúng trên trang. | Status: PASS

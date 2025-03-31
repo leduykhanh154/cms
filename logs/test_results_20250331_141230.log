@@ -1,0 +1,2 @@
+2025-03-31 14:12:39,483 - INFO - Bắt đầu Test Case 19: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh.
+2025-03-31 14:12:47,782 - INFO - Test Case 19 PASS | Expected: Nút 'Xóa ảnh' không xuất hiện trước khi tải ảnh. | Actual: Nút 'Xóa ảnh' không xuất hiện trước khi tải ảnh. | Status: PASS

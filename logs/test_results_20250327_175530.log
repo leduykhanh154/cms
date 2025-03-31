@@ -1,0 +1,8 @@
+2025-03-27 17:55:39,480 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'Có'.
+2025-03-27 17:55:41,212 - INFO - Đã chọn bài viết đầu tiên.
+2025-03-27 17:55:41,300 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 17:55:42,376 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 17:55:43,417 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-03-27 17:55:43,526 - INFO - Đã nhấn vào nút 'Có'.
+2025-03-27 17:55:47,849 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'Có'.
+2025-03-27 17:55:52,900 - INFO - Test Case 20 | Expected: Bài viết đã bị xóa. | Actual: Bài viết đã bị xóa. | Status: PASS

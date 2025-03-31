@@ -35,15 +35,24 @@ def read_test_log():
                     if len(parts) < 4:
                         logging.warning(f"Dòng log sai định dạng: {line.strip()}")
                         continue
-                    raw_test_name = parts[0].split(": ")[1].strip()
-                    test_name = normalize_test_name(raw_test_name) 
-                    expected = parts[1].split(": ")[1].strip()
-                    actual = parts[2].split(": ")[1].strip()
-                    status = parts[3].split(": ")[1].strip()
+                    
+                    # Kiểm tra và trích xuất raw_test_name an toàn
+                    test_name_part = parts[0].split(": ")
+                    if len(test_name_part) < 2:
+                        logging.warning(f"Lỗi tách tên test case: {parts[0]}")
+                        continue
+                    raw_test_name = test_name_part[1].strip()
+                    test_name = normalize_test_name(raw_test_name)
+
+                    expected = parts[1].split(": ")[1].strip() if ": " in parts[1] else "N/A"
+                    actual = parts[2].split(": ")[1].strip() if ": " in parts[2] else "N/A"
+                    status = parts[3].split(": ")[1].strip() if ": " in parts[3] else "N/A"
+
                     test_data[test_name] = {"expected": expected, "actual": actual, "status": status}
     except FileNotFoundError:
         logging.error(f"Không tìm thấy file {latest_log}")
     return test_data
+
 
 @pytest.fixture(scope="function")
 def setup_driver():

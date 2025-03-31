@@ -1,0 +1,2 @@
+2025-03-26 01:42:33,087 - INFO - Bắt đầu Test Case 11: Verify có thể nhấn vào checkbox 'Select All'.
+2025-03-26 01:42:36,046 - INFO - Test Case 11 PASS: test_click_select_all_checkbox | Expected: Đã nhấn vào checkbox 'Select All'. | Actual: Đã nhấn vào checkbox 'Select All'. | Status: PASS

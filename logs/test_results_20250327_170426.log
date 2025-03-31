@@ -1,0 +1,4 @@
+2025-03-27 17:04:35,206 - INFO - Bắt đầu Test Case 18: Verify có thể nhấn vào icon '...' rồi chọn nút 'Xóa'.
+2025-03-27 17:04:37,866 - INFO - Đã nhấn vào icon '...' thành công.
+2025-03-27 17:04:38,963 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-03-27 17:04:39,052 - INFO - Test Case 18 PASS: test_click_menu_and_delete_button | Expected: Hệ thống hiển thị cảnh báo: 'Bạn có chắc chắn ?' khi nhấn 'Xóa'. | Actual: Hệ thống hiển thị đúng cảnh báo. | Status: PASS

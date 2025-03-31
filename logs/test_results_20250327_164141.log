@@ -1,0 +1,6 @@
+2025-03-27 16:41:49,844 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'No'.
+2025-03-27 16:41:51,461 - INFO - Text bài viết đầu tiên trước khi xóa: 'Loai bai viet cho xu ly'.
+2025-03-27 16:41:51,591 - INFO - Đã chọn bài viết đầu tiên.
+2025-03-27 16:41:51,664 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 16:41:51,769 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 16:41:51,813 - INFO - Hộp thoại cảnh báo hiển thị đúng.

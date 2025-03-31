@@ -1,0 +1,9 @@
+2025-03-27 17:25:57,438 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'No'.
+2025-03-27 17:25:59,082 - INFO - Đã chọn bài viết đầu tiên.
+2025-03-27 17:25:59,145 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 17:26:00,218 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 17:26:01,239 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-03-27 17:26:01,318 - INFO - Đã nhấn vào nút 'No'.
+2025-03-27 17:26:01,843 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'No'.
+2025-03-27 17:26:01,872 - INFO - Bài viết đầu tiên không thay đổi sau khi hủy xóa.
+2025-03-27 17:26:01,872 - INFO - Test Case 20 PASS | Expected: Popup da dong, loai bai viet van con. | Actual: Popup da dong, loai bai viet van con. | Status: PASS

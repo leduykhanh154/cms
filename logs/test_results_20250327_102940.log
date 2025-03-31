@@ -1,0 +1,9 @@
+2025-03-27 10:29:48,942 - INFO - Bắt đầu Test Case 11: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Kiểm tra cảnh báo 'Bạn có chắc chắn ?'.
+2025-03-27 10:29:51,419 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 10:29:52,497 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 10:29:53,604 - INFO - Test Case 11 PASS: test_select_and_delete_article_type | Expected: Hệ thống hiển thị cảnh báo: 'Vui lòng chọn Loại bài viết để xóa.'. | Actual: Hệ thống hiển thị đúng cảnh báo. | Status: PASS
+2025-03-27 10:30:08,655 - INFO - Bắt đầu Test Case 11: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Kiểm tra cảnh báo 'Bạn có chắc chắn ?'.
+2025-03-27 10:30:11,200 - INFO - Đã chọn bài viết đầu tiên thành công.
+2025-03-27 10:30:12,269 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 10:30:13,523 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 10:30:14,645 - INFO - Test Case 11 PASS: test_select_and_delete_article_type | Expected: Hệ thống hiển thị cảnh báo: 'Bạn có chắc chắn ?'. | Actual: Hệ thống hiển thị đúng cảnh báo. | Status: PASS

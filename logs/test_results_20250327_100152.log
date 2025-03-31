@@ -1,0 +1,5 @@
+2025-03-27 10:02:02,307 - INFO - Bắt đầu Test Case 11: Verify khi chọn bài viết -> nhấn 'Thao tác' -> nhấn 'Xóa' -> Kiểm tra cảnh báo.
+2025-03-27 10:02:04,945 - INFO - Đã chọn bài viết đầu tiên thành công.
+2025-03-27 10:02:06,009 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 10:02:07,105 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 10:02:08,119 - INFO - Hộp thoại cảnh báo đã xuất hiện.
