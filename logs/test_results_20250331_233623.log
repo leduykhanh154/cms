@@ -1,0 +1,4 @@
+2025-03-31 23:36:32,862 - INFO - Bắt đầu Test Case 45: Click dropdown 'Banner Set' và kiểm tra dropdown có mở không.
+2025-03-31 23:36:38,136 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-03-31 23:36:40,914 - INFO - Đã click vào dropdown 'Banner Set'.
+2025-03-31 23:36:40,966 - INFO - Test Case 45 PASS: test_click_banner_set_dropdown_and_verify | Expected: Dropdown 'Banner Set' mở thành công (tìm thấy 'Banner icon' trên trang). | Actual: Dropdown 'Banner Set' mở thành công (tìm thấy 'Banner icon' trên trang). | Status: PASS

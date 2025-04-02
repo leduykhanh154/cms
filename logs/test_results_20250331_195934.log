@@ -1,0 +1,24 @@
+2025-03-31 19:59:44,611 - INFO - Bắt đầu Test Case 36: Nhập 255 ký tự vào ô 'Loại bài viết' (English) và kiểm tra thông báo lỗi.
+2025-03-31 19:59:51,197 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:59:52,374 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:59:55,231 - INFO - Test Case 36 PASS: test_en_article_type_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Status: PASS
+2025-03-31 20:00:09,836 - INFO - Bắt đầu Test Case 37: Nhập dữ liệu vào ô 'Loại bài viết' (English) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-03-31 20:00:16,346 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:00:17,482 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:00:21,040 - INFO - Test Case 37 PASS: test_en_article_type_clear_and_check_error | Expected: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Actual: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Status: PASS
+2025-03-31 20:00:35,674 - INFO - Bắt đầu Test Case 38: Nhập 255 ký tự vào ô 'Duong dan' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:00:42,353 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:00:43,471 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:00:46,411 - INFO - Test Case 38 PASS: test_en_article_link_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'. | Status: PASS
+2025-03-31 20:01:00,972 - INFO - Bắt đầu Test Case 39: Nhập 255 ký tự vào ô 'Mô tả ngắn' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:01:07,617 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:01:08,735 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:01:11,591 - INFO - Test Case 39 PASS: test_en_short_description_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Status: PASS
+2025-03-31 20:01:26,362 - INFO - Bắt đầu Test Case 40: Nhập 101 ký tự vào ô 'Meta Keyword' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:01:32,851 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:01:34,021 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:01:36,493 - INFO - Test Case 40 PASS: test_en_meta_keyword_101_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Status: PASS
+2025-03-31 20:01:51,140 - INFO - Bắt đầu Test Case 25: Nhập 501 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:01:58,018 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:01:59,133 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:02:02,732 - INFO - Test Case 25 PASS: test_en_meta_description_501_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 300 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 300 ký tự'. | Status: PASS

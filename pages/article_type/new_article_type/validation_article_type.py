@@ -16,7 +16,8 @@ class ValidationArticleType:
         self.driver = driver
         self.wait = WebDriverWait(self.driver, timeout)
         self.locators = LocatorNewArticleType  
-        
+    
+    # Tab Tieng Viet    
     # Hàm lấy nội dung văn bản của một phần tử trên giao diện
     def get_text(self, locator):
         try:
@@ -45,7 +46,7 @@ class ValidationArticleType:
             logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
         return False
 
-# Ham kiem tra Loai bai viet khong dien hoac dien va xoa Loai bai viet
+    # Ham kiem tra Loai bai viet khong dien hoac dien va xoa Loai bai viet
     def is_field_error_displayed(self):
         try:
             error_message = self.get_text(self.locators.VI_ERROR_PLEASE_FIELD_TYPE_ARTICLE)
@@ -126,6 +127,159 @@ class ValidationArticleType:
         try:
             error_message = self.get_text(self.locators.VI_ERROR_META_DESCRIPTION)
             expected_message = "Vui lòng nhập Meta Description không quá 500 ký tự"
+
+            if error_message == expected_message:
+                logging.info("Thông báo lỗi hiển thị đúng.")
+                return True
+            elif error_message == "global.validation.required":
+                logging.error("Lỗi: global.validation.required. Thông báo lỗi không đúng.")
+                return False  # Khi hiển thị "global.validation.required",
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_message}', nhưng nhận được: '{error_message}'")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
+        return False
+    
+    # Tab English
+    # Ham kiem tra Loai bai viet khong vuot qua 255 ky tu
+    def is_en_max_type_error_displayed(self):
+        try:
+            error_message = self.get_text(self.locators.EN_ERROR_PLEASE_FIELD_TYPE_ARTICLE)
+            expected_message = "Vui lòng nhập Loại bài viết không quá 254 ký tự"
+
+            if error_message == expected_message:
+                logging.info("Thông báo lỗi hiển thị đúng.")
+                return True
+            elif error_message == "global.validation.required":
+                logging.error("Lỗi: global.validation.required. Thông báo lỗi không đúng.")
+                return False  # Khi hiển thị "global.validation.required",
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_message}', nhưng nhận được: '{error_message}'")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
+        return False
+
+    # Ham kiem tra Loai bai viet khong dien hoac dien va xoa Loai bai viet
+    def is_en_field_error_displayed(self):
+        try:
+            error_message = self.get_text(self.locators.EN_ERROR_PLEASE_FIELD_TYPE_ARTICLE)
+            expected_message = "Vui lòng nhập Loại bài viết"
+
+            if error_message == expected_message:
+                logging.info("Thông báo lỗi hiển thị đúng.")
+                return True
+            elif error_message == "global.validation.required":
+                logging.error("Lỗi: global.validation.required. Thông báo lỗi không đúng.")
+                return False  # Khi hiển thị "global.validation.required",
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_message}', nhưng nhận được: '{error_message}'")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
+        return False
+    
+    # Ham kiem tra duong dan khong vuot qua 255 ky tu
+    def is_en_max_link_error_displayed(self):
+        try:
+            error_message = self.get_text(self.locators.EN_ERROR_LINK)
+            expected_message = "Vui lòng nhập Đường dẫn không quá 254 ký tự"
+
+            if error_message == expected_message:
+                logging.info("Thông báo lỗi hiển thị đúng.")
+                return True
+            elif error_message == "global.validation.required":
+                logging.error("Lỗi: global.validation.required. Thông báo lỗi không đúng.")
+                return False  # Khi hiển thị "global.validation.required",
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_message}', nhưng nhận được: '{error_message}'")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
+        return False
+    
+    # Ham kiem tra Mo ta ngan khong vuot qua 200 ky tu
+    def is_en_max_short_description_error_displayed(self):
+        try:
+            error_message = self.get_text(self.locators.EN_ERROR_SHORT_DESCRIPTION)
+            expected_message = "Vui lòng nhập Mô tả ngắn không quá 200 ký tự"
+
+            if error_message == expected_message:
+                logging.info("Thông báo lỗi hiển thị đúng.")
+                return True
+            elif error_message == "global.validation.required":
+                logging.error("Lỗi: global.validation.required. Thông báo lỗi không đúng.")
+                return False  # Khi hiển thị "global.validation.required",
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_message}', nhưng nhận được: '{error_message}'")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
+        return False
+    
+    # Ham kiem tra Meta Keyword khong vuot qua 100 ky tu
+    def is_en_meta_keyword_error_displayed(self):
+        try:
+            error_message = self.get_text(self.locators.EN_ERROR_META_KEYWORD)
+            expected_message = "Vui lòng nhập Meta Keyword không quá 100 ký tự"
+
+            if error_message == expected_message:
+                logging.info("Thông báo lỗi hiển thị đúng.")
+                return True
+            elif error_message == "global.validation.required":
+                logging.error("Lỗi: global.validation.required. Thông báo lỗi không đúng.")
+                return False  # Khi hiển thị "global.validation.required",
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_message}', nhưng nhận được: '{error_message}'")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
+        return False
+    
+     # Ham kiem tra Mo ta ngan khong vuot qua 7 ky tu
+    def is_max_sort_order_error_displayed(self):
+        try:
+            error_message = self.get_text(self.locators.ERROR_SORT_ORDER)
+            expected_message = "Vui lòng nhập Mô tả ngắn không quá 7 ký tự"
+
+            if error_message == expected_message:
+                logging.info("Thông báo lỗi hiển thị đúng.")
+                return True
+            elif error_message == "global.validation.required":
+                logging.error("Lỗi: global.validation.required. Thông báo lỗi không đúng.")
+                return False  # Khi hiển thị "global.validation.required",
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_message}', nhưng nhận được: '{error_message}'")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
+        return False
+    
+    # Ham kiem tra Meta Keyword khong vuot qua 100 ky tu
+    def is_en_meta_description_error_displayed(self):
+        try:
+            error_message = self.get_text(self.locators.EN_ERROR_META_DESCRIPTION)
+            expected_message = "Vui lòng nhập Meta Description không quá 500 ký tự"
+
+            if error_message == expected_message:
+                logging.info("Thông báo lỗi hiển thị đúng.")
+                return True
+            elif error_message == "global.validation.required":
+                logging.error("Lỗi: global.validation.required. Thông báo lỗi không đúng.")
+                return False  # Khi hiển thị "global.validation.required",
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_message}', nhưng nhận được: '{error_message}'")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
+        return False
+    
+    # Ham kiem tra Thu tu sap xep trong
+    def is_miss_sort_order_error_displayed(self):
+        try:
+            error_message = self.get_text(self.locators.ERROR_SORT_ORDER)
+            expected_message = "Vui lòng nhập Thứ tự sắp xếp"
 
             if error_message == expected_message:
                 logging.info("Thông báo lỗi hiển thị đúng.")

@@ -1,0 +1,4 @@
+2025-03-31 18:32:52,151 - INFO - Bắt đầu Test Case 27: Nhập đường dẫn ở tab 'English' -> Kiểm tra dữ liệu.
+2025-03-31 18:32:58,692 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 18:32:59,774 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 18:33:00,934 - INFO - Test Case 27 PASS: test_enter_en_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Status: PASS

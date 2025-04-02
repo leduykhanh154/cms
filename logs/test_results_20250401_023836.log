@@ -1,0 +1,22 @@
+2025-04-01 02:38:44,784 - INFO - Bắt đầu Test Case 7: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết'.
+2025-04-01 02:38:52,058 - INFO - Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu.
+2025-04-01 02:38:52,138 - INFO - Thông báo lỗi 'Vui lòng nhập loại bài viết' đã xuất hiện như mong đợi.
+2025-04-01 02:38:52,138 - INFO - Test Case 7 PASS: test_click_save_and_check_error_message | Expected: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Actual: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Status: PASS
+2025-04-01 02:39:06,221 - INFO - Bắt đầu Test Case 8: Click 'Tạo Mới' -> Click 'Lưu và Tiếp Tục Cập Nhật' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết'.
+2025-04-01 02:39:13,506 - INFO - Đã nhấn vào nút 'Lưu và Tiếp Tục Cập Nhật' mà không nhập dữ liệu.
+2025-04-01 02:39:13,549 - INFO - Thông báo lỗi 'Vui lòng nhập loại bài viết' đã xuất hiện như mong đợi.
+2025-04-01 02:39:13,549 - INFO - Test Case 8 PASS: test_click_save_and_continue_and_check_error_message | Expected: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Actual: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Status: PASS
+2025-04-01 02:39:27,812 - INFO - Bắt đầu Test Case 9.
+2025-04-01 02:39:34,260 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-01 02:39:35,386 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 02:39:37,446 - INFO - Đã nhấn vào nút 'Lưu' mà không nhập loại bài viết.
+2025-04-01 02:39:37,471 - INFO - Thông báo lỗi 'Vui lòng nhập loại bài viết' đã xuất hiện như mong đợi.
+2025-04-01 02:39:37,472 - INFO - Test Case 9 PASS: test_translate_and_save_without_article_type | Expected: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Actual: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Status: PASS
+2025-04-01 02:39:51,610 - INFO - Bắt đầu Test Case 10: Tạo mới -> Click tab tiếng Anh -> Click 'Dịch nội dung' -> Click 'Lưu và Tiếp tục cập nhật' -> Kiểm tra lỗi.
+2025-04-01 02:39:58,004 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-01 02:39:59,099 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 02:40:01,268 - INFO - Đã nhấn vào nút 'Lưu và Tiếp tục cập nhật' mà không nhập loại bài viết.
+2025-04-01 02:40:01,290 - INFO - Thông báo lỗi 'Vui lòng nhập loại bài viết' đã xuất hiện như mong đợi.
+2025-04-01 02:40:01,290 - INFO - Test Case 10 PASS: test_translate_and_save_continue_without_article_type | Expected: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Actual: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Status: PASS
+2025-04-01 02:40:15,401 - INFO - Bắt đầu Test Case 11: Nhập loại bài viết tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 02:40:21,821 - INFO - Test Case 11 PASS: test_enter_vi_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS

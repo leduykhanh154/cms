@@ -1,0 +1,8 @@
+2025-03-31 18:27:07,958 - INFO - Bắt đầu Test Case 26: Nhập loại bài viết English -> Kiểm tra dữ liệu.
+2025-03-31 18:27:14,449 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-03-31 18:27:15,519 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 18:27:16,649 - INFO - Test Case 26 PASS: test_enter_en_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-03-31 18:27:30,783 - INFO - Bắt đầu Test Case 27: Nhập đường dẫn English -> Kiểm tra dữ liệu.
+2025-03-31 18:27:37,059 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-03-31 18:27:38,239 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 18:27:39,355 - INFO - Test Case 27 PASS: test_enter_vi_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Status: PASS

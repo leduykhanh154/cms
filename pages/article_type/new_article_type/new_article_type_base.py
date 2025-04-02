@@ -250,7 +250,32 @@ class NewArticleTypeBase:
             logging.error("Không thể nhấn vào nút 'Dịch nội dung'. Hết thời gian chờ.")
             return False
 
-
+    # Ham click dropdown 'Status'
+    def click_dropdown_status(self):
+        try:
+            dropdown = self.wait.until(EC.element_to_be_clickable(self.locators.DROPDOWN_STATUS))
+            dropdown.click()
+            print("Đã click vào dropdown 'Status'.")
+        except Exception as e:
+            print(f"Lỗi khi click vào dropdown 'Status': {e}")
+    
+    # Ham click dropdown Loai bai viet cap cha
+    def click_dropdown_father_type(self):
+        try:
+            dropdown = self.wait.until(EC.element_to_be_clickable(self.locators.DROPDOWN_FATHER_TYPE))
+            dropdown.click()
+            print("Đã click vào dropdown 'Father Type'.")
+        except Exception as e:
+            print(f"Lỗi khi click vào dropdown 'Father Type': {e}")
+            
+    # Ham click dropdown Bo Banner
+    def click_dropdown_banner_set(self):
+        try:
+            dropdown = self.wait.until(EC.element_to_be_clickable(self.locators.DROPDOWN_BANNER_SET))
+            dropdown.click()
+            print("Đã click vào dropdown 'Banner Set'.")
+        except Exception as e:
+            print(f"Lỗi khi click vào dropdown 'Banner Set': {e}")
         
     # Hàm thực hiện thao tác nhấn menu Nội dung -> menu Bài viết
     def navigate_to_article(self):

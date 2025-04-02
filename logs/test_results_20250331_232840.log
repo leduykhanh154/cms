@@ -1,0 +1,4 @@
+2025-03-31 23:28:49,643 - INFO - Bắt đầu Test Case 43: Click dropdown 'Status' và kiểm tra dropdown có mở không.
+2025-03-31 23:28:55,189 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-03-31 23:28:58,313 - INFO - Đã click vào dropdown 'Status'.
+2025-03-31 23:28:58,369 - INFO - Test Case 43 PASS: test_click_status_dropdown_and_verify | Expected: Dropdown 'Status' mở thành công (tìm thấy 'Chờ xử lý' trên trang). | Actual: Dropdown 'Status' mở thành công (tìm thấy 'Chờ xử lý' trên trang). | Status: PASS

@@ -1,0 +1,4 @@
+2025-03-31 18:52:21,778 - INFO - Bắt đầu Test Case 30: Nhập 'Meta Description' English -> Kiểm tra dữ liệu.
+2025-03-31 18:52:28,154 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 18:52:29,222 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 18:52:30,397 - INFO - Test Case 30 PASS: test_enter_en_meta_description_and_verify | Expected: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Status: PASS

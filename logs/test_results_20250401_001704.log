@@ -1,0 +1,5 @@
+2025-04-01 00:17:14,001 - INFO - Bắt đầu Test Case 44: Nhập giá trị vào ô 'Thu tu sap xep' và kiểm tra thông báo lỗi.
+2025-04-01 00:17:19,192 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 00:17:22,030 - INFO - Đã nhập '5' vào ô 'Sort Order'.
+2025-04-01 00:17:24,085 - INFO - Đã xóa nội dung trong ô 'Sort Order'.
+2025-04-01 00:17:24,117 - ERROR - Test Case 44 FAIL: test_sort_order_validation | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Thu tu sap xep'. | Actual: Thông báo lỗi không xuất hiện! | Status: FAIL

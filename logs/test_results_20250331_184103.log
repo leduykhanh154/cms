@@ -1,0 +1,8 @@
+2025-03-31 18:41:12,509 - INFO - Bắt đầu Test Case 28: Nhập 'Từ khóa meta' English -> Kiểm tra dữ liệu.
+2025-03-31 18:41:18,922 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 18:41:20,061 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 18:41:21,467 - INFO - Test Case 28 PASS: test_enter_vi_meta_keyword_and_verify | Expected: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-03-31 18:41:36,110 - INFO - Bắt đầu Test Case 29: Nhập 'Mô tả' English -> Kiểm tra dữ liệu.
+2025-03-31 18:41:42,560 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 18:41:43,626 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 18:41:44,861 - INFO - Test Case 29 PASS: test_enter_en_description_and_verify | Expected: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Status: PASS

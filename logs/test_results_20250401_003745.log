@@ -1,0 +1,5 @@
+2025-04-01 00:37:54,558 - INFO - Bắt đầu Test Case 45: Nhập ký tự chữ vào ô 'Sort Order' và kiểm tra không hiển thị.
+2025-04-01 00:37:59,936 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 00:38:03,721 - INFO - Đã nhập '5abc' vào ô 'Sort Order'.
+2025-04-01 00:38:08,812 - INFO - Giá trị thực tế sau khi nhập: 'None'
+2025-04-01 00:38:08,814 - ERROR - Test Case 45 FAIL | Expected: '5' | Actual: 'None' | Status: FAIL

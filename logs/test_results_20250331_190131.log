@@ -1,0 +1,14 @@
+2025-03-31 19:01:40,604 - INFO - Bắt đầu Test Case 16: Click vào hình ảnh -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 19:01:47,012 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-03-31 19:01:47,028 - INFO - Test Case 16 PASS: test_click_vi_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-03-31 19:02:01,276 - INFO - Bắt đầu Test Case 17: Click vào hình ảnh -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 19:02:07,732 - INFO - Test Case 17 PASS: test_click_vi_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-03-31 19:02:21,947 - INFO - Bắt đầu Test Case 18: Click tab Browser -> Chọn ảnh -> Click Upload -> Kiểm tra ảnh hiển thị.
+2025-03-31 19:02:33,182 - INFO - Test Case 18 PASS: test_upload_vi_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS
+2025-03-31 19:02:47,848 - INFO - Bắt đầu Test Case 19: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh, sau đó click nút xóa ảnh.
+2025-03-31 19:03:00,741 - INFO - Test Case 19 PASS: test_check_vi_delete_button_before_and_after_upload | Expected: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Actual: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Status: PASS
+2025-03-31 19:03:15,088 - INFO - Bắt đầu Test Case 20: Không chọn ảnh và click 'Upload', kiểm tra nút 'Xóa ảnh'.
+2025-03-31 19:03:21,280 - ERROR - Test Case 20 FAIL: test_vi_upload_without_selecting_image | Expected: Nút 'Xóa ảnh' không xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Actual: Nút 'Xóa ảnh' xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Status: FAIL
+2025-03-31 19:03:35,687 - INFO - Bắt đầu Test Case 31: Click vào hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 19:03:41,988 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-03-31 19:03:41,994 - INFO - Test Case 31 PASS: test_click_en_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS

@@ -1,0 +1,4 @@
+2025-04-01 01:31:12,676 - INFO - Bắt đầu Test Case 49: Nhập loại bài viết, click nút 'Lưu' và kiểm tra đường dẫn có hiển thị loại bài viết vừa tạo.
+2025-04-01 01:31:19,076 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-01 01:31:21,170 - INFO - Đã nhấn nút 'Lưu'.
+2025-04-01 01:31:23,197 - ERROR - Test Case 49 FAIL: test_save_and_check_article_type | Expected: https://mpire-cms-demo.m1pire.asia/cms/category?page=1 | Actual: https://mpire-cms-demo.mpire.asia/cms/category?page=1

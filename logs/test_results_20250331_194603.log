@@ -1,0 +1,4 @@
+2025-03-31 19:46:13,976 - INFO - Bắt đầu Test Case 36: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 19:46:20,872 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:46:21,961 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:46:24,786 - INFO - Test Case 36 PASS: test_en_article_type_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Status: PASS

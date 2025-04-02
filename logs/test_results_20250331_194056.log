@@ -1,0 +1,9 @@
+2025-03-31 19:41:05,346 - INFO - Bắt đầu Test Case 31: Click vào hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 19:41:12,557 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:41:13,650 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:41:14,699 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-03-31 19:41:14,707 - INFO - Test Case 31 PASS: test_click_en_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-03-31 19:41:28,980 - INFO - Bắt đầu Test Case 32: Click vào nut 'Upload' hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 19:41:35,438 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:41:36,515 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:41:37,604 - INFO - Test Case 32 PASS: test_click_en_upload_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS

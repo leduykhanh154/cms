@@ -110,6 +110,7 @@ class IsDisplayedNewArticleType:
             logging.error(f"Lỗi khi kiểm tra popup: {e}")
             return False
 
+    # Tab Tieng Viet
     # Ham kiem tra nut 'Xoa anh' co hien thi khong
     def is_delete_image_button_displayed(self):
         try:
@@ -134,3 +135,63 @@ class IsDisplayedNewArticleType:
             logging.error("Ảnh không hiển thị sau khi tải lên!")
             return False
 
+    # Tab English
+    # Ham kiem tra nut 'Xoa anh' co hien thi khong
+    def is_en_delete_image_button_displayed(self):
+        try:
+            delete_button = self.wait.until(
+                EC.visibility_of_element_located(self.locators.EN_BUTTON_DELETE_IMAGE)
+            )
+            logging.info("Nút 'Xóa ảnh' đã xuất hiện.")
+            return True
+        except TimeoutException:
+            logging.error("Nút 'Xóa ảnh' không xuất hiện!")
+            return False
+
+    # Ham kiem tra anh co xuat hien khong
+    def is_en_uploaded_image_displayed(self):
+        try:
+            uploaded_image = self.wait.until(
+                EC.visibility_of_element_located(self.locators.EN_FIELD_IMAGE)
+            )
+            logging.info("Ảnh đã hiển thị trên giao diện sau khi tải lên.")
+            return True
+        except TimeoutException:
+            logging.error("Ảnh không hiển thị sau khi tải lên!")
+            return False
+
+    # Tab Thong tin chung
+    # Ham kiem tra dropdown status co duoc mo khong
+    def is_dropdown_opened(self):
+        if self.is_text_present_on_page("Chờ xử lý"):
+            print("Dropdown đã mở (tìm thấy 'Chờ xử lý').")
+            return True
+        else:
+            print("Dropdown chưa mở hoặc không tìm thấy 'Chờ xử lý'.")
+            return False
+    
+    # Ham kiem tra dropdown Loai bai viet cap cha co mo chua
+    def is_father_dropdown_opened(self):
+        if self.is_text_present_on_page("Lĩnh vực kinh doanh"):
+            print("Dropdown 'Father Type' đã mở (tìm thấy 'Lĩnh vực kinh doanh').")
+            return True
+        else:
+            print("Dropdown 'Father Type' chưa mở hoặc không tìm thấy 'Lĩnh vực kinh doanh'.")
+            return False
+    
+    # Ham kiem tra dropdown Bo banner da mo chua
+    def is_banner_dropdown_opened(self):
+        if self.is_text_present_on_page("Banner icon"):
+            print("Dropdown 'Banner Set' đã mở (tìm thấy 'Banner icon' trên toàn trang).")
+            return True
+        else:
+            print("Dropdown 'Banner Set' chưa mở hoặc không tìm thấy 'Banner icon' trên toàn trang.")
+            return False
+    
+    # Ham tim kiem tu khoa tren trang
+    def is_text_present_on_page(self, text):
+        try:
+            body_element = self.wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+            return text in body_element.text
+        except:
+            return False

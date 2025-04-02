@@ -1,0 +1,4 @@
+2025-03-31 23:33:53,515 - INFO - Bắt đầu Test Case 44: Click dropdown 'Father Type' và kiểm tra dropdown có mở không.
+2025-03-31 23:33:58,536 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-03-31 23:34:01,238 - INFO - Đã click vào dropdown 'Father Type'.
+2025-03-31 23:34:01,299 - INFO - Test Case 44 PASS: test_click_father_type_dropdown_and_verify | Expected: Dropdown 'Father Type' mở thành công (tìm thấy 'Lĩnh vực kinh doanh' trên trang). | Actual: Dropdown 'Father Type' mở thành công (tìm thấy 'Lĩnh vực kinh doanh' trên trang). | Status: PASS

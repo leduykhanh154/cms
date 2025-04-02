@@ -1,0 +1,4 @@
+2025-04-01 01:28:49,813 - INFO - Bắt đầu Test Case 49: Nhập loại bài viết, click nút 'Lưu' và kiểm tra đường dẫn có hiển thị loại bài viết vừa tạo.
+2025-04-01 01:28:56,638 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-01 01:28:58,789 - INFO - Đã nhấn nút 'Lưu'.
+2025-04-01 01:29:00,867 - INFO - Test Case 49 PASS: test_save_and_check_article_type | Expected: Chuyển hướng về trang danh sách và hiển thị đúng loại bài viết: 'Bài viết thử nghiệm'. | Actual: Chuyển hướng về trang danh sách và hiển thị đúng loại bài viết: 'Bài viết thử nghiệm'. | Status: PASS

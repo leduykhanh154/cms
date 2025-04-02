@@ -1,0 +1,4 @@
+2025-04-01 00:41:39,745 - INFO - Bắt đầu Test Case 45: Nhập ký tự chữ vào ô 'Sort Order' và kiểm tra không hiển thị.
+2025-04-01 00:41:44,978 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 00:41:47,639 - INFO - Đã nhập 'abc' vào ô 'Sort Order'.
+2025-04-01 00:41:47,662 - INFO - Test Case 45 PASS: test_sort_order_rejects_text | Expected: Không có giá trị nào hiển thị trong ô 'Sort Order' khi nhập chữ. | Actual: Không có giá trị nào hiển thị trong ô 'Sort Order' khi nhập chữ. | Status: PASS
