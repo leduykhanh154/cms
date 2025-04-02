@@ -1,0 +1,4 @@
+2025-04-02 18:32:01,256 - INFO - Bắt đầu Test Case 65: Nhập 199 ký tự vào ô 'Mô tả ngắn' (English) và kiểm tra thông báo lỗi.
+2025-04-02 18:32:07,477 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 18:32:08,538 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 18:32:16,366 - INFO - Test Case 65 PASS: test_en_short_description_199_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS

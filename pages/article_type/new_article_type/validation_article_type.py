@@ -237,11 +237,11 @@ class ValidationArticleType:
             logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
         return False
     
-     # Ham kiem tra Mo ta ngan khong vuot qua 7 ky tu
+     # Ham kiem tra Mo ta ngan khong vuot qua 6 ky tu
     def is_max_sort_order_error_displayed(self):
         try:
             error_message = self.get_text(self.locators.ERROR_SORT_ORDER)
-            expected_message = "Vui lòng nhập Mô tả ngắn không quá 7 ký tự"
+            expected_message = "Vui lòng nhập Mô tả ngắn không quá 6 ký tự"
 
             if error_message == expected_message:
                 logging.info("Thông báo lỗi hiển thị đúng.")

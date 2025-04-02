@@ -1,0 +1,4 @@
+2025-04-02 18:20:08,893 - INFO - Bắt đầu Test Case 62: Nhập 254 ký tự vào ô 'Loại bài viết' (English) và kiểm tra thông báo lỗi.
+2025-04-02 18:20:15,461 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 18:20:16,531 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 18:20:24,310 - INFO - Test Case 62 PASS: test_en_article_type_254_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS

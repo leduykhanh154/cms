@@ -1,0 +1,2 @@
+2025-04-02 20:17:26,418 - INFO - Bắt đầu Test Case 74: Nhập dữ liệu vào ô 'Loại bài viết' (Tiếng Việt) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-04-02 20:17:41,904 - INFO - Test Case 74 PASS: test_vi_article_type_clear_and_check_error_and_retype | Expected: Thông báo lỗi da an di'. | Actual: Thông báo lỗi da an di'. | Status: PASS

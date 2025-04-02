@@ -1,0 +1,4 @@
+2025-04-02 23:15:55,023 - INFO - Bắt đầu Test Case 73: Nhập 255 ký tự vào ô 'Loại bài viết' (English) sau đó xóa 1 ký tự và kiểm tra thông báo lỗi.
+2025-04-02 23:16:00,531 - INFO - Đã mở form nhập loại bài viết mới.
+2025-04-02 23:16:07,699 - INFO - Đã nhập 255 ký tự vào ô 'Loại bài viết'.
+2025-04-02 23:16:12,826 - INFO - Đã kiểm tra thông báo lỗi khi nhập 255 ký tự.

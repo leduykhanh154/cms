@@ -1,0 +1,6 @@
+2025-04-02 20:29:06,213 - INFO - Bắt đầu Test Case 73: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) sau do xoa di 1 và kiểm tra thông báo lỗi.
+2025-04-02 20:29:19,668 - INFO - Test Case 73 PASS: test_vi_article_type_255_chars_and_remove_last | Expected: Thông báo lỗi da duoc an di. | Actual: Thông báo lỗi da duoc an di. | Status: PASS
+2025-04-02 20:29:34,349 - INFO - Bắt đầu Test Case 74: Nhập dữ liệu vào ô 'Loại bài viết' (Tiếng Việt) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-04-02 20:29:49,576 - INFO - Test Case 74 PASS: test_vi_article_type_clear_and_check_error_and_retype | Expected: Thông báo lỗi da an di'. | Actual: Thông báo lỗi da an di'. | Status: PASS
+2025-04-02 20:30:03,962 - INFO - Bắt đầu Test Case 75: Nhập 255 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 20:30:17,312 - INFO - Test Case 75 PASS: test_vi_article_link_255_chars_and_remove_last | Expected: Thông báo lỗi da an di. | Actual: Thông báo lỗi da an di. | Status: PASS

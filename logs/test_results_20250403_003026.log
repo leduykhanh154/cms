@@ -1,0 +1,6 @@
+2025-04-03 00:30:35,720 - INFO - Bắt đầu Test Case 87: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết' ( Tieng Viet ).
+2025-04-03 00:30:40,894 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-03 00:30:43,000 - INFO - Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu vào ô 'Loại bài viết'.
+2025-04-03 00:30:43,027 - INFO - Đã kiểm tra thông báo lỗi hiển thị khi không nhập loại bài viết.
+2025-04-03 00:30:44,144 - INFO - Đã nhập 'Bài viết thử nghiệm' vào ô 'Loại bài viết'.
+2025-04-03 00:30:49,290 - INFO - Test Case 87 PASS: test_click_save_and_continue_and_field_information | Expected: Thông báo lỗi đã được ẩn đi. | Actual: Thông báo lỗi đã được ẩn đi. | Status: PASS

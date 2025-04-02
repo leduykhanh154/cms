@@ -11,6 +11,7 @@ from pages.article_type.new_article_type.get_field_new_article_type import GetFi
 from pages.article_type.new_article_type.enter_field_new_article_type import EnterFieldNewArticleType
 from pages.article_type.new_article_type.meta_image_new_article_type import MetaImageNewArticleType
 from pages.article_type.new_article_type.validation_article_type import ValidationArticleType
+from pages.article_type.new_article_type.delete_last_char_new_article_type import DeleteLastCharNewArticleType
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -57,6 +58,10 @@ def meta_image_new_article_type(setup_driver):
 @pytest.fixture
 def validation_new_article_type(setup_driver):
     return ValidationArticleType(setup_driver)
+
+@pytest.fixture
+def delete_last_char_new_article_type(setup_driver):
+    return DeleteLastCharNewArticleType(setup_driver)
 
 # Test Case 1: Click 'Trang chủ' trên breadcrumb -> Chuyển hướng về trang chủ.
 def test_click_breadcrumb_home(new_article_type):
@@ -1571,9 +1576,9 @@ def test_click_status_dropdown_and_verify(new_article_type, is_displayed_new_art
         test_logger.error(f"Test Case 43 FAIL: test_click_status_dropdown_and_verify | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
-# Test Case 44: Nhập giá trị vào ô 'Sort Order' và kiểm tra thông báo lỗi
+# Test Case 44: Nhập giá trị vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi
 def test_sort_order_validation(new_article_type, enter_field_new_article_type, validation_new_article_type):
-    test_logger.info("Bắt đầu Test Case 44: Nhập giá trị vào ô 'Thu tu sap xep' và kiểm tra thông báo lỗi.")
+    test_logger.info("Bắt đầu Test Case 44: Nhập giá trị vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.")
 
     new_article_type.perform_tag_operations()
     time.sleep(1)
@@ -1582,13 +1587,13 @@ def test_sort_order_validation(new_article_type, enter_field_new_article_type, v
     test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
     new_article_type.click_tab_general_information()
 
-    # **Bước 1**: Nhập giá trị vào ô 'Sort Order'
+    # **Bước 1**: Nhập giá trị vào ô 'Thứ tự sắp xếp'
     test_value = "5"
     enter_field_new_article_type.enter_sort_order(test_value)
     time.sleep(2)
     test_logger.info(f"Đã nhập '{test_value}' vào ô 'Thứ tự sắp xếp'.")
 
-    # **Bước 2**: Xóa giá trị trong ô 'Sort Order'
+    # **Bước 2**: Xóa giá trị trong ô 'Thứ tự sắp xếp'
     enter_field_new_article_type.clear_sort_order()
     time.sleep(2)
     test_logger.info("Đã xóa nội dung trong ô 'Thứ tự sắp xếp'.")
@@ -1606,9 +1611,9 @@ def test_sort_order_validation(new_article_type, enter_field_new_article_type, v
         test_logger.error(f"Test Case 44 FAIL: test_sort_order_validation | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
-# Test Case 45: Nhập ký tự chữ vào ô 'Sort Order' và kiểm tra không hiển thị
+# Test Case 45: Nhập ký tự chữ vào ô 'Thứ tự sắp xếp' và kiểm tra không hiển thị
 def test_sort_order_rejects_text(new_article_type, enter_field_new_article_type, get_field_new_article_type):
-    test_logger.info("Bắt đầu Test Case 45: Nhập ký tự chữ vào ô 'Sort Order' và kiểm tra không hiển thị.")
+    test_logger.info("Bắt đầu Test Case 45: Nhập ký tự chữ vào ô 'Thứ tự sắp xếp' và kiểm tra không hiển thị.")
 
     new_article_type.perform_tag_operations()
     time.sleep(1)
@@ -1617,17 +1622,17 @@ def test_sort_order_rejects_text(new_article_type, enter_field_new_article_type,
     test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
     new_article_type.click_tab_general_information()
 
-    # **Bước 1**: Nhập ký tự chữ vào ô 'Sort Order'
+    # **Bước 1**: Nhập ký tự chữ vào ô 'Thứ tự sắp xếp'
     invalid_text = "abc"
     enter_field_new_article_type.enter_sort_order(invalid_text)
     time.sleep(2)
-    test_logger.info(f"Đã nhập '{invalid_text}' vào ô 'Sort Order'.")
+    test_logger.info(f"Đã nhập '{invalid_text}' vào ô 'Thứ tự sắp xếp'.")
 
-    # **Bước 2**: Lấy giá trị hiển thị thực tế trong ô 'Sort Order'
+    # **Bước 2**: Lấy giá trị hiển thị thực tế trong ô 'Thứ tự sắp xếp'
     actual_value = get_field_new_article_type.get_sort_order_value()
 
     # **Kết quả mong đợi**
-    expected_result = "Không có giá trị nào hiển thị trong ô 'Sort Order' khi nhập chữ."
+    expected_result = "Không có giá trị nào hiển thị trong ô 'Thứ tự sắp xếp' khi nhập chữ."
     actual_result = expected_result if actual_value == "" else f"Giá trị '{actual_value}' không hợp lệ được hiển thị!"
 
     # **Kiểm tra kết quả**
@@ -1637,9 +1642,9 @@ def test_sort_order_rejects_text(new_article_type, enter_field_new_article_type,
         test_logger.error(f"Test Case 45 FAIL: test_sort_order_rejects_text | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
-# Test Case 46: Nhập quá 7 ký tự số vào ô 'Sort Order' và kiểm tra thông báo lỗi
+# Test Case 46: Nhập quá 6 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi
 def test_sort_order_exceeds_max_length(new_article_type, enter_field_new_article_type, validation_new_article_type):
-    test_logger.info("Bắt đầu Test Case 46: Nhập quá 7 ký tự số vào ô 'Sort Order' và kiểm tra thông báo lỗi.")
+    test_logger.info("Bắt đầu Test Case 46: Nhập quá 7 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.")
 
     new_article_type.perform_tag_operations()
     time.sleep(1)
@@ -1649,17 +1654,17 @@ def test_sort_order_exceeds_max_length(new_article_type, enter_field_new_article
     time.sleep(1)
     test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
 
-    # **Bước 1**: Nhập quá 7 ký tự số vào ô 'Sort Order'
-    long_number = "12345678"  # 8 ký tự số
+    # **Bước 1**: Nhập quá 6 ký tự số vào ô 'Thứ tự sắp xếp'
+    long_number = "1234567"
     enter_field_new_article_type.enter_sort_order(long_number)
     time.sleep(2)
-    test_logger.info(f"Đã nhập '{long_number}' vào ô 'Sort Order'.")
+    test_logger.info(f"Đã nhập '{long_number}' vào ô 'Thứ tự sắp xếp'.")
 
     # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
     error_displayed = validation_new_article_type.is_max_sort_order_error_displayed()
 
     # **Kiểm tra kết quả**
-    expected_result = "Thông báo lỗi xuất hiện: 'Vui lòng nhập Sort Order không quá 7 ký tự số'."
+    expected_result = "Thông báo lỗi xuất hiện: 'Vui lòng nhập Thứ tự sắp xếp không quá 6 ký tự số'."
     actual_result = expected_result if error_displayed else "Thông báo lỗi không xuất hiện hoac hien thi sai!"
 
     if error_displayed:
@@ -1859,7 +1864,7 @@ def test_vi_article_type_254_chars(new_article_type, enter_field_new_article_typ
 
 # Test case Test Case 53: Nhập 253 ký tự vào ô 'Duong dan' (Tiếng Việt)
 def test_vi_article_link_253_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
-    test_logger.info("Bắt đầu Test Case 23: Nhập 253 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+    test_logger.info("Bắt đầu Test Case 53: Nhập 253 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.")
 
     new_article_type.perform_tag_operations()
     time.sleep(1)
@@ -1994,7 +1999,7 @@ def test_vi_meta_keyword_99_chars(new_article_type, enter_field_new_article_type
         
 # Test Case 58: Nhập 100 ký tự vào ô 'Meta Keyword' (Tiếng Việt)
 def test_vi_meta_keyword_100_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
-    test_logger.info("Bắt đầu Test Case 57: Nhập 100 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+    test_logger.info("Bắt đầu Test Case 58: Nhập 100 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.")
 
     new_article_type.perform_tag_operations()
     time.sleep(1)
@@ -2071,4 +2076,1169 @@ def test_vi_meta_description_500_chars(new_article_type, enter_field_new_article
         test_logger.info(f"Test Case 60 PASS: test_vi_meta_description_500_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
         test_logger.error(f"Test Case 60 FAIL: test_vi_meta_description_500_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Tab English
+# Test Case 61: Nhập 253 ký tự vào ô 'Loại bài viết' (English)
+def test_en_article_type_253_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 61: Nhập 253 ký tự vào ô 'Loại bài viết' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    
+    # **Bước 1**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 2**: Nhập 253 ký tự vào ô 'Loại bài viết' (English)
+    long_text = "A" * 253  # Tạo chuỗi 253 ký tự
+    enter_field_new_article_type.enter_en_article_type(long_text)
+    time.sleep(2)
+
+    # **Bước 3**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_en_max_type_error_displayed()
+
+    # **Bước 4**: Kiểm tra kết quả
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 61 PASS: test_en_article_type_253_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 61 FAIL: test_en_article_type_253_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 62: Nhập 254 ký tự vào ô 'Loại bài viết' (English)
+def test_en_article_type_254_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 62: Nhập 254 ký tự vào ô 'Loại bài viết' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    
+    # **Bước 1**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 2**: Nhập 254 ký tự vào ô 'Loại bài viết' (English)
+    long_text = "A" * 254  # Tạo chuỗi 254 ký tự
+    enter_field_new_article_type.enter_en_article_type(long_text)
+    time.sleep(2)
+
+    # **Bước 3**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_en_max_type_error_displayed()
+
+    # **Bước 4**: Kiểm tra kết quả
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 62 PASS: test_en_article_type_254_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 62 FAIL: test_en_article_type_254_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test case Test Case 63: Nhập 253 ký tự vào ô 'Duong dan' (English)
+def test_en_article_link_253_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 63: Nhập 253 ký tự vào ô 'Duong dan' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 1**: Nhập 253 ký tự vào ô 'Liên kết bài viết' (English)
+    long_text = "A" * 253
+    enter_field_new_article_type.enter_en_article_link(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_en_max_link_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 63 PASS: test_en_article_link_253_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 63 FAIL: test_en_article_link_253_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test case Test Case 64: Nhập 254 ký tự vào ô 'Duong dan' (English)
+def test_en_article_link_254_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 64: Nhập 254 ký tự vào ô 'Duong dan' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 1**: Nhập 254 ký tự vào ô 'Liên kết bài viết' (English)
+    long_text = "A" * 254
+    enter_field_new_article_type.enter_en_article_link(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_en_max_link_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 64 PASS: test_en_article_link_254_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 64 FAIL: test_en_article_link_254_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 65: Nhập 199 ký tự vào ô 'Mô tả ngắn' (English)
+def test_en_short_description_199_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 65: Nhập 199 ký tự vào ô 'Mô tả ngắn' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 1**: Nhập 199 ký tự vào ô 'Mô tả ngắn' (English)
+    long_text = "A" * 199
+    enter_field_new_article_type.enter_en_description(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_en_max_short_description_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 200 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 65 PASS: test_en_short_description_199_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 65 FAIL: test_en_short_description_199_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 66: Nhập 200 ký tự vào ô 'Mô tả ngắn' (English)
+def test_en_short_description_200_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 66: Nhập 200 ký tự vào ô 'Mô tả ngắn' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 1**: Nhập 200 ký tự vào ô 'Mô tả ngắn' (English)
+    long_text = "A" * 200
+    enter_field_new_article_type.enter_en_description(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_en_max_short_description_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 200 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 66 PASS: test_en_short_description_200_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 66 FAIL: test_en_short_description_200_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 67: Nhập 99 ký tự vào ô 'Meta Keyword' (English)
+def test_en_meta_keyword_99_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 67: Nhập 99 ký tự vào ô 'Meta Keyword' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 1**: Nhập 99 ký tự vào ô 'Meta Keyword' (English)
+    long_text = "A" * 99
+    enter_field_new_article_type.enter_en_meta_keyword(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_en_meta_keyword_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 67 PASS: test_en_meta_keyword_99_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 67 FAIL: test_en_meta_keyword_99_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 68: Nhập 100 ký tự vào ô 'Meta Keyword' (English)
+def test_en_meta_keyword_100_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 68: Nhập 100 ký tự vào ô 'Meta Keyword' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 1**: Nhập 100 ký tự vào ô 'Meta Keyword' (English)
+    long_text = "A" * 100
+    enter_field_new_article_type.enter_en_meta_keyword(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_en_meta_keyword_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 68 PASS: test_en_meta_keyword_100_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 68 FAIL: test_en_meta_keyword_100_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 69: Nhập 499 ký tự vào ô 'Meta Description' (English)
+def test_en_meta_description_499_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 69: Nhập 499 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 1**: Nhập 499 ký tự vào ô 'Meta Description' (English)
+    long_text = "A" * 499
+    enter_field_new_article_type.enter_en_meta_description(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_displayed = not validation_new_article_type.is_en_meta_description_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 499 ký tự'."
+
+    if error_displayed:
+        test_logger.info(f"Test Case 69 PASS: test_en_meta_description_499_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 69 FAIL: test_en_meta_description_499_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 70: Nhập 500 ký tự vào ô 'Meta Description' (English)
+def test_en_meta_description_500_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 70: Nhập 500 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 1**: Nhập 500 ký tự vào ô 'Meta Description' (English)
+    long_text = "A" * 500
+    enter_field_new_article_type.enter_en_meta_description(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_displayed = not validation_new_article_type.is_en_meta_description_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 499 ký tự'."
+
+    if error_displayed:
+        test_logger.info(f"Test Case 70 PASS: test_en_meta_description_500_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 70 FAIL: test_en_meta_description_500_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 71: Nhập 5 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi
+def test_sort_order_exceeds_5_numbers(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 71: Nhập 5 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    new_article_type.click_tab_general_information()
+    time.sleep(1)
+    test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
+
+    # **Bước 1**: Nhập 5 ký tự số vào ô 'Thứ tự sắp xếp'
+    long_number = "12345"  # 5 ký tự số
+    enter_field_new_article_type.enter_sort_order(long_number)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập '{long_number}' vào ô 'Thứ tự sắp xếp'.")
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_displayed = not validation_new_article_type.is_max_sort_order_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Thứ tự sắp xếp không quá 6 ký tự số'."
+
+    if error_displayed:
+        test_logger.info(f"Test Case 71 PASS: test_sort_order_exceeds_5_numbers | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 71 FAIL: test_sort_order_exceeds_5_numbers | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 72: Nhập 6 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi
+def test_sort_order_exceeds_6_numbers(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 72: Nhập 6 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    new_article_type.click_tab_general_information()
+    time.sleep(1)
+    test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
+
+    # **Bước 1**: Nhập 6 ký tự số vào ô 'Thứ tự sắp xếp'
+    long_number = "123456"  # 6 ký tự số
+    enter_field_new_article_type.enter_sort_order(long_number)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập '{long_number}' vào ô 'Thứ tự sắp xếp'.")
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_displayed = not validation_new_article_type.is_max_sort_order_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Thứ tự sắp xếp không quá 6 ký tự số'."
+
+    if error_displayed:
+        test_logger.info(f"Test Case 72 PASS: test_sort_order_exceeds_6_numbers | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 72 FAIL: test_sort_order_exceeds_6_numbers | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 73: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_vi_article_type_255_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 73: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) sau đó xóa 1 ký tự và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập loại bài viết
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 3**: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt)
+    long_text = "A" * 255  # Chuỗi gồm 255 ký tự 'A'
+    enter_field_new_article_type.enter_vi_article_type(long_text)
+    time.sleep(2)
+    test_logger.info("Đã nhập 255 ký tự vào ô 'Loại bài viết'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    validation_new_article_type.is_max_type_error_displayed()
+    test_logger.info("Đã kiểm tra thông báo lỗi khi nhập 255 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng
+    delete_last_char_new_article_type.delete_vi_article_type_character()
+    time.sleep(2)
+    test_logger.info("Đã xóa ký tự cuối cùng trong ô 'Loại bài viết'.")
+
+    # **Bước 6**: Kiểm tra xem thông báo lỗi có biến mất không
+    error_displayed = not validation_new_article_type.is_max_type_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn được hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 73 PASS: test_vi_article_type_255_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 73 FAIL: test_vi_article_type_255_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 74: Nhập dữ liệu vào ô 'Loại bài viết' (Tiếng Việt), sau đó xóa và kiểm tra thông báo lỗi.
+def test_vi_article_type_clear_and_check_error_and_retype(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 74: Nhập dữ liệu vào ô 'Loại bài viết' (Tiếng Việt), sau đó xóa và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập loại bài viết
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 3**: Nhập nội dung vào ô 'Loại bài viết' (Tiếng Việt)
+    test_text = "Bài viết test"
+    enter_field_new_article_type.enter_vi_article_type(test_text)
+    time.sleep(1)
+    test_logger.info(f"Đã nhập '{test_text}' vào ô 'Loại bài viết'.")
+
+    # **Bước 4**: Xóa nội dung đã nhập bằng hàm clear
+    enter_field_new_article_type.clear_vi_article_type()
+    time.sleep(2)
+    test_logger.info("Đã xóa nội dung trong ô 'Loại bài viết'.")
+
+    # **Bước 5**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    validation_new_article_type.is_field_error_displayed()
+    test_logger.info("Đã kiểm tra thông báo lỗi khi ô 'Loại bài viết' bị xóa.")
+
+    # **Bước 6**: Nhập lại nội dung vào ô 'Loại bài viết'
+    enter_field_new_article_type.enter_vi_article_type(test_text)
+    time.sleep(1)
+    test_logger.info(f"Đã nhập lại '{test_text}' vào ô 'Loại bài viết'.")
+
+    # **Bước 7**: Kiểm tra xem thông báo lỗi có biến mất không
+    error_displayed = not validation_new_article_type.is_field_error_displayed()
+
+    # **Bước 8**: Kiểm tra kết quả
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 74 PASS: test_vi_article_type_clear_and_check_error_and_retype | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 74 FAIL: test_vi_article_type_clear_and_check_error_and_retype | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 75: Nhập 255 ký tự vào ô 'Đường dẫn' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_vi_article_link_255_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 75: Nhập 255 ký tự vào ô 'Đường dẫn' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập đường dẫn bài viết
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 3**: Nhập 255 ký tự vào ô 'Đường dẫn' (Tiếng Việt)
+    long_text = "A" * 255  # Chuỗi gồm 255 ký tự 'A'
+    enter_field_new_article_type.enter_vi_article_link(long_text)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập {len(long_text)} ký tự vào ô 'Đường dẫn'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá giới hạn ký tự
+    validation_new_article_type.is_max_link_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập đủ 255 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng trong ô 'Đường dẫn'
+    delete_last_char_new_article_type.delete_vi_article_link_character()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Đường dẫn'.")
+
+    # **Bước 6**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_max_link_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 75 PASS: test_vi_article_link_255_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 75 FAIL: test_vi_article_link_255_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 76: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_vi_short_description_201_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 76: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập mô tả bài viết
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 3**: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
+    long_text = "A" * 201  # Chuỗi gồm 201 ký tự 'A'
+    enter_field_new_article_type.enter_vi_description(long_text)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập {len(long_text)} ký tự vào ô 'Mô tả ngắn'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá giới hạn ký tự
+    validation_new_article_type.is_max_short_description_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 200 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng trong ô 'Mô tả ngắn'
+    delete_last_char_new_article_type.delete_vi_description_character()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Mô tả ngắn'.")
+
+    # **Bước 6**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_max_short_description_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 76 PASS: test_vi_short_description_201_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 76 FAIL: test_vi_short_description_201_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 77: Nhập 101 ký tự vào ô 'Meta Keyword' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_vi_meta_keyword_101_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 77: Nhập 101 ký tự vào ô 'Meta Keyword' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập từ khóa meta
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để mở trang nhập dữ liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 3**: Nhập 101 ký tự vào ô 'Meta Keyword' (Tiếng Việt)
+    long_text = "A" * 101  # Chuỗi gồm 101 ký tự 'A'
+    enter_field_new_article_type.enter_vi_meta_keyword(long_text)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập {len(long_text)} ký tự vào ô 'Meta Keyword'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá giới hạn ký tự
+    validation_new_article_type.is_meta_keyword_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 100 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng trong ô 'Meta Keyword'
+    delete_last_char_new_article_type.delete_vi_meta_keyword_character()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Meta Keyword'.")
+
+    # **Bước 6**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_meta_keyword_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 77 PASS: test_vi_meta_keyword_101_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 77 FAIL: test_vi_meta_keyword_101_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 78: Nhập 501 ký tự vào ô 'Meta Description' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_vi_meta_description_501_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 78: Nhập 501 ký tự vào ô 'Meta Description' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập mô tả meta
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để mở trang nhập dữ liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 3**: Nhập 501 ký tự vào ô 'Meta Description' (Tiếng Việt)
+    long_text = "A" * 501  # Chuỗi gồm 501 ký tự 'A'
+    enter_field_new_article_type.enter_vi_meta_description(long_text)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập {len(long_text)} ký tự vào ô 'Meta Description'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá giới hạn ký tự
+    validation_new_article_type.is_meta_description_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 500 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng trong ô 'Meta Description'
+    delete_last_char_new_article_type.delete_vi_meta_description_character()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Meta Description'.")
+
+    # **Bước 6**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_meta_description_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 78 PASS: test_vi_meta_description_501_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 78 FAIL: test_vi_meta_description_501_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 79: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_en_article_type_255_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 73: Nhập 255 ký tự vào ô 'Loại bài viết' (English) sau đó xóa 1 ký tự và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập loại bài viết
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 3**: Nhập 255 ký tự vào ô 'Loại bài viết' (English)
+    long_text = "A" * 255  # Chuỗi gồm 255 ký tự 'A'
+    enter_field_new_article_type.enter_en_article_type(long_text)
+    time.sleep(2)
+    test_logger.info("Đã nhập 255 ký tự vào ô 'Loại bài viết'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    validation_new_article_type.is_en_max_type_error_displayed()
+    test_logger.info("Đã kiểm tra thông báo lỗi khi nhập 255 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng
+    delete_last_char_new_article_type.delete_en_article_type_character()
+    time.sleep(2)
+    test_logger.info("Đã xóa ký tự cuối cùng trong ô 'Loại bài viết'.")
+
+    # **Bước 6**: Kiểm tra xem thông báo lỗi có biến mất không
+    error_displayed = not validation_new_article_type.is_en_max_type_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn được hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 79 PASS: test_en_article_type_255_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 79 FAIL: test_en_article_type_255_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 80: Nhập dữ liệu vào ô 'Loại bài viết' (English), sau đó xóa và kiểm tra thông báo lỗi.
+def test_en_article_type_clear_and_check_error_and_retype(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 80: Nhập dữ liệu vào ô 'Loại bài viết' (English), sau đó xóa và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập loại bài viết
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 3**: Nhập nội dung vào ô 'Loại bài viết' (English)
+    test_text = "Bài viết test"
+    enter_field_new_article_type.enter_en_article_type(test_text)
+    time.sleep(1)
+    test_logger.info(f"Đã nhập '{test_text}' vào ô 'Loại bài viết'.")
+
+    # **Bước 4**: Xóa nội dung đã nhập bằng hàm clear
+    enter_field_new_article_type.clear_en_article_type()
+    time.sleep(2)
+    test_logger.info("Đã xóa nội dung trong ô 'Loại bài viết'.")
+
+    # **Bước 5**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    validation_new_article_type.is_en_field_error_displayed()
+    test_logger.info("Đã kiểm tra thông báo lỗi khi ô 'Loại bài viết' bị xóa.")
+
+    # **Bước 6**: Nhập lại nội dung vào ô 'Loại bài viết'
+    enter_field_new_article_type.enter_en_article_type(test_text)
+    time.sleep(1)
+    test_logger.info(f"Đã nhập lại '{test_text}' vào ô 'Loại bài viết'.")
+
+    # **Bước 7**: Kiểm tra xem thông báo lỗi có biến mất không
+    error_displayed = not validation_new_article_type.is_en_field_error_displayed()
+
+    # **Bước 8**: Kiểm tra kết quả
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 80 PASS: test_en_article_type_clear_and_check_error_and_retype | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 80 FAIL: test_en_article_type_clear_and_check_error_and_retype | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 81: Nhập 255 ký tự vào ô 'Đường dẫn' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_en_article_link_255_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 81: Nhập 255 ký tự vào ô 'Đường dẫn' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập đường dẫn bài viết
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 3**: Nhập 255 ký tự vào ô 'Đường dẫn' (English)
+    long_text = "A" * 255  # Chuỗi gồm 255 ký tự 'A'
+    enter_field_new_article_type.enter_en_article_link(long_text)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập {len(long_text)} ký tự vào ô 'Đường dẫn'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá giới hạn ký tự
+    validation_new_article_type.is_en_max_link_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập đủ 255 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng trong ô 'Đường dẫn'
+    delete_last_char_new_article_type.delete_en_article_link_character()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Đường dẫn'.")
+
+    # **Bước 6**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_en_max_link_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 81 PASS: test_en_article_link_255_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 81 FAIL: test_en_article_link_255_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 82: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_en_short_description_201_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 82: Nhập 201 ký tự vào ô 'Mô tả ngắn' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập mô tả bài viết
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 3**: Nhập 201 ký tự vào ô 'Mô tả ngắn' (English)
+    long_text = "A" * 201  # Chuỗi gồm 201 ký tự 'A'
+    enter_field_new_article_type.enter_en_description(long_text)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập {len(long_text)} ký tự vào ô 'Mô tả ngắn'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá giới hạn ký tự
+    validation_new_article_type.is_en_max_short_description_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 200 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng trong ô 'Mô tả ngắn'
+    delete_last_char_new_article_type.delete_en_description_character()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Mô tả ngắn'.")
+
+    # **Bước 6**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_en_max_short_description_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 82 PASS: test_en_short_description_201_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 82 FAIL: test_en_short_description_201_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 83: Nhập 101 ký tự vào ô 'Meta Keyword' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_en_meta_keyword_101_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 83: Nhập 101 ký tự vào ô 'Meta Keyword' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập từ khóa meta
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 3**: Nhập 101 ký tự vào ô 'Meta Keyword' (English)
+    long_text = "A" * 101  # Chuỗi gồm 101 ký tự 'A'
+    enter_field_new_article_type.enter_en_meta_keyword(long_text)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập {len(long_text)} ký tự vào ô 'Meta Keyword'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá giới hạn ký tự
+    validation_new_article_type.is_en_meta_keyword_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 100 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng trong ô 'Meta Keyword'
+    delete_last_char_new_article_type.delete_en_meta_keyword_character()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Meta Keyword'.")
+
+    # **Bước 6**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_en_meta_keyword_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 83 PASS: test_en_meta_keyword_101_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 83 FAIL: test_en_meta_keyword_101_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 84: Nhập 501 ký tự vào ô 'Meta Description' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+def test_en_meta_description_501_chars_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 84: Nhập 501 ký tự vào ô 'Meta Description' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập mô tả meta
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+
+    # **Bước 2**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab 'English'.")
+
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung'.")
+
+    # **Bước 3**: Nhập 501 ký tự vào ô 'Meta Description' (English)
+    long_text = "A" * 501  # Chuỗi gồm 501 ký tự 'A'
+    enter_field_new_article_type.enter_en_meta_description(long_text)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập {len(long_text)} ký tự vào ô 'Meta Description'.")
+
+    # **Bước 4**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá giới hạn ký tự
+    validation_new_article_type.is_en_meta_description_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 500 ký tự.")
+
+    # **Bước 5**: Xóa ký tự cuối cùng trong ô 'Meta Description'
+    delete_last_char_new_article_type.delete_en_meta_description_character()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Meta Description'.")
+
+    # **Bước 6**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_en_meta_description_error_displayed()
+
+    # **Bước 7**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 84 PASS: test_en_meta_description_501_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 84 FAIL: test_en_meta_description_501_chars_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 85: Nhập quá 6 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi
+def test_sort_order_exceeds_max_length_and_remove_last(new_article_type, enter_field_new_article_type, validation_new_article_type, delete_last_char_new_article_type):
+    test_logger.info("Bắt đầu Test Case 85: Nhập quá 6 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.")
+
+    # **Bước 1**: Chuyển đến trang nhập liệu "Tạo mới loại bài viết"
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    new_article_type.click_tab_general_information()
+    time.sleep(1)
+    test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
+
+    # **Bước 2**: Nhập quá 6 ký tự số vào ô 'Thứ tự sắp xếp'
+    long_number = "1234567"  # Chuỗi có 7 ký tự
+    enter_field_new_article_type.enter_sort_order(long_number)
+    time.sleep(2)
+    test_logger.info(f"Đã nhập '{long_number}' vào ô 'Thứ tự sắp xếp'.")
+
+    # **Bước 3**: Kiểm tra xem thông báo lỗi có xuất hiện không khi nhập quá số ký tự cho phép
+    validation_new_article_type.is_max_sort_order_error_displayed()
+    test_logger.info("Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 6 ký tự vào ô 'Thứ tự sắp xếp'.")
+
+    # **Bước 4**: Xóa ký tự cuối cùng trong ô 'Thứ tự sắp xếp'
+    delete_last_char_new_article_type.delete_last_character_in_sort_order()
+    test_logger.info("Đã xóa ký tự cuối cùng khỏi ô 'Thứ tự sắp xếp'.")
+
+    # **Bước 5**: Kiểm tra lại xem thông báo lỗi có biến mất không sau khi xóa 1 ký tự
+    error_displayed = not validation_new_article_type.is_max_sort_order_error_displayed()
+
+    # **Bước 6**: Kiểm tra kết quả mong đợi
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_displayed else "Thông báo lỗi vẫn hiển thị!"
+
+    if error_displayed:
+        test_logger.info(f"Test Case 85 PASS: test_sort_order_exceeds_max_length_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 85 FAIL: test_sort_order_exceeds_max_length_and_remove_last | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 86: Nhập Loại bài viết sau khi đã click nút 'Lưu' khi chưa nhập Loại bài viết ( Tieng Viet )
+def test_click_save_and_field_information(new_article_type, validation_new_article_type, enter_field_new_article_type):
+    test_logger.info("Bắt đầu Test Case 86: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết' ( Tieng Viet ).")
+
+    # **Bước 1**: Chuyển đến trang nhập liệu "Tạo mới loại bài viết"
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
+
+    # **Bước 2**: Nhấn nút "Lưu" mà không nhập dữ liệu vào trường 'Loại bài viết'
+    new_article_type.click_save_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu vào ô 'Loại bài viết'.")
+
+    # **Bước 3**: Kiểm tra thông báo lỗi "Vui lòng nhập loại bài viết"
+    error_message_displayed = validation_new_article_type.is_field_error_displayed()
+    test_logger.info("Đã kiểm tra thông báo lỗi hiển thị khi không nhập loại bài viết.")
+    
+    # **Bước 4**: Nhập dữ liệu vào ô 'Loại bài viết'
+    expected_text = "Bài viết thử nghiệm"
+    enter_field_new_article_type.enter_vi_article_type(expected_text)
+    time.sleep(1)
+    test_logger.info(f"Đã nhập '{expected_text}' vào ô 'Loại bài viết'.")
+
+    # **Bước 5**: Kiểm tra lại thông báo lỗi sau khi nhập dữ liệu vào trường 'Loại bài viết'
+    error_message_displayed = not validation_new_article_type.is_field_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_message_displayed else "Thông báo lỗi vẫn hiển thị."
+
+    if error_message_displayed:
+        test_logger.info(f"Test Case 86 PASS: test_click_save_and_field_information | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 86 FAIL: test_click_save_and_field_information | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 87: Nhập Loại bài viết sau khi đã click nút 'Lưu' khi chưa nhập Loại bài viết ( Tieng Viet )
+def test_click_save_and_continue_and_field_information(new_article_type, validation_new_article_type, enter_field_new_article_type):
+    test_logger.info("Bắt đầu Test Case 87: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết' ( Tieng Viet ).")
+
+    # **Bước 1**: Chuyển đến trang nhập liệu "Tạo mới loại bài viết"
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
+
+    # **Bước 2**: Nhấn nút "Lưu" mà không nhập dữ liệu vào trường 'Loại bài viết'
+    new_article_type.click_save_and_continue_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu vào ô 'Loại bài viết'.")
+
+    # **Bước 3**: Kiểm tra thông báo lỗi "Vui lòng nhập loại bài viết"
+    error_message_displayed = validation_new_article_type.is_field_error_displayed()
+    test_logger.info("Đã kiểm tra thông báo lỗi hiển thị khi không nhập loại bài viết.")
+    
+    # **Bước 4**: Nhập dữ liệu vào ô 'Loại bài viết'
+    expected_text = "Bài viết thử nghiệm"
+    enter_field_new_article_type.enter_vi_article_type(expected_text)
+    time.sleep(1)
+    test_logger.info(f"Đã nhập '{expected_text}' vào ô 'Loại bài viết'.")
+
+    # **Bước 5**: Kiểm tra lại thông báo lỗi sau khi nhập dữ liệu vào trường 'Loại bài viết'
+    error_message_displayed = not validation_new_article_type.is_field_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_message_displayed else "Thông báo lỗi vẫn hiển thị."
+
+    if error_message_displayed:
+        test_logger.info(f"Test Case 87 PASS: test_click_save_and_continue_and_field_information | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 87 FAIL: test_click_save_and_continue_and_field_information | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 88: Nhập Loại bài viết sau khi đã click nút 'Lưu' khi chưa nhập Loại bài viết (Tiếng Việt)
+def test_translate_and_save_and_field_information(new_article_type, validation_new_article_type, enter_field_new_article_type):
+    test_logger.info("Bắt đầu Test Case 88: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết' (Tiếng Việt).")
+
+    # **Bước 1**: Chuyển đến trang nhập liệu "Tạo mới loại bài viết"
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
+
+    # **Bước 2**: Chuyển sang tab tiếng Anh
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab tiếng Anh.")
+
+    # **Bước 3**: Nhấn nút "Dịch nội dung"
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung' để dịch thông tin sang tiếng Anh.")
+
+    # **Bước 4**: Nhấn nút "Lưu" mà không nhập dữ liệu vào trường 'Loại bài viết'
+    new_article_type.click_save_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu vào ô 'Loại bài viết'.")
+
+    # **Bước 5**: Kiểm tra thông báo lỗi "Vui lòng nhập loại bài viết" trong tab tiếng Anh
+    error_message_displayed = validation_new_article_type.is_en_field_error_displayed()
+    test_logger.info("Đã kiểm tra thông báo lỗi hiển thị khi không nhập loại bài viết.")
+
+    # **Bước 6**: Nhập dữ liệu vào ô 'Loại bài viết'
+    expected_text = "Bài viết thử nghiệm"
+    enter_field_new_article_type.enter_en_article_type(expected_text)
+    time.sleep(1)
+    test_logger.info(f"Đã nhập '{expected_text}' vào ô 'Loại bài viết'.")
+
+    # **Bước 7**: Kiểm tra lại thông báo lỗi sau khi nhập dữ liệu vào trường 'Loại bài viết'
+    error_message_displayed = not validation_new_article_type.is_en_field_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi đã được ẩn đi."
+    actual_result = expected_result if error_message_displayed else "Thông báo lỗi vẫn hiển thị."
+
+    # **Xác nhận kết quả**
+    if error_message_displayed:
+        test_logger.info(f"Test Case 88 PASS: test_translate_and_save_and_field_information | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 88 FAIL: test_translate_and_save_and_field_information | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 89: Nhập Loại bài viết sau khi đã click nút 'Lưu' khi chưa nhập Loại bài viết (English)
+def test_translate_and_continuing_save_and_field_information(new_article_type, validation_new_article_type, enter_field_new_article_type):
+    test_logger.info("Bắt đầu Test Case 89: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết' (English).")
+
+    # **Bước 1**: Chuyển đến trang nhập liệu "Tạo mới loại bài viết"
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+    test_logger.info("Đã vào trang 'Tạo mới loại bài viết'.")
+
+    # **Bước 2**: Chuyển sang tab tiếng Anh
+    new_article_type.click_tab_english()
+    time.sleep(1)
+    test_logger.info("Đã chuyển sang tab tiếng Anh để đảm bảo rằng đang làm việc với phiên bản tiếng Anh của trang.")
+
+    # **Bước 3**: Nhấn nút "Dịch nội dung" để dịch các trường nhập liệu
+    new_article_type.click_translate_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Dịch nội dung' để dịch các trường nhập liệu sang tiếng Anh.")
+
+    # **Bước 4**: Nhấn nút "Lưu" mà không nhập dữ liệu vào trường 'Loại bài viết'
+    new_article_type.click_save_and_continue_button()
+    time.sleep(1)
+    test_logger.info("Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu vào ô 'Loại bài viết'.")
+
+    # **Bước 5**: Kiểm tra thông báo lỗi "Vui lòng nhập loại bài viết" trong phiên bản tiếng Anh
+    error_message_displayed = validation_new_article_type.is_en_field_error_displayed()
+    test_logger.info("Đã kiểm tra thông báo lỗi hiển thị khi không nhập loại bài viết.")
+
+    # **Bước 6**: Nhập dữ liệu vào ô 'Loại bài viết' sau khi thông báo lỗi đã hiển thị
+    expected_text = "Bài viết thử nghiệm"
+    enter_field_new_article_type.enter_en_article_type(expected_text)
+    time.sleep(1)
+    test_logger.info(f"Đã nhập '{expected_text}' vào ô 'Loại bài viết'.")
+
+    # **Bước 7**: Kiểm tra lại thông báo lỗi sau khi nhập dữ liệu vào trường 'Loại bài viết'
+    error_message_displayed = not validation_new_article_type.is_en_field_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi đã được ẩn đi sau khi nhập dữ liệu hợp lệ."
+    actual_result = expected_result if error_message_displayed else "Thông báo lỗi vẫn hiển thị."
+
+    # **Xác nhận kết quả**
+    if error_message_displayed:
+        test_logger.info(f"Test Case 89 PASS: test_translate_and_continuing_save_and_field_information | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 89 FAIL: test_translate_and_continuing_save_and_field_information | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"

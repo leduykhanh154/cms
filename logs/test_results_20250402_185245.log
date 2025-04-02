@@ -1,0 +1,60 @@
+2025-04-02 18:52:54,277 - INFO - Bắt đầu Test Case 51: Nhập 253 ký tự vào ô 'Loại bài viết' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:53:07,588 - INFO - Test Case 51 PASS: test_vi_article_type_253_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:53:22,360 - INFO - Bắt đầu Test Case 52: Nhập 254 ký tự vào ô 'Loại bài viết' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:53:35,563 - INFO - Test Case 52 PASS: test_vi_article_type_254_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:53:50,188 - INFO - Bắt đầu Test Case 53: Nhập 253 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:54:03,709 - INFO - Test Case 53 PASS: test_vi_article_link_253_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:54:18,150 - INFO - Bắt đầu Test Case 54: Nhập 254 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:54:31,355 - INFO - Test Case 54 PASS: test_vi_article_link_254_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:54:45,892 - INFO - Bắt đầu Test Case 55: Nhập 199 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:54:58,860 - INFO - Test Case 55 PASS: test_vi_short_description_199_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:55:29,316 - INFO - Bắt đầu Test Case 56: Nhập 200 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:55:42,033 - INFO - Test Case 56 PASS: test_vi_short_description_200_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:55:56,436 - INFO - Bắt đầu Test Case 57: Nhập 99 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:56:09,091 - INFO - Test Case 57 PASS: test_vi_meta_keyword_99_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:56:23,141 - INFO - Bắt đầu Test Case 58: Nhập 100 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:56:35,781 - INFO - Test Case 58 PASS: test_vi_meta_keyword_100_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:56:49,481 - INFO - Bắt đầu Test Case 59: Nhập 499 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:57:02,851 - INFO - Test Case 59 PASS: test_vi_meta_description_499_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:57:16,863 - INFO - Bắt đầu Test Case 60: Nhập 500 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 18:57:30,968 - INFO - Test Case 60 PASS: test_vi_meta_description_500_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:57:44,815 - INFO - Bắt đầu Test Case 61: Nhập 253 ký tự vào ô 'Loại bài viết' (English) và kiểm tra thông báo lỗi.
+2025-04-02 18:57:50,995 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 18:57:52,069 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 18:57:59,801 - INFO - Test Case 61 PASS: test_en_article_type_253_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:58:34,407 - INFO - Bắt đầu Test Case 62: Nhập 254 ký tự vào ô 'Loại bài viết' (English) và kiểm tra thông báo lỗi.
+2025-04-02 18:58:40,636 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 18:58:41,704 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 18:58:49,370 - INFO - Test Case 62 PASS: test_en_article_type_254_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:59:03,184 - INFO - Bắt đầu Test Case 63: Nhập 253 ký tự vào ô 'Duong dan' (English) và kiểm tra thông báo lỗi.
+2025-04-02 18:59:09,388 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 18:59:10,482 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 18:59:18,225 - INFO - Test Case 63 PASS: test_en_article_link_253_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 18:59:32,064 - INFO - Bắt đầu Test Case 64: Nhập 254 ký tự vào ô 'Duong dan' (English) và kiểm tra thông báo lỗi.
+2025-04-02 18:59:38,366 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 18:59:39,435 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 18:59:47,148 - INFO - Test Case 64 PASS: test_en_article_link_254_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 19:00:00,890 - INFO - Bắt đầu Test Case 65: Nhập 199 ký tự vào ô 'Mô tả ngắn' (English) và kiểm tra thông báo lỗi.
+2025-04-02 19:00:07,073 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 19:00:08,138 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 19:00:15,769 - INFO - Test Case 65 PASS: test_en_short_description_199_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 19:00:29,887 - INFO - Bắt đầu Test Case 66: Nhập 200 ký tự vào ô 'Mô tả ngắn' (English) và kiểm tra thông báo lỗi.
+2025-04-02 19:00:36,241 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 19:00:37,321 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 19:00:44,943 - INFO - Test Case 66 PASS: test_en_short_description_200_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 19:00:58,862 - INFO - Bắt đầu Test Case 67: Nhập 99 ký tự vào ô 'Meta Keyword' (English) và kiểm tra thông báo lỗi.
+2025-04-02 19:01:05,201 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 19:01:06,290 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 19:01:13,736 - INFO - Test Case 67 PASS: test_en_meta_keyword_99_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 19:01:48,098 - INFO - Bắt đầu Test Case 68: Nhập 100 ký tự vào ô 'Meta Keyword' (English) và kiểm tra thông báo lỗi.
+2025-04-02 19:01:54,418 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 19:01:55,489 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 19:02:03,077 - INFO - Test Case 68 PASS: test_en_meta_keyword_100_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 19:02:17,768 - INFO - Bắt đầu Test Case 69: Nhập 499 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.
+2025-04-02 19:02:24,270 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 19:02:25,361 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 19:02:33,778 - INFO - Test Case 69 PASS: test_en_meta_description_499_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 19:02:47,644 - INFO - Bắt đầu Test Case 70: Nhập 500 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.
+2025-04-02 19:02:54,171 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 19:02:55,268 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 19:03:03,833 - INFO - Test Case 70 PASS: test_en_meta_description_500_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS

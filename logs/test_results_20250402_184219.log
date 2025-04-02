@@ -1,0 +1,4 @@
+2025-04-02 18:42:28,750 - INFO - Bắt đầu Test Case 68: Nhập 100 ký tự vào ô 'Meta Keyword' (English) và kiểm tra thông báo lỗi.
+2025-04-02 18:42:35,214 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 18:42:36,287 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 18:42:43,699 - INFO - Test Case 68 PASS: test_en_meta_keyword_100_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS

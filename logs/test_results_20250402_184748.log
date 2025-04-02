@@ -1,0 +1,2 @@
+2025-04-02 18:47:57,279 - INFO - Bắt đầu Test Case 70: Nhập 500 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.
+2025-04-02 18:48:14,803 - INFO - Test Case 70 PASS: test_en_meta_description_500_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS

@@ -1,0 +1,4 @@
+2025-04-02 19:12:34,084 - INFO - Bắt đầu Test Case 71: Nhập 5 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.
+2025-04-02 19:12:40,329 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-02 19:12:42,412 - INFO - Đã nhập '12345' vào ô 'Thứ tự sắp xếp'.
+2025-04-02 19:12:47,503 - INFO - Test Case 71 PASS: test_sort_order_exceeds_5_numbers | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
