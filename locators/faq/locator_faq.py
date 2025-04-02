@@ -37,3 +37,23 @@ class LocatorFAQ:
 
     # CHECKBOX
     CHECKBOX_FIRST = (By.XPATH, '//*[@id="table-career-field-list"]/tbody/tr[1]/td[1]/div/input')
+ 
+    #
+    # Tạo mới FAQ
+    # SELECT
+    SELECT_SHOW = (By.XPATH, '//*[@id="select2-status-container"]')
+    SELECT_VALUE_NOT = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[2]')
+    SELECT_VALUE_HAS = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[1]')
+    SELECT_VALUE_VISIBLE = (By.XPATH, '//*[@id="select2-status-container"]')    
+
+    # DROPDOWN
+    DROPDOWN_SHOW_VISIBLE = (By.XPATH, '//*[@id="app-container"]/span/span')
+
+    # FIELD CÂU HỎI
+    FAQ_INPUT = (By.XPATH, '//*[@id="cke_1_contents"]/iframe/html/body')
+    FAQ_ERROR_MESSAGE = (By.XPATH, '//*[@id="vi-content"]/div/div[3]/div/div[2]/div')
+
+    # BUTTON
+    SAVE_BUTTON = (By.XPATH, '//*[@id="mpireValidateForm"]/div[1]/div[2]/div/div/button[1]')
+
+    

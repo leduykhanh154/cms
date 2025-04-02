@@ -5,12 +5,12 @@ import datetime
 from utils.login import Login
 from utils.logger import LoggerConfig
 from utils.driver_setup import get_driver
-from pages.faq.faq_base import FAQBase
-from pages.faq.url_faq import UrlFAQ
-from pages.faq.select_faq import SelectFAQ
-from pages.faq.enter_field_faq import EnterFieldFAQ
-from pages.faq.validation_faq import ValidationFAQ 
-from pages.faq.popup_faq import PopupFAQ 
+from pages.faq.listfaq.faq_base import FAQBase
+from pages.faq.listfaq.url_faq import UrlFAQ
+from pages.faq.listfaq.select_faq import SelectFAQ
+from pages.faq.listfaq.enter_field_faq import EnterFieldFAQ
+from pages.faq.listfaq.validation_faq import ValidationFAQ 
+from pages.faq.listfaq.popup_faq import PopupFAQ 
 from locators.faq.locator_faq import LocatorFAQ
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
@@ -123,20 +123,20 @@ def popup(setup_driver):
 # Test Case 5: Verify dropdown 'Dòng hiển thị trên trang' -> Hệ thống hiển thị dropdown.
 
 # Test Case 6: Verify nhập sai thông tin ở field 'Tìm kiếm' -> Hệ thống hiển thị text 'Không tìm thấy kết quả tương ứng' trong table.
-# def test_invalid_in_search(faq, enter_field, validation, setup_driver):
-#     test_logger.info("Bắt đầu Test Case 6: Verify nhập sai thông tin ở field 'Tìm kiếm' -> Hệ thống hiển thị text 'Không tìm thấy kết quả tương ứng' trong table.")
-#     faq.navigate_to_faq()
-#     invalid_in_search = '123456'
-#     enter_field.enter_data_in_search(invalid_in_search)
-#     expected_result = "Hệ thống hiển thị text 'Không tìm thấy kết quả tương ứng' trong table"
-#     result = validation.is_invalid_search_in_list(invalid_in_search)
-#     actual_result = expected_result if result else "Hệ thống không hiển thị text 'Không tìm thấy kết quả tương ứng' trong table"
+def test_invalid_in_search(faq, enter_field, validation, setup_driver):
+    test_logger.info("Bắt đầu Test Case 6: Verify nhập sai thông tin ở field 'Tìm kiếm' -> Hệ thống hiển thị text 'Không tìm thấy kết quả tương ứng' trong table.")
+    faq.navigate_to_faq()
+    invalid_in_search = '123456'
+    enter_field.enter_data_in_search(invalid_in_search)
+    expected_result = "Hệ thống hiển thị text 'Không tìm thấy kết quả tương ứng' trong table"
+    result = validation.is_invalid_search_in_list(invalid_in_search)
+    actual_result = expected_result if result else "Hệ thống không hiển thị text 'Không tìm thấy kết quả tương ứng' trong table"
 
-#     if result:
-#         test_logger.info(f"Test Case 6 PASS: test_invalid_in_search | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
-#     else:
-#         test_logger.error(f"Test Case 6 FAIL: test_invalid_in_search | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
-#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+    if result:
+        test_logger.info(f"Test Case 6 PASS: test_invalid_in_search | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 6 FAIL: test_invalid_in_search | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
 # Test Case 7
 

@@ -1,2 +1,0 @@
-2025-03-27 17:09:00,699 - INFO - Bắt đầu Test Case 11: Verify button 'Thao tác' và chọn dữ liệu -> Hệ thống hiển thị popup 'Bạn có chắc chắn ?'.
-2025-03-27 17:09:03,847 - INFO - Test Case 11 PASS: test_checkbox_and_operation_button | Expected: Hệ thống hiển thị popup 'Bạn có chắc chắn ?' | Actual: Hệ thống hiển thị popup 'Bạn có chắc chắn ?' | Status: PASS

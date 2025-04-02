@@ -39,7 +39,7 @@ class LocatorArticle:
     SHORT_DESCRIPTION_EN_INPUT = (By.XPATH, "//*[@id='languages[en][short_description]']")
     SHORT_DESCRIPTION_EN_ERROR_MESSAGE = (By.XPATH, "//*[@id='en-content']/div[1]/div[4]/div/div/div" )
 
-    # Field Nội dung 
+    # Field Nội dung
     CKEDITOR_IFRAME_LOCATOR = (By.XPATH, "//iframe[contains(@title, 'Rich Text Editor')]")
     CKEDITOR_BODY_LOCATOR = (By.TAG_NAME, "body")
     CONTENT_VI_ERROR_MESSAGE = (By.XPATH, "//*[@id='vi-content']/div[1]/div[5]/div/div[2]/div")
