@@ -151,14 +151,14 @@ def test_click_datepicker_to(article_type):
         test_logger.error(f"Test Case 5 FAIL: test_click_datepicker_to | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
-# Test Case 6: Click vào Dropdown 'Loại cha'
+# Test Case 6: Click vào Dropdown 'Loại bai viet cap cha'
 def test_click_dropdown_father_type(article_type):
     test_logger.info("Bắt đầu Test Case 6: Verify khi nhấn vào Dropdown 'Loại cha'.")
 
     article_type.perform_tag_operations()
     time.sleep(1)
 
-    # Nhấn vào Dropdown 'Loại cha'
+    # Nhấn vào Dropdown 'Loại bai viet cap cha'
     result = article_type.click_dropdown_father_type()
 
     # Kết quả mong đợi

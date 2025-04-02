@@ -833,17 +833,17 @@ def test_vi_article_link_255_chars(new_article_type, enter_field_new_article_typ
         test_logger.error(f"Test Case 23 FAIL: test_vi_article_link_255_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
-# Test Case 24: Nhập 255 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
-def test_vi_short_description_255_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
-    test_logger.info("Bắt đầu Test Case 24: Nhập 255 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+# Test Case 24: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
+def test_vi_short_description_201_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 24: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.")
 
     new_article_type.perform_tag_operations()
     time.sleep(1)
     new_article_type.click_new_article_type_button()
     time.sleep(1)
 
-    # **Bước 1**: Nhập 255 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
-    long_text = "A" * 255
+    # **Bước 1**: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
+    long_text = "A" * 201
     enter_field_new_article_type.enter_vi_description(long_text)
     time.sleep(2)
 
@@ -851,13 +851,13 @@ def test_vi_short_description_255_chars(new_article_type, enter_field_new_articl
     error_displayed = validation_new_article_type.is_max_short_description_error_displayed()
 
     # **Kiểm tra kết quả**
-    expected_result = "Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'."
+    expected_result = "Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 200 ký tự'."
     actual_result = expected_result if error_displayed else "Thông báo lỗi không xuất hiện!"
 
     if error_displayed:
-        test_logger.info(f"Test Case 24 PASS: test_vi_short_description_255_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+        test_logger.info(f"Test Case 24 PASS: test_vi_short_description_201_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
-        test_logger.error(f"Test Case 24 FAIL: test_vi_short_description_255_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        test_logger.error(f"Test Case 24 FAIL: test_vi_short_description_201_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
 # Test Case 25: Nhập 101 ký tự vào ô 'Meta Keyword' (Tiếng Việt)
@@ -905,7 +905,7 @@ def test_vi_meta_description_501_chars(new_article_type, enter_field_new_article
     error_displayed = validation_new_article_type.is_meta_description_error_displayed()
 
     # **Kiểm tra kết quả**
-    expected_result = "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 310 ký tự'."
+    expected_result = "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 500 ký tự'."
     actual_result = expected_result if error_displayed else "Thông báo lỗi không xuất hiện!"
 
     if error_displayed:
@@ -1797,4 +1797,278 @@ def test_save_and_continue_check_edit(new_article_type, enter_field_new_article_
         test_logger.info(f"Test Case 50 PASS: test_save_and_continue_check_edit | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
         test_logger.error(f"Test Case 50 FAIL: test_save_and_continue_check_edit | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 51: Nhập 253 ký tự vào ô 'Loại bài viết' (Tiếng Việt)
+def test_vi_article_type_253_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 51: Nhập 253 ký tự vào ô 'Loại bài viết' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    
+    # **Bước 1**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 2**: Nhập 253 ký tự vào ô 'Loại bài viết' (Tiếng Việt)
+    long_text = "A" * 253  # Tạo chuỗi 253 ký tự
+    enter_field_new_article_type.enter_vi_article_type(long_text)
+    time.sleep(2)
+
+    # **Bước 3**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_max_type_error_displayed()
+
+    # **Bước 4**: Kiểm tra kết quả
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 51 PASS: test_vi_article_type_253_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 51 FAIL: test_vi_article_type_253_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 52: Nhập 254 ký tự vào ô 'Loại bài viết' (Tiếng Việt)
+def test_vi_article_type_254_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 52: Nhập 254 ký tự vào ô 'Loại bài viết' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    
+    # **Bước 1**: Click "Tạo mới" để vào trang nhập liệu
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 2**: Nhập 254 ký tự vào ô 'Loại bài viết' (Tiếng Việt)
+    long_text = "A" * 254  # Tạo chuỗi 254 ký tự
+    enter_field_new_article_type.enter_vi_article_type(long_text)
+    time.sleep(2)
+
+    # **Bước 3**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_max_type_error_displayed()
+
+    # **Bước 4**: Kiểm tra kết quả
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 52 PASS: test_vi_article_type_254_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 52 FAIL: test_vi_article_type_254_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test case Test Case 53: Nhập 253 ký tự vào ô 'Duong dan' (Tiếng Việt)
+def test_vi_article_link_253_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 23: Nhập 253 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 1**: Nhập 253 ký tự vào ô 'Liên kết bài viết' (Tiếng Việt)
+    long_text = "A" * 253
+    enter_field_new_article_type.enter_vi_article_link(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_max_link_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 53 PASS: test_vi_article_link_253_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 53 FAIL: test_vi_article_link_253_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test case Test Case 54: Nhập 254 ký tự vào ô 'Duong dan' (Tiếng Việt)
+def test_vi_article_link_254_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 54: Nhập 254 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 1**: Nhập 254 ký tự vào ô 'Liên kết bài viết' (Tiếng Việt)
+    long_text = "A" * 254
+    enter_field_new_article_type.enter_vi_article_link(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_max_link_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 54 PASS: test_vi_article_link_254_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 54 FAIL: test_vi_article_link_254_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 55: Nhập 199 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
+def test_vi_short_description_199_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 55: Nhập 199 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 1**: Nhập 199 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
+    long_text = "A" * 199
+    enter_field_new_article_type.enter_vi_description(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_max_short_description_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 200 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 55 PASS: test_vi_short_description_199_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 55 FAIL: test_vi_short_description_199_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 56: Nhập 200 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
+def test_vi_short_description_200_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 56: Nhập 200 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 1**: Nhập 200 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt)
+    long_text = "A" * 200
+    enter_field_new_article_type.enter_vi_description(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_max_short_description_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 200 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 56 PASS: test_vi_short_description_200_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 56 FAIL: test_vi_short_description_200_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 57: Nhập 99 ký tự vào ô 'Meta Keyword' (Tiếng Việt)
+def test_vi_meta_keyword_99_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 57: Nhập 99 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 1**: Nhập 99 ký tự vào ô 'Meta Keyword' (Tiếng Việt)
+    long_text = "A" * 99
+    enter_field_new_article_type.enter_vi_meta_keyword(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_meta_keyword_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 57 PASS: test_vi_meta_keyword_99_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 57 FAIL: test_vi_meta_keyword_99_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 58: Nhập 100 ký tự vào ô 'Meta Keyword' (Tiếng Việt)
+def test_vi_meta_keyword_100_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 57: Nhập 100 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 1**: Nhập 100 ký tự vào ô 'Meta Keyword' (Tiếng Việt)
+    long_text = "A" * 100
+    enter_field_new_article_type.enter_vi_meta_keyword(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_not_displayed = not validation_new_article_type.is_meta_keyword_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_not_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'."
+
+    if error_not_displayed:
+        test_logger.info(f"Test Case 58 PASS: test_vi_meta_keyword_100_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 58 FAIL: test_vi_meta_keyword_100_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 59: Nhập 499 ký tự vào ô 'Meta Description' (Tiếng Việt)
+def test_vi_meta_description_499_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 59: Nhập 499 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 1**: Nhập 499 ký tự vào ô 'Meta Description' (Tiếng Việt)
+    long_text = "A" * 499
+    enter_field_new_article_type.enter_vi_meta_description(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_displayed = not validation_new_article_type.is_meta_description_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 499 ký tự'."
+
+    if error_displayed:
+        test_logger.info(f"Test Case 59 PASS: test_vi_meta_description_499_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 59 FAIL: test_vi_meta_description_499_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+        
+# Test Case 60: Nhập 500 ký tự vào ô 'Meta Description' (Tiếng Việt)
+def test_vi_meta_description_500_chars(new_article_type, enter_field_new_article_type, validation_new_article_type):
+    test_logger.info("Bắt đầu Test Case 60: Nhập 500 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.")
+
+    new_article_type.perform_tag_operations()
+    time.sleep(1)
+    new_article_type.click_new_article_type_button()
+    time.sleep(1)
+
+    # **Bước 1**: Nhập 500 ký tự vào ô 'Meta Description' (Tiếng Việt)
+    long_text = "A" * 500
+    enter_field_new_article_type.enter_vi_meta_description(long_text)
+    time.sleep(2)
+
+    # **Bước 2**: Kiểm tra xem thông báo lỗi có xuất hiện không
+    error_displayed = not validation_new_article_type.is_meta_description_error_displayed()
+
+    # **Kiểm tra kết quả**
+    expected_result = "Thông báo lỗi không xuất hiện!"
+    actual_result = expected_result if error_displayed else "Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 499 ký tự'."
+
+    if error_displayed:
+        test_logger.info(f"Test Case 60 PASS: test_vi_meta_description_500_chars | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 60 FAIL: test_vi_meta_description_500_chars | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"

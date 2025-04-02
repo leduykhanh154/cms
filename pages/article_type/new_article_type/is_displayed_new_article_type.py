@@ -67,7 +67,7 @@ class IsDisplayedNewArticleType:
     def is_please_field_type_article_displayed(self):
         try:
             element = self.wait.until(
-                EC.presence_of_element_located(self.locators.PLEASE_FIELD_TYPE_ARTICLE)
+                EC.presence_of_element_located(self.locators.VI_ERROR_PLEASE_FIELD_TYPE_ARTICLE)
             )
             logging.info("Thông báo 'Vui lòng nhập loại bài viết' đã xuất hiện.")
             return True

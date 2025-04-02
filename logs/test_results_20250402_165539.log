@@ -1,0 +1,4 @@
+2025-04-02 16:55:47,968 - INFO - Bắt đầu Test Case 59: Nhập 499 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 16:56:01,952 - INFO - Test Case 59 PASS: test_vi_meta_description_499_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS
+2025-04-02 16:56:16,037 - INFO - Bắt đầu Test Case 59: Nhập 500 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 16:56:29,572 - INFO - Test Case 59 PASS: test_vi_meta_description_500_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS

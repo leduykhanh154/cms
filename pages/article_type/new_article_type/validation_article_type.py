@@ -122,7 +122,7 @@ class ValidationArticleType:
             logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
         return False
     
-    # Ham kiem tra Meta Keyword khong vuot qua 100 ky tu
+    # Ham kiem tra Meta Keyword khong vuot qua 500 ky tu
     def is_meta_description_error_displayed(self):
         try:
             error_message = self.get_text(self.locators.VI_ERROR_META_DESCRIPTION)
@@ -256,7 +256,7 @@ class ValidationArticleType:
             logging.error(f"Lỗi: Không tìm thấy phần tử thông báo lỗi. Exception: {e}")
         return False
     
-    # Ham kiem tra Meta Keyword khong vuot qua 100 ky tu
+    # Ham kiem tra Meta Description khong vuot qua 500 ky tu
     def is_en_meta_description_error_displayed(self):
         try:
             error_message = self.get_text(self.locators.EN_ERROR_META_DESCRIPTION)
