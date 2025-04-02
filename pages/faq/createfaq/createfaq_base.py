@@ -45,14 +45,12 @@ class CreateFAQBase:
     # Hàm nhấn vào button Lưu
     def click_save_button(self):
         try:
-            save_button = self.wait.until(EC.element_to_be_clickable(self.locators.SAVE_BUTTON))
+            save_button = self.wait.until(EC.element_to_be_clickable(self.locators.CREATE_NEW_BUTTON))
             save_button.click()
             logging.info("Đã nhấn vào button Lưu.")
         except TimeoutException:
             logging.error("Không thể nhấn vào button Lưu.")
             raise
-
-
 
     # Hàm thực hiện thao tác nhấn menu Nội dung -> menu FAQ
     def navigate_to_faq(self):

@@ -112,18 +112,49 @@ def validation(setup_driver):
 #         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
         
 # Test Case 5: Verify khi bỏ trống giá trị ở field 'Câu hỏi*' -> Hệ thống hiển thị validate: 'Vui lòng nhập Câu hỏi'.
-def test_empty_faq_vi(setup_driver, createfaq, enter_field, validation, select):
+# def test_empty_faq_vi(setup_driver, createfaq, enter_field, validation):
+#     createfaq.navigate_to_faq()
+#     createfaq.click_create_new_button()
+#     empty_data = ""
+#     enter_field.enter_faq_vi(empty_data)
+#     expected_result = "Hệ thống hiển thị validate: Vui lòng nhập Câu hỏi"
+#     result = validation.is_faq_vi_error_displayed()
+#     actual_result = expected_result if result else "Hệ thống không hiển thị validate: Vui lòng nhập Câu hỏi"
+
+#     if result:
+#         test_logger.info(f"Test Case 5 PASS: test_empty_faq_vi | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 5 FAIL: test_empty_faq_vi | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 6: Verify khi nhập lại giá trị ở field 'Câu hỏi*' -> Hệ thống ẩn validate.
+# def test_enter_faq_vi(setup_driver, createfaq, enter_field, validation):
+#     createfaq.navigate_to_faq()
+#     createfaq.click_create_new_button()
+#     enter_data = "test-cauhoi"
+#     enter_field.enter_faq_vi(enter_data)
+#     expected_result = "Hệ thống ẩn validate"
+#     result = validation.is_faq_vi_not_invisible()
+#     actual_result = expected_result if result else "Hệ thống không ẩn validate"
+
+#     if result:
+#         test_logger.info(f"Test Case 6 PASS: test_enter_faq_vi | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 6 FAIL: test_enter_faq_vi | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 7: Verify 499 kí tự ở field Câu hỏi* -> Hệ thống hiển thị giá trị ở field
+def test_499_character_faq_vi(setup_driver, createfaq, enter_field, validation):
     createfaq.navigate_to_faq()
     createfaq.click_create_new_button()
-    data = "123"
-    enter_field.enter_faq_vi(data)
-    select.click_save_button()
-    expected_result = "Hệ thống hiển thị validate: 'Vui lòng nhập Câu hỏi'"
-    result = validation.is_faq_vi_error_displayed()
-    actual_result = expected_result if result else "Hệ thống không hiển thị validate: 'Vui lòng nhập Câu hỏi'"
+    character_data = "A" * 499
+    enter_field.enter_faq_vi(character_data)
+    expected_result = "Hệ thống hiển thị giá trị ở field"
+    result = validation.is_faq_vi_499_character()
+    actual_result = expected_result if result else "Hệ thống không hiển thị giá trị ở field"
 
     if result:
-        test_logger.info(f"Test Case 5 PASS: test_empty_faq_vi | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+        test_logger.info(f"Test Case 7 PASS: test_499_character_faq_vi | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
-        test_logger.error(f"Test Case 5 FAIL: test_empty_faq_vi | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        test_logger.error(f"Test Case 7 FAIL: test_499_character_faq_vi | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"

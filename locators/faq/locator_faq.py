@@ -50,10 +50,10 @@ class LocatorFAQ:
     DROPDOWN_SHOW_VISIBLE = (By.XPATH, '//*[@id="app-container"]/span/span')
 
     # FIELD CÂU HỎI
-    FAQ_INPUT = (By.XPATH, '//*[@id="cke_1_contents"]/iframe/html/body')
+    FAQ_INPUT = (By.XPATH, '//*[@id="cke_1_contents"]/iframe')
     FAQ_ERROR_MESSAGE = (By.XPATH, '//*[@id="vi-content"]/div/div[3]/div/div[2]/div')
 
     # BUTTON
-    SAVE_BUTTON = (By.XPATH, '//*[@id="mpireValidateForm"]/div[1]/div[2]/div/div/button[1]')
+    SAVE_BUTTON = (By.CSS_SELECTOR, '#mpireValidateForm > div.row.page-header > div.col-6.d-flex.justify-content-end > div > div > button:nth-child(1)')
 
     
