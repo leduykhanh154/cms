@@ -49,9 +49,13 @@ class LocatorFAQ:
     # DROPDOWN
     DROPDOWN_SHOW_VISIBLE = (By.XPATH, '//*[@id="app-container"]/span/span')
 
-    # FIELD CÂU HỎI
-    FAQ_INPUT = (By.XPATH, '//*[@id="cke_1_contents"]/iframe')
-    FAQ_ERROR_MESSAGE = (By.XPATH, '//*[@id="vi-content"]/div/div[3]/div/div[2]/div')
+    # FIELD CÂU HỎI - VI
+    FAQ_INPUT_VI = (By.XPATH, '//*[@id="cke_1_contents"]/iframe')
+    FAQ_ERROR_MESSAGE_VI = (By.XPATH, '//*[@id="vi-content"]/div/div[3]/div/div[2]/div')
+
+    # FIELD CÂU TRẢ LỜI - VI
+    ANSWER_INPUT_VI = (By.XPATH, '//*[@id="cke_2_contents"]/iframe')
+    ANSWER_ERROR_MESSAGE_VI = (By.XPATH, '//*[@id="vi-content"]/div/div[4]/div/div[2]/div')
 
     # BUTTON
     SAVE_BUTTON = (By.CSS_SELECTOR, '#mpireValidateForm > div.row.page-header > div.col-6.d-flex.justify-content-end > div > div > button:nth-child(1)')

@@ -1,0 +1,1 @@
+2025-04-03 12:01:31,466 - ERROR - Test Case 9 FAIL: test_501_character_faq_vi | Expected: Hệ thống hiển thị validate Vui lòng nhập Câu hỏi không quá 500 ký tự | Actual: Hệ thống hiển thị không đúng validate Vui lòng nhập Câu hỏi không quá 500 ký tự | Status: FAIL

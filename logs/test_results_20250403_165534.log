@@ -1,0 +1,1 @@
+2025-04-03 16:55:57,845 - ERROR - Test Case 11 FAIL: test_enter_answer_vi | Expected: Hệ thống ẩn validate | Actual: Hệ thống không ẩn validate | Status: FAIL

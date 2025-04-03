@@ -1,0 +1,2 @@
+2025-04-03 11:55:33,119 - INFO - Test Case 8 PASS: test_500_character_faq_vi | Expected: Hệ thống hiển thị giá trị ở field | Actual: Hệ thống hiển thị giá trị ở field | Status: PASS
+2025-04-03 11:55:56,837 - INFO - Test Case 9 PASS: test_501_character_faq_vi | Expected: Hệ thống hiển thị validate Vui lòng nhập Câu hỏi không quá 500 ký tự | Actual: Hệ thống hiển thị validate Vui lòng nhập Câu hỏi không quá 500 ký tự | Status: PASS
