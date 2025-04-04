@@ -37,27 +37,5 @@ class LocatorFAQ:
 
     # CHECKBOX
     CHECKBOX_FIRST = (By.XPATH, '//*[@id="table-career-field-list"]/tbody/tr[1]/td[1]/div/input')
- 
-    #
-    # Tạo mới FAQ
-    # SELECT
-    SELECT_SHOW = (By.XPATH, '//*[@id="select2-status-container"]')
-    SELECT_VALUE_NOT = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[2]')
-    SELECT_VALUE_HAS = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[1]')
-    SELECT_VALUE_VISIBLE = (By.XPATH, '//*[@id="select2-status-container"]')    
-
-    # DROPDOWN
-    DROPDOWN_SHOW_VISIBLE = (By.XPATH, '//*[@id="app-container"]/span/span')
-
-    # FIELD CÂU HỎI - VI
-    FAQ_INPUT_VI = (By.XPATH, '//*[@id="cke_1_contents"]/iframe')
-    FAQ_ERROR_MESSAGE_VI = (By.XPATH, '//*[@id="vi-content"]/div/div[3]/div/div[2]/div')
-
-    # FIELD CÂU TRẢ LỜI - VI
-    ANSWER_INPUT_VI = (By.XPATH, '//*[@id="cke_2_contents"]/iframe')
-    ANSWER_ERROR_MESSAGE_VI = (By.XPATH, '//*[@id="vi-content"]/div/div[4]/div/div[2]/div')
-
-    # BUTTON
-    SAVE_BUTTON = (By.CSS_SELECTOR, '#mpireValidateForm > div.row.page-header > div.col-6.d-flex.justify-content-end > div > div > button:nth-child(1)')
 
     

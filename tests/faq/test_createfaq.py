@@ -147,7 +147,7 @@ def validation(setup_driver):
 # def test_499_character_faq_vi(setup_driver, createfaq, enter_field, validation):
 #     createfaq.navigate_to_faq()
 #     createfaq.click_create_new_button()
-#     character_data = "A" * 50
+#     character_data = "A" * 499
 #     enter_field.enter_faq_vi(character_data)
 #     expected_result = "Hệ thống hiển thị giá trị ở field"
 #     result = validation.is_faq_vi_499_character()
@@ -223,3 +223,118 @@ def validation(setup_driver):
 #         test_logger.error(f"Test Case 11 FAIL: test_enter_answer_vi | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
 #         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
          
+# Test Case 12: Verify 4999 kí tự ở field Câu trả lời* -> Hệ thống hiển thị giá trị ở field
+# def test_4999_character_answer_vi(setup_driver, createfaq, enter_field, validation):
+#     createfaq.navigate_to_faq()
+#     createfaq.click_create_new_button()
+#     character_data = "A" * 4999
+#     enter_field.enter_answer_vi(character_data)
+#     expected_result = "Hệ thống hiển thị giá trị ở field"
+#     result = validation.is_answer_vi_4999_character()
+#     actual_result = expected_result if result else "Hệ thống không hiển thị giá trị ở field"
+
+#     if result:
+#         test_logger.info(f"Test Case 12 PASS: test_4999_character_answer_vi | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 12 FAIL: test_4999_character_answer_vi | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 13: Verify 5000 kí tự ở field Câu trả lời* -> Hệ thống hiển thị giá trị ở field
+# def test_5000_character_answer_vi(setup_driver, createfaq, enter_field, validation):
+#     createfaq.navigate_to_faq()
+#     createfaq.click_create_new_button()
+#     character_data = "A" * 5000
+#     enter_field.enter_answer_vi(character_data)
+#     expected_result = "Hệ thống hiển thị giá trị ở field"
+#     result = validation.is_answer_vi_5000_character()
+#     actual_result = expected_result if result else "Hệ thống không hiển thị giá trị ở field"
+
+#     if result:
+#         test_logger.info(f"Test Case 13 PASS: test_5000_character_answer_vi | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 13 FAIL: test_5000_character_answer_vi | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 14: Verify 5001 kí tự ở field Câu trả lời* -> Hệ thống hiển thị validate "Vui lòng nhập Câu trả lời không quá 5000 ký tự"
+# def test_5001_character_answer_vi(setup_driver, createfaq, enter_field, validation):
+#     createfaq.navigate_to_faq()
+#     createfaq.click_create_new_button()
+#     character_data = "A" * 5001
+#     enter_field.enter_answer_vi(character_data)
+#     expected_result = "Hệ thống hiển thị validate 'Vui lòng nhập Câu trả lời không quá 5000 ký tự'"
+#     result = validation.is_answer_vi_5001_character()
+#     actual_result = expected_result if result else "Hệ thống không hiển thị đúng validate 'Vui lòng nhập Câu trả lời không quá 5000 ký tự'"
+
+#     if result:
+#         test_logger.info(f"Test Case 14 PASS: test_5001_character_answer_vi | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 14 FAIL: test_5001_character_answer_vi | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 15: Verify khi click tab English -> Hệ thống chuyển hướng sang trang Tạo mới FAQ - English
+# Đang bị bug
+
+# Test Case 16: Verify khi click tab Thông tin chung -> Hệ thống hiển thị các field ở tab Thông tin chung
+# def test_general_info_tab(setup_driver, createfaq, select):
+#     createfaq.navigate_to_faq()
+#     createfaq.click_create_new_button()
+#     createfaq.click_general_info_tab()
+#     expected_result = "Hệ thống hiển thị các field ở tab Thông tin chung"
+#     result = select.is_general_info_tab_displayed()
+#     actual_result = expected_result if result else "Hệ thống không hiển thị hết các field ở tab Thông tin chung"
+
+#     if result:
+#         test_logger.info(f"Test Case 16 PASS: test_general_info_tab | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 16 FAIL: test_general_info_tab | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 17: Verify khi click select Loại câu hỏi* -> Hệ thống mở select Loại câu hỏi*
+# def test_open_select_question_type(setup_driver, createfaq, select):
+#     createfaq.navigate_to_faq()
+#     createfaq.click_create_new_button()
+#     createfaq.click_general_info_tab()
+#     select.click_select_question_type()
+#     expected_result = "Hệ thống mở select 'Loại câu hỏi*'"
+#     result = select.is_select_question_type_visible()
+#     actual_result = expected_result if result else "Hệ thống không mở select 'Loại câu hỏi*'"
+
+#     if result:
+#         test_logger.info(f"Test Case 17 PASS: test_open_select_question_type | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 17 FAIL: test_open_select_question_type | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 18: Verify khi click lại select Loại câu hỏi* -> Hệ thống đóng select 'Loại câu hỏi*'
+# def test_close_select_question_type(setup_driver, createfaq, select):
+#     createfaq.navigate_to_faq()
+#     createfaq.click_create_new_button()
+#     createfaq.click_general_info_tab()
+#     select.click_select_question_type()
+#     select.click_again_select_question_type()
+#     expected_result = "Hệ thống đóng select 'Loại câu hỏi*'"
+#     result = select.is_select_question_type_invisible()
+#     actual_result = expected_result if result else "Hệ thống không đóng select 'Loại câu hỏi*'"
+
+#     if result:
+#         test_logger.info(f"Test Case 18 PASS: test_close_select_question_type | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 18 FAIL: test_close_select_question_type | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 19: Verify khi chọn giá trị Thủ tục, quy trình -> Hệ thống hiển thị giá trị Thủ tục, quy trình ở field
+def test_value_procedure_select_question_type(setup_driver, createfaq, select):
+    createfaq.navigate_to_faq()
+    createfaq.click_create_new_button()
+    createfaq.click_general_info_tab()
+    select.click_select_question_type()
+    select.click_value_procedure_select_question_type()
+    expected_result = "Hệ thống hiển thị giá trị 'Thủ tục, quy trình' ở field"
+    result = select.is_value_procedure_visible()
+    actual_result = expected_result if result else "Hệ thống không hiển thị đúng giá trị 'Thủ tục, quy trình' ở field"
+
+    if result:
+        test_logger.info(f"Test Case 19 PASS: test_value_procedure_select_question_type | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+    else:
+        test_logger.error(f"Test Case 19 FAIL: test_value_procedure_select_question_type | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        assert False, f"Expected: {expected_result} | Actual: {actual_result}"

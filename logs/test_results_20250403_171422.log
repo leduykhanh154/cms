@@ -1,2 +1,0 @@
-2025-04-03 17:14:38,810 - INFO - Test Case 10 PASS: test_empty_answer_vi | Expected: Hệ thống hiển thị validate 'Vui lòng nhập Câu trả lời' | Actual: Hệ thống hiển thị validate 'Vui lòng nhập Câu trả lời' | Status: PASS
-2025-04-03 17:15:01,916 - INFO - Test Case 11 PASS: test_enter_answer_vi | Expected: Hệ thống ẩn validate | Actual: Hệ thống ẩn validate | Status: PASS

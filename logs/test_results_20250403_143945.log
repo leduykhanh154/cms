@@ -1,1 +1,0 @@
-2025-04-03 14:40:03,483 - INFO - Test Case 9 PASS: test_501_character_faq_vi | Expected: Hệ thống hiển thị validate: Vui lòng nhập Câu hỏi không quá 500 ký tự | Actual: Hệ thống hiển thị validate: Vui lòng nhập Câu hỏi không quá 500 ký tự | Status: PASS

@@ -1,7 +1,7 @@
 import logging
 import keyword
 import time
-from locators.faq.locator_faq import LocatorFAQ
+from locators.faq.locator_createfaq import LocatorCreateFAQ
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
@@ -14,7 +14,7 @@ class EnterFieldCreateFAQ:
             raise ValueError("Driver không được để trống hoặc None!")
         self.driver = driver
         self.wait = WebDriverWait(self.driver, timeout)
-        self.locators = LocatorFAQ
+        self.locators = LocatorCreateFAQ
 
     # Hàm nhập Câu hỏi - VI
     def enter_faq_vi(self, data):

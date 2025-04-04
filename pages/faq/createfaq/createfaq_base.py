@@ -1,7 +1,7 @@
 import logging
 import time
 from selenium.webdriver.common.by import By
-from locators.faq.locator_faq import LocatorFAQ
+from locators.faq.locator_createfaq import LocatorCreateFAQ
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,7 +12,7 @@ class CreateFAQBase:
             raise ValueError("Driver không được để trống hoặc None!")
         self.driver = driver
         self.wait = WebDriverWait(self.driver, timeout)
-        self.locators = LocatorFAQ
+        self.locators = LocatorCreateFAQ
 
     def click_menu(self, locator, menu_name):
         try:
@@ -50,6 +50,16 @@ class CreateFAQBase:
             logging.info("Đã nhấn vào button Lưu.")
         except TimeoutException:
             logging.error("Không thể nhấn vào button Lưu.")
+            raise
+
+    # Hàm nhấn vào tab Thông tin chung
+    def click_general_info_tab(self):
+        try:
+            general_info_tab = self.wait.until(EC.element_to_be_clickable(self.locators.GENERAL_INFO_TAB))
+            general_info_tab.click()
+            logging.info("Đã nhấn tab Thông tin chung.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào tab Thông tin chung.")
             raise
 
     # Hàm thực hiện thao tác nhấn menu Nội dung -> menu FAQ
