@@ -364,7 +364,34 @@ class ArticleTypeBase:
         except Exception as e:
             logging.error(f"Lỗi khi kiểm tra URL: {str(e)}")
             return False
+    
+    # Ham verify mot phan cua duong dan    
+    def verify_path_of_current_url(self, expected_partial_url):
+        try:
+            current_url = self.driver.current_url
+            if expected_partial_url in current_url:
+                logging.info(f"URL hiện tại chứa phần mong đợi: {expected_partial_url}")
+                return True
+            else:
+                logging.error(f"URL không chứa phần mong đợi! Expected to contain: {expected_partial_url}, Actual: {current_url}")
+                return False
+        except Exception as e:
+            logging.error(f"Lỗi khi kiểm tra URL: {str(e)}")
+            return False
 
+    # Hàm lấy nội dung của FIRST_CREATE_DATE
+    def get_first_create_date(self):
+        try:
+            first_create_date_elem = self.wait.until(
+                EC.visibility_of_element_located(self.locators.FIRST_CREATE_DATE)
+            )
+            date_text = first_create_date_elem.text
+            logging.info(f"Nội dung FIRST_CREATE_DATE: {date_text}")
+            return date_text
+        except TimeoutException:
+            logging.error("Không thể lấy nội dung của FIRST_CREATE_DATE.")
+            return None
+    
     # Hàm thực hiện thao tác nhấn menu Nội dung -> menu Bài viết
     def navigate_to_article(self):
         self.click_content_menu()

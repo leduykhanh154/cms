@@ -1,0 +1,32 @@
+2025-04-04 11:41:23,077 - INFO - Bắt đầu Test Case 19: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'No'.
+2025-04-04 11:41:24,776 - INFO - Đã chọn bài viết đầu tiên.
+2025-04-04 11:41:24,846 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-04-04 11:41:25,950 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-04-04 11:41:27,047 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 11:41:27,232 - INFO - Đã nhấn vào nút 'No'.
+2025-04-04 11:41:27,766 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'No'.
+2025-04-04 11:41:27,804 - INFO - Bài viết đầu tiên không thay đổi sau khi hủy xóa.
+2025-04-04 11:41:27,812 - INFO - Test Case 19 PASS: test_select_and_cancel_delete | Expected: Popup da dong, loai bai viet van con. | Actual: Popup da dong, loai bai viet van con. | Status: PASS
+2025-04-04 11:41:42,005 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'Có'.
+2025-04-04 11:41:43,602 - INFO - Đã chọn bài viết đầu tiên.
+2025-04-04 11:41:43,668 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-04-04 11:41:44,748 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-04-04 11:41:45,770 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 11:41:45,846 - INFO - Đã nhấn vào nút 'Có'.
+2025-04-04 11:41:50,059 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'Có'.
+2025-04-04 11:41:55,084 - INFO - Test Case 20 PASS: test_select_and_confirm_delete | Expected: Bài viết đã bị xóa. | Actual: Bài viết đã bị xóa. | Status: PASS
+2025-04-04 11:42:09,396 - INFO - Bắt đầu Test Case 21: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'No'.
+2025-04-04 11:42:10,985 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 11:42:12,052 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-04-04 11:42:13,076 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 11:42:13,146 - INFO - Đã nhấn vào nút 'No'.
+2025-04-04 11:42:13,666 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'No'.
+2025-04-04 11:42:13,686 - INFO - Bài viết đầu tiên không thay đổi sau khi hủy xóa.
+2025-04-04 11:42:13,687 - INFO - Test Case 21 PASS: test_click_and_cancel_delete | Expected: Popup da dong, loai bai viet van con. | Actual: Popup da dong, loai bai viet van con. | Status: PASS
+2025-04-04 11:42:28,018 - INFO - Bắt đầu Test Case 22: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'Có'.
+2025-04-04 11:42:29,812 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 11:42:30,917 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-04-04 11:42:31,936 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 11:42:32,031 - INFO - Đã nhấn vào nút 'Có'.
+2025-04-04 11:42:36,285 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'Có'.
+2025-04-04 11:42:41,325 - INFO - Test Case 22 PASS: test_click_and_confirm_delete | Expected: Bài viết đã bị xóa. | Actual: Bài viết đã bị xóa. | Status: PASS

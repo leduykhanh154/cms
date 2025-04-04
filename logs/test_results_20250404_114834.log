@@ -1,0 +1,82 @@
+2025-04-04 11:48:43,458 - INFO - Bắt đầu Test Case 1: Verify khi nhấn vào breadcrumb 'Trang chủ' -> Hệ thống điều hướng về trang chủ thành công.
+2025-04-04 11:48:45,686 - INFO - Test Case 1 PASS: test_click_breadcrumb_home | Expected: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Actual: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Status: PASS
+2025-04-04 11:48:59,713 - INFO - Bắt đầu Test Case 2: Verify khi nhấn vào nút 'Tạo mới loại bài viết' -> Hệ thống điều hướng về trang tạo mới thành công.
+2025-04-04 11:49:04,098 - INFO - Test Case 2 PASS: test_click_create_new_article_type | Expected: Hệ thống điều hướng thành công đến trang 'Tạo mới loại bài viết'. | Actual: Hệ thống điều hướng thành công đến trang 'Tạo mới loại bài viết'. | Status: PASS
+2025-04-04 11:49:22,261 - INFO - Bắt đầu Test Case 3: Verify khi nhấn vào dropdown 'Status'.
+2025-04-04 11:49:24,813 - INFO - Test Case 3 PASS: test_click_status_dropdown | Expected: Dropdown 'Status' được nhấn thành công. | Actual: Dropdown 'Status' được nhấn thành công. | Status: PASS
+2025-04-04 11:49:38,975 - INFO - Bắt đầu Test Case 4: Verify khi nhấn vào Datepicker 'Từ ngày'.
+2025-04-04 11:49:41,568 - INFO - Test Case 4 PASS: test_click_datepicker_from | Expected: Datepicker 'Từ ngày' được nhấn thành công. | Actual: Datepicker 'Từ ngày' được nhấn thành công. | Status: PASS
+2025-04-04 11:49:55,731 - INFO - Bắt đầu Test Case 5: Verify khi nhấn vào Datepicker 'Đến ngày'.
+2025-04-04 11:49:58,342 - INFO - Test Case 5 PASS: test_click_datepicker_to | Expected: Datepicker 'Đến ngày' được nhấn thành công. | Actual: Datepicker 'Đến ngày' được nhấn thành công. | Status: PASS
+2025-04-04 11:50:12,183 - INFO - Bắt đầu Test Case 6: Verify khi nhấn vào Dropdown 'Loại cha'.
+2025-04-04 11:50:14,817 - INFO - Test Case 6 PASS: test_click_dropdown_father_type | Expected: Dropdown 'Loại cha' được nhấn thành công. | Actual: Dropdown 'Loại cha' được nhấn thành công. | Status: PASS
+2025-04-04 11:50:30,466 - INFO - Bắt đầu Test Case 7: Verify khi nhấn vào nút 'Tai lai'.
+2025-04-04 11:50:33,603 - INFO - Test Case 7 PASS: test_click_reset_button | Expected: Nút 'Tai lai' được nhấn thành công. | Actual: Nút 'Tai lai' được nhấn thành công. | Status: PASS
+2025-04-04 11:50:47,976 - INFO - Bắt đầu Test Case 8: Verify khi nhấn vào dropdown 'Phân trang'.
+2025-04-04 11:50:50,496 - INFO - Test Case 8 PASS: test_click_pagination_dropdown | Expected: Dropdown 'Phân trang' được nhấn thành công. | Actual: Dropdown 'Phân trang' được nhấn thành công. | Status: PASS
+2025-04-04 11:51:24,957 - INFO - Bắt đầu Test Case 9: Verify khi nhấn vào nút 'Thao tác'.
+2025-04-04 11:51:27,480 - INFO - Test Case 9 PASS: test_click_operate_button | Expected: Nút 'Thao tác' được nhấn thành công. | Actual: Nút 'Thao tác' được nhấn thành công. | Status: PASS
+2025-04-04 11:51:41,465 - INFO - Bắt đầu Test Case 10: Verify có thể nhập từ khóa vào ô tìm kiếm.
+2025-04-04 11:51:44,114 - INFO - Test Case 10 PASS: test_enter_search_keyword | Expected: Đã nhập 'Test Article' vào ô tìm kiếm và thực hiện tìm kiếm. | Actual: Đã nhập 'Test Article' vào ô tìm kiếm và thực hiện tìm kiếm. | Status: PASS
+2025-04-04 11:51:58,265 - INFO - Bắt đầu Test Case 11: Verify có thể nhấn vào checkbox 'Select All'.
+2025-04-04 11:52:00,801 - INFO - Test Case 11 PASS: test_click_select_all_checkbox | Expected: Đã nhấn vào checkbox 'Select All'. | Actual: Đã nhấn vào checkbox 'Select All'. | Status: PASS
+2025-04-04 11:52:14,886 - INFO - Bắt đầu Test Case 12: Verify có thể nhấn vào checkbox 'Select First'.
+2025-04-04 11:52:17,500 - INFO - Đã nhấn vào checkbox 'Select First'.
+2025-04-04 11:52:17,525 - INFO - Hệ thống hiển thị chính xác '1'.
+2025-04-04 11:52:17,525 - INFO - Test Case 12 PASS: test_click_select_first_checkbox | Expected: Đã chọn mục đầu tiên và hiển thị đúng '1' dòng được chọn. | Actual: Đã chọn mục đầu tiên và hiển thị đúng '1' dòng được chọn. | Status: PASS
+2025-04-04 11:52:31,860 - INFO - Bắt đầu Test Case 13: Kiểm tra liên kết đầu tiên và sự xuất hiện của text trên trang đích.
+2025-04-04 11:52:33,449 - INFO - Text của liên kết đầu tiên: 'test 1'.
+2025-04-04 11:52:34,182 - INFO - Đã nhấn vào liên kết đầu tiên thành công.
+2025-04-04 11:52:36,192 - INFO - Text 'test 1' hiển thị đúng trên trang đích.
+2025-04-04 11:52:36,192 - INFO - Test Case 13 PASS: test_click_first_link | Expected: Text 'test 1' hiển thị đúng trên trang. | Actual: Text 'test 1' hiển thị đúng trên trang. | Status: PASS
+2025-04-04 11:52:49,778 - INFO - Bắt đầu Test Case 14: Verify có thể nhấn vào nút menu đầu tiên.
+2025-04-04 11:52:52,287 - INFO - Test Case PASS 14: test_click_first_menu_button | Expected: Hệ thống đã nhấn vào nút menu đầu tiên thành công. | Actual: Hệ thống đã nhấn vào nút menu đầu tiên thành công. | Status: PASS
+2025-04-04 11:53:26,658 - INFO - Bắt đầu Test Case 15: Nhấn 'Thao tác' -> Nhấn 'Xóa' khi chưa chọn loại bài viết -> Kiểm tra cảnh báo 'Vui lòng chọn Loại bài viết để xóa.'.
+2025-04-04 11:53:29,156 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-04-04 11:53:30,229 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-04-04 11:53:31,324 - INFO - Test Case 15 PASS: test_click_operate_and_delete_without_selection | Expected: Hệ thống hiển thị cảnh báo: 'Vui lòng chọn Loại bài viết để xóa.'. | Actual: Hệ thống hiển thị đúng cảnh báo. | Status: PASS
+2025-04-04 11:53:45,298 - INFO - Bắt đầu Test Case 16: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Kiểm tra cảnh báo 'Bạn có chắc chắn ?'.
+2025-04-04 11:53:47,898 - INFO - Đã chọn bài viết đầu tiên thành công.
+2025-04-04 11:53:48,965 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-04-04 11:53:50,065 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-04-04 11:53:51,123 - INFO - Test Case 16 PASS: test_select_and_delete_article_type | Expected: Hệ thống hiển thị cảnh báo: 'Bạn có chắc chắn ?'. | Actual: Hệ thống hiển thị đúng cảnh báo. | Status: PASS
+2025-04-04 11:54:05,489 - INFO - Bắt đầu Test Case 17: Verify có thể nhấn vào icon '...' rồi chọn menu-item 'Chi tiết'.
+2025-04-04 11:54:08,105 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 11:54:09,849 - INFO - Đã nhấn vào menu-item 'Chi tiết' thành công.
+2025-04-04 11:54:09,857 - INFO - Test Case 17 PASS: test_click_menu_and_detail_button | Expected: Hệ thống đã nhấn vào 'Chi tiết' và chuyển hướng đến trang do 'cms/category/update/'. | Actual: Hệ thống đã nhấn vào 'Chi tiết' và chuyển hướng đến trang do 'cms/category/update/'. | Status: PASS
+2025-04-04 11:54:24,025 - INFO - Bắt đầu Test Case 18: Verify có thể nhấn vào icon '...' rồi chọn nút 'Xóa'.
+2025-04-04 11:54:26,620 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 11:54:27,686 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-04-04 11:54:27,743 - INFO - Test Case 18 PASS: test_click_menu_and_delete_button | Expected: Hệ thống hiển thị cảnh báo: 'Bạn có chắc chắn ?' khi nhấn 'Xóa'. | Actual: Hệ thống hiển thị đúng cảnh báo. | Status: PASS
+2025-04-04 11:54:41,769 - INFO - Bắt đầu Test Case 19: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'No'.
+2025-04-04 11:54:43,441 - INFO - Đã chọn bài viết đầu tiên.
+2025-04-04 11:54:43,503 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-04-04 11:54:44,575 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-04-04 11:54:45,595 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 11:54:45,721 - INFO - Đã nhấn vào nút 'No'.
+2025-04-04 11:54:46,257 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'No'.
+2025-04-04 11:54:46,287 - INFO - Bài viết đầu tiên không thay đổi sau khi hủy xóa.
+2025-04-04 11:54:46,287 - INFO - Test Case 19 PASS: test_select_and_cancel_delete | Expected: Popup da dong, loai bai viet van con. | Actual: Popup da dong, loai bai viet van con. | Status: PASS
+2025-04-04 11:55:00,148 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'Có'.
+2025-04-04 11:55:01,904 - INFO - Đã chọn bài viết đầu tiên.
+2025-04-04 11:55:01,989 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-04-04 11:55:03,058 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-04-04 11:55:04,102 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 11:55:04,192 - INFO - Đã nhấn vào nút 'Có'.
+2025-04-04 11:55:08,351 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'Có'.
+2025-04-04 11:55:13,376 - INFO - Test Case 20 PASS: test_select_and_confirm_delete | Expected: Bài viết đã bị xóa. | Actual: Bài viết đã bị xóa. | Status: PASS
+2025-04-04 11:55:47,860 - INFO - Bắt đầu Test Case 21: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'No'.
+2025-04-04 11:55:49,561 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 11:55:50,633 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-04-04 11:55:51,683 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 11:55:51,782 - INFO - Đã nhấn vào nút 'No'.
+2025-04-04 11:55:52,328 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'No'.
+2025-04-04 11:55:52,465 - INFO - Bài viết đầu tiên không thay đổi sau khi hủy xóa.
+2025-04-04 11:55:52,467 - INFO - Test Case 21 PASS: test_click_and_cancel_delete | Expected: Popup da dong, loai bai viet van con. | Actual: Popup da dong, loai bai viet van con. | Status: PASS
+2025-04-04 11:56:06,880 - INFO - Bắt đầu Test Case 22: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'Có'.
+2025-04-04 11:56:08,519 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 11:56:09,585 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-04-04 11:56:10,654 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 11:56:10,756 - INFO - Đã nhấn vào nút 'Có'.
+2025-04-04 11:56:14,927 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'Có'.
+2025-04-04 11:56:19,946 - INFO - Test Case 22 PASS: test_click_and_confirm_delete | Expected: Bài viết đã bị xóa. | Actual: Bài viết đã bị xóa. | Status: PASS

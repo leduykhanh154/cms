@@ -77,7 +77,7 @@ class IsDisplayedArticleType:
     def is_warning_popup_closed(self, expected_text):
         try:
             # Kiểm tra xem cảnh báo có tồn tại không
-            warning_element = self.wait.until(
+            self.wait.until(
                 EC.invisibility_of_element_located(self.locators.WARNING_TEXT)
             )
             logging.info(f"Hộp thoại cảnh báo '{expected_text}' đã đóng.")
@@ -86,7 +86,17 @@ class IsDisplayedArticleType:
             logging.error(f"Hộp thoại cảnh báo '{expected_text}' vẫn còn hiển thị!")
             return False
 
-
+    # Hàm kiểm tra checkbox đầu tiên không hiển thị
+    def is_first_checkbox_not_visible(self):
+        try:
+            self.wait.until_not(
+                EC.visibility_of_element_located(self.locators.SELECT_FIRST)
+            )
+            logging.info("Checkbox 'Select First' không hiển thị (ẩn thành công).")
+            return True
+        except TimeoutException:
+            logging.error("Checkbox 'Select First' vẫn đang hiển thị khi không mong đợi.")
+            return False
 
     
 

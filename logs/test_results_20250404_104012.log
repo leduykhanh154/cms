@@ -1,0 +1,5 @@
+2025-04-04 10:40:22,124 - INFO - Bắt đầu Test Case 17: Verify có thể nhấn vào icon '...' rồi chọn menu-item 'Chi tiết'.
+2025-04-04 10:40:24,659 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 10:40:26,403 - INFO - Đã nhấn vào menu-item 'Chi tiết' thành công.
+2025-04-04 10:40:26,414 - INFO - Test Case 17 PASS: test_click_menu_and_detail_button | Expected: Hệ thống đã nhấn vào 'Chi tiết' và chuyển hướng đến trang do 'cms/category/update/'. | Actual: Hệ thống đã nhấn vào 'Chi tiết' và chuyển hướng đến trang do 'cms/category/update/'. | Status: PASS
+2025-04-04 10:40:40,330 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'Có'.

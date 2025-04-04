@@ -46,7 +46,7 @@ class LocatorArticleType:
     
     # Checkbox
     SELECT_ALL = (By.XPATH, '//*[@id="table-category-list"]/thead/tr/th[1]/span[1]/span/input')
-    SELECT_FIRST = (By.XPATH, '//*[@id="checkbox67e60af4f1224"]')
+    SELECT_FIRST = (By.XPATH, '//*[@id="checkbox67ef62b07e389"]')
     
     # Link
     FIRST_LINK = (By.XPATH, '//*[@id="table-category-list"]/tbody/tr[1]/td[2]/a')
@@ -64,3 +64,6 @@ class LocatorArticleType:
 
     # Title
     ARTICLE_TYPE_TITLE = (By.XPATH, '//*[@id="languages[vi][title]"]')
+    
+    # Create date
+    FIRST_CREATE_DATE = (By.XPATH, '//*[@id="table-category-list"]/tbody/tr[1]/td[6]')
