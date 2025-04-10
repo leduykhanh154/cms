@@ -1,0 +1,3 @@
+2025-04-10 12:28:53,018 - INFO - Bắt đầu Test Case 29: Verify Đường dẫn tự động điền tab Tiếng Việt.
+2025-04-10 12:29:02,359 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-10 12:29:04,379 - INFO - Test Case 29 PASS: test_vi_article_link_auto_field | Expected: Đường dẫn được điền tự động | Actual: Đường dẫn được điền tự động | Status: PASS

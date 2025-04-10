@@ -2,20 +2,20 @@ import time
 import logging
 import selenium
 from selenium.webdriver.common.by import By
-from locators.locator_article_type.locator_new_article_type import LocatorNewArticleType
+from locators.locator_article_type.locator_update_article_type import LocatorUpdateArticleType
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 
-class IsDisplayedNewArticleType:
+class IsDisplayedUpdateArticleType:
     # Hàm khởi tạo driver
     def __init__(self, driver, timeout=5):
         if not driver:
             raise ValueError("Driver không được để trống hoặc None!")
         self.driver = driver
         self.wait = WebDriverWait(self.driver, timeout)
-        self.locators = LocatorNewArticleType  
+        self.locators = LocatorUpdateArticleType  
     
     # Ham kiem tra noi dung label 'Trang thai'
     def is_label_status_displayed(self):

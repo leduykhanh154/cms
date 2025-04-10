@@ -1,0 +1,9 @@
+2025-04-08 15:28:30,394 - INFO - Bắt đầu Test Case 5: Kiểm tra tab 'English' và nút 'Dịch nội dung'.
+2025-04-08 15:28:34,935 - INFO - Đã nhấn vào nút 'Tạo mới'.
+2025-04-08 15:28:35,162 - INFO - Đã nhấn vào tab 'English'.
+2025-04-08 15:28:35,163 - INFO - Test Case 5 PASS: test_click_tab_english_and_check_translate_button | Expected: Tab 'English' hoạt động. | Actual: Tab 'English' hoạt động. | Status: PASS
+2025-04-08 15:28:49,948 - INFO - Bắt đầu Test Case 6: Kiểm tra tab 'Tiếng Việt'.
+2025-04-08 15:28:54,553 - INFO - Đã nhấn vào tab 'Tiếng Anh'.
+2025-04-08 15:28:54,807 - INFO - Đã nhấn vào tab 'Tiếng Việt'.
+2025-04-08 15:28:55,385 - INFO - Tab 'Tiếng Việt' hiển thị đúng.
+2025-04-08 15:28:55,385 - INFO - Test Case 6 PASS: test_click_tabs_english_vietnamese_and_check_labels | Expected: Tab 'Tiếng Việt' hoạt động đúng. | Actual: Tab 'Tiếng Việt' hoạt động đúng. | Status: PASS

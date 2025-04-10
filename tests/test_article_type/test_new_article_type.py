@@ -632,7 +632,7 @@ def test_enter_en_article_type_and_verify(new_article_type, enter_field_new_arti
         test_logger.error(f"Test Case 27 FAIL: test_enter_en_article_type_and_verify | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
-# Test Case 28: Nhập đường dẫn o tab 'Tiếng Việt'     
+# Test Case 28: Nhập đường dẫn o tab 'English'     
 def test_enter_en_article_link_and_verify(new_article_type, enter_field_new_article_type, get_field_new_article_type):
     test_logger.info("Bắt đầu Test Case 28: Nhập đường dẫn ở tab English -> Kiểm tra dữ liệu.")
     new_article_type.perform_tag_operations()
@@ -1089,7 +1089,7 @@ def test_sort_order_rejects_text(new_article_type, enter_field_new_article_type,
         test_logger.error(f"Test Case 45 FAIL: test_sort_order_rejects_text | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
-# Test Case 46: Nhập quá 6 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi
+# Test Case 46: Nhập quá 7 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi
 def test_sort_order_exceeds_max_length(new_article_type, enter_field_new_article_type, validation_new_article_type):
     test_logger.info("Bắt đầu Test Case 46: Nhập quá 7 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.")
     new_article_type.perform_tag_operations()

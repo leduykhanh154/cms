@@ -1,0 +1,2 @@
+2025-04-08 15:58:29,060 - INFO - Bắt đầu Test Case 7: Click nut 'Huy' va kiem tra duong dan.
+2025-04-08 15:58:35,378 - INFO - Test Case 7 PASS: test_click_button_cancel_and_check_url | Expected: Hệ thống huy thay doi va điều hướng đúng đến trang 'Danh sách loại bài viết'. | Actual: Hệ thống huy thay doi va điều hướng đúng đến trang 'Danh sách loại bài viết'. | Status: PASS

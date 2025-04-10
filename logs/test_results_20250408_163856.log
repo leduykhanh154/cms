@@ -1,0 +1,4 @@
+2025-04-08 16:39:05,822 - INFO - Bắt đầu Test Case 11: Nhập dữ liệu vào ô 'Loại bài viết' (English) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-04-08 16:39:11,462 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 16:39:12,560 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 16:39:16,081 - INFO - Test Case 11 PASS: test_en_article_type_clear_and_check_error | Expected: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Actual: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Status: PASS

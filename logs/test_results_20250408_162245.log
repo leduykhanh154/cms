@@ -1,0 +1,4 @@
+2025-04-08 16:22:55,154 - INFO - Bắt đầu Test Case 9: Nhấn nút 'Lưu' và 'Lưu và Tiếp tục', kiểm tra trang có chứa thông tin 'Chỉnh sửa'.
+2025-04-08 16:23:00,668 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-08 16:23:03,813 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 16:23:04,292 - INFO - Test Case 9 PASS: test_save_and_continue_check_edit | Expected: O lai trang chỉnh sửa sau khi nhấn 'Lưu và Tiếp tục'. | Actual: O lai trang chỉnh sửa sau khi nhấn 'Lưu và Tiếp tục'. | Status: PASS

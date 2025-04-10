@@ -2,20 +2,66 @@ import time
 import logging
 import selenium
 from selenium.webdriver.common.by import By
-from locators.locator_article_type.locator_new_article_type import LocatorNewArticleType
+from locators.locator_article_type.locator_update_article_type import LocatorUpdateArticleType
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 
-class NewArticleTypeBase:
+class UpdateArticleTypeBase:
     # Hàm khởi tạo driver
     def __init__(self, driver, timeout=5):
         if not driver:
             raise ValueError("Driver không được để trống hoặc None!")
         self.driver = driver
         self.wait = WebDriverWait(self.driver, timeout)
-        self.locators = LocatorNewArticleType  
+        self.locators = LocatorUpdateArticleType  
+    
+     # Ham click Ten loai bai viet dau tien
+    def click_first_link(self):
+        try:
+            # Chờ liên kết đầu tiên xuất hiện
+            first_link = self.wait.until(
+                EC.element_to_be_clickable(self.locators.FIRST_LINK)
+            )
+
+            # Lấy nội dung text của liên kết
+            link_text = first_link.text.strip()
+            logging.info(f"Lấy text của liên kết đầu tiên: '{link_text}'")
+
+            # Click vào liên kết
+            first_link.click()
+            logging.info("Đã nhấn vào liên kết đầu tiên.")
+
+            return link_text  # Trả về text để sử dụng trong test case
+        except TimeoutException:
+            logging.error("Không tìm thấy liên kết đầu tiên để nhấn.")
+            return None
+    
+    # Lay text cua hang dau tien
+    def get_first_link_text(self):
+        try:
+            first_link = self.wait.until(
+                EC.element_to_be_clickable(self.locators.FIRST_LINK)
+            )
+
+            # Thử lấy text theo cách thông thường
+            first_link_text = first_link.text.strip()
+
+            # Nếu text rỗng, thử lấy bằng JavaScript
+            if not first_link_text:
+                first_link_text = self.driver.execute_script("return arguments[0].textContent;", first_link).strip()
+
+            if first_link_text:
+                logging.info(f"Đã lấy được text của liên kết đầu tiên: '{first_link_text}'")
+                return first_link_text
+            else:
+                logging.error("Không lấy được text của liên kết đầu tiên (text rỗng).")
+                return None
+
+        except TimeoutException:
+            logging.error("Không tìm thấy liên kết đầu tiên trong thời gian chờ!")
+            return None
         
     # Hàm nhấn vào một menu cụ thể trên giao diện
     def click_menu(self, locator, menu_name):
@@ -188,6 +234,26 @@ class NewArticleTypeBase:
             return True
         except TimeoutException:
             logging.error("Không thể nhấn vào tab 'Tiếng Việt'!")
+            return False
+    
+    # Hàm click nút 'Hủy'
+    def click_cancel_button(self):
+        try:
+            cancel_button = self.wait.until(
+                EC.element_to_be_clickable(self.locators.CANCEL_BUTTON)
+            )
+
+            try:
+                cancel_button.click()
+                logging.info("Đã nhấn vào nút 'Hủy'.")
+            except ElementClickInterceptedException:
+                self.driver.execute_script("arguments[0].click();", cancel_button)
+                logging.info("Đã nhấn vào nút 'Hủy' bằng JavaScript.")
+
+            return True
+
+        except TimeoutException:
+            logging.error("Không thể nhấn vào nút 'Hủy'. Hết thời gian chờ.")
             return False
     
     # Hàm click nút 'Lưu'
