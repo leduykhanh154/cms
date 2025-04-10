@@ -39,4 +39,14 @@ class EnterFieldEditFAQ:
             logging.info(f"Đã nhập Câu trả lời*: {data}")
         except Exception as e:
             logging.error(f"Lỗi exception {e}")
+
+    # Hàm chỉnh sửa Thứ tự sắp xếp - VI
+    def edit_sort_order_vi(self, data):
+        try:
+            input = self.wait.until(EC.presence_of_element_located(self.locators.SORT_ORDER_INPUT_VI))
+            input.clear()
+            input.send_keys(data)
+            logging.info(f"Đã chỉnh sửa Thứ tự sắp xếp*: {data}")
+        except Exception as e:
+            logging.error(f"Lỗi exception {e}")
  

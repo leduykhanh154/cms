@@ -52,6 +52,16 @@ class EditFAQBase:
             logging.error("Không thể nhấn vào dòng 'đầu tiên' ở cột 'Câu hỏi'.")
             raise
 
+    # Hàm nhấn vào tab Thông tin chung
+    def click_general_info_tab(self):
+        try:
+            general_info_tab = self.wait.until(EC.element_to_be_clickable(self.locators.GENERAL_INFO_TAB))
+            general_info_tab.click()
+            logging.info("Đã nhấn vào tab Thông tin chung.")
+        except TimeoutException:
+            logging.error("Không thể nhấn vào tab Thông tin chung.")
+            raise
+
 
     
     # Hàm thực hiện thao tác nhấn menu Nội dung -> menu FAQ

@@ -49,8 +49,6 @@ class ValidationEditFAQ:
                 return False
         except TimeoutException:
             return False
-
-        
     
     def is_answer_vi_error_displayed(self):
         try:
@@ -98,5 +96,21 @@ class ValidationEditFAQ:
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(1)
             return self.is_error_message_displayed(self.locators.ANSWER_ERROR_MESSAGE_VI, "Vui lòng nhập Câu trả lời không quá 5000 ký tự")
+        except TimeoutException:
+            return False
+        
+    def is_edit_sort_order_displayed(self, data):
+        try:
+            time.sleep(1)
+            value_element = self.wait.until(
+                EC.text_to_be_present_in_element_attribute(self.locators.SORT_ORDER_INPUT_VI, "value", data)
+            )
+
+            if value_element:
+                logging.info(f"Đã hiển thị giá trị '{data}' vừa chỉnh sửa ở field.")
+                return True
+            else:
+                logging.error(f"Lỗi: Expected: '{data}', nhưng nhận được: '{value_element}'")
+                return False
         except TimeoutException:
             return False
