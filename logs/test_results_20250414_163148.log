@@ -1,0 +1,2 @@
+2025-04-14 16:31:58,634 - INFO - Bắt đầu Test Case 6:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-14 16:32:05,310 - INFO - Test Case 6 PASS: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS

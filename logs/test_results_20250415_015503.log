@@ -1,0 +1,2 @@
+2025-04-15 01:55:13,893 - INFO - Bắt đầu Test Case 1: Verify khi nhấn nút 'Tạo mới'.
+2025-04-15 01:55:17,152 - INFO - Test Case 1 PASS: test_click_create_button | Expected: Hệ thống điều hướng đến trang 'Tạo mới chi nhánh'. | Actual: Hệ thống điều hướng đến trang 'Tạo mới chi nhánh'. | Status: PASS

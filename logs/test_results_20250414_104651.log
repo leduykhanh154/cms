@@ -1,0 +1,2 @@
+2025-04-14 10:47:00,674 - INFO - Bắt đầu Test Case 1: Truy cập vào trang Danh sách chi nhánh.
+2025-04-14 10:47:03,442 - INFO - Test Case 1 PASS: test_click_location_menu | Expected: Truy cập thành công vào trang Danh sách chi nhánh. | Actual: Truy cập thành công vào trang Danh sách chi nhánh. | Status: PASS

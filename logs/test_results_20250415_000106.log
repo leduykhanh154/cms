@@ -1,0 +1,31 @@
+2025-04-15 00:01:16,877 - INFO - Bắt đầu Test Case 10: Verify khi nhấn nút 'Thao tác' và chọn 'Xóa' khi không chọn Chi nhánh.
+2025-04-15 00:01:18,708 - INFO - Test Case 10 PASS: test_click_create_button | Expected: Popup hiển thị đúng nội dung. | Actual: Popup hiển thị đúng nội dung. | Status: PASS
+2025-04-15 00:01:35,813 - INFO - Bắt đầu Test Case 2: Verify khi nhấn dropdown 'Tỉnh/Thành phố' và chọn Tỉnh/Thành phố đầu tiên.
+2025-04-15 00:01:38,639 - INFO - Test Case 2 PASS: test_click_province_dropdown_and_choose_province | Expected: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Actual: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Status: PASS
+2025-04-15 00:01:54,378 - INFO - Bắt đầu Test Case 3: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-15 00:01:55,892 - INFO - Test Case 3 PASS: test_click_district_dropdown | Expected: Hệ thống mở dropdown chỉ có giá trị mặc định. | Actual: Hệ thống mở dropdown chỉ có giá trị mặc định. | Status: PASS
+2025-04-15 00:02:12,047 - INFO - Bắt đầu Test Case 4: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-15 00:02:14,487 - INFO - Test Case 4 PASS: test_click_district_dropdown_after_choose_province | Expected: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Actual: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Status: PASS
+2025-04-15 00:02:30,577 - INFO - Bắt đầu Test Case 5: Verify khi nhấn dropdown 'Huyện/Quận'và chọn Huyện/Quận đầu tiên.
+2025-04-15 00:02:33,194 - INFO - Test Case 5 PASS: test_click_district_dropdown_and_choose_district | Expected: Hệ thống hiển thị Huyện/Quận được chọn. | Actual: Hệ thống hiển thị Huyện/Quận được chọn. | Status: PASS
+2025-04-15 00:02:49,066 - INFO - Bắt đầu Test Case 6:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-15 00:02:50,761 - INFO - Test Case 6 PASS: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-15 00:03:27,371 - INFO - Bắt đầu Test Case 7:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-15 00:03:29,107 - INFO - Test Case 7 PASS: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-15 00:03:46,313 - INFO - Bắt đầu Test Case 8:  Verify click nút 'Tải lại'.
+2025-04-15 00:03:50,655 - INFO - Test Case 8 PASS: test_click_reload_button_after_select | Expected: Hệ thống đặt lại các bộ lọc. | Actual: Hệ thống đặt lại các bộ lọc. | Status: PASS
+2025-04-15 00:04:06,369 - INFO - Bắt đầu Test Case 9:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-15 00:04:08,104 - INFO - Test Case 9 PASS: test_click_pagination_dropdown_and_choose_number_of_page | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-15 00:04:24,093 - INFO - Bắt đầu Test Case 11: Verify khi nhập từ khóa vào thanh tìm kiếm.
+2025-04-15 00:04:25,595 - INFO - Test Case 11 PASS: test_enter_search_keyword | Expected: Từ khóa tìm kiếm được nhập và hiển thị. | Actual: Từ khóa tìm kiếm được nhập và hiển thị. | Status: PASS
+2025-04-15 00:04:41,288 - INFO - Bắt đầu Test Case 12: Verify khi click chọn checkbox và click nút 'Thao tác', chọn 'Xóa'.
+2025-04-15 00:04:43,135 - INFO - Test Case 12 PASS: test_click_delete_button_after_click_checkbox | Expected: Hiển thị popup 'Xác nhận xóa' với đúng nội dung. | Actual: Hiển thị popup 'Xác nhận xóa' với đúng nội dung. | Status: PASS
+2025-04-15 00:05:00,684 - INFO - Bắt đầu Test Case 13: Verify khi click Tên của chi nhánh đầu tiên.
+2025-04-15 00:05:03,257 - INFO - Test Case 13 PASS: test_click_first_location_name | Expected: Hệ thống chuyển hướng đến trang chỉnh sửa. | Actual: Hệ thống chuyển hướng đến trang chỉnh sửa. | Status: PASS
+2025-04-15 00:05:39,451 - INFO - Bắt đầu Test Case 14: Verify khi click nút '...' của chi nhánh đầu tiên và chọn Chi tiết.
+2025-04-15 00:05:41,786 - INFO - Test Case 14 PASS: test_click_first_menu_button_choose_detail | Expected: Hệ thống chuyển hướng đến trang chỉnh sửa. | Actual: Hệ thống chuyển hướng đến trang chỉnh sửa. | Status: PASS
+2025-04-15 00:05:57,497 - INFO - Bắt đầu Test Case 15: Verify khi click nút '...' của chi nhánh đầu tiên và chọn Xóa.
+2025-04-15 00:05:59,304 - INFO - Test Case 15 PASS: test_click_first_menu_button_choose_delete | Expected: Hệ thống hiển thị popup 'Xác nhận' với đúng nội dung. | Actual: Hệ thống hiển thị popup 'Xác nhận' với đúng nội dung. | Status: PASS
+2025-04-15 00:06:15,691 - INFO - Bắt đầu Test Case 16: Verify khi click chọn Có trong popup 'Xác nhận'.
+2025-04-15 00:06:33,322 - INFO - Bắt đầu Test Case 17: Verify khi click chọn Không trong popup 'Xác nhận'.
+2025-04-15 00:06:36,130 - INFO - Test Case 17 PASS: test_click_no_in_popup_confirm | Expected:  Hệ thống hủy xóa Chi nhánh, đóng popup. | Actual:  Hệ thống hủy xóa Chi nhánh, đóng popup. | Status: PASS

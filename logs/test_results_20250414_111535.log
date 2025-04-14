@@ -1,0 +1,2 @@
+2025-04-14 11:15:44,573 - INFO - Bắt đầu Test Case 2: Verify khi nhấn vào 'Trang chủ' trên breadcrumb.
+2025-04-14 11:15:46,768 - INFO - Test Case 2 PASS: test_click_home_breadcrumb | Expected: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Actual: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Status: PASS

@@ -1,0 +1,16 @@
+2025-04-14 19:31:33,908 - INFO - Bắt đầu Test Case 1: Verify khi nhấn nút 'Tạo mới'.
+2025-04-14 19:31:37,454 - INFO - Test Case 1 PASS: test_click_create_button | Expected: Hệ thống điều hướng đến trang 'Tạo mới chi nhánh'. | Actual: Hệ thống điều hướng đến trang 'Tạo mới chi nhánh'. | Status: PASS
+2025-04-14 19:31:52,939 - INFO - Bắt đầu Test Case 2: Verify khi nhấn dropdown 'Tỉnh/Thành phố' và chọn Tỉnh/Thành phố đầu tiên.
+2025-04-14 19:31:55,633 - INFO - Test Case 2 PASS: test_click_province_dropdown_and_choose_province | Expected: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Actual: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Status: PASS
+2025-04-14 19:32:11,116 - INFO - Bắt đầu Test Case 3: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-14 19:32:12,750 - INFO - Test Case 3 PASS: test_click_district_dropdown | Expected: Hệ thống mở dropdown chỉ có giá trị mặc định. | Actual: Hệ thống mở dropdown chỉ có giá trị mặc định. | Status: PASS
+2025-04-14 19:32:28,495 - INFO - Bắt đầu Test Case 4: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-14 19:32:30,906 - INFO - Test Case 4 PASS: test_click_district_dropdown_after_choose_province | Expected: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Actual: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Status: PASS
+2025-04-14 19:32:46,375 - INFO - Bắt đầu Test Case 5: Verify khi nhấn dropdown 'Huyện/Quận'và chọn Huyện/Quận đầu tiên.
+2025-04-14 19:32:48,743 - INFO - Test Case 5 PASS: test_click_district_dropdown_and_choose_district | Expected: Hệ thống hiển thị Huyện/Quận được chọn. | Actual: Hệ thống hiển thị Huyện/Quận được chọn. | Status: PASS
+2025-04-14 19:33:04,613 - INFO - Bắt đầu Test Case 6:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-14 19:33:06,244 - INFO - Test Case 6 PASS: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-14 19:33:21,765 - INFO - Bắt đầu Test Case 7:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-14 19:33:23,411 - INFO - Test Case 7 PASS: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-14 19:34:03,419 - INFO - Bắt đầu Test Case 8:  Verify click nút 'Tải lại'.
+2025-04-14 19:34:07,739 - INFO - Test Case 8 PASS: test_click_reload_button_after_select | Expected: Hệ thống đặt lại các bộ lọc. | Actual: Hệ thống đặt lại các bộ lọc. | Status: PASS

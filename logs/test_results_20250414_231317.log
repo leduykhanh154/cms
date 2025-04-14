@@ -1,0 +1,2 @@
+2025-04-14 23:13:28,045 - INFO - Bắt đầu Test Case 13: Verify khi click Tên của chi nhánh đầu tiên.
+2025-04-14 23:13:30,516 - INFO - Test Case 13 PASS: test_click_first_location_name | Expected: Hệ thống chuyển hướng đến trang chỉnh sửa. | Actual: Hệ thống chuyển hướng đến trang chỉnh sửa. | Status: PASS

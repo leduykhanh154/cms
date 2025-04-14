@@ -1,0 +1,2 @@
+2025-04-14 11:26:08,710 - INFO - Bắt đầu Test Case 2: Verify khi nhấn vào 'Trang chủ' trên breadcrumb.
+2025-04-14 11:26:17,009 - ERROR - Test Case 2 FAIL: test_click_home_breadcrumb | Expected: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Actual: Hệ thống không điều hướng đến trang 'Trang chủ'. | Status: FAIL

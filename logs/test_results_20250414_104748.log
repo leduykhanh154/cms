@@ -1,0 +1,2 @@
+2025-04-14 10:47:57,508 - INFO - Bắt đầu Test Case 1: Truy cập vào trang Danh sách chi nhánh.
+2025-04-14 10:47:58,900 - ERROR - Test Case 1 FAIL: test_click_location_menu | Expected: Truy cập thành công vào trang Danh sách chi nhánh. | Actual: Không thể truy cập vào trang Danh sách chi nhánh. | Status: FAIL

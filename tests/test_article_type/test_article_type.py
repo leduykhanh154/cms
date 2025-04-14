@@ -3,10 +3,10 @@ import pytest
 from utils.login import Login
 from utils.logger import LoggerConfig
 from utils.driver_setup import get_driver
-from pages.article_type.article_type import ArticleTypeBase
-from pages.article_type.enter_field_article_type import EnterFieldArticleType
-from pages.article_type.is_displayed_article_type import IsDisplayedArticleType
-from pages.article_type.popup_article_type import PopupArticleType
+from pages.article_type.list_article_type.article_type import ArticleTypeBase
+from pages.article_type.list_article_type.enter_field_article_type import EnterFieldArticleType
+from pages.article_type.list_article_type.is_displayed_article_type import IsDisplayedArticleType
+from pages.article_type.list_article_type.popup_article_type import PopupArticleType
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 

@@ -1,0 +1,2 @@
+2025-04-14 14:31:17,001 - INFO - Bắt đầu Test Case 3: Verify khi nhấn nút 'Thao tác' và chọn 'Xóa' khi không chọn Chi nhánh.
+2025-04-14 14:31:18,669 - INFO - Test Case 3 PASS: test_click_create_button | Expected: Popup hiển thị đúng nội dung. | Actual: Popup hiển thị đúng nội dung. | Status: PASS

@@ -1,0 +1,4 @@
+2025-04-14 18:15:03,480 - INFO - Bắt đầu Test Case 3: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-14 18:15:04,968 - INFO - Test Case 3 PASS: test_click_district_dropdown | Expected: Hệ thống mở dropdown chỉ có giá trị mặc định. | Actual: Hệ thống mở dropdown chỉ có giá trị mặc định. | Status: PASS
+2025-04-14 18:15:20,597 - INFO - Bắt đầu Test Case 8:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-14 18:15:27,628 - ERROR - Test Case 8 FAIL: test_click_reload_button_after_select | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống không hiển thị trạng thái được chọn. | Status: FAIL

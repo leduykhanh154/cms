@@ -1,0 +1,2 @@
+2025-04-14 14:27:56,221 - INFO - Bắt đầu Test Case 3: Verify khi nhấn nút 'Tạo mới'.
+2025-04-14 14:27:58,319 - INFO - Test Case 3 PASS: test_click_create_button | Expected: Popup hiển thị đúng nội dung. | Actual: Popup hiển thị đúng nội dung. | Status: PASS

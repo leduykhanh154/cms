@@ -1,0 +1,4 @@
+2025-04-14 11:48:36,122 - INFO - Bắt đầu Test Case 4: Verify khi nhấn dropdown 'Tỉnh/Thành phố'.
+2025-04-14 11:48:37,881 - INFO - Test Case 4 PASS: test_click_province_dropdown | Expected: Hệ thống mở dropdown. | Actual: Hệ thống mở dropdown. | Status: PASS
+2025-04-14 11:48:52,052 - INFO - Bắt đầu Test Case 5: Verify khi nhấn dropdown 'Huyện/Quận'.
+2025-04-14 11:48:53,680 - INFO - Test Case 5 PASS: test_click_district_dropdown | Expected: Hệ thống mở dropdown. | Actual: Hệ thống mở dropdown. | Status: PASS
