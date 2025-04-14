@@ -169,3 +169,100 @@ class SelectEditFAQ:
                 return False
         except TimeoutException:
             return False
+        
+    # Hàm click select Trạng thái
+    def click_select_status(self):
+        try:
+            select = self.wait.until(EC.element_to_be_clickable(self.locators.SELECT_STATUS))
+            select.click()
+            logging.info("Đã click select Trạng thái.")
+        except TimeoutException:
+            logging.error("Không thể click select Trạng thái.")
+            raise
+
+    # Hàm click chọn giá trị Chờ xử lý
+    def click_value_pending_select_status(self):
+        try:
+            value = self.wait.until(EC.element_to_be_clickable(self.locators.SELECT_VALUE_PENDING))
+            value.click()
+            logging.info("Đã click chọn giá trị Chờ xử lý.")
+        except TimeoutException:
+            logging.error("Không thể click chọn giá trị Chờ xử lý.")
+            raise
+
+    # Hàm kiểm tra xem giá trị Chờ xử lý hiển thị
+    def is_value_pending_visible(self):
+        try:
+            value_element = self.get_text(self.locators.SELECT_STATUS)
+            expected_value = "Chờ xử lý"
+
+            if value_element == expected_value:
+                logging.info("Đã hiển thị giá trị Chờ xử lý ở field.")
+                return True
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_value}', nhưng nhận được: '{value_element}'")
+                return False
+        except TimeoutException:
+            return False
+        
+    # Hàm click chọn giá trị Kích hoạt
+    def click_value_activate_select_status(self):
+        try:
+            value = self.wait.until(EC.element_to_be_clickable(self.locators.SELECT_VALUE_ACTIVATE))
+            value.click()
+            logging.info("Đã click chọn giá trị Kích hoạt.")
+        except TimeoutException:
+            logging.error("Không thể click chọn giá trị Kích hoạt.")
+            raise
+
+    # Hàm kiểm tra xem giá trị Kích hoạt hiển thị
+    def is_value_activate_visible(self):
+        try:
+            value_element = self.get_text(self.locators.SELECT_STATUS)
+            expected_value = "Kích hoạt"
+
+            if value_element == expected_value:
+                logging.info("Đã hiển thị giá trị Kích hoạt ở field.")
+                return True
+            else:
+                logging.error(f"Lỗi: Expected: '{expected_value}', nhưng nhận được: '{value_element}'")
+                return False
+        except TimeoutException:
+            return False
+        
+    # Hàm click select Ngày đăng
+    def click_select_posted_date(self):
+        try:
+            select = self.wait.until(EC.element_to_be_clickable(self.locators.SELECT_POSTED_DATE))
+            select.click()
+            logging.info("Đã click select Ngày đăng.")
+        except TimeoutException:
+            logging.error("Không thể click select Ngày đăng.")
+            raise
+
+    # Hàm click chọn giá trị ngày 14/04/2025 ở field Ngày đăng
+    def click_value_14apr_select_posted_date(self):
+        try:
+            value = self.wait.until(EC.element_to_be_clickable(self.locators.SELECT_14APR))
+            value.click()
+            logging.info("Đã click chọn giá trị 14/04/2025.")
+        except TimeoutException:
+            logging.error("Không thể click chọn giá trị 14/04/2025.")
+            raise
+
+    # Hàm kiểm tra xem giá trị 14/04/2025 hiển thị
+    def is_value_14apr_visible(self, data):
+        try:
+            time.sleep(1)
+            value_element = self.wait.until(
+                EC.text_to_be_present_in_element_attribute(self.locators.SELECT_POSTED_DATE, "value", data)
+            )
+
+            if value_element:
+                logging.info(f"Đã hiển thị giá trị {data} vừa chỉnh sửa ở field.")
+                return True
+            else:
+                logging.error(f"Lỗi: Expected: '{data}', nhưng nhận được: '{value_element}'")
+                return False
+        except TimeoutException:
+            return False

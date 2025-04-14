@@ -20,7 +20,7 @@ class LocatorEditFAQ:
     # TAB
     GENERAL_INFO_TAB = (By.XPATH, '//*[@id="MainTab"]')
 
-    # SELECT HIỂN THỊ - VI
+    # FIELD HIỂN THỊ - VI
     SELECT_SHOW = (By.XPATH, '//*[@id="select2-status-container"]')
     SELECT_VALUE_NOT = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[2]')
     SELECT_VALUE_HAS = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[1]')
@@ -34,7 +34,7 @@ class LocatorEditFAQ:
     ANSWER_INPUT_VI = (By.XPATH, '//*[@id="cke_2_contents"]/iframe')
     ANSWER_ERROR_MESSAGE_VI = (By.XPATH, '//*[@id="vi-content"]/div/div[4]/div/div[2]/div')
 
-    # SELECT LOẠI CÂU HỎI - VI
+    # FIELD LOẠI CÂU HỎI - VI
     SELECT_QUESTION_TYPE = (By.XPATH, '//*[@id="select2-faq_type_id-container"]')
     SELECT_VALUE_PROCEDURE = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[2]')
     SELECT_VALUE_OTHER_SERVICE = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[3]')
@@ -43,3 +43,13 @@ class LocatorEditFAQ:
     # FIELD THỨ TỰ SẮP XẾP - VI
     SORT_ORDER_INPUT_VI = (By.XPATH, '//*[@id="ordering"]')
     CHECK_SORT_ORDER_INPUT_VI = (By.XPATH, '//*[@id="showSettingTab"]/div/div[3]/div')
+
+    # FIELD TRẠNG THÁI - VI
+    SELECT_STATUS = (By.XPATH, '//*[@id="showSettingTab"]/div/div[5]/div/span/span[1]/span')
+    SELECT_VALUE_PENDING = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[2]')
+    SELECT_VALUE_ACTIVATE = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[1]')
+
+    # FIELD NGÀY ĐĂNG - VI
+    SELECT_POSTED_DATE = (By.XPATH, '//*[@id="public_date"]')
+    SELECT_14APR = (By.XPATH, '//*[@id="showSettingTab"]/div/div[4]/div/div[1]/div/ul/li[1]/div/div[1]/table/tbody/tr[3]/td[2]')
+    SELECT_VALUE_ACTIVATE = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[1]')

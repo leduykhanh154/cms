@@ -165,7 +165,7 @@ def validation(setup_driver):
 #     editfaq.navigate_to_faq()
 #     editfaq.click_edit_first_line()
 #     editfaq.click_general_info_tab()
-#     edit_data = "99"
+#     edit_data = "55"
 #     enter_field.edit_sort_order_vi(edit_data)
 #     editfaq.click_save_continue_button()
 #     time.sleep(2)
@@ -180,3 +180,63 @@ def validation(setup_driver):
 #         test_logger.error(f"Test Case 8 FAIL: test_edited_sort_order | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
 #         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
 
+# Test Case 9: Verify khi chỉnh sửa giá trị ở field Ngày đăng -> Hệ thống hiển thị giá trị vừa chỉnh sửa
+# def test_value_14apr_select_posted_date(setup_driver, editfaq, select):
+#     editfaq.navigate_to_faq()
+#     editfaq.click_edit_first_line()
+#     editfaq.click_general_info_tab()
+#     date_data = "2025-04-14"
+#     select.click_select_posted_date()
+#     select.click_value_14apr_select_posted_date()
+#     editfaq.click_save_continue_button()
+#     time.sleep(2)
+#     editfaq.click_general_info_tab()
+#     expected_result = "Hệ thống hiển thị giá trị 14/04/2025 ở field"
+#     result = select.is_value_14apr_visible(date_data)
+#     actual_result = expected_result if result else "Hệ thống không hiển thị giá trị 14/04/2025 ở field"
+
+#     if result:
+#         test_logger.info(f"Test Case 9 PASS: test_value_14apr_select_posted_date | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 9 FAIL: test_value_14apr_select_posted_date | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 10: Verify khi chọn giá trị Chờ xử lý -> Hệ thống hiển thị giá trị Chờ xử lý ở field
+# def test_value_pending_select_status(setup_driver, editfaq, select):
+#     editfaq.navigate_to_faq()
+#     editfaq.click_edit_first_line()
+#     editfaq.click_general_info_tab()
+#     select.click_select_status()
+#     select.click_value_pending_select_status()
+#     editfaq.click_save_continue_button()
+#     time.sleep(2)
+#     editfaq.click_general_info_tab()
+#     expected_result = "Hệ thống hiển thị giá trị Chờ xử lý ở field"
+#     result = select.is_value_pending_visible()
+#     actual_result = expected_result if result else "Hệ thống không hiển thị giá trị Chờ xử lý ở field"
+
+#     if result:
+#         test_logger.info(f"Test Case 10 PASS: test_value_pending_select_status | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 10 FAIL: test_value_pending_select_status | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
+
+# Test Case 11: Verify khi chọn giá trị Kích hoạt -> Hệ thống hiển thị giá trị Kích hoạt ở field
+# def test_value_activate_select_status(setup_driver, editfaq, select):
+#     editfaq.navigate_to_faq()
+#     editfaq.click_edit_first_line()
+#     editfaq.click_general_info_tab()
+#     select.click_select_status()
+#     select.click_value_activate_select_status()
+#     editfaq.click_save_continue_button()
+#     time.sleep(2)
+#     editfaq.click_general_info_tab()
+#     expected_result = "Hệ thống hiển thị giá trị Kích hoạt ở field"
+#     result = select.is_value_activate_visible()
+#     actual_result = expected_result if result else "Hệ thống không hiển thị giá trị Kích hoạt ở field"
+
+#     if result:
+#         test_logger.info(f"Test Case 11 PASS: test_value_activate_select_status | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+#     else:
+#         test_logger.error(f"Test Case 11 FAIL: test_value_activate_select_status | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+#         assert False, f"Expected: {expected_result} | Actual: {actual_result}"
