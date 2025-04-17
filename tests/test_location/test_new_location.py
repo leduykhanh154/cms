@@ -513,7 +513,7 @@ def image_new_location(setup_driver):
 
 # Test Case 25: Nhập tất cả các trường thông tin và click nút 'Lưu và tiếp tục cập nhật' -> Hệ thống tiến hành lưu Chi nhánh và ở lại trang chỉnh sửa.
 def test_click_save_and_continue_button_after_field_all_information(new_location_base, get_field_new_location, enter_new_location, image_new_location, is_displayed_new_location):
-    test_logger.info("Bắt đầu Test Case 24: Nhập tất cả các trường thông tin và click nút 'Lưu và tiếp tục cập nhật'.")
+    test_logger.info("Bắt đầu Test Case 25: Nhập tất cả các trường thông tin và click nút 'Lưu và tiếp tục cập nhật'.")
     new_location_base.perform_tag_operations()
     new_location_base.click_create_button()
     name = "Tp. Hồ Chí Minh"
@@ -571,7 +571,7 @@ def test_click_save_and_continue_button_after_field_all_information(new_location
     expected_result = "Hệ thống tiến hành lưu Chi nhánh và ở lại trang chỉnh sửa."
     actual_result = expected_result if url else "Hệ thống lưu không thành công hoặc không ở lại trang chỉnh sửa."
     if url:
-        test_logger.info(f"Test Case 24 PASS: test_click_save_button_after_field_all_information | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+        test_logger.info(f"Test Case 25 PASS: test_click_save_button_after_field_all_information | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
-        test_logger.error(f"Test Case 24 FAIL: test_click_save_button_after_field_all_information | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        test_logger.error(f"Test Case 25 FAIL: test_click_save_button_after_field_all_information | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"                          
