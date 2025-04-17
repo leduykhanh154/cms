@@ -1,0 +1,48 @@
+2025-04-18 00:14:44,243 - INFO - Bắt đầu Test Case 1: Verify khi nhấn nút 'Tạo mới'.
+2025-04-18 00:14:47,638 - INFO - Test Case 1 PASS: test_click_create_button | Expected: Hệ thống điều hướng đến trang 'Tạo mới chi nhánh'. | Actual: Hệ thống điều hướng đến trang 'Tạo mới chi nhánh'. | Status: PASS
+2025-04-18 00:15:01,634 - INFO - Bắt đầu Test Case 2: Verify khi nhập Tên chi nhánh ở tab Tiếng Việt.
+2025-04-18 00:15:05,079 - INFO - Test Case 2 PASS: test_enter_vi_location_name | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:15:19,084 - INFO - Bắt đầu Test Case 3: Verify khi nhập Địa chỉ chi nhánh ở tab Tiếng Việt.
+2025-04-18 00:15:22,696 - INFO - Test Case 3 PASS: test_enter_vi_location_address | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:15:36,609 - INFO - Bắt đầu Test Case 4: Verify khi nhập Địa chỉ chi nhánh ở tab Tiếng Việt.
+2025-04-18 00:15:39,893 - INFO - Test Case 4 PASS: test_enter_vi_location_content | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:15:55,385 - INFO - Bắt đầu Test Case 5: Verify khi nhập Tên chi nhánh ở tab English.
+2025-04-18 00:15:59,582 - INFO - Test Case 5 PASS: test_enter_en_location_name | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:16:29,621 - INFO - Bắt đầu Test Case 6: Verify khi nhập Địa chỉ chi nhánh ở tab English.
+2025-04-18 00:16:33,746 - INFO - Test Case 6 PASS: test_enter_en_location_address | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:16:47,726 - INFO - Bắt đầu Test Case 8: Verify khi nhấn dropdown 'Tỉnh/Thành phố' và chọn Tỉnh/Thành phố đầu tiên.
+2025-04-18 00:16:52,677 - INFO - Test Case 8 PASS: test_click_province_dropdown_and_choose_province | Expected: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Actual: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Status: PASS
+2025-04-18 00:17:06,501 - INFO - Bắt đầu Test Case 9: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-18 00:17:10,783 - INFO - Test Case 9 PASS: test_click_district_dropdown | Expected: Hệ thống mở dropdown chỉ có giá trị mặc định. | Actual: Hệ thống mở dropdown chỉ có giá trị mặc định. | Status: PASS
+2025-04-18 00:17:24,410 - INFO - Bắt đầu Test Case 10: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-18 00:17:29,178 - INFO - Test Case 10 PASS: test_click_district_dropdown_after_choose_province | Expected: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Actual: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Status: PASS
+2025-04-18 00:17:43,032 - INFO - Bắt đầu Test Case 11: Verify khi nhấn dropdown 'Huyện/Quận'và chọn Huyện/Quận đầu tiên.
+2025-04-18 00:17:48,024 - INFO - Test Case 11 PASS: test_click_district_dropdown_and_choose_district | Expected: Hệ thống hiển thị Huyện/Quận được chọn. | Actual: Hệ thống hiển thị Huyện/Quận được chọn. | Status: PASS
+2025-04-18 00:18:01,845 - INFO - Bắt đầu Test Case 12: Verify khi nhập Số điện thoại ở tab 'Thông tin chung'.
+2025-04-18 00:18:05,949 - INFO - Test Case 12 PASS: test_enter_phone_number | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:18:40,602 - INFO - Bắt đầu Test Case 13: Verify khi nhập FAX ở tab 'Thông tin chung'.
+2025-04-18 00:18:44,981 - INFO - Test Case 13 PASS: test_enter_fax | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:18:59,474 - INFO - Bắt đầu Test Case 14: Verify khi nhập Kinh độ ở tab 'Thông tin chung'.
+2025-04-18 00:19:03,592 - INFO - Test Case 14 PASS: test_enter_longitude | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:19:17,572 - INFO - Bắt đầu Test Case 15: Verify khi nhập Vĩ độ ở tab 'Thông tin chung'.
+2025-04-18 00:19:21,990 - INFO - Test Case 15 PASS: test_enter_latitude | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:19:36,888 - INFO - Bắt đầu Test Case 16: Verify khi nhập Email ở tab 'Thông tin chung'.
+2025-04-18 00:19:41,609 - INFO - Test Case 16 PASS: test_enter_email | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:19:56,270 - INFO - Bắt đầu Test Case 17: Verify khi nhập Giá trị sắp xếp ở tab 'Thông tin chung'.
+2025-04-18 00:20:00,740 - INFO - Test Case 17 PASS: test_enter_sort_order | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-18 00:20:15,257 - INFO - Bắt đầu Test Case 18:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-18 00:20:19,965 - INFO - Test Case 18 PASS: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-18 00:20:54,927 - INFO - Bắt đầu Test Case 19:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-18 00:20:59,424 - INFO - Test Case 19 PASS: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-18 00:21:14,570 - INFO - Bắt đầu Test Case 20:  Verify click field 'Avatar'.
+2025-04-18 00:21:19,418 - INFO - Test Case 20 PASS: test_click_field_avatar | Expected: Hệ thống hiển thị popup 'Upload image'. | Actual: Hệ thống hiển thị popup 'Upload image'. | Status: PASS
+2025-04-18 00:21:34,607 - INFO - Bắt đầu Test Case 21:  Verify click field 'Avatar' và click nút 'Upload'.
+2025-04-18 00:21:39,717 - ERROR - Test Case 21 FAIL: test_click_field_avatar_and_click_upload | Expected: Không hiển thị nút 'Xóa ảnh'. | Actual: Hệ thống hiển thị nút 'Xóa ảnh'. | Status: FAIL
+2025-04-18 00:21:54,778 - INFO - Bắt đầu Test Case 22:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-18 00:22:01,865 - INFO - Test Case 22 PASS: test_click_upload_after_choose_image_from_system | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: PASS
+2025-04-18 00:22:16,537 - INFO - Bắt đầu Test Case 23:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-18 00:22:28,509 - INFO - Test Case 23 PASS: test_click_delete_after_upload_image | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: PASS
+2025-04-18 00:22:42,859 - INFO - Bắt đầu Test Case 24: Nhập tất cả các trường thông tin và click nút 'Lưu'.
+2025-04-18 00:23:00,752 - INFO - Test Case 24 PASS: test_click_save_button_after_field_all_information | Expected: Hệ thống tiến hành lưu Chi nhánh và chuyển hướng về trang 'Danh sách chi nhánh'. | Actual: Hệ thống lưu không thành công hoặc không chuyyển hướng về trang danh sách hoặc không hiển thị chi nhánh mới lưu trên danh sách. | Status: PASS
+2025-04-18 00:23:35,584 - INFO - Bắt đầu Test Case 25: Nhập tất cả các trường thông tin và click nút 'Lưu và tiếp tục cập nhật'.
+2025-04-18 00:24:00,223 - INFO - Test Case 25 PASS: test_click_save_and_continue_button_after_field_all_information | Expected: Hệ thống tiến hành lưu Chi nhánh và ở lại trang chỉnh sửa. | Actual: Hệ thống tiến hành lưu Chi nhánh và ở lại trang chỉnh sửa. | Status: PASS

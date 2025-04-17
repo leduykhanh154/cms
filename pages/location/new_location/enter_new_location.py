@@ -51,12 +51,74 @@ class EnterNewLocation:
             logging.error(f"Lỗi khi nhập địa chỉ chi nhánh: {str(e)}")
             return False
 
+    # Hàm nhập tên chi nhánh
+    def enter_en_name(self, name):
+        try:
+            name_input = self.wait.until(
+                EC.visibility_of_element_located(self.locators.EN_NAME_TEXT_INPUT)
+            )
+            name_input.clear()
+            name_input.send_keys(name)
+            logging.info(f"Đã nhập tên chi nhánh: {name}")
+            return True
+        except TimeoutException:
+            logging.error("Không tìm thấy ô nhập tên chi nhánh!")
+            return False
+        except Exception as e:
+            logging.error(f"Lỗi khi nhập tên chi nhánh: {str(e)}")
+            return False
+
+    # Hàm nhập địa chỉ chi nhánh
+    def enter_en_address(self, address):
+        try:
+            address_input = self.wait.until(
+                EC.visibility_of_element_located(self.locators.EN_ADDRESS_TEXT_INPUT)
+            )
+            address_input.clear()
+            address_input.send_keys(address)
+            logging.info(f"Đã nhập địa chỉ chi nhánh: {address}")
+            return True
+        except TimeoutException:
+            logging.error("Không tìm thấy ô nhập địa chỉ chi nhánh!")
+            return False
+        except Exception as e:
+            logging.error(f"Lỗi khi nhập địa chỉ chi nhánh: {str(e)}")
+            return False
+
     # Hàm nhập nội dung vào khung soạn thảo (CKEditor)
     def enter_content(self, content):
         try:
             # Chờ và chuyển vào iframe của CKEditor
             iframe = self.wait.until(
                 EC.presence_of_element_located(self.locators.CONTENT_TEXT_AREA)
+            )
+            self.driver.switch_to.frame(iframe)
+
+            # Chờ vùng soạn thảo trong iframe, sau đó nhập nội dung
+            editable_area = self.wait.until(
+                EC.presence_of_element_located((By.XPATH, "//body"))
+            )
+            editable_area.clear()
+            editable_area.send_keys(content)
+            logging.info(f"Đã nhập nội dung chi nhánh: {content}")
+
+            # Thoát khỏi iframe
+            self.driver.switch_to.default_content()
+            return True
+
+        except TimeoutException:
+            logging.error("Không tìm thấy iframe hoặc vùng soạn thảo CKEditor!")
+            return False
+        except Exception as e:
+            logging.error(f"Lỗi khi nhập nội dung chi nhánh: {str(e)}")
+            return False
+    
+    # Hàm nhập nội dung vào khung soạn thảo (CKEditor)
+    def enter_en_content(self, content):
+        try:
+            # Chờ và chuyển vào iframe của CKEditor
+            iframe = self.wait.until(
+                EC.presence_of_element_located(self.locators.EN_CONTENT_TEXT_AREA)
             )
             self.driver.switch_to.frame(iframe)
 

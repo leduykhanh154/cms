@@ -1,0 +1,2 @@
+2025-04-17 19:43:55,857 - INFO - Bắt đầu Test Case 1: Verify khi click nút '...' của chi nhánh đầu tiên và chọn Chi tiết.
+2025-04-17 19:43:58,142 - INFO - Test Case 1 PASS: test_click_first_menu_button_choose_detail | Expected: Hệ thống chuyển hướng đến trang chỉnh sửa. | Actual: Hệ thống chuyển hướng đến trang chỉnh sửa. | Status: PASS

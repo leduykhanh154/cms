@@ -2,20 +2,20 @@ import time
 import logging
 import selenium
 from selenium.webdriver.common.by import By
-from locators.locator_location.locator_new_location import LocatorNewLocation
+from locators.locator_location.locator_update_location import LocatorUpdateLocation
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 
-class GetFieldNewLocation:
+class GetFieldUpdateLocation:
     # Hàm khởi tạo driver
     def __init__(self, driver, timeout=5):
         if not driver:
             raise ValueError("Driver không được để trống hoặc None!")
         self.driver = driver
         self.wait = WebDriverWait(self.driver, timeout)
-        self.locators = LocatorNewLocation 
+        self.locators = LocatorUpdateLocation 
 
     # Hàm lấy giá trị ô 'Tên chi nhánh'
     def get_name(self):
@@ -39,48 +39,10 @@ class GetFieldNewLocation:
             logging.error("Không thể lấy giá trị từ ô địa chỉ chi nhánh.")
             return None
 
-    # Hàm lấy giá trị ô 'Tên chi nhánh'
-    def get_en_name(self):
-        try:
-            input_field = self.wait.until(EC.element_to_be_clickable(self.locators.EN_NAME_TEXT_INPUT))
-            value = input_field.get_attribute("value")
-            logging.info(f"Giá trị lấy được từ ô 'Tên chi nhánh': {value}")
-            return value
-        except TimeoutException:
-            logging.error("Không thể lấy giá trị từ ô 'Tên chi nhánh'.")
-            return None        
-    
-    # Hàm lấy giá trị ô 'Địa chỉ chi nhánh'
-    def get_en_address(self):
-        try:
-            input_field = self.wait.until(EC.element_to_be_clickable(self.locators.EN_ADDRESS_TEXT_INPUT))
-            value = input_field.get_attribute("value")
-            logging.info(f"Giá trị lấy được từ ô địa chỉ chi nhánh: {value}")
-            return value
-        except TimeoutException:
-            logging.error("Không thể lấy giá trị từ ô địa chỉ chi nhánh.")
-            return None
-
     # Hàm lấy nội dung từ khung soạn thảo CKEditor
     def get_content(self):
         try:
             iframe = self.wait.until(EC.presence_of_element_located(self.locators.CONTENT_TEXT_AREA))
-            self.driver.switch_to.frame(iframe)
-
-            editable_area = self.wait.until(EC.presence_of_element_located((By.XPATH, "//body")))
-            content = editable_area.get_attribute("innerHTML")
-
-            self.driver.switch_to.default_content()
-            logging.info(f"Nội dung CKEditor lấy được: {content}")
-            return content
-        except TimeoutException:
-            logging.error("Không thể lấy nội dung từ CKEditor.")
-            return None
-
-    # Hàm lấy nội dung từ khung soạn thảo CKEditor
-    def get_en_content(self):
-        try:
-            iframe = self.wait.until(EC.presence_of_element_located(self.locators.EN_CONTENT_TEXT_AREA))
             self.driver.switch_to.frame(iframe)
 
             editable_area = self.wait.until(EC.presence_of_element_located((By.XPATH, "//body")))

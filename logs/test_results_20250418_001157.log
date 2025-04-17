@@ -1,0 +1,4 @@
+2025-04-18 00:12:06,395 - INFO - Bắt đầu Test Case 24: Nhập tất cả các trường thông tin và click nút 'Lưu'.
+2025-04-18 00:12:23,194 - INFO - Test Case 24 PASS: test_click_save_button_after_field_all_information | Expected: Hệ thống tiến hành lưu Chi nhánh và chuyển hướng về trang 'Danh sách chi nhánh'. | Actual: Hệ thống lưu không thành công hoặc không chuyyển hướng về trang danh sách hoặc không hiển thị chi nhánh mới lưu trên danh sách. | Status: PASS
+2025-04-18 00:12:37,242 - INFO - Bắt đầu Test Case 25: Nhập tất cả các trường thông tin và click nút 'Lưu và tiếp tục cập nhật'.
+2025-04-18 00:13:00,175 - INFO - Test Case 25 PASS: test_click_save_and_continue_button_after_field_all_information | Expected: Hệ thống tiến hành lưu Chi nhánh và ở lại trang chỉnh sửa. | Actual: Hệ thống tiến hành lưu Chi nhánh và ở lại trang chỉnh sửa. | Status: PASS

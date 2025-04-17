@@ -22,7 +22,9 @@ class LocatorNewLocation:
     
     # TEXT-INPUT
     NAME_TEXT_INPUT = (By.XPATH, '//*[@id="name"]')
+    EN_NAME_TEXT_INPUT = (By.XPATH, '//*[@id="en-content"]/div/div[1]/div/input')
     ADDRESS_TEXT_INPUT = (By.XPATH, '//*[@id="address"]')
+    EN_ADDRESS_TEXT_INPUT = (By.XPATH, '//*[@id="en-content"]/div/div[2]/div/input')
     PHONE_TEXT_INPUT = (By.XPATH, '//*[@id="phone"]')
     FAX_TEXT_INPUT = (By.XPATH, '//*[@id="fax"]')
     LONGITUDE_TEXT_INPUT = (By.XPATH, '//*[@id="longitude"]')
@@ -32,6 +34,7 @@ class LocatorNewLocation:
     
     # TEXT-AREA
     CONTENT_TEXT_AREA = (By.XPATH, '//*[@id="cke_1_contents"]/iframe')
+    EN_CONTENT_TEXT_AREA = (By.XPATH, '//*[@id="cke_timework"]/div/div/iframe')
     
     # DROPDOWN 
     PROVINCE_DROPDOWN = (By.XPATH, '//*[@id="select2-select-province-container"]')

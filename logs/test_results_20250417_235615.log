@@ -1,0 +1,2 @@
+2025-04-17 23:56:24,489 - INFO - Bắt đầu Test Case 7: Verify khi nhập Địa chỉ chi nhánh ở tab English.
+2025-04-17 23:56:30,681 - ERROR - Test Case 7 FAIL: test_enter_en_location_content | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống không hiển thị thông tin vừa nhập. | Status: FAIL

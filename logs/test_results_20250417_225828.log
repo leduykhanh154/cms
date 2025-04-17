@@ -1,0 +1,2 @@
+2025-04-17 22:58:38,805 - INFO - Bắt đầu Test Case 3: Verify khi click nút 'Hủy'.
+2025-04-17 22:58:43,210 - ERROR - Test Case 3 FAIL: test_click_first_menu_button_choose_detail | Expected: Hệ thống hủy chỉnh sửa và chuyển hướng về trang danh sách. | Actual: Hệ thống không hủy chỉnh sửa và chuyển hướng về trang danh sách. | Status: FAIL
