@@ -1,0 +1,2 @@
+2025-04-17 16:05:44,969 - INFO - Bắt đầu Test Case 23:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-17 16:05:57,002 - ERROR - Test Case 23 FAIL: test_click_delete_after_upload_image | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống không đóng popup hoặc không hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: FAIL

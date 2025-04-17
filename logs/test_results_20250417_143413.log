@@ -1,0 +1,6 @@
+2025-04-17 14:34:23,288 - INFO - Bắt đầu Test Case 14: Verify khi nhập Kinh độ ở tab 'Thông tin chung'.
+2025-04-17 14:34:27,459 - INFO - Test Case 14 PASS: test_enter_longitude | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-17 14:34:41,358 - INFO - Bắt đầu Test Case 15: Verify khi nhập Vĩ độ ở tab 'Thông tin chung'.
+2025-04-17 14:34:45,426 - INFO - Test Case 15 PASS: test_enter_latitude | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-17 14:34:59,271 - INFO - Bắt đầu Test Case 16: Verify khi nhập Email ở tab 'Thông tin chung'.
+2025-04-17 14:35:03,423 - INFO - Test Case 16 PASS: test_enter_email | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS

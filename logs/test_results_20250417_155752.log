@@ -1,0 +1,2 @@
+2025-04-17 15:58:04,103 - INFO - Bắt đầu Test Case 22:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-17 15:58:10,181 - INFO - Test Case 22 PASS: test_click_upload_after_choose_image_from_system | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: PASS

@@ -1,0 +1,4 @@
+2025-04-17 14:52:49,476 - INFO - Bắt đầu Test Case 18:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-17 14:52:53,629 - INFO - Test Case 18 PASS: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-17 14:53:07,698 - INFO - Bắt đầu Test Case 19:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-17 14:53:12,144 - INFO - Test Case 19 PASS: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
