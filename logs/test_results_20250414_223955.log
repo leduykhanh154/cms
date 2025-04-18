@@ -1,0 +1,2 @@
+2025-04-14 22:40:05,355 - INFO - Bắt đầu Test Case 11: Verify khi nhập từ khóa vào thanh tìm kiếm.
+2025-04-14 22:40:06,890 - INFO - Test Case 11 PASS: test_enter_search_keyword | Expected: Từ khóa tìm kiếm được nhập và hiển thị. | Actual: Từ khóa tìm kiếm được nhập và hiển thị. | Status: PASS

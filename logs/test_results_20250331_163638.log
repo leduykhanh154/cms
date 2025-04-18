@@ -1,0 +1,4 @@
+2025-03-31 16:36:47,065 - INFO - Bắt đầu Test Case 19: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh, sau đó click nút xóa ảnh.
+2025-03-31 16:37:00,109 - INFO - Test Case 19 PASS: test_check_delete_button_before_and_after_upload | Expected: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Actual: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Status: PASS
+2025-03-31 16:37:14,158 - INFO - Bắt đầu Test Case 20: Không chọn ảnh và click 'Upload', kiểm tra nút 'Xóa ảnh'.
+2025-03-31 16:37:20,146 - ERROR - Test Case 20 FAIL: test_upload_without_selecting_image | Expected: Nút 'Xóa ảnh' không xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Actual: Nút 'Xóa ảnh' xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Status: FAIL

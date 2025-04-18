@@ -1,0 +1,2 @@
+2025-04-17 18:16:15,632 - INFO - Bắt đầu Test Case 25: Nhập tất cả các trường thông tin và click nút 'Lưu và tiếp tục cập nhật'.
+2025-04-17 18:16:32,536 - ERROR - Test Case 25 FAIL: test_click_save_button_after_field_all_information | Expected: Hệ thống tiến hành lưu Chi nhánh và ở lại trang chỉnh sửa. | Actual: Hệ thống lưu không thành công hoặc không ở lại trang chỉnh sửa. | Status: FAIL

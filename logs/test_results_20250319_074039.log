@@ -1,0 +1,2 @@
+2025-03-19 07:40:50,552 - INFO - Bat dau Test Case 1: Verify khi nhan vao breadcrumb 'Trang chu' -> He thong dieu huong ve trang chu thanh cong.
+2025-03-19 07:40:53,000 - INFO - Test Case 1 PASS: test_click_breadcrumb_home | Expected: He thong dieu huong thanh cong den trang 'Trang chu'. | Actual: He thong dieu huong thanh cong den trang 'Trang chu'. | Status: PASS

@@ -1,0 +1,4 @@
+2025-03-27 10:38:21,903 - INFO - Bắt đầu Test Case 15: Nhấn 'Thao tác' -> Nhấn 'Xóa' khi chưa chọn loại bài viết -> Kiểm tra cảnh báo 'Vui lòng chọn Loại bài viết để xóa.'.
+2025-03-27 10:38:24,401 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 10:38:25,510 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 10:38:26,605 - INFO - Test Case 15 PASS: test_click_operate_and_delete_without_selection | Expected: Hệ thống hiển thị cảnh báo: 'Vui lòng chọn Loại bài viết để xóa.'. | Actual: Hệ thống hiển thị đúng cảnh báo. | Status: PASS

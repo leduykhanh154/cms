@@ -1,0 +1,12 @@
+2025-04-14 17:09:46,831 - INFO - Bắt đầu Test Case 2: Verify khi nhấn dropdown 'Tỉnh/Thành phố' và chọn Tỉnh/Thành phố đầu tiên.
+2025-04-14 17:09:48,298 - INFO - Test Case 2 PASS: test_click_province_dropdown_and_choose_province | Expected: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Actual: True | Status: PASS
+2025-04-14 17:10:03,592 - INFO - Bắt đầu Test Case 3: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-14 17:10:04,988 - INFO - Test Case 3 PASS: test_click_district_dropdown | Expected: Hệ thống mở dropdown chỉ có giá trị mặc định. | Actual: Hệ thống mở dropdown chỉ có giá trị mặc định. | Status: PASS
+2025-04-14 17:10:20,421 - INFO - Bắt đầu Test Case 4: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-14 17:10:22,788 - INFO - Test Case 4 PASS: test_click_district_dropdown_after_choose_province | Expected: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Actual: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Status: PASS
+2025-04-14 17:10:37,874 - INFO - Bắt đầu Test Case 5: Verify khi nhấn dropdown 'Huyện/Quận'và chọn Huyện/Quận đầu tiên.
+2025-04-14 17:10:45,319 - INFO - Test Case 5 PASS: test_click_district_dropdown_and_choose_district | Expected: Hệ thống hiển thị Huyện/Quận được chọn. | Actual: Hệ thống không hiển thị Huyện/Quận được chọn. | Status: PASS
+2025-04-14 17:11:00,320 - INFO - Bắt đầu Test Case 6:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-14 17:11:01,884 - INFO - Test Case 6 PASS: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-14 17:11:16,905 - INFO - Bắt đầu Test Case 7:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-14 17:11:18,308 - INFO - Test Case 7 PASS: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS

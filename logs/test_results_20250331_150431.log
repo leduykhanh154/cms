@@ -1,0 +1,2 @@
+2025-03-31 15:04:50,570 - INFO - Bắt đầu Test Case 20: Không chọn ảnh và click 'Upload', kiểm tra nút 'Xóa ảnh'.
+2025-03-31 15:04:57,014 - ERROR - Test Case 20 | Expected: Nút 'Xóa ảnh' không xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Actual: LỖI: Nút 'Xóa ảnh' xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Status: FAIL

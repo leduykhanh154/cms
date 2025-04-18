@@ -1,0 +1,2 @@
+2025-03-26 01:53:19,556 - INFO - Bắt đầu Test Case 14: Verify có thể nhấn vào nút menu đầu tiên.
+2025-03-26 01:53:22,145 - INFO - Test Case PASS 14: test_click_first_menu_button | Expected: Hệ thống đã nhấn vào nút menu đầu tiên thành công. | Actual: Hệ thống đã nhấn vào nút menu đầu tiên thành công. | Status: PASS

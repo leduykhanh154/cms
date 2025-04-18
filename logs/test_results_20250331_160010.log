@@ -1,0 +1,2 @@
+2025-03-31 16:00:20,341 - INFO - Bắt đầu Test Case 22: Nhập dữ liệu vào ô 'Loại bài viết' (Tiếng Việt) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-03-31 16:00:33,918 - ERROR - Test Case 22 FAIL: test_vi_article_type_clear_and_check_error | Expected: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Actual: Thông báo lỗi không xuất hiện! | Status: FAIL

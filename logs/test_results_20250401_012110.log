@@ -1,0 +1,4 @@
+2025-04-01 01:21:19,761 - INFO - Bắt đầu Test Case 49: Nhập loại bài viết, click nút 'Lưu' và kiểm tra đường dẫn có hiển thị loại bài viết vua tao.
+2025-04-01 01:21:26,472 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-01 01:21:28,600 - INFO - Đã nhấn nút 'Lưu'.
+2025-04-01 01:21:30,757 - INFO - Test Case 49 PASS: test_save_and_check_article_type | Expected: Đường dẫn hiển thị đúng loại bài viết: 'Bài viết thử nghiệm'. | Actual: Đường dẫn hiển thị đúng loại bài viết: 'Bài viết thử nghiệm'. | Status: PASS

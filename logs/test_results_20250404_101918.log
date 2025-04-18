@@ -1,0 +1,8 @@
+2025-04-04 10:19:27,582 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'Có'.
+2025-04-04 10:19:29,109 - INFO - Đã chọn bài viết đầu tiên.
+2025-04-04 10:19:29,175 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-04-04 10:19:30,262 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-04-04 10:19:31,348 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-04-04 10:19:31,543 - INFO - Đã nhấn vào nút 'Có'.
+2025-04-04 10:19:35,825 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'Có'.
+2025-04-04 10:19:40,833 - INFO - Test Case 20 PASS: test_select_and_confirm_delete | Expected: Bài viết đã bị xóa. | Actual: Bài viết đã bị xóa. | Status: PASS

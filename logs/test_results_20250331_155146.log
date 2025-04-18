@@ -1,0 +1,2 @@
+2025-03-31 15:51:54,965 - INFO - Bắt đầu Test Case 21: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 15:52:03,136 - INFO - Test Case 21 PASS: test_vi_article_type_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Status: PASS

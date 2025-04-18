@@ -1,0 +1,2 @@
+2025-04-14 11:29:56,422 - INFO - Bắt đầu Test Case 2: Verify khi nhấn nút 'Tạo mới'.
+2025-04-14 11:29:59,598 - INFO - Test Case 2 PASS: test_click_home_breadcrumb | Expected: Hệ thống điều hướng đến trang 'Tạo mới chi nhánh'. | Actual: Hệ thống điều hướng đến trang 'Tạo mới chi nhánh'. | Status: PASS

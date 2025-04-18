@@ -1,0 +1,5 @@
+2025-04-08 17:55:15,614 - INFO - Bắt đầu Test Case 28: Nhập đường dẫn ở tab English -> Kiểm tra dữ liệu.
+2025-04-08 17:55:21,456 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 17:55:27,565 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 17:55:31,857 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 17:55:37,009 - ERROR - Test Case 28 FAIL: test_enter_en_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị hiển thị không đúng: 'None' | Status: FAIL

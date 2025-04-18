@@ -1,0 +1,19 @@
+2025-04-08 15:20:08,115 - INFO - Bắt đầu Test Case 1: Verify khi nhấn vào breadcrumb 'Trang chủ' -> Hệ thống điều hướng về trang chủ thành công.
+2025-04-08 15:20:12,364 - INFO - Test Case 1 PASS: test_click_breadcrumb_home | Expected: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Actual: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Status: PASS
+2025-04-08 15:20:26,467 - INFO - Bắt đầu Test Case 2: Verify có thể nhấn vào 'Danh sách loại bài viết' trên breadcrumb và kiểm tra điều hướng.
+2025-04-08 15:20:31,242 - INFO - Đã nhấn vào breadcrumb 'Danh sách loại bài viết'.
+2025-04-08 15:20:31,250 - INFO - Test Case 2 PASS: test_click_breadcrumb_type_list | Expected: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Actual: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Status: PASS
+2025-04-08 15:20:45,349 - INFO - Bắt đầu Test Case 3: Nhấn vào tab 'Thông tin chung'.
+2025-04-08 15:20:49,768 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-04-08 15:20:50,337 - INFO - Test Case 3 PASS: test_click_tab_general_information_and_check_label | Expected: Tab 'Thong tin chung' duoc hien thi | Actual: Tab 'Thong tin chung' duoc hien thi | Status: PASS
+2025-04-08 15:21:04,502 - INFO - Bắt đầu Test Case 4: Kiểm tra tab 'Thông tin chung' & 'Nội dung chính'.
+2025-04-08 15:21:08,906 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-04-08 15:21:09,448 - INFO - Tab 'Thông tin chung' hiển thị đúng.
+2025-04-08 15:21:09,524 - INFO - Đã nhấn vào tab 'Nội dung chính'.
+2025-04-08 15:21:10,066 - INFO - Tab 'Nội dung chính' hiển thị đúng.
+2025-04-08 15:21:10,066 - INFO - Test Case 4 PASS: test_click_tabs_and_check_labels | Expected: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng. | Actual: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng. | Status: PASS
+2025-04-08 15:21:38,012 - INFO - Bắt đầu Test Case 5: Kiểm tra tab 'English' và nút 'Dịch nội dung'.
+2025-04-08 15:21:42,528 - INFO - Đã nhấn vào nút 'Tạo mới'.
+2025-04-08 15:21:42,629 - INFO - Đã nhấn vào tab 'English'.
+2025-04-08 15:22:34,268 - INFO - Bắt đầu Test Case 6: Kiểm tra tab 'Tiếng Việt'.
+2025-04-08 15:22:38,735 - INFO - Đã nhấn vào tab 'Tiếng Anh'.

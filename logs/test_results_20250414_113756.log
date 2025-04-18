@@ -1,0 +1,2 @@
+2025-04-14 11:38:05,950 - INFO - Bắt đầu Test Case 4: Verify khi nhấn nút 'Tạo mới'.
+2025-04-14 11:38:07,819 - INFO - Test Case 4 PASS: test_click_province_dropdown | Expected: Hệ thống mở dropdown. | Actual: Hệ thống mở dropdown. | Status: PASS

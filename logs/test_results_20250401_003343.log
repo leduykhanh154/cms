@@ -1,0 +1,9 @@
+2025-04-01 00:33:53,774 - INFO - Bắt đầu Test Case 44: Nhập giá trị vào ô 'Thu tu sap xep' và kiểm tra thông báo lỗi.
+2025-04-01 00:33:59,140 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 00:34:01,835 - INFO - Đã nhập '5' vào ô 'Thứ tự sắp xếp'.
+2025-04-01 00:34:03,917 - INFO - Đã xóa nội dung trong ô 'Thứ tự sắp xếp'.
+2025-04-01 00:34:03,973 - ERROR - Test Case 44 FAIL: test_sort_order_validation | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Thứ tự sắp xếpp'. | Actual: Thông báo lỗi không xuất hiện! | Status: FAIL
+2025-04-01 00:34:18,899 - INFO - Bắt đầu Test Case 45: Nhập ký tự chữ vào ô 'Sort Order' và kiểm tra không hiển thị.
+2025-04-01 00:34:24,827 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 00:34:27,622 - INFO - Đã nhập '5abc' vào ô 'Sort Order'.
+2025-04-01 00:34:32,710 - ERROR - Test Case 45 FAIL: test_sort_order_rejects_text | Expected: Không có giá trị nào hiển thị trong ô 'Sort Order' khi nhập chữ. | Actual: Giá trị 'None' không hợp lệ được hiển thị! | Status: FAIL

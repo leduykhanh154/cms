@@ -1,0 +1,33 @@
+2025-04-03 00:54:14,662 - INFO - Bắt đầu Test Case 1: Verify khi nhấn vào breadcrumb 'Trang chủ' -> Hệ thống điều hướng về trang chủ thành công.
+2025-04-03 00:54:19,726 - INFO - Test Case 1 PASS: test_click_breadcrumb_home | Expected: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Actual: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Status: PASS
+2025-04-03 00:54:34,097 - INFO - Bắt đầu Test Case 2: Verify có thể nhấn vào 'Danh sách loại bài viết' trên breadcrumb và kiểm tra điều hướng.
+2025-04-03 00:54:39,853 - INFO - Đã nhấn vào breadcrumb 'Danh sách loại bài viết'.
+2025-04-03 00:54:39,896 - INFO - Test Case 2 PASS: test_click_breadcrumb_type_list | Expected: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Actual: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Status: PASS
+2025-04-03 00:54:58,129 - INFO - Bắt đầu Test Case 3: Nhấn vào tab 'Thông tin chung'.
+2025-04-03 00:55:03,576 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-04-03 00:55:04,116 - INFO - Test Case 3 PASS: test_click_tab_general_information_and_check_label | Expected: Tab 'Thong tin chung' duoc hien thi | Actual: Tab 'Thong tin chung' duoc hien thi | Status: PASS
+2025-04-03 00:55:18,295 - INFO - Bắt đầu Test Case 4: Kiểm tra tab 'Thông tin chung' & 'Nội dung chính'.
+2025-04-03 00:55:23,661 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-04-03 00:55:24,240 - INFO - Tab 'Thông tin chung' hiển thị đúng.
+2025-04-03 00:55:24,377 - INFO - Đã nhấn vào tab 'Nội dung chính'.
+2025-04-03 00:55:24,940 - INFO - Tab 'Nội dung chính' hiển thị đúng.
+2025-04-03 00:55:24,942 - INFO - Test Case 4 PASS: test_click_tabs_and_check_labels | Expected: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng. | Actual: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng. | Status: PASS
+2025-04-03 00:55:39,125 - INFO - Bắt đầu Test Case 5: Kiểm tra tab 'English' và nút 'Dịch nội dung'.
+2025-04-03 00:55:44,453 - INFO - Đã nhấn vào nút 'Tạo mới'.
+2025-04-03 00:55:44,673 - INFO - Đã nhấn vào tab 'English'.
+2025-04-03 00:55:44,747 - INFO - Nút 'Dịch nội dung' xuất hiện đúng.
+2025-04-03 00:55:44,748 - INFO - Test Case 5 PASS: test_click_tab_english_and_check_translate_button | Expected: Tab 'English' hoạt động và nút 'Dịch nội dung' hiển thị đúng. | Actual: Tab 'English' hoạt động và nút 'Dịch nội dung' hiển thị đúng. | Status: PASS
+2025-04-03 00:55:58,768 - INFO - Bắt đầu Test Case 6: Kiểm tra tab 'Tiếng Việt'.
+2025-04-03 00:56:04,039 - INFO - Đã nhấn vào tab 'Tiếng Anh'.
+2025-04-03 00:56:04,056 - INFO - Nút 'Dịch nội dung' hiển thị đúng.
+2025-04-03 00:56:04,173 - INFO - Đã nhấn vào tab 'Tiếng Việt'.
+2025-04-03 00:56:04,230 - INFO - Tab 'Tiếng Việt' hiển thị đúng.
+2025-04-03 00:56:04,230 - INFO - Test Case 6 PASS: test_click_tabs_english_vietnamese_and_check_labels | Expected: Tab 'Tiếng Việt' hoạt động đúng. | Actual: Tab 'Tiếng Việt' hoạt động đúng. | Status: PASS
+2025-04-03 00:56:18,492 - INFO - Bắt đầu Test Case 7: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết'.
+2025-04-03 00:56:25,723 - INFO - Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu.
+2025-04-03 00:56:25,825 - INFO - Thông báo lỗi 'Vui lòng nhập loại bài viết' đã xuất hiện như mong đợi.
+2025-04-03 00:56:25,825 - INFO - Test Case 7 PASS: test_click_save_and_check_error_message | Expected: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Actual: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Status: PASS
+2025-04-03 00:56:40,157 - INFO - Bắt đầu Test Case 8: Click 'Tạo Mới' -> Click 'Lưu và Tiếp Tục Cập Nhật' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết'.
+2025-04-03 00:56:47,638 - INFO - Đã nhấn vào nút 'Lưu và Tiếp Tục Cập Nhật' mà không nhập dữ liệu.
+2025-04-03 00:56:47,775 - INFO - Thông báo lỗi 'Vui lòng nhập loại bài viết' đã xuất hiện như mong đợi.
+2025-04-03 00:56:47,775 - INFO - Test Case 8 PASS: test_click_save_and_continue_and_check_error_message | Expected: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Actual: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Status: PASS

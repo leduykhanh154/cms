@@ -1,0 +1,14 @@
+2025-04-08 18:07:32,306 - INFO - Bắt đầu Test Case 16: Nhập loại bài viết tab English -> Kiểm tra dữ liệu.
+2025-04-08 18:07:37,813 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-08 18:07:43,906 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 18:07:48,179 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 18:07:49,956 - INFO - Test Case 16 PASS: test_enter_en_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 18:08:04,534 - INFO - Bắt đầu Test Case 18: Nhập đường dẫn ở tab English -> Kiểm tra dữ liệu.
+2025-04-08 18:08:10,157 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 18:08:16,296 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 18:08:22,050 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 18:08:22,080 - INFO - Test Case 18 PASS: test_enter_en_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem-888' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem-888' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 18:08:36,350 - INFO - Bắt đầu Test Case 19: Nhập 'Mô tả' tab English -> Kiểm tra dữ liệu.
+2025-04-08 18:08:41,891 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 18:08:47,994 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 18:08:53,746 - INFO - Test Case 19 PASS: test_enter_en_description_and_verify | Expected: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Status: PASS

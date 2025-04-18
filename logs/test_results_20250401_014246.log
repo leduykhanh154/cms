@@ -1,0 +1,167 @@
+2025-04-01 01:42:55,408 - INFO - Bắt đầu Test Case 1: Verify khi nhấn vào breadcrumb 'Trang chủ' -> Hệ thống điều hướng về trang chủ thành công.
+2025-04-01 01:43:00,495 - INFO - Test Case 1 PASS: test_click_breadcrumb_home | Expected: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Actual: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Status: PASS
+2025-04-01 01:43:14,683 - INFO - Bắt đầu Test Case 2: Verify có thể nhấn vào 'Danh sách loại bài viết' trên breadcrumb và kiểm tra điều hướng.
+2025-04-01 01:43:20,532 - INFO - Đã nhấn vào breadcrumb 'Danh sách loại bài viết'.
+2025-04-01 01:43:20,540 - INFO - Test Case 2 PASS: test_click_breadcrumb_type_list | Expected: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Actual: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Status: PASS
+2025-04-01 01:43:34,827 - INFO - Bắt đầu Test Case 3: Nhấn vào tab 'Thông tin chung'.
+2025-04-01 01:43:40,217 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-04-01 01:43:40,791 - INFO - Test Case 3 PASS: test_click_tab_general_information_and_check_label | Expected: Tab 'Thong tin chung' duoc hien thi | Actual: Tab 'Thong tin chung' duoc hien thi | Status: PASS
+2025-04-01 01:43:55,283 - INFO - Bắt đầu Test Case 4: Kiểm tra tab 'Thông tin chung' & 'Nội dung chính'.
+2025-04-01 01:44:00,493 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-04-01 01:44:01,049 - INFO - Tab 'Thông tin chung' hiển thị đúng.
+2025-04-01 01:44:01,149 - INFO - Đã nhấn vào tab 'Nội dung chính'.
+2025-04-01 01:44:01,695 - INFO - Tab 'Nội dung chính' hiển thị đúng.
+2025-04-01 01:44:01,695 - INFO - Test Case 4 PASS: test_click_tabs_and_check_labels | Expected: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng. | Actual: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng. | Status: PASS
+2025-04-01 01:44:16,012 - INFO - Bắt đầu Test Case 5: Kiểm tra tab 'English' và nút 'Dịch nội dung'.
+2025-04-01 01:44:21,269 - INFO - Đã nhấn vào nút 'Tạo mới'.
+2025-04-01 01:44:21,351 - INFO - Đã nhấn vào tab 'English'.
+2025-04-01 01:44:21,381 - INFO - Nút 'Dịch nội dung' xuất hiện đúng.
+2025-04-01 01:44:21,383 - INFO - Test Case 5 PASS: test_click_tab_english_and_check_translate_button | Expected: Tab 'English' hoạt động và nút 'Dịch nội dung' hiển thị đúng. | Actual: Tab 'English' hoạt động và nút 'Dịch nội dung' hiển thị đúng. | Status: PASS
+2025-04-01 01:44:35,691 - INFO - Bắt đầu Test Case 6: Kiểm tra tab 'Tiếng Việt'.
+2025-04-01 01:44:40,932 - INFO - Đã nhấn vào tab 'Tiếng Anh'.
+2025-04-01 01:44:40,970 - INFO - Nút 'Dịch nội dung' hiển thị đúng.
+2025-04-01 01:44:41,111 - INFO - Đã nhấn vào tab 'Tiếng Việt'.
+2025-04-01 01:44:41,690 - INFO - Tab 'Tiếng Việt' hiển thị đúng.
+2025-04-01 01:44:41,690 - INFO - Test Case 6 PASS: test_click_tabs_english_vietnamese_and_check_labels | Expected: Tab 'Tiếng Việt' hoạt động đúng. | Actual: Tab 'Tiếng Việt' hoạt động đúng. | Status: PASS
+2025-04-01 01:45:16,534 - INFO - Bắt đầu Test Case 7: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết'.
+2025-04-01 01:45:23,867 - INFO - Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu.
+2025-04-01 01:45:38,281 - INFO - Bắt đầu Test Case 8: Click 'Tạo Mới' -> Click 'Lưu và Tiếp Tục Cập Nhật' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết'.
+2025-04-01 01:45:45,661 - INFO - Đã nhấn vào nút 'Lưu và Tiếp Tục Cập Nhật' mà không nhập dữ liệu.
+2025-04-01 01:46:00,097 - INFO - Bắt đầu Test Case 9.
+2025-04-01 01:46:06,485 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-01 01:46:07,581 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:46:09,678 - INFO - Đã nhấn vào nút 'Lưu' mà không nhập loại bài viết.
+2025-04-01 01:46:33,194 - INFO - Bắt đầu Test Case 10: Tạo mới -> Click tab tiếng Anh -> Click 'Dịch nội dung' -> Click 'Lưu và Tiếp tục cập nhật' -> Kiểm tra lỗi.
+2025-04-01 01:46:39,656 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-01 01:46:40,739 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:46:42,827 - INFO - Đã nhấn vào nút 'Lưu và Tiếp tục cập nhật' mà không nhập loại bài viết.
+2025-04-01 01:46:57,204 - INFO - Bắt đầu Test Case 11: Nhập loại bài viết tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 01:47:03,539 - INFO - Test Case 11 PASS: test_enter_vi_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:47:18,878 - INFO - Bắt đầu Test Case 12: Nhập đường dẫn tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 01:47:25,577 - INFO - Test Case 12 PASS: test_enter_vi_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:47:39,853 - INFO - Bắt đầu Test Case 13: Nhập 'Từ khóa meta' tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 01:47:46,333 - INFO - Test Case 13 PASS: test_enter_vi_meta_keyword_and_verify | Expected: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:48:00,622 - INFO - Bắt đầu Test Case 14: Nhập 'Mô tả' tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 01:48:07,116 - INFO - Test Case 14 PASS: test_enter_vi_description_and_verify | Expected: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:48:37,761 - INFO - Bắt đầu Test Case 15: Nhập 'Meta Description' tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 01:48:44,200 - INFO - Test Case 15 PASS: test_enter_vi_meta_description_and_verify | Expected: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:48:58,565 - INFO - Bắt đầu Test Case 16: Click vào hình ảnh -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-04-01 01:49:05,146 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-04-01 01:49:05,155 - INFO - Test Case 16 PASS: test_click_vi_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-04-01 01:49:19,286 - INFO - Bắt đầu Test Case 17: Click vào nut 'Upload' hình ảnh -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-04-01 01:49:25,606 - INFO - Test Case 17 PASS: test_click_vi_upload_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-04-01 01:49:39,990 - INFO - Bắt đầu Test Case 18: Click tab Browser -> Chọn ảnh -> Click Upload -> Kiểm tra ảnh hiển thị.
+2025-04-01 01:49:50,640 - INFO - Test Case 18 PASS: test_upload_vi_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS
+2025-04-01 01:50:05,213 - INFO - Bắt đầu Test Case 19: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh, sau đó click nút xóa ảnh.
+2025-04-01 01:50:18,279 - INFO - Test Case 19 PASS: test_check_vi_delete_button_before_and_after_upload | Expected: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Actual: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Status: PASS
+2025-04-01 01:50:46,969 - INFO - Bắt đầu Test Case 20: Không chọn ảnh và click 'Upload', kiểm tra nút 'Xóa ảnh'.
+2025-04-01 01:50:53,209 - ERROR - Test Case 20 FAIL: test_vi_upload_without_selecting_image | Expected: Nút 'Xóa ảnh' không xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Actual: Nút 'Xóa ảnh' xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Status: FAIL
+2025-04-01 01:51:32,356 - INFO - Bắt đầu Test Case 21: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-01 01:51:40,701 - INFO - Test Case 21 PASS: test_vi_article_type_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Status: PASS
+2025-04-01 01:51:55,123 - INFO - Bắt đầu Test Case 22: Nhập dữ liệu vào ô 'Loại bài viết' (Tiếng Việt) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-04-01 01:52:04,147 - INFO - Test Case 22 PASS: test_vi_article_type_clear_and_check_error | Expected: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Actual: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Status: PASS
+2025-04-01 01:52:18,595 - INFO - Bắt đầu Test Case 23: Nhập 255 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-01 01:52:26,669 - INFO - Test Case 23 PASS: test_vi_article_link_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'. | Status: PASS
+2025-04-01 01:52:40,705 - INFO - Bắt đầu Test Case 24: Nhập 255 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-01 01:52:48,781 - INFO - Test Case 24 PASS: test_vi_short_description_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Status: PASS
+2025-04-01 01:53:02,941 - INFO - Bắt đầu Test Case 25: Nhập 101 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-01 01:53:10,771 - INFO - Test Case 25 PASS: test_vi_meta_keyword_101_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Status: PASS
+2025-04-01 01:53:24,964 - INFO - Bắt đầu Test Case 26: Nhập 501 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-01 01:53:33,613 - INFO - Test Case 26 PASS: test_vi_meta_description_501_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 310 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 310 ký tự'. | Status: PASS
+2025-04-01 01:54:08,090 - INFO - Bắt đầu Test Case 27: Nhập loại bài viết tab English -> Kiểm tra dữ liệu.
+2025-04-01 01:54:14,383 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-01 01:54:15,450 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:54:16,639 - INFO - Test Case 27 PASS: test_enter_en_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:54:31,159 - INFO - Bắt đầu Test Case 28: Nhập đường dẫn ở tab English -> Kiểm tra dữ liệu.
+2025-04-01 01:54:37,832 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:54:38,901 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:54:40,067 - INFO - Test Case 28 PASS: test_enter_en_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:54:54,177 - INFO - Bắt đầu Test Case 29: Nhập 'Từ khóa meta' tab English -> Kiểm tra dữ liệu.
+2025-04-01 01:55:00,627 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:55:01,714 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:55:02,905 - INFO - Test Case 29 PASS: test_enter_en_meta_keyword_and_verify | Expected: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:55:17,655 - INFO - Bắt đầu Test Case 30: Nhập 'Mô tả' tab English -> Kiểm tra dữ liệu.
+2025-04-01 01:55:24,174 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:55:25,247 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:55:26,429 - INFO - Test Case 30 PASS: test_enter_en_description_and_verify | Expected: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:55:41,244 - INFO - Bắt đầu Test Case 31: Nhập 'Meta Description' tab English -> Kiểm tra dữ liệu.
+2025-04-01 01:55:47,665 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:55:48,750 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:55:50,028 - INFO - Test Case 31 PASS: test_enter_en_meta_description_and_verify | Expected: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 01:56:04,076 - INFO - Bắt đầu Test Case 32: Click vào hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-04-01 01:56:10,933 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:56:12,050 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:56:13,111 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-04-01 01:56:13,134 - INFO - Test Case 32 PASS: test_click_en_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-04-01 01:56:48,077 - INFO - Bắt đầu Test Case 33: Click vào nut 'Upload' hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-04-01 01:56:54,516 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:56:55,642 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:56:56,721 - INFO - Test Case 33 PASS: test_click_en_upload_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-04-01 01:57:12,401 - INFO - Bắt đầu Test Case 34: Click tab Browser -> Chọn ảnh -> Click Upload -> Kiểm tra ảnh hiển thị tab English.
+2025-04-01 01:57:19,109 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:57:20,196 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:57:25,756 - INFO - Test Case 34 PASS: test_upload_en_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS
+2025-04-01 01:57:40,426 - INFO - Bắt đầu Test Case 35: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh, sau đó click nút xóa ảnh tab English.
+2025-04-01 01:57:46,698 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:57:47,801 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:57:55,340 - INFO - Test Case 35 PASS: test_check_en_delete_button_before_and_after_upload | Expected: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Actual: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Status: PASS
+2025-04-01 01:58:09,713 - INFO - Bắt đầu Test Case 36: Không chọn ảnh và click 'Upload', kiểm tra nút 'Xóa ảnh' tab English.
+2025-04-01 01:58:15,989 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:58:17,097 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:58:17,901 - ERROR - Test Case 36 FAIL: test_en_upload_without_selecting_image | Expected: Nút 'Xóa ảnh' không xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Actual: Nút 'Xóa ảnh' xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Status: FAIL
+2025-04-01 01:58:32,630 - INFO - Bắt đầu Test Case 37: Nhập 255 ký tự vào ô 'Loại bài viết' (English) và kiểm tra thông báo lỗi.
+2025-04-01 01:58:39,468 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:58:40,544 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:58:43,456 - INFO - Test Case 37 PASS: test_en_article_type_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Status: PASS
+2025-04-01 01:59:14,957 - INFO - Bắt đầu Test Case 38: Nhập dữ liệu vào ô 'Loại bài viết' (English) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-04-01 01:59:21,398 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:59:22,509 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:59:26,238 - INFO - Test Case 38 PASS: test_en_article_type_clear_and_check_error | Expected: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Actual: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Status: PASS
+2025-04-01 01:59:40,836 - INFO - Bắt đầu Test Case 39: Nhập 255 ký tự vào ô 'Duong dan' (English) và kiểm tra thông báo lỗi.
+2025-04-01 01:59:47,455 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 01:59:48,558 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 01:59:51,620 - INFO - Test Case 39 PASS: test_en_article_link_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'. | Status: PASS
+2025-04-01 02:00:05,972 - INFO - Bắt đầu Test Case 40: Nhập 255 ký tự vào ô 'Mô tả ngắn' (English) và kiểm tra thông báo lỗi.
+2025-04-01 02:00:12,438 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 02:00:13,519 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 02:00:16,147 - INFO - Test Case 40 PASS: test_en_short_description_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Status: PASS
+2025-04-01 02:00:30,628 - INFO - Bắt đầu Test Case 41: Nhập 101 ký tự vào ô 'Meta Keyword' (English) và kiểm tra thông báo lỗi.
+2025-04-01 02:00:37,103 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 02:00:38,173 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 02:00:40,575 - INFO - Test Case 41 PASS: test_en_meta_keyword_101_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Status: PASS
+2025-04-01 02:00:55,232 - INFO - Bắt đầu Test Case 42: Nhập 501 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.
+2025-04-01 02:01:01,440 - INFO - Đã chuyển sang tab 'English'.
+2025-04-01 02:01:02,528 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-01 02:01:19,847 - INFO - Bắt đầu Test Case 43: Click dropdown 'Status' và kiểm tra dropdown có mở không.
+2025-04-01 02:01:25,114 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 02:01:27,799 - INFO - Đã click vào dropdown 'Status'.
+2025-04-01 02:01:27,842 - INFO - Test Case 43 PASS: test_click_status_dropdown_and_verify | Expected: Dropdown 'Status' mở thành công (tìm thấy 'Chờ xử lý' trên trang). | Actual: Dropdown 'Status' mở thành công (tìm thấy 'Chờ xử lý' trên trang). | Status: PASS
+2025-04-01 02:02:02,769 - INFO - Bắt đầu Test Case 44: Nhập giá trị vào ô 'Thu tu sap xep' và kiểm tra thông báo lỗi.
+2025-04-01 02:02:08,315 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 02:02:10,985 - INFO - Đã nhập '5' vào ô 'Thứ tự sắp xếp'.
+2025-04-01 02:02:13,044 - INFO - Đã xóa nội dung trong ô 'Thứ tự sắp xếp'.
+2025-04-01 02:02:13,077 - ERROR - Test Case 44 FAIL: test_sort_order_validation | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Thứ tự sắp xếpp'. | Actual: Thông báo lỗi không xuất hiện! | Status: FAIL
+2025-04-01 02:02:27,690 - INFO - Bắt đầu Test Case 45: Nhập ký tự chữ vào ô 'Sort Order' và kiểm tra không hiển thị.
+2025-04-01 02:02:32,827 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 02:02:35,664 - INFO - Đã nhập 'abc' vào ô 'Sort Order'.
+2025-04-01 02:02:35,683 - INFO - Test Case 45 PASS: test_sort_order_rejects_text | Expected: Không có giá trị nào hiển thị trong ô 'Sort Order' khi nhập chữ. | Actual: Không có giá trị nào hiển thị trong ô 'Sort Order' khi nhập chữ. | Status: PASS
+2025-04-01 02:02:50,078 - INFO - Bắt đầu Test Case 46: Nhập quá 7 ký tự số vào ô 'Sort Order' và kiểm tra thông báo lỗi.
+2025-04-01 02:02:56,702 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 02:02:58,821 - INFO - Đã nhập '12345678' vào ô 'Sort Order'.
+2025-04-01 02:02:58,848 - ERROR - Test Case 46 FAIL: test_sort_order_exceeds_max_length | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Sort Order không quá 7 ký tự số'. | Actual: Thông báo lỗi không xuất hiện hoac hien thi sai! | Status: FAIL
+2025-04-01 02:03:13,769 - INFO - Bắt đầu Test Case 47: Click dropdown 'Father Type' và kiểm tra dropdown có mở không.
+2025-04-01 02:03:19,260 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 02:03:21,936 - INFO - Đã click vào dropdown 'Father Type'.
+2025-04-01 02:03:22,008 - INFO - Test Case 47 PASS: test_click_father_type_dropdown_and_verify | Expected: Dropdown 'Father Type' mở thành công (tìm thấy 'Lĩnh vực kinh doanh' trên trang). | Actual: Dropdown 'Father Type' mở thành công (tìm thấy 'Lĩnh vực kinh doanh' trên trang). | Status: PASS
+2025-04-01 02:03:36,632 - INFO - Bắt đầu Test Case 48: Click dropdown 'Banner Set' và kiểm tra dropdown có mở không.
+2025-04-01 02:03:41,874 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 02:03:44,636 - INFO - Đã click vào dropdown 'Banner Set'.
+2025-04-01 02:03:44,686 - INFO - Test Case 48 PASS: test_click_banner_set_dropdown_and_verify | Expected: Dropdown 'Banner Set' mở thành công (tìm thấy 'Banner icon' trên trang). | Actual: Dropdown 'Banner Set' mở thành công (tìm thấy 'Banner icon' trên trang). | Status: PASS
+2025-04-01 02:04:15,136 - INFO - Bắt đầu Test Case 49: Nhập loại bài viết, click nút 'Lưu' và kiểm tra đường dẫn có hiển thị loại bài viết vừa tạo.
+2025-04-01 02:04:21,440 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-01 02:04:23,575 - INFO - Đã nhấn nút 'Lưu'.
+2025-04-01 02:04:25,631 - INFO - Test Case 49 PASS: test_save_and_check_article_type | Expected: Chuyển hướng về trang danh sách và hiển thị đúng loại bài viết: 'Bài viết thử nghiệm'. | Actual: Chuyển hướng về trang danh sách và hiển thị đúng loại bài viết: 'Bài viết thử nghiệm'. | Status: PASS
+2025-04-01 02:04:39,824 - INFO - Bắt đầu Test Case 50: Nhấn nút 'Lưu' và 'Lưu và Tiếp tục', kiểm tra trang có chứa thông tin 'Chỉnh sửa'.
+2025-04-01 02:04:46,105 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-01 02:04:49,212 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-01 02:04:49,833 - INFO - Test Case 50 PASS: test_save_and_continue_check_edit | Expected: Trang đã chuyển sang trạng thái chỉnh sửa sau khi nhấn 'Lưu và Tiếp tục'. | Actual: Trang đã chuyển sang trạng thái chỉnh sửa sau khi nhấn 'Lưu và Tiếp tục'. | Status: PASS

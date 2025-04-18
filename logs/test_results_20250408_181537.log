@@ -1,0 +1,8 @@
+2025-04-08 18:15:46,637 - INFO - Bắt đầu Test Case 29: Nhập 'Từ khóa meta' tab English -> Kiểm tra dữ liệu.
+2025-04-08 18:15:52,402 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 18:15:58,520 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 18:16:04,332 - INFO - Test Case 20 PASS: test_enter_en_meta_keyword_and_verify | Expected: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 18:16:18,191 - INFO - Bắt đầu Test Case 31: Nhập 'Meta Description' tab English -> Kiểm tra dữ liệu.
+2025-04-08 18:16:23,382 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 18:16:29,498 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 18:16:35,388 - INFO - Test Case 21 PASS: test_enter_en_meta_description_and_verify | Expected: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Status: PASS

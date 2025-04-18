@@ -1,0 +1,54 @@
+2025-04-02 23:19:37,255 - INFO - Bắt đầu Test Case 73: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) sau đó xóa 1 ký tự và kiểm tra thông báo lỗi.
+2025-04-02 23:19:45,151 - INFO - Đã nhập 255 ký tự vào ô 'Loại bài viết'.
+2025-04-02 23:19:45,208 - INFO - Đã kiểm tra thông báo lỗi khi nhập 255 ký tự.
+2025-04-02 23:19:47,245 - INFO - Đã xóa ký tự cuối cùng trong ô 'Loại bài viết'.
+2025-04-02 23:19:52,374 - INFO - Test Case 73 PASS: test_vi_article_type_255_chars_and_remove_last | Expected: Thông báo lỗi đã được ẩn đi. | Actual: Thông báo lỗi đã được ẩn đi. | Status: PASS
+2025-04-02 23:20:06,401 - INFO - Bắt đầu Test Case 74: Nhập dữ liệu vào ô 'Loại bài viết' (Tiếng Việt), sau đó xóa và kiểm tra thông báo lỗi.
+2025-04-02 23:20:12,765 - INFO - Đã nhập 'Bài viết test' vào ô 'Loại bài viết'.
+2025-04-02 23:20:15,065 - INFO - Đã xóa nội dung trong ô 'Loại bài viết'.
+2025-04-02 23:20:15,087 - INFO - Đã kiểm tra thông báo lỗi khi ô 'Loại bài viết' bị xóa.
+2025-04-02 23:20:16,168 - INFO - Đã nhập lại 'Bài viết test' vào ô 'Loại bài viết'.
+2025-04-02 23:20:21,346 - INFO - Test Case 74 PASS: test_vi_article_type_clear_and_check_error_and_retype | Expected: Thông báo lỗi đã được ẩn đi. | Actual: Thông báo lỗi đã được ẩn đi. | Status: PASS
+2025-04-02 23:20:35,034 - INFO - Bắt đầu Test Case 75: Nhập 255 ký tự vào ô 'Đường dẫn' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+2025-04-02 23:20:42,837 - INFO - Đã nhập 255 ký tự vào ô 'Đường dẫn'.
+2025-04-02 23:20:42,859 - INFO - Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập đủ 255 ký tự.
+2025-04-02 23:20:42,896 - INFO - Đã xóa ký tự cuối cùng khỏi ô 'Đường dẫn'.
+2025-04-02 23:20:48,039 - INFO - Test Case 75 PASS: test_vi_article_link_255_chars_and_remove_last | Expected: Thông báo lỗi đã được ẩn đi. | Actual: Thông báo lỗi đã được ẩn đi. | Status: PASS
+2025-04-02 23:21:02,106 - INFO - Bắt đầu Test Case 76: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+2025-04-02 23:21:09,990 - INFO - Đã nhập 201 ký tự vào ô 'Mô tả ngắn'.
+2025-04-02 23:21:10,015 - INFO - Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 200 ký tự.
+2025-04-02 23:21:10,066 - INFO - Đã xóa ký tự cuối cùng khỏi ô 'Mô tả ngắn'.
+2025-04-02 23:21:15,161 - INFO - Test Case 76 PASS: test_vi_short_description_201_chars_and_remove_last | Expected: Thông báo lỗi đã được ẩn đi. | Actual: Thông báo lỗi đã được ẩn đi. | Status: PASS
+2025-04-02 23:21:29,052 - INFO - Bắt đầu Test Case 83: Nhập 101 ký tự vào ô 'Meta Keyword' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+2025-04-02 23:21:35,282 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 23:21:36,344 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 23:21:38,648 - INFO - Đã nhập 101 ký tự vào ô 'Meta Keyword'.
+2025-04-02 23:21:38,673 - INFO - Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 100 ký tự.
+2025-04-02 23:21:52,671 - INFO - Bắt đầu Test Case 78: Nhập 501 ký tự vào ô 'Meta Description' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+2025-04-02 23:21:58,993 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 23:22:00,080 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 23:22:03,738 - INFO - Đã nhập 501 ký tự vào ô 'Meta Description'.
+2025-04-02 23:22:03,788 - INFO - Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 500 ký tự.
+2025-04-02 23:22:39,153 - INFO - Bắt đầu Test Case 73: Nhập 255 ký tự vào ô 'Loại bài viết' (English) sau đó xóa 1 ký tự và kiểm tra thông báo lỗi.
+2025-04-02 23:22:45,516 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 23:22:46,585 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 23:22:49,286 - INFO - Đã nhập 255 ký tự vào ô 'Loại bài viết'.
+2025-04-02 23:22:49,313 - INFO - Đã kiểm tra thông báo lỗi khi nhập 255 ký tự.
+2025-04-02 23:23:03,355 - INFO - Bắt đầu Test Case 80: Nhập dữ liệu vào ô 'Loại bài viết' (English), sau đó xóa và kiểm tra thông báo lỗi.
+2025-04-02 23:23:09,518 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 23:23:10,608 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 23:23:11,699 - INFO - Đã nhập 'Bài viết test' vào ô 'Loại bài viết'.
+2025-04-02 23:23:13,966 - INFO - Đã xóa nội dung trong ô 'Loại bài viết'.
+2025-04-02 23:23:14,013 - INFO - Đã kiểm tra thông báo lỗi khi ô 'Loại bài viết' bị xóa.
+2025-04-02 23:23:15,112 - INFO - Đã nhập lại 'Bài viết test' vào ô 'Loại bài viết'.
+2025-04-02 23:23:20,194 - INFO - Test Case 80 PASS: test_en_article_type_clear_and_check_error_and_retype | Expected: Thông báo lỗi đã được ẩn đi. | Actual: Thông báo lỗi đã được ẩn đi. | Status: PASS
+2025-04-02 23:23:34,454 - INFO - Bắt đầu Test Case 81: Nhập 255 ký tự vào ô 'Đường dẫn' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+2025-04-02 23:23:41,016 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 23:23:42,125 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 23:23:44,869 - INFO - Đã nhập 255 ký tự vào ô 'Đường dẫn'.
+2025-04-02 23:23:44,908 - INFO - Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập đủ 255 ký tự.
+2025-04-02 23:23:59,479 - INFO - Bắt đầu Test Case 82: Nhập 201 ký tự vào ô 'Mô tả ngắn' (English), sau đó xóa ký tự cuối cùng và kiểm tra thông báo lỗi.
+2025-04-02 23:24:05,808 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 23:24:06,909 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 23:24:09,996 - INFO - Đã nhập 201 ký tự vào ô 'Mô tả ngắn'.
+2025-04-02 23:24:10,036 - INFO - Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 200 ký tự.

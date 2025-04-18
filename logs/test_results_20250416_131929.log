@@ -1,0 +1,4 @@
+2025-04-16 13:19:37,620 - INFO - Bắt đầu Test Case 2: Verify khi nhập Tên chi nhánh ở tab Tiếng Việt.
+2025-04-16 13:19:41,061 - INFO - Test Case 2 PASS: test_enter_vi_location_name | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-16 13:19:55,102 - INFO - Bắt đầu Test Case 2: Verify khi nhập Tên chi nhánh ở tab English.
+2025-04-16 13:20:09,725 - ERROR - Test Case 5 FAIL: test_enter_en_location_name | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống không hiển thị thông tin vừa nhập. | Status: FAIL

@@ -1,0 +1,2 @@
+2025-04-14 19:51:10,881 - INFO - Bắt đầu Test Case 9:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-14 19:51:12,452 - INFO - Test Case 9 PASS: test_click_pagination_dropdown_and_choose_number_of_page | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS

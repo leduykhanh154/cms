@@ -1,0 +1,4 @@
+2025-03-31 17:29:49,380 - INFO - Bắt đầu Test Case 23: Nhập 255 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 17:29:57,173 - INFO - Test Case 23 PASS: test_vi_short_description_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Status: PASS
+2025-03-31 17:30:11,007 - INFO - Bắt đầu Test Case 24: Nhập 101 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 17:30:18,474 - INFO - Test Case 24 PASS: test_vi_meta_keyword_101_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Status: PASS

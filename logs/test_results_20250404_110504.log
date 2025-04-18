@@ -1,0 +1,7 @@
+2025-04-04 11:05:14,514 - INFO - Bắt đầu Test Case 21: Verify có thể nhấn vào icon '...' rồi chọn nút 'Xóa'.
+2025-04-04 11:05:17,295 - INFO - Ngày tạo trước khi xóa: 04/04/2025 11:04
+2025-04-04 11:05:17,397 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 11:05:18,648 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-04-04 11:05:18,980 - INFO - Đã nhấn vào nút 'Có'.
+2025-04-04 11:05:21,018 - INFO - Ngày tạo sau khi xóa: 04/04/2025 11:04
+2025-04-04 11:05:21,020 - ERROR - Test Case 21 FAIL: Dữ liệu không thay đổi sau khi xóa. | Status: FAIL

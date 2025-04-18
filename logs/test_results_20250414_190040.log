@@ -1,0 +1,14 @@
+2025-04-14 19:00:50,815 - INFO - Bắt đầu Test Case 2: Verify khi nhấn dropdown 'Tỉnh/Thành phố' và chọn Tỉnh/Thành phố đầu tiên.
+2025-04-14 19:00:53,497 - INFO - Test Case 2 PASS: test_click_province_dropdown_and_choose_province | Expected: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Actual: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Status: PASS
+2025-04-14 19:01:09,507 - INFO - Bắt đầu Test Case 3: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-14 19:01:16,175 - ERROR - Test Case 3 FAIL: test_click_district_dropdown | Expected: Hệ thống mở dropdown chỉ có giá trị mặc định. | Actual: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Status: FAIL
+2025-04-14 19:01:32,798 - INFO - Bắt đầu Test Case 4: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-14 19:01:35,129 - INFO - Test Case 4 PASS: test_click_district_dropdown_after_choose_province | Expected: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Actual: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Status: PASS
+2025-04-14 19:01:50,921 - INFO - Bắt đầu Test Case 5: Verify khi nhấn dropdown 'Huyện/Quận'và chọn Huyện/Quận đầu tiên.
+2025-04-14 19:01:53,231 - INFO - Test Case 5 PASS: test_click_district_dropdown_and_choose_district | Expected: Hệ thống hiển thị Huyện/Quận được chọn. | Actual: Hệ thống hiển thị Huyện/Quận được chọn. | Status: PASS
+2025-04-14 19:02:08,257 - INFO - Bắt đầu Test Case 6:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-14 19:02:10,180 - ERROR - Test Case 6 FAIL: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống không hiển thị trạng thái được chọn. | Status: FAIL
+2025-04-14 19:02:25,243 - INFO - Bắt đầu Test Case 7:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-14 19:02:26,853 - ERROR - Test Case 7 FAIL: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống không hiển thị trạng thái được chọn. | Status: FAIL
+2025-04-14 19:03:02,515 - INFO - Bắt đầu Test Case 8:  Verify click nút 'Tải lại'.
+2025-04-14 19:03:06,541 - INFO - Test Case 8 PASS: test_click_reload_button_after_select | Expected: Hệ thống đặt lại các bộ lọc. | Actual: Hệ thống đặt lại các bộ lọc. | Status: PASS

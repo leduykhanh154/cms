@@ -1,0 +1,2 @@
+2025-04-02 16:38:39,530 - INFO - Bắt đầu Test Case 55: Nhập 199 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 16:38:52,952 - INFO - Test Case 55 PASS: test_vi_short_description_199_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS

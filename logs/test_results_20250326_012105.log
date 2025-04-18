@@ -1,0 +1,2 @@
+2025-03-26 01:21:14,518 - INFO - Bắt đầu Test Case 9: Verify khi nhấn vào nút 'Thao tác'.
+2025-03-26 01:21:17,054 - INFO - Test Case 9 PASS: test_click_operate_button | Expected: Nút 'Thao tác' được nhấn thành công. | Actual: Nút 'Thao tác' được nhấn thành công. | Status: PASS

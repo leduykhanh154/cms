@@ -1,0 +1,2 @@
+2025-03-26 01:04:21,173 - INFO - Bắt đầu Test Case 4: Verify khi nhấn vào Datepicker 'Từ ngày'.
+2025-03-26 01:04:23,711 - INFO - Test Case PASS 4: test_click_datepicker_from | Expected: Datepicker 'Từ ngày' được nhấn thành công. | Actual: Datepicker 'Từ ngày' được nhấn thành công. | Status: PASS

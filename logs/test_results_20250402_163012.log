@@ -1,0 +1,2 @@
+2025-04-02 16:30:21,387 - INFO - Bắt đầu Test Case 23: Nhập 253 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 16:30:34,250 - INFO - Test Case 23 PASS: test_vi_article_link_253_chars | Expected: Thông báo lỗi không xuất hiện! | Actual: Thông báo lỗi không xuất hiện! | Status: PASS

@@ -1,0 +1,9 @@
+2025-03-27 17:25:00,068 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'No'.
+2025-03-27 17:25:03,142 - INFO - Đã chọn bài viết đầu tiên.
+2025-03-27 17:25:03,211 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 17:25:04,303 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 17:25:05,325 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-03-27 17:25:05,414 - INFO - Đã nhấn vào nút 'No'.
+2025-03-27 17:25:05,995 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'No'.
+2025-03-27 17:25:06,013 - INFO - Bài viết đầu tiên không thay đổi sau khi hủy xóa.
+2025-03-27 17:25:06,013 - INFO - Test Case 20 | Expected: Popup đã đóng, loại bài viết vẫn còn. | Actual: Popup đã đóng, loại bài viết vẫn còn. | Status: PASS

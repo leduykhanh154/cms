@@ -1,0 +1,3 @@
+2025-04-08 16:58:28,816 - INFO - Bắt đầu Test Case 11: Nhập đường dẫn tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-08 16:58:37,543 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 16:58:38,036 - ERROR - Test Case 11 FAIL: test_enter_vi_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị hiển thị không đúng: 'bai-viet-thu-nghiem-2' | Status: FAIL

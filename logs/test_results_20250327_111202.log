@@ -1,0 +1,4 @@
+2025-03-27 11:12:11,195 - INFO - Bắt đầu Test Case 17: Verify có thể nhấn vào icon '...' rồi chọn menu-item 'Chi tiết'.
+2025-03-27 11:12:14,018 - INFO - Đã nhấn vào icon '...' thành công.
+2025-03-27 11:12:15,634 - INFO - Đã nhấn vào menu-item 'Chi tiết' thành công.
+2025-03-27 11:12:15,639 - INFO - Test Case 17 PASS: test_click_menu_and_detail_button | Expected: Hệ thống đã nhấn vào 'Chi tiết' và chuyển hướng đến https://mpire-cms-demo.mpire.asia/cms/category/update/67e3b6b80abc6. | Actual: Hệ thống đã nhấn vào 'Chi tiết' và chuyển hướng đến https://mpire-cms-demo.mpire.asia/cms/category/update/67e3b6b80abc6. | Status: PASS

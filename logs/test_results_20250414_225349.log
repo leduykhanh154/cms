@@ -1,0 +1,2 @@
+2025-04-14 22:53:59,612 - INFO - Bắt đầu Test Case 12: Verify khi click chọn checkbox và click nút 'Thao tác', chọn 'Xóa'.
+2025-04-14 22:54:01,383 - INFO - Test Case 12 PASS: test_click_delete_button_after_click_checkbox | Expected: Hiển thị popup 'Xác nhận xóa' với đúng nội dung. | Actual: Hiển thị popup 'Xác nhận xóa' với đúng nội dung. | Status: PASS

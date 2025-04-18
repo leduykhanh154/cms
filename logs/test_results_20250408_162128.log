@@ -1,0 +1,8 @@
+2025-04-08 16:21:39,609 - INFO - Bắt đầu Test Case 8: Nhập loại bài viết, click nút 'Lưu' và kiểm tra đường dẫn có hiển thị loại bài viết vừa tạo.
+2025-04-08 16:21:45,298 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-08 16:21:47,427 - INFO - Đã nhấn nút 'Lưu'.
+2025-04-08 16:21:49,506 - INFO - Test Case 8 PASS: test_save_and_check_article_type | Expected: Chuyển hướng về trang danh sách và hiển thị đúng loại bài viết: 'Bài viết thử nghiệm'. | Actual: Chuyển hướng về trang danh sách và hiển thị đúng loại bài viết: 'Bài viết thử nghiệm'. | Status: PASS
+2025-04-08 16:22:03,886 - INFO - Bắt đầu Test Case 9: Nhấn nút 'Lưu' và 'Lưu và Tiếp tục', kiểm tra trang có chứa thông tin 'Chỉnh sửa'.
+2025-04-08 16:22:10,342 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-08 16:22:13,453 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 16:22:14,015 - INFO - Test Case 9 PASS: test_save_and_continue_check_edit | Expected: O lai trang chỉnh sửa sau khi nhấn 'Lưu và Tiếp tục'. | Actual: O lai trang chỉnh sửa sau khi nhấn 'Lưu và Tiếp tục'. | Status: PASS

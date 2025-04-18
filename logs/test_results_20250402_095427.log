@@ -1,0 +1,4 @@
+2025-04-02 09:54:36,554 - INFO - Bắt đầu Test Case 42: Nhập 501 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.
+2025-04-02 09:54:43,788 - INFO - Đã chuyển sang tab 'English'.
+2025-04-02 09:54:44,892 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-02 09:54:48,478 - INFO - Test Case 42 PASS: test_en_meta_description_501_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 500 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 500 ký tự'. | Status: PASS

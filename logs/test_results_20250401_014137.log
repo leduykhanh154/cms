@@ -1,0 +1,4 @@
+2025-04-01 01:41:46,255 - INFO - Bắt đầu Test Case 50: Nhấn nút 'Lưu' và 'Lưu và Tiếp tục', kiểm tra trang có chứa thông tin 'Chỉnh sửa'.
+2025-04-01 01:41:52,805 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-01 01:41:55,958 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-01 01:41:56,550 - INFO - Test Case 50 PASS: test_save_and_continue_check_edit | Expected: Trang đã chuyển sang trạng thái chỉnh sửa sau khi nhấn 'Lưu và Tiếp tục'. | Actual: Trang đã chuyển sang trạng thái chỉnh sửa sau khi nhấn 'Lưu và Tiếp tục'. | Status: PASS

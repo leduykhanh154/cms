@@ -1,0 +1,2 @@
+2025-03-27 09:45:50,328 - INFO - Bắt đầu Test Case 16: Verify khi chọn bài viết -> nhấn 'Thao tác' -> nhấn 'Xóa'.
+2025-03-27 09:45:56,429 - INFO - Test Case 16 PASS: test_select_and_delete_article | Expected: Hộp thoại xác nhận cảnh báo xuất hiện. | Actual: Hộp thoại xác nhận cảnh báo xuất hiện. | Status: PASS

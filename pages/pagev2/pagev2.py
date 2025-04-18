@@ -65,22 +65,23 @@ class PageV2:
         return self
     
     # Hàm nhấn vào nút 'Tạo mới' để tạo trang mới
-    def click_create_new_button(self):
+    def click_new_article_type(self):
         try:
-            create_new_button = self.wait.until(EC.element_to_be_clickable(self.create_new_button))
-            self.driver.execute_script("arguments[0].click();", create_new_button)
-            logging.info("Đã nhấn nút Tạo mới.")
+            new_article_type_button = self.wait.until(
+                EC.element_to_be_clickable(self.locators.NEW_ARTICLE_TYPE_BUTTON)
+            )
 
-            self.wait.until(EC.url_to_be(self.page_v2_create_url))
+            # Dùng JavaScript để click nếu cần
+            self.driver.execute_script("arguments[0].click();", new_article_type_button)
+            logging.info("Đã nhấn vào nút 'Thêm loại bài viết mới' bằng JavaScript.")
 
-            if self.driver.current_url == self.page_v2_create_url:
-                logging.info(f"Chuyển hướng thành công đến {self.page_v2_create_url}")
-                return True
-            else:
-                logging.warning(f"Chuyển hướng không thành công. URL hiện tại: {self.driver.current_url}")
-                return False
-        except Exception as e:
-            logging.error(f"Lỗi khi nhấn nút Tạo mới hoặc chuyển hướng: {e}", exc_info=True)
+            expected_url = "https://mpire-cms-demo.mpire.asia/cms/article-types/create"
+            self.wait.until(EC.url_to_be(expected_url))
+            logging.info("Trang 'Thêm loại bài viết mới' đã load thành công.")
+            return True
+
+        except TimeoutException:
+            logging.error("Trang 'Thêm loại bài viết mới' không tải được!")
             return False
     
     # Hàm nhập tiêu đề trang

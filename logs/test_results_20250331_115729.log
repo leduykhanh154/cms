@@ -1,0 +1,2 @@
+2025-03-31 11:57:38,732 - INFO - Bắt đầu Test Case 18: Upload hình ảnh -> Kiểm tra nút Xóa ảnh.
+2025-03-31 11:57:50,796 - INFO - Test Case 18 PASS: test_upload_image_and_check_delete_button | Expected: Nút 'Xóa ảnh' hiển thị đúng sau khi tải ảnh lên. | Actual: Nút 'Xóa ảnh' hiển thị đúng sau khi tải ảnh lên. | Status: PASS

@@ -1,0 +1,2 @@
+2025-04-14 18:54:16,021 - INFO - Bắt đầu Test Case 2: Verify khi nhấn dropdown 'Tỉnh/Thành phố' và chọn Tỉnh/Thành phố đầu tiên.
+2025-04-14 18:54:18,483 - INFO - Test Case 2 PASS: test_click_province_dropdown_and_choose_province | Expected: Hệ thống hiển thị Tỉnh/Thành phố được chọn. | Actual: True | Status: PASS

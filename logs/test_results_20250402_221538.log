@@ -1,0 +1,2 @@
+2025-04-02 22:15:50,707 - INFO - Bắt đầu Test Case 76: Nhập 201 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 22:16:04,725 - INFO - Test Case 76 PASS: test_vi_short_description_201_chars_and_remove_last | Expected: Thông báo lỗi da an di. | Actual: Thông báo lỗi da an di. | Status: PASS

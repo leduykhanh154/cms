@@ -1,0 +1,2 @@
+2025-03-31 14:05:09,646 - INFO - Bắt đầu Test Case 19: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh.
+2025-03-31 14:05:32,930 - INFO - Test Case 19 PASS: Nút 'Xóa ảnh' xuất hiện sau khi upload và ẩn đi sau khi xóa ảnh thành công.

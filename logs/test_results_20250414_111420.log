@@ -1,0 +1,4 @@
+2025-04-14 11:14:30,130 - INFO - Bắt đầu Test Case 1: Truy cập vào trang Danh sách chi nhánh.
+2025-04-14 11:14:31,635 - INFO - Test Case 1 PASS: test_click_location_menu | Expected: Truy cập thành công, tiêu đề 'Danh sách chi nhánh' được hiển thị. | Actual: Truy cập thành công, tiêu đề 'Danh sách chi nhánh' được hiển thị. | Status: PASS
+2025-04-14 11:14:46,320 - INFO - Bắt đầu Test Case 2: Truy cập vào trang Danh sách chi nhánh.
+2025-04-14 11:14:48,627 - INFO - Test Case 2 PASS: test_click_home_breadcrumb | Expected: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Actual: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Status: PASS

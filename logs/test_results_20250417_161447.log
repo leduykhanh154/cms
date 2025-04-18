@@ -1,0 +1,6 @@
+2025-04-17 16:14:55,906 - INFO - Bắt đầu Test Case 21:  Verify click field 'Avatar' và click nút 'Upload'.
+2025-04-17 16:15:00,522 - ERROR - Test Case 21 FAIL: test_click_field_avatar_and_click_upload | Expected: Không hiển thị nút 'Xóa ảnh'. | Actual: Hệ thống hiển thị nút 'Xóa ảnh'. | Status: FAIL
+2025-04-17 16:15:15,535 - INFO - Bắt đầu Test Case 22:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-17 16:15:21,885 - ERROR - Test Case 22 FAIL: test_click_upload_after_choose_image_from_system | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống không đóng popup hoặc không hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: FAIL
+2025-04-17 16:15:35,926 - INFO - Bắt đầu Test Case 23:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-17 16:15:47,365 - INFO - Test Case 23 PASS: test_click_delete_after_upload_image | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: PASS

@@ -1,0 +1,2 @@
+2025-04-17 14:15:02,995 - INFO - Bắt đầu Test Case 13: Verify khi nhập FAX ở tab 'Thông tin chung'.
+2025-04-17 14:15:07,441 - INFO - Test Case 13 PASS: test_enter_phone_number | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS

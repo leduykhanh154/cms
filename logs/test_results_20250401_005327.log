@@ -1,0 +1,4 @@
+2025-04-01 00:53:37,827 - INFO - Bắt đầu Test Case 46: Nhập quá 7 ký tự số vào ô 'Sort Order' và kiểm tra thông báo lỗi.
+2025-04-01 00:53:44,536 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 00:53:46,671 - INFO - Đã nhập '12345678' vào ô 'Sort Order'.
+2025-04-01 00:53:46,701 - ERROR - Test Case 46 FAIL: test_sort_order_exceeds_max_length | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Sort Order không quá 7 ký tự số'. | Actual: Thông báo lỗi không xuất hiện! | Status: FAIL

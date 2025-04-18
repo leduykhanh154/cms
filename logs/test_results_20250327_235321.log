@@ -1,0 +1,2 @@
+2025-03-27 23:53:29,813 - INFO - Bắt đầu Test Case 11: Nhập loại bài viết tiếng Việt -> Kiểm tra dữ liệu.
+2025-03-27 23:53:36,071 - INFO - Test Case 11 PASS: test_enter_vi_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS

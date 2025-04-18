@@ -1,0 +1,6 @@
+2025-04-03 00:02:31,062 - INFO - Bắt đầu Test Case 85: Nhập quá 6 ký tự số vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.
+2025-04-03 00:02:37,463 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-03 00:02:39,548 - INFO - Đã nhập '1234567' vào ô 'Thứ tự sắp xếp'.
+2025-04-03 00:02:39,570 - INFO - Đã kiểm tra sự xuất hiện của thông báo lỗi khi nhập quá 6 ký tự vào ô 'Thứ tự sắp xếp'.
+2025-04-03 00:02:39,631 - INFO - Đã xóa ký tự cuối cùng khỏi ô 'Thứ tự sắp xếp'.
+2025-04-03 00:02:44,827 - INFO - Test Case 85 PASS: test_sort_order_exceeds_max_length_and_remove_last | Expected: Thông báo lỗi đã được ẩn đi. | Actual: Thông báo lỗi đã được ẩn đi. | Status: PASS

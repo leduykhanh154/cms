@@ -1,0 +1,5 @@
+2025-03-28 01:33:49,233 - INFO - Bắt đầu Test Case 16: Click vào hình ảnh -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-28 01:33:55,526 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-03-28 01:33:55,534 - INFO - Test Case 16 PASS: test_click_vi_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-03-28 01:34:09,498 - INFO - Bắt đầu Test Case 16: Click vào hình ảnh -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-28 01:34:15,702 - INFO - Test Case 17 PASS: test_click_vi_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS

@@ -1,0 +1,2 @@
+2025-04-14 18:04:10,448 - INFO - Bắt đầu Test Case 7:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-14 18:04:13,691 - ERROR - Test Case 7 FAIL: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống không hiển thị trạng thái được chọn. | Status: FAIL

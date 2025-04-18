@@ -1,0 +1,10 @@
+2025-03-27 16:42:42,495 - INFO - Bắt đầu Test Case 20: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Nhấn 'No'.
+2025-03-27 16:42:43,963 - INFO - Text bài viết đầu tiên trước khi xóa: 'Loai bai viet cho xu ly'.
+2025-03-27 16:42:44,037 - INFO - Đã chọn bài viết đầu tiên.
+2025-03-27 16:42:44,098 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 16:42:44,191 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 16:42:44,217 - INFO - Hộp thoại cảnh báo hiển thị đúng.
+2025-03-27 16:42:44,283 - INFO - Đã nhấn vào nút 'No'.
+2025-03-27 16:42:44,820 - INFO - Hộp thoại cảnh báo đã đóng sau khi nhấn 'No'.
+2025-03-27 16:42:44,867 - INFO - Bài viết đầu tiên không thay đổi sau khi hủy xóa.
+2025-03-27 16:42:44,867 - INFO - Test Case 20 PASS: test_select_and_cancel_delete | Expected: Hộp thoại cảnh báo đóng & bài viết đầu tiên không thay đổi sau khi nhấn 'No'. | Status: PASS

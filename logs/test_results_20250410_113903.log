@@ -1,0 +1,4 @@
+2025-04-10 11:39:13,086 - INFO - Bắt đầu Test Case 24: Nhập giá trị vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.
+2025-04-10 11:39:20,538 - INFO - Đã nhập '5' vào ô 'Thứ tự sắp xếp'.
+2025-04-10 11:39:22,623 - INFO - Đã xóa nội dung trong ô 'Thứ tự sắp xếp'.
+2025-04-10 11:39:22,672 - ERROR - Test Case 24 FAIL: test_sort_order_validation | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Thứ tự sắp xếp'. | Actual: Thông báo lỗi không xuất hiện! | Status: FAIL

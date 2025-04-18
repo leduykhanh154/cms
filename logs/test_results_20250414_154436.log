@@ -1,0 +1,2 @@
+2025-04-14 15:44:46,697 - INFO - Bắt đầu Test Case 4: Verify khi nhấn dropdown 'Huyện/Quận' khi chưa chọn Tỉnh/Thành phố.
+2025-04-14 15:44:49,014 - INFO - Test Case 4 PASS: test_click_district_dropdown_after_choose_province | Expected: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Actual: Hệ thống hiện thị Huyện/Quận tương ứng của Tỉnh/Thành phố. | Status: PASS

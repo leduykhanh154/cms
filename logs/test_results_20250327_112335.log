@@ -1,0 +1,3 @@
+2025-03-27 11:23:45,737 - INFO - Bắt đầu Test Case 13: Nhấn vào liên kết đầu tiên và kiểm tra đường dẫn.
+2025-03-27 11:23:49,181 - INFO - Đã nhấn vào liên kết đầu tiên thành công.
+2025-03-27 11:23:49,306 - INFO - Test Case 13 PASS: test_click_first_link | Expected: Hệ thống chuyển hướng đến URL: https://mpire-cms-demo.mpire.asia/cms/category/update/67e3b6b80abc6. | Actual: Hệ thống chuyển hướng đến URL: https://mpire-cms-demo.mpire.asia/cms/category/update/67e3b6b80abc6. | Status: PASS

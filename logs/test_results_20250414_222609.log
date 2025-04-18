@@ -1,0 +1,2 @@
+2025-04-14 22:26:21,096 - INFO - Bắt đầu Test Case 11: Verify khi nhập từ khóa vào thanh tìm kiếm.
+2025-04-14 22:26:22,805 - ERROR - Test Case 11 FAIL: test_enter_search_keyword | Expected: Từ khóa tìm kiếm được nhập và hiển thị. | Actual: Từ khóa tìm kiếm không được nhập hoặc hiển thị. | Status: FAIL

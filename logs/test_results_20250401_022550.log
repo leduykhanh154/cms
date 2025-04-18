@@ -1,0 +1,44 @@
+2025-04-01 02:26:00,987 - INFO - Bắt đầu Test Case 1: Verify khi nhấn vào breadcrumb 'Trang chủ' -> Hệ thống điều hướng về trang chủ thành công.
+2025-04-01 02:26:06,424 - INFO - Test Case 1 PASS: test_click_breadcrumb_home | Expected: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Actual: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Status: PASS
+2025-04-01 02:26:21,178 - INFO - Bắt đầu Test Case 2: Verify có thể nhấn vào 'Danh sách loại bài viết' trên breadcrumb và kiểm tra điều hướng.
+2025-04-01 02:26:27,200 - INFO - Đã nhấn vào breadcrumb 'Danh sách loại bài viết'.
+2025-04-01 02:26:27,208 - INFO - Test Case 2 PASS: test_click_breadcrumb_type_list | Expected: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Actual: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Status: PASS
+2025-04-01 02:26:41,937 - INFO - Bắt đầu Test Case 3: Nhấn vào tab 'Thông tin chung'.
+2025-04-01 02:26:47,556 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-04-01 02:26:48,172 - INFO - Test Case 3 PASS: test_click_tab_general_information_and_check_label | Expected: Tab 'Thong tin chung' duoc hien thi | Actual: Tab 'Thong tin chung' duoc hien thi | Status: PASS
+2025-04-01 02:27:02,201 - INFO - Bắt đầu Test Case 4: Kiểm tra tab 'Thông tin chung' & 'Nội dung chính'.
+2025-04-01 02:27:07,510 - INFO - Đã nhấn vào tab 'Thông tin chung'.
+2025-04-01 02:27:08,123 - INFO - Tab 'Thông tin chung' hiển thị đúng.
+2025-04-01 02:27:08,223 - INFO - Đã nhấn vào tab 'Nội dung chính'.
+2025-04-01 02:27:08,804 - INFO - Tab 'Nội dung chính' hiển thị đúng.
+2025-04-01 02:27:08,804 - INFO - Test Case 4 PASS: test_click_tabs_and_check_labels | Expected: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng. | Actual: Tab 'Thông tin chung' và 'Nội dung chính' hoạt động đúng. | Status: PASS
+2025-04-01 02:27:30,934 - INFO - Bắt đầu Test Case 5: Kiểm tra tab 'English' và nút 'Dịch nội dung'.
+2025-04-01 02:27:36,907 - INFO - Đã nhấn vào nút 'Tạo mới'.
+2025-04-01 02:27:37,017 - INFO - Đã nhấn vào tab 'English'.
+2025-04-01 02:27:37,058 - INFO - Nút 'Dịch nội dung' xuất hiện đúng.
+2025-04-01 02:27:37,058 - INFO - Test Case 5 PASS: test_click_tab_english_and_check_translate_button | Expected: Tab 'English' hoạt động và nút 'Dịch nội dung' hiển thị đúng. | Actual: Tab 'English' hoạt động và nút 'Dịch nội dung' hiển thị đúng. | Status: PASS
+2025-04-01 02:27:57,302 - INFO - Bắt đầu Test Case 6: Kiểm tra tab 'Tiếng Việt'.
+2025-04-01 02:28:02,940 - INFO - Đã nhấn vào tab 'Tiếng Anh'.
+2025-04-01 02:28:02,955 - INFO - Nút 'Dịch nội dung' hiển thị đúng.
+2025-04-01 02:28:03,055 - INFO - Đã nhấn vào tab 'Tiếng Việt'.
+2025-04-01 02:28:03,080 - INFO - Tab 'Tiếng Việt' hiển thị đúng.
+2025-04-01 02:28:03,081 - INFO - Test Case 6 PASS: test_click_tabs_english_vietnamese_and_check_labels | Expected: Tab 'Tiếng Việt' hoạt động đúng. | Actual: Tab 'Tiếng Việt' hoạt động đúng. | Status: PASS
+2025-04-01 02:29:37,064 - INFO - Bắt đầu Test Case 11: Nhập loại bài viết tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 02:29:43,625 - INFO - Test Case 11 PASS: test_enter_vi_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 02:29:57,733 - INFO - Bắt đầu Test Case 12: Nhập đường dẫn tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 02:30:04,203 - INFO - Test Case 12 PASS: test_enter_vi_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 02:30:39,245 - INFO - Bắt đầu Test Case 13: Nhập 'Từ khóa meta' tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 02:30:45,624 - INFO - Test Case 13 PASS: test_enter_vi_meta_keyword_and_verify | Expected: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 02:30:59,848 - INFO - Bắt đầu Test Case 14: Nhập 'Mô tả' tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 02:31:06,440 - INFO - Test Case 14 PASS: test_enter_vi_description_and_verify | Expected: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 02:31:20,660 - INFO - Bắt đầu Test Case 15: Nhập 'Meta Description' tiếng Việt -> Kiểm tra dữ liệu.
+2025-04-01 02:31:27,188 - INFO - Test Case 15 PASS: test_enter_vi_meta_description_and_verify | Expected: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-01 02:31:41,455 - INFO - Bắt đầu Test Case 16: Click vào hình ảnh -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-04-01 02:31:47,648 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-04-01 02:31:47,656 - INFO - Test Case 16 PASS: test_click_vi_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-04-01 02:32:01,583 - INFO - Bắt đầu Test Case 17: Click vào nut 'Upload' hình ảnh -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-04-01 02:32:07,899 - INFO - Test Case 17 PASS: test_click_vi_upload_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-04-01 02:32:22,221 - INFO - Bắt đầu Test Case 18: Click tab Browser -> Chọn ảnh -> Click Upload -> Kiểm tra ảnh hiển thị.
+2025-04-01 02:32:33,567 - INFO - Test Case 18 PASS: test_upload_vi_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS
+2025-04-01 02:33:08,612 - INFO - Bắt đầu Test Case 19: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh, sau đó click nút xóa ảnh.
+2025-04-01 02:33:22,680 - INFO - Test Case 19 PASS: test_check_vi_delete_button_before_and_after_upload | Expected: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Actual: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Status: PASS

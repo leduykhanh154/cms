@@ -1,0 +1,21 @@
+2025-03-31 19:37:30,138 - INFO - Bắt đầu Test Case 31: Click vào hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 19:37:36,605 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:37:37,721 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:37:38,781 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-03-31 19:37:38,836 - INFO - Test Case 31 PASS: test_click_en_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-03-31 19:37:53,411 - INFO - Bắt đầu Test Case 32: Click vào nut 'Upload' hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 19:37:59,815 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:38:00,926 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:38:02,041 - INFO - Test Case 17 PASS: test_click_en_upload_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-03-31 19:38:16,538 - INFO - Bắt đầu Test Case 33: Click tab Browser -> Chọn ảnh -> Click Upload -> Kiểm tra ảnh hiển thị tab English.
+2025-03-31 19:38:23,069 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:38:24,180 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:38:29,739 - INFO - Test Case 33 PASS: test_upload_en_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS
+2025-03-31 19:38:44,768 - INFO - Bắt đầu Test Case 34: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh, sau đó click nút xóa ảnh tab English.
+2025-03-31 19:38:51,438 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:38:52,524 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:39:00,721 - INFO - Test Case 34 PASS: test_check_en_delete_button_before_and_after_upload | Expected: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Actual: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Status: PASS
+2025-03-31 19:39:16,077 - INFO - Bắt đầu Test Case 35: Không chọn ảnh và click 'Upload', kiểm tra nút 'Xóa ảnh' tab English.
+2025-03-31 19:39:22,533 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 19:39:23,614 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 19:39:24,533 - ERROR - Test Case 35 FAIL: test_en_upload_without_selecting_image | Expected: Nút 'Xóa ảnh' không xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Actual: Nút 'Xóa ảnh' xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Status: FAIL

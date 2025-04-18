@@ -1,0 +1,2 @@
+2025-03-26 01:47:14,960 - INFO - Bắt đầu Test Case 12: Verify có thể nhấn vào checkbox 'Select First'.
+2025-03-26 01:47:17,404 - INFO - Test Case 12 PASS: test_click_select_first_checkbox | Expected: Đã nhấn vào checkbox 'Select First'. | Actual: Đã nhấn vào checkbox 'Select First'. | Status: PASS

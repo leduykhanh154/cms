@@ -1,0 +1,2 @@
+2025-04-08 16:34:48,786 - INFO - Bắt đầu Test Case 10: Nhập dữ liệu vào ô 'Loại bài viết' (Tiếng Việt) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-04-08 16:34:56,809 - INFO - Test Case 10 PASS: test_vi_article_type_clear_and_check_error | Expected: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Actual: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Status: PASS

@@ -1,0 +1,4 @@
+2025-03-27 22:12:37,882 - INFO - Bắt đầu Test Case 7: Click 'Tạo Mới' -> Click 'Lưu' -> Kiểm tra lỗi 'Vui lòng nhập loại bài viết'.
+2025-03-27 22:12:50,177 - INFO - Đã nhấn vào nút 'Lưu' mà không nhập dữ liệu.
+2025-03-27 22:12:50,187 - INFO - Thông báo lỗi 'Vui lòng nhập loại bài viết' đã xuất hiện như mong đợi.
+2025-03-27 22:12:50,195 - INFO - Test Case 7 PASS: test_click_save_and_check_error_message | Expected: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Actual: Thông báo lỗi 'Vui lòng nhập loại bài viết' xuất hiện đúng. | Status: PASS

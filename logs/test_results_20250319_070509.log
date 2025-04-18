@@ -1,0 +1,2 @@
+2025-03-19 07:05:21,964 - INFO - Bắt đầu Test Case 1: Verify khi nhấn vào breadcrumb 'Trang chủ' -> Hệ thống điều hướng về trang chủ thành công.
+2025-03-19 07:05:24,330 - INFO - Test Case 1 PASS: Hệ thống điều hướng thành công đến trang 'Trang chủ'. | Status: PASS

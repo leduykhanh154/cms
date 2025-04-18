@@ -1,0 +1,48 @@
+2025-04-08 20:03:53,300 - INFO - Bắt đầu Test Case 9: Cập nhật Loại bài viết tab Tiếng Việt -> Lưu và kiểm tra sau khi lưu.
+2025-04-08 20:03:59,404 - INFO - Đã nhập loại bài viết: Bài viết thử nghiệm.
+2025-04-08 20:04:02,545 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 20:04:03,357 - INFO - Test Case 9 PASS: test_save_and_continue_check_edit | Expected: Cập nhật thành công Loại bài viết. | Actual: Cập nhật thành công Loại bài viết. | Status: PASS
+2025-04-08 20:04:18,532 - INFO - Bắt đầu Test Case 11: Cập nhật Đường dẫn tab Tiếng Việt -> Lưu và kiểm tra sau khi lưu.
+2025-04-08 20:04:27,358 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 20:04:27,924 - INFO - Test Case 11 PASS: test_enter_vi_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem-666' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem-666' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:04:42,274 - INFO - Bắt đầu Test Case 12: Nhập 'Mô tả' tab tiếng Việt -> Lưu và kiểm tra dữ liệu.
+2025-04-08 20:04:51,045 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 20:04:51,765 - INFO - Test Case 12 PASS: test_enter_vi_description_and_verify | Expected: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:05:06,392 - INFO - Bắt đầu Test Case 13: Nhập 'Từ khóa meta' tab tiếng Việt -> Lưu và kiểm tra dữ liệu.
+2025-04-08 20:05:15,168 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 20:05:15,687 - INFO - Test Case 13 PASS: test_enter_vi_meta_keyword_and_verify | Expected: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:05:30,560 - INFO - Bắt đầu Test Case 14: Nhập 'Meta Description' tab tiếng Việt -> Lưu và kiểm tra dữ liệu.
+2025-04-08 20:05:39,565 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 20:05:40,006 - INFO - Test Case 14 PASS: test_enter_vi_meta_description_and_verify | Expected: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:05:54,538 - INFO - Bắt đầu Test Case 15: Click tab Browser -> Chọn ảnh -> Click Upload -> Lưu và kiểm tra ảnh hiển thị.
+2025-04-08 20:06:07,731 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 20:06:08,309 - INFO - Test Case 15 PASS: test_upload_vi_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS
+2025-04-08 20:06:43,124 - INFO - Bắt đầu Test Case 16: Nhập loại bài viết tab English -> Lưu và kiểm tra dữ liệu.
+2025-04-08 20:06:48,619 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-08 20:06:54,723 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 20:06:58,968 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 20:07:00,484 - INFO - Test Case 16 PASS: test_enter_en_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:07:15,089 - INFO - Bắt đầu Test Case 17: Nhập dữ liệu vào ô 'Loại bài viết' English và sau đó xóa, kiểm tra thông báo lỗi.
+2025-04-08 20:07:20,566 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 20:07:23,729 - INFO - Test Case 17 PASS: test_en_article_type_clear_and_check_error | Expected: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Actual: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Status: PASS
+2025-04-08 20:07:38,376 - INFO - Bắt đầu Test Case 18: Nhập đường dẫn ở tab English -> Lưu và kiểm tra dữ liệu.
+2025-04-08 20:07:43,953 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 20:07:50,035 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 20:07:55,905 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 20:07:55,937 - INFO - Test Case 18 PASS: test_enter_en_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem-888' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem-888' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:08:10,506 - INFO - Bắt đầu Test Case 19: Nhập 'Mô tả' tab English -> Lưu và kiểm tra dữ liệu.
+2025-04-08 20:08:16,103 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 20:08:22,192 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 20:08:28,080 - INFO - Test Case 19 PASS: test_enter_en_description_and_verify | Expected: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:08:42,620 - INFO - Bắt đầu Test Case 29: Nhập 'Từ khóa meta' tab English -> Lưu và kiểm tra dữ liệu.
+2025-04-08 20:08:48,200 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 20:08:54,312 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 20:09:00,199 - INFO - Test Case 20 PASS: test_enter_en_meta_keyword_and_verify | Expected: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:09:14,892 - INFO - Bắt đầu Test Case 21: Nhập 'Meta Description' tab English -> Lưu và kiểm tra dữ liệu.
+2025-04-08 20:09:20,440 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 20:09:26,527 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 20:09:32,385 - INFO - Test Case 21 PASS: test_enter_en_meta_description_and_verify | Expected: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 20:10:07,558 - INFO - Bắt đầu Test Case 22: Cập nhật Meta image tab English -> Lưu và kiểm tra ảnh hiển thị tab English.
+2025-04-08 20:10:13,419 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 20:10:19,529 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 20:10:29,826 - INFO - Test Case 22 PASS: test_upload_en_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS

@@ -1,0 +1,6 @@
+2025-04-04 17:00:21,443 - INFO - Bắt đầu Test Case: Nhập toàn bộ nội dung và tải lên ảnh.
+2025-04-04 17:00:28,821 - INFO - Tiến hành tải lên ảnh.
+2025-04-04 17:00:35,355 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-04 17:00:36,426 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-04 17:00:38,179 - INFO - Proceeding to upload an image.
+2025-04-04 17:00:44,688 - ERROR - Test Case 90 FAIL: test_enter_content_and_upload_image | Expected: Luu thanh cong. | Actual: Luu khong thanh cong. | Status: FAIL

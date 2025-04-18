@@ -1,0 +1,2 @@
+2025-04-02 20:23:09,549 - INFO - Bắt đầu Test Case 75: Nhập 255 ký tự vào ô 'Duong dan' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 20:23:23,232 - INFO - Test Case 75 PASS: test_vi_article_link_255_chars_and_delete_last_char | Expected: Thông báo lỗi da an di. | Actual: Thông báo lỗi da an di. | Status: PASS

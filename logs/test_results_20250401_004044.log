@@ -1,0 +1,4 @@
+2025-04-01 00:40:53,433 - INFO - Bắt đầu Test Case 45: Nhập ký tự chữ vào ô 'Sort Order' và kiểm tra không hiển thị.
+2025-04-01 00:40:58,700 - INFO - Đã vào trang 'Tạo mới loại bài viết'.
+2025-04-01 00:41:01,406 - INFO - Đã nhập '5abc' vào ô 'Sort Order'.
+2025-04-01 00:41:01,445 - ERROR - Test Case 45 FAIL: test_sort_order_rejects_text | Expected: Không có giá trị nào hiển thị trong ô 'Sort Order' khi nhập chữ. | Actual: Không có giá trị nào hiển thị trong ô 'Sort Order' khi nhập chữ. | Status: FAIL

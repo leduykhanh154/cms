@@ -1,0 +1,71 @@
+2025-03-31 20:46:20,686 - INFO - Bắt đầu Test Case 24: Nhập 255 ký tự vào ô 'Mô tả ngắn' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 20:46:30,173 - INFO - Test Case 24 PASS: test_vi_short_description_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Status: PASS
+2025-03-31 20:46:44,999 - INFO - Bắt đầu Test Case 25: Nhập 101 ký tự vào ô 'Meta Keyword' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 20:46:52,786 - INFO - Test Case 25 PASS: test_vi_meta_keyword_101_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Status: PASS
+2025-03-31 20:47:08,170 - INFO - Bắt đầu Test Case 26: Nhập 501 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 20:47:17,756 - INFO - Test Case 26 PASS: test_vi_meta_description_501_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 310 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 310 ký tự'. | Status: PASS
+2025-03-31 20:47:32,552 - INFO - Bắt đầu Test Case 27: Nhập loại bài viết tab English -> Kiểm tra dữ liệu.
+2025-03-31 20:47:39,125 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-03-31 20:47:40,213 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:47:41,397 - INFO - Test Case 27 PASS: test_enter_en_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-03-31 20:47:55,985 - INFO - Bắt đầu Test Case 28: Nhập đường dẫn ở tab English -> Kiểm tra dữ liệu.
+2025-03-31 20:48:02,791 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:48:03,882 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:48:05,045 - INFO - Test Case 28 PASS: test_enter_en_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-03-31 20:48:36,112 - INFO - Bắt đầu Test Case 29: Nhập 'Từ khóa meta' tab English -> Kiểm tra dữ liệu.
+2025-03-31 20:48:42,575 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:48:43,729 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:48:44,955 - INFO - Test Case 29 PASS: test_enter_en_meta_keyword_and_verify | Expected: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'tin-tuc, cong-nghe, review' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-03-31 20:49:04,206 - INFO - Bắt đầu Test Case 30: Nhập 'Mô tả' tab English -> Kiểm tra dữ liệu.
+2025-03-31 20:49:10,766 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:49:11,929 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:49:13,134 - INFO - Test Case 30 PASS: test_enter_en_description_and_verify | Expected: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là mô tả thử nghiệm cho bài viết mới.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-03-31 20:49:28,267 - INFO - Bắt đầu Test Case 31: Nhập 'Meta Description' tab English -> Kiểm tra dữ liệu.
+2025-03-31 20:49:34,691 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:49:35,797 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:49:37,020 - INFO - Test Case 31 PASS: test_enter_en_meta_description_and_verify | Expected: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Đây là Meta Description thử nghiệm.' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-03-31 20:49:54,611 - INFO - Bắt đầu Test Case 32: Click vào hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 20:50:01,309 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:50:02,400 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:50:03,451 - INFO - Đã click vào hình ảnh để mở popup tải lên.
+2025-03-31 20:50:03,459 - INFO - Test Case 32 PASS: test_click_en_meta_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-03-31 20:50:17,867 - INFO - Bắt đầu Test Case 33: Click vào nut 'Upload' hình ảnh tab English -> Kiểm tra popup tải lên ảnh xuất hiện.
+2025-03-31 20:50:24,330 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:50:25,423 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:50:26,512 - INFO - Test Case 33 PASS: test_click_en_upload_image_and_check_popup | Expected: Popup tải lên ảnh hiển thị đúng. | Actual: Popup tải lên ảnh hiển thị đúng. | Status: PASS
+2025-03-31 20:50:41,827 - INFO - Bắt đầu Test Case 34: Click tab Browser -> Chọn ảnh -> Click Upload -> Kiểm tra ảnh hiển thị tab English.
+2025-03-31 20:50:48,237 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:50:49,331 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:50:55,032 - INFO - Test Case 34 PASS: test_upload_en_image_and_check_display | Expected: Ảnh hiển thị đúng sau khi tải lên. | Actual: Ảnh hiển thị đúng sau khi tải lên. | Status: PASS
+2025-03-31 20:51:10,598 - INFO - Bắt đầu Test Case 35: Kiểm tra trạng thái nút 'Xóa ảnh' trước và sau khi tải ảnh, sau đó click nút xóa ảnh tab English.
+2025-03-31 20:51:17,372 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:51:18,475 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:51:26,392 - INFO - Test Case 35 PASS: test_check_en_delete_button_before_and_after_upload | Expected: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Actual: Nút 'Xóa ảnh' ẩn đi sau khi xóa ảnh. | Status: PASS
+2025-03-31 20:52:02,698 - INFO - Bắt đầu Test Case 36: Không chọn ảnh và click 'Upload', kiểm tra nút 'Xóa ảnh' tab English.
+2025-03-31 20:52:09,294 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:52:10,375 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:52:11,242 - ERROR - Test Case 36 FAIL: test_en_upload_without_selecting_image | Expected: Nút 'Xóa ảnh' không xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Actual: Nút 'Xóa ảnh' xuất hiện sau khi click 'Upload' mà không chọn ảnh. | Status: FAIL
+2025-03-31 20:52:26,191 - INFO - Bắt đầu Test Case 37: Nhập 255 ký tự vào ô 'Loại bài viết' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:52:32,640 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:52:33,713 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:52:36,621 - INFO - Test Case 37 PASS: test_en_article_type_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Loại bài viết không quá 254 ký tự'. | Status: PASS
+2025-03-31 20:52:51,379 - INFO - Bắt đầu Test Case 38: Nhập dữ liệu vào ô 'Loại bài viết' (English) và sau đó xóa, kiểm tra thông báo lỗi.
+2025-03-31 20:52:57,685 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:52:58,763 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:53:02,280 - INFO - Test Case 38 PASS: test_en_article_type_clear_and_check_error | Expected: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Actual: Thông báo lỗi xuất hiện: 'Trường này không được để trống'. | Status: PASS
+2025-03-31 20:53:17,147 - INFO - Bắt đầu Test Case 39: Nhập 255 ký tự vào ô 'Duong dan' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:53:23,790 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:53:24,865 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:53:27,662 - INFO - Test Case 39 PASS: test_en_article_link_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Duong dan không quá 254 ký tự'. | Status: PASS
+2025-03-31 20:53:42,722 - INFO - Bắt đầu Test Case 40: Nhập 255 ký tự vào ô 'Mô tả ngắn' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:53:49,143 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:53:50,247 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:53:52,954 - INFO - Test Case 40 PASS: test_en_short_description_255_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Mô tả ngắn không quá 254 ký tự'. | Status: PASS
+2025-03-31 20:54:24,593 - INFO - Bắt đầu Test Case 41: Nhập 101 ký tự vào ô 'Meta Keyword' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:54:31,282 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:54:32,475 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:54:34,902 - INFO - Test Case 41 PASS: test_en_meta_keyword_101_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Keyword không quá 100 ký tự'. | Status: PASS
+2025-03-31 20:54:51,546 - INFO - Bắt đầu Test Case 42: Nhập 501 ký tự vào ô 'Meta Description' (English) và kiểm tra thông báo lỗi.
+2025-03-31 20:54:58,168 - INFO - Đã chuyển sang tab 'English'.
+2025-03-31 20:54:59,266 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-03-31 20:55:02,823 - INFO - Test Case 42 PASS: test_en_meta_description_501_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 310 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 310 ký tự'. | Status: PASS

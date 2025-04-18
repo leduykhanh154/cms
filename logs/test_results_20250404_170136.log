@@ -1,0 +1,6 @@
+2025-04-04 17:01:45,064 - INFO - Bắt đầu Test Case: Nhập toàn bộ nội dung và tải lên ảnh.
+2025-04-04 17:01:52,580 - INFO - Tiến hành tải lên ảnh.
+2025-04-04 17:01:59,391 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-04 17:02:00,505 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-04 17:02:02,361 - INFO - Proceeding to upload an image.
+2025-04-04 17:02:11,277 - INFO - Test Case 90 PASS: test_enter_content_and_upload_image | Expected: Luu thanh cong. | Actual: Luu thanh cong. | Status: PASS

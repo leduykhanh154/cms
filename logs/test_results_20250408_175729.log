@@ -1,0 +1,10 @@
+2025-04-08 17:57:39,124 - INFO - Bắt đầu Test Case 16: Nhập loại bài viết tab English -> Kiểm tra dữ liệu.
+2025-04-08 17:57:44,750 - INFO - Đã chuyển sang tab tiếng Anh.
+2025-04-08 17:57:50,864 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 17:57:55,121 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 17:57:56,595 - INFO - Test Case 16 PASS: test_enter_en_article_type_and_verify | Expected: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị 'Bài viết thử nghiệm' hiển thị đúng trong ô nhập liệu. | Status: PASS
+2025-04-08 17:58:11,737 - INFO - Bắt đầu Test Case 28: Nhập đường dẫn ở tab English -> Kiểm tra dữ liệu.
+2025-04-08 17:58:17,455 - INFO - Đã chuyển sang tab 'English'.
+2025-04-08 17:58:23,583 - INFO - Đã nhấn vào nút 'Dịch nội dung'.
+2025-04-08 17:58:29,385 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-08 17:58:29,417 - ERROR - Test Case 28 FAIL: test_enter_en_article_link_and_verify | Expected: Giá trị 'bai-viet-thu-nghiem' hiển thị đúng trong ô nhập liệu. | Actual: Giá trị hiển thị không đúng: 'bai-viet-thu-nghiem-2' | Status: FAIL

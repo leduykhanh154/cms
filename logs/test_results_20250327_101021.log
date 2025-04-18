@@ -1,0 +1,6 @@
+2025-03-27 10:10:30,626 - INFO - Bắt đầu Test Case 11: Chọn bài viết -> Nhấn 'Thao tác' -> Nhấn 'Xóa' -> Kiểm tra cảnh báo 'Bạn có chắc chắn ?'.
+2025-03-27 10:10:33,259 - INFO - Đã chọn bài viết đầu tiên thành công.
+2025-03-27 10:10:34,348 - INFO - Đã nhấn vào nút 'Thao tác'.
+2025-03-27 10:10:35,481 - INFO - Đã nhấn vào nút 'Xóa'.
+2025-03-27 10:10:36,511 - INFO - Cảnh báo xuất hiện chính xác với nội dung: 'Bạn có chắc chắn ?'.
+2025-03-27 10:10:36,513 - INFO - Test Case 11 PASS: Xác nhận cảnh báo khi xóa bài viết.

@@ -1,0 +1,6 @@
+2025-03-27 11:58:53,289 - INFO - Bắt đầu Test Case 12: Verify có thể nhấn vào checkbox 'Select First'.
+2025-03-27 11:58:56,104 - INFO - Đã nhấn vào checkbox 'Select First'.
+2025-03-27 11:59:11,773 - INFO - Bắt đầu Test Case 18: Verify có thể nhấn vào icon '...' rồi chọn nút 'Xóa'.
+2025-03-27 11:59:14,583 - INFO - Đã nhấn vào icon '...' thành công.
+2025-03-27 11:59:16,008 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-03-27 11:59:16,198 - INFO - Test Case 18 PASS: test_click_menu_and_delete_button | Expected: Hệ thống hiển thị cảnh báo: 'Bạn có chắc chắn ?' khi nhấn 'Xóa'. | Actual: Hệ thống hiển thị đúng cảnh báo. | Status: PASS

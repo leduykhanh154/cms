@@ -1,0 +1,2 @@
+2025-04-14 23:59:00,200 - INFO - Bắt đầu Test Case 17: Verify khi click chọn Không trong popup 'Xác nhận'.
+2025-04-14 23:59:02,008 - ERROR - Test Case 17 FAIL: test_click_no_in_popup_confirm | Expected:  Hệ thống hủy xóa Chi nhánh, đóng popup. | Actual: Hệ thống không hủy xóa Chi nhánh, hoặc không đóng popup | Status: FAIL

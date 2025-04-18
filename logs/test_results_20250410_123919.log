@@ -1,0 +1,5 @@
+2025-04-10 12:39:28,733 - INFO - Bắt đầu Test Case 30: Verify Đường dẫn tự động điền tab English.
+2025-04-10 12:39:34,166 - INFO - Đã chuyển sang tab 'English'.
+2025-04-10 12:39:40,322 - INFO - Đã nhấn vào nút 'Dịch nội dung' hoặc bỏ qua nếu không cần thiết.
+2025-04-10 12:39:44,849 - INFO - Đã nhấn nút 'Lưu và Tiếp tục'.
+2025-04-10 12:39:47,918 - INFO - Test Case 30 PASS: test_en_article_link_auto_field | Expected: Đường dẫn được điền tự động | Actual: Đường dẫn được điền tự động | Status: PASS

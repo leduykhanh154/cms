@@ -1,0 +1,2 @@
+2025-04-02 19:47:16,603 - INFO - Bắt đầu Test Case 21: Nhập 255 ký tự vào ô 'Loại bài viết' (Tiếng Việt) sau do xoa di 1 và kiểm tra thông báo lỗi.
+2025-04-02 19:47:31,186 - INFO - Test Case 73 PASS: test_vi_article_type_255_chars_and_delete_last_char | Expected: Thông báo lỗi da duoc an di. | Actual: Thông báo lỗi da duoc an di. | Status: PASS

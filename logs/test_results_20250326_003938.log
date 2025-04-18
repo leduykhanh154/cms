@@ -1,0 +1,2 @@
+2025-03-26 00:39:47,233 - INFO - Bắt đầu Test Case: Verify khi nhấn vào dropdown 'Status'.
+2025-03-26 00:39:49,968 - INFO - Test Case PASS: test_click_status_dropdown | Expected: Dropdown 'Status' được nhấn thành công. | Actual: Dropdown 'Status' được nhấn thành công. | Status: PASS

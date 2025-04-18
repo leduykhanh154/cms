@@ -1,0 +1,6 @@
+2025-04-04 11:19:49,215 - INFO - Bắt đầu Test Case 21: Verify có thể nhấn vào icon '...' rồi chọn nút 'Xóa'.
+2025-04-04 11:19:52,097 - INFO - Ngày tạo trước khi xóa: 04/04/2025 11:19
+2025-04-04 11:19:52,194 - INFO - Đã nhấn vào icon '...' thành công.
+2025-04-04 11:19:53,297 - INFO - Đã nhấn vào nút 'Xóa' thành công.
+2025-04-04 11:19:53,487 - INFO - Đã nhấn vào nút 'Có'.
+2025-04-04 11:19:55,574 - INFO - Test Case 21 PASS: test_select_and_delete_article_type | Expected: Bài viết đã bị xóa. | Actual: Bài viết đã bị xóa. | Status: PASS

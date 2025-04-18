@@ -1,0 +1,2 @@
+2025-03-26 01:49:36,898 - INFO - Bắt đầu Test Case 13: Verify có thể nhấn vào liên kết đầu tiên và chuyển hướng đúng.
+2025-03-26 01:49:39,987 - INFO - Test Case 13 PASS: test_click_first_link | Expected: Hệ thống điều hướng đúng đến trang cập nhật danh mục. | Actual: Hệ thống điều hướng đúng đến trang cập nhật danh mục. | Status: PASS

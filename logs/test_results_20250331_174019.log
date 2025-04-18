@@ -1,0 +1,2 @@
+2025-03-31 17:40:28,501 - INFO - Bắt đầu Test Case 25: Nhập 501 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-03-31 17:40:37,083 - INFO - Test Case 25 PASS: test_vi_meta_description_501_chars | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 300 ký tự'. | Actual: Thông báo lỗi xuất hiện: 'Vui lòng nhập Meta Description không quá 300 ký tự'. | Status: PASS

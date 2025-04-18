@@ -1,0 +1,16 @@
+2025-04-10 11:35:35,270 - INFO - Bắt đầu Test Case 23: Click dropdown 'Status' và kiểm tra dropdown có mở không.
+2025-04-10 11:35:43,019 - INFO - Đã click vào dropdown 'Status'.
+2025-04-10 11:35:43,057 - INFO - Test Case 23 PASS: test_click_status_dropdown_and_verify | Expected: Dropdown 'Status' mở thành công (tìm thấy 'Chờ xử lý' trên trang). | Actual: Dropdown 'Status' mở thành công (tìm thấy 'Chờ xử lý' trên trang). | Status: PASS
+2025-04-10 11:35:57,389 - INFO - Bắt đầu Test Case 24: Nhập giá trị vào ô 'Thứ tự sắp xếp' và kiểm tra thông báo lỗi.
+2025-04-10 11:36:04,728 - INFO - Đã nhập '5' vào ô 'Thứ tự sắp xếp'.
+2025-04-10 11:36:06,797 - INFO - Đã xóa nội dung trong ô 'Thứ tự sắp xếp'.
+2025-04-10 11:36:06,844 - ERROR - Test Case 24 FAIL: test_sort_order_validation | Expected: Thông báo lỗi xuất hiện: 'Vui lòng nhập Thứ tự sắp xếp'. | Actual: Thông báo lỗi không xuất hiện! | Status: FAIL
+2025-04-10 11:36:21,407 - INFO - Bắt đầu Test Case 25: Nhập ký tự chữ vào ô 'Thứ tự sắp xếp' và kiểm tra không hiển thị.
+2025-04-10 11:36:28,516 - INFO - Đã nhập 'abc' vào ô 'Thứ tự sắp xếp'.
+2025-04-10 11:36:28,540 - INFO - Test Case 25 PASS: test_sort_order_rejects_text | Expected: Không có giá trị nào hiển thị trong ô 'Thứ tự sắp xếp' khi nhập chữ. | Actual: Không có giá trị nào hiển thị trong ô 'Thứ tự sắp xếp' khi nhập chữ. | Status: PASS
+2025-04-10 11:36:43,119 - INFO - Bắt đầu Test Case 26: Click dropdown 'Father Type' và kiểm tra dropdown có mở không.
+2025-04-10 11:36:50,615 - INFO - Đã click vào dropdown 'Father Type'.
+2025-04-10 11:36:50,665 - INFO - Test Case 26 PASS: test_click_father_type_dropdown_and_verify | Expected: Dropdown 'Father Type' mở thành công (tìm thấy 'Lĩnh vực kinh doanh' trên trang). | Actual: Dropdown 'Father Type' mở thành công (tìm thấy 'Lĩnh vực kinh doanh' trên trang). | Status: PASS
+2025-04-10 11:37:04,963 - INFO - Bắt đầu Test Case 48: Click dropdown 'Banner Set' và kiểm tra dropdown có mở không.
+2025-04-10 11:37:12,115 - INFO - Đã click vào dropdown 'Banner Set'.
+2025-04-10 11:37:12,154 - INFO - Test Case 27 PASS: test_click_banner_set_dropdown_and_verify | Expected: Dropdown 'Banner Set' mở thành công (tìm thấy 'Banner icon' trên trang). | Actual: Dropdown 'Banner Set' mở thành công (tìm thấy 'Banner icon' trên trang). | Status: PASS

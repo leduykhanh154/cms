@@ -1,0 +1,2 @@
+2025-04-02 22:28:00,579 - INFO - Bắt đầu Test Case 78: Nhập 501 ký tự vào ô 'Meta Description' (Tiếng Việt) và kiểm tra thông báo lỗi.
+2025-04-02 22:28:14,591 - INFO - Test Case 78 PASS: test_vi_meta_description_501_chars_and_remove_last | Expected: Thông báo lỗi da an di. | Actual: Thông báo lỗi da an di. | Status: PASS

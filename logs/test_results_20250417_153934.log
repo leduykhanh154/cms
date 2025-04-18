@@ -1,0 +1,2 @@
+2025-04-17 15:39:43,817 - INFO - Bắt đầu Test Case 21:  Verify click field 'Avatar'.
+2025-04-17 15:39:48,741 - ERROR - Test Case 21 FAIL: test_click_field_avatar | Expected: Không hiển thị nút 'Xóa ảnh'. | Actual: Hệ thống hiển thị nút 'Xóa ảnh'. | Status: FAIL

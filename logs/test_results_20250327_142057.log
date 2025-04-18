@@ -1,0 +1,3 @@
+2025-03-27 14:21:06,697 - INFO - Bắt đầu Test Case 19: Verify có thể nhấn vào 'Danh sách loại bài viết' trên breadcrumb và kiểm tra điều hướng.
+2025-03-27 14:21:12,578 - INFO - Đã nhấn vào breadcrumb 'Danh sách loại bài viết'.
+2025-03-27 14:21:12,604 - ERROR - Test Case 19 FAIL: test_click_breadcrumb_type_list | Expected: Hệ thống điều hướng đúng đến trang 'Danh sách loại bài viết'. | Actual: Hệ thống không điều hướng đúng trang. | Status: FAIL
