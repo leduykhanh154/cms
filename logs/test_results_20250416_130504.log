@@ -1,0 +1,2 @@
+2025-04-16 13:05:12,495 - INFO - Bắt đầu Test Case 3: Verify khi nhập Địa chỉ chi nhánh.
+2025-04-16 13:05:15,913 - INFO - Test Case 3 PASS: test_enter_location_content | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS

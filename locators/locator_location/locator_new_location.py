@@ -5,12 +5,13 @@ class LocatorNewLocation:
     CONTENT_MENU = (By.XPATH, "//*[@id='left-menu']/ul/li[1]/a")
     LOCATION_MENU = (By.XPATH, '//*[@id="left-menu"]/ul/li[1]/ul/li[5]/a')
     
-    # LOCATION LIST BUTTON
+    # LOCATION LIST
     CREATE_BUTTON = (By.XPATH, '//*[@id="app-container"]/main/div/div[2]/div[2]/div/a')
+    FIRST_LOCATION_NAME = (By.XPATH, '//*[@id="table-dealer-list"]/tbody/tr[1]/td[2]/a')
     
     # BUTTON
-    SAVE_BUTTON = (By. XPATH, '//*[@id="save-button"]')
-    SAVE_AND_CONTINUE_BUTTON = (By.XPATH, '//*[@id="save-category"]/div[1]/div[2]/div/div/button[2]')
+    SAVE_BUTTON = (By. XPATH, '//*[@id="mpireValidateForm"]/div[1]/div[2]/div/div/button[1]')
+    SAVE_AND_CONTINUE_BUTTON = (By.XPATH, '//*[@id="mpireValidateForm"]/div[1]/div[2]/div/div/button[2]')
     TRANSLATE_BUTTON = (By.XPATH, '//*[@id="en-content"]/button')
     
     # TAB
@@ -32,13 +33,18 @@ class LocatorNewLocation:
     # TEXT-AREA
     CONTENT_TEXT_AREA = (By.XPATH, '//*[@id="cke_1_contents"]/iframe')
     
-    # DROPDOWN
+    # DROPDOWN 
     PROVINCE_DROPDOWN = (By.XPATH, '//*[@id="select2-select-province-container"]')
+    FIRST_PROVINCE_ITEM = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[2]')
     DISTRICT_DROPDOWN = (By.XPATH, '//*[@id="select2-select-district-container"]')
+    FIRST_DISTRICT_ITEM = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[2]')
     STATUS_DROPDOWN = (By.XPATH, '//*[@id="select2-status-container"]')
+    ACTIVE_STATUS = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[1]')
+    PROCESSING_STATUS = (By.XPATH, '//*[@id="app-container"]/span/span/span[2]/ul/li[2]')
     
     # IMAGE
     IMAGE_FIELD = (By.XPATH, '//*[@id="image-id_upload"]/div/div[1]/a')
+    UPLOAD_IMAGE_POPUP = (By.XPATH, '//*[@id="image-id_upload-ModalUploadImage"]/div/div')
     UPLOAD_IMAGE_BUTTON = (By.XPATH, '//*[@id="image-id_upload"]/div/div[2]/a[1]')
     DELETE_IMAGE_BUTTON = (By.XPATH, '//*[@id="image-id_upload"]/div/div[2]/a[2]')
     UPLOAD_IMAGE_POPUP = (By.XPATH, '//*[@id="image-id_upload-ModalUploadImage"]/div/div')

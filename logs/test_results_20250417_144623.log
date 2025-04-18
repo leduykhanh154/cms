@@ -1,0 +1,6 @@
+2025-04-17 14:46:32,555 - INFO - Bắt đầu Test Case 17: Verify khi nhập Giá trị sắp xếp ở tab 'Thông tin chung'.
+2025-04-17 14:46:36,978 - INFO - Test Case 17 PASS: test_enter_sort_order | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống hiển thị thông tin vừa nhập. | Status: PASS
+2025-04-17 14:46:51,208 - INFO - Bắt đầu Test Case 18:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-17 14:46:55,529 - ERROR - Test Case 18 FAIL: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống không hiển thị trạng thái được chọn. | Status: FAIL
+2025-04-17 14:47:10,913 - INFO - Bắt đầu Test Case 19:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-17 14:47:20,278 - ERROR - Test Case 19 FAIL: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống không hiển thị trạng thái được chọn. | Status: FAIL

@@ -1,0 +1,2 @@
+2025-04-16 12:50:06,229 - INFO - Bắt đầu Test Case 2: Verify khi nhập Tên chi nhánh.
+2025-04-16 12:50:09,389 - ERROR - Test Case 2 FAIL: test_enter_location_name | Expected: Hệ thống hiển thị thông tin vừa nhập. | Actual: Hệ thống không hiển thị thông tin vừa nhập. | Status: FAIL

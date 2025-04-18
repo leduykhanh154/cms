@@ -1,0 +1,2 @@
+2025-04-17 15:29:26,220 - INFO - Bắt đầu Test Case 20:  Verify click field 'Avatar'.
+2025-04-17 15:29:30,732 - INFO - Test Case 20 PASS: test_click_field_avatar | Expected: Hệ thống hiển thị popup 'Upload image'. | Actual: Hệ thống hiển thị popup 'Upload image'. | Status: PASS
