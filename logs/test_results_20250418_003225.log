@@ -1,0 +1,2 @@
+2025-04-18 00:32:34,477 - INFO - Bắt đầu Test Case 3: Verify khi click nút 'Hủy'.
+2025-04-18 00:32:38,846 - INFO - Test Case 3 PASS: test_click_first_menu_button_choose_detail | Expected: Hệ thống hủy chỉnh sửa và chuyển hướng về trang danh sách. | Actual: Hệ thống hủy chỉnh sửa và chuyển hướng về trang danh sách. | Status: PASS

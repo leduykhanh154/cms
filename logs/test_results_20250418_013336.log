@@ -1,0 +1,4 @@
+2025-04-18 01:33:45,951 - INFO - Bắt đầu Test Case 11: Verify khi nhấn dropdown 'Huyện/Quận'và chọn Huyện/Quận đầu tiên.
+2025-04-18 01:33:56,125 - INFO - Test Case 11 PASS: test_click_district_dropdown_and_choose_district | Expected: Hệ thống hiển thị Huyện/Quận được chọn. | Actual: Hệ thống hiển thị Huyện/Quận được chọn. | Status: PASS
+2025-04-18 01:34:10,174 - INFO - Bắt đầu Test Case 12: Verify khi cập nhật Số điện thoại ở tab 'Thông tin chung'.
+2025-04-18 01:34:19,194 - INFO - Test Case 12 PASS: test_enter_phone_number | Expected: Hệ thống hiển thị thông tin vừa cập nhật. | Actual: Hệ thống hiển thị thông tin vừa cập nhật. | Status: PASS

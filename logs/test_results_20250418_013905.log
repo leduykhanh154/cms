@@ -1,0 +1,26 @@
+2025-04-18 01:39:15,189 - INFO - Bắt đầu Test Case 11: Verify khi nhấn dropdown 'Huyện/Quận'và chọn Huyện/Quận đầu tiên.
+2025-04-18 01:39:24,619 - INFO - Test Case 11 PASS: test_click_district_dropdown_and_choose_district | Expected: Hệ thống hiển thị Huyện/Quận được chọn. | Actual: Hệ thống hiển thị Huyện/Quận được chọn. | Status: PASS
+2025-04-18 01:39:39,212 - INFO - Bắt đầu Test Case 12: Verify khi cập nhật Số điện thoại ở tab 'Thông tin chung'.
+2025-04-18 01:39:48,419 - INFO - Test Case 12 PASS: test_enter_phone_number | Expected: Hệ thống hiển thị thông tin vừa cập nhật. | Actual: Hệ thống hiển thị thông tin vừa cập nhật. | Status: PASS
+2025-04-18 01:40:02,891 - INFO - Bắt đầu Test Case 13: Verify khi cập nhật FAX ở tab 'Thông tin chung'.
+2025-04-18 01:40:12,314 - INFO - Test Case 13 PASS: test_enter_fax | Expected: Hệ thống hiển thị thông tin vừa cập nhật. | Actual: Hệ thống hiển thị thông tin vừa cập nhật. | Status: PASS
+2025-04-18 01:40:27,227 - INFO - Bắt đầu Test Case 14: Verify khi cập nhật Kinh độ ở tab 'Thông tin chung'.
+2025-04-18 01:40:36,112 - INFO - Test Case 14 PASS: test_enter_longitude | Expected: Hệ thống hiển thị thông tin vừa cập nhật. | Actual: Hệ thống hiển thị thông tin vừa cập nhật. | Status: PASS
+2025-04-18 01:40:50,538 - INFO - Bắt đầu Test Case 15: Verify khi cập nhật Vĩ độ ở tab 'Thông tin chung'.
+2025-04-18 01:40:59,567 - INFO - Test Case 15 PASS: test_enter_latitude | Expected: Hệ thống hiển thị thông tin vừa cập nhật. | Actual: Hệ thống hiển thị thông tin vừa cập nhật. | Status: PASS
+2025-04-18 01:41:14,429 - INFO - Bắt đầu Test Case 16: Verify khi cập nhật Email ở tab 'Thông tin chung'.
+2025-04-18 01:41:23,459 - INFO - Test Case 16 PASS: test_enter_email | Expected: Hệ thống hiển thị thông tin vừa cập nhật. | Actual: Hệ thống hiển thị thông tin vừa cập nhật. | Status: PASS
+2025-04-18 01:41:58,186 - INFO - Bắt đầu Test Case 17: Verify khi cập nhật Giá trị sắp xếp ở tab 'Thông tin chung'.
+2025-04-18 01:42:06,929 - INFO - Test Case 17 PASS: test_enter_sort_order | Expected: Hệ thống hiển thị thông tin vừa cập nhật. | Actual: Hệ thống hiển thị thông tin vừa cập nhật. | Status: PASS
+2025-04-18 01:42:21,199 - INFO - Bắt đầu Test Case 18:  Verify click dropdown 'Status' và chọn trạng thái 'Kích hoạt'.
+2025-04-18 01:42:29,770 - INFO - Test Case 18 PASS: test_click_status_dropdown_and_choose_active | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-18 01:42:44,186 - INFO - Bắt đầu Test Case 19:  Verify click dropdown 'Status' và chọn trạng thái 'Chờ xử lý'.
+2025-04-18 01:42:52,927 - INFO - Test Case 19 PASS: test_click_status_dropdown_and_choose_processing | Expected: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Actual: Hệ thống đóng dropdown, hiển thị trạng thái được chọn. | Status: PASS
+2025-04-18 01:43:08,468 - INFO - Bắt đầu Test Case 20:  Verify click field 'Avatar'.
+2025-04-18 01:43:21,817 - ERROR - Test Case 20 FAIL: test_click_field_avatar | Expected: Hệ thống hiển thị popup 'Upload image'. | Actual: Hệ thống không hiển thị popup 'Upload image'. | Status: FAIL
+2025-04-18 01:43:36,388 - INFO - Bắt đầu Test Case 21:  Verify click field 'Avatar' và click nút 'Upload'.
+2025-04-18 01:43:50,462 - INFO - Test Case 21 PASS: test_click_field_avatar_and_click_upload | Expected: Không hiển thị nút 'Xóa ảnh'. | Actual: Không hiển thị nút 'Xóa ảnh'. | Status: PASS
+2025-04-18 01:44:04,694 - INFO - Bắt đầu Test Case 22:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-18 01:44:15,679 - INFO - Test Case 22 PASS: test_click_upload_after_choose_image_from_system | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: PASS
+2025-04-18 01:44:50,301 - INFO - Bắt đầu Test Case 23:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-18 01:45:05,898 - INFO - Test Case 23 PASS: test_click_delete_after_upload_image | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: PASS

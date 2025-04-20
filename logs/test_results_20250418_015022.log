@@ -1,0 +1,3 @@
+2025-04-18 01:50:31,236 - INFO - Bắt đầu Test Case 21:  Verify click field 'Avatar', chọn ảnh từ hệ thống và click nút 'Upload'.
+2025-04-18 01:50:47,207 - INFO - Test Case 21 PASS: test_click_delete_after_upload_image | Expected: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Actual: Hệ thống đóng popup, hiển thị ảnh được chọn và nút 'Xóa ảnh'. | Status: PASS
+2025-04-18 01:51:01,330 - INFO - Bắt đầu Test Case 22: Nhập tất cả các trường thông tin và click nút 'Lưu và tiếp tục cập nhật'.

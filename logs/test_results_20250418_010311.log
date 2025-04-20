@@ -1,0 +1,2 @@
+2025-04-18 01:03:21,129 - INFO - Bắt đầu Test Case 4: Verify khi cập nhật Tên chi nhánh ở tab Tiếng Việt.
+2025-04-18 01:03:28,916 - INFO - Test Case 4 PASS: test_enter_vi_location_name | Expected: Hệ thống hiển thị thông tin vừa cập nhật. | Actual: Hệ thống hiển thị thông tin vừa cập nhật. | Status: PASS

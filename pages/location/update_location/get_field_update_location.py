@@ -39,10 +39,48 @@ class GetFieldUpdateLocation:
             logging.error("Không thể lấy giá trị từ ô địa chỉ chi nhánh.")
             return None
 
+    # Hàm lấy giá trị ô 'Tên chi nhánh'
+    def get_en_name(self):
+        try:
+            input_field = self.wait.until(EC.element_to_be_clickable(self.locators.EN_NAME_TEXT_INPUT))
+            value = input_field.get_attribute("value")
+            logging.info(f"Giá trị lấy được từ ô 'Tên chi nhánh': {value}")
+            return value
+        except TimeoutException:
+            logging.error("Không thể lấy giá trị từ ô 'Tên chi nhánh'.")
+            return None        
+    
+    # Hàm lấy giá trị ô 'Địa chỉ chi nhánh'
+    def get_en_address(self):
+        try:
+            input_field = self.wait.until(EC.element_to_be_clickable(self.locators.EN_ADDRESS_TEXT_INPUT))
+            value = input_field.get_attribute("value")
+            logging.info(f"Giá trị lấy được từ ô địa chỉ chi nhánh: {value}")
+            return value
+        except TimeoutException:
+            logging.error("Không thể lấy giá trị từ ô địa chỉ chi nhánh.")
+            return None
+
     # Hàm lấy nội dung từ khung soạn thảo CKEditor
     def get_content(self):
         try:
             iframe = self.wait.until(EC.presence_of_element_located(self.locators.CONTENT_TEXT_AREA))
+            self.driver.switch_to.frame(iframe)
+
+            editable_area = self.wait.until(EC.presence_of_element_located((By.XPATH, "//body")))
+            content = editable_area.get_attribute("innerHTML")
+
+            self.driver.switch_to.default_content()
+            logging.info(f"Nội dung CKEditor lấy được: {content}")
+            return content
+        except TimeoutException:
+            logging.error("Không thể lấy nội dung từ CKEditor.")
+            return None
+
+    # Hàm lấy nội dung từ khung soạn thảo CKEditor
+    def get_en_content(self):
+        try:
+            iframe = self.wait.until(EC.presence_of_element_located(self.locators.EN_CONTENT_TEXT_AREA))
             self.driver.switch_to.frame(iframe)
 
             editable_area = self.wait.until(EC.presence_of_element_located((By.XPATH, "//body")))
