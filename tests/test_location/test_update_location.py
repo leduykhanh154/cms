@@ -96,9 +96,9 @@ def test_click_cancel_button(update_location_base, is_displayed_update_location)
     expected_result = f"Hệ thống hủy chỉnh sửa và chuyển hướng về trang danh sách."
     actual_result = expected_result if result else f"Hệ thống không hủy chỉnh sửa và chuyển hướng về trang danh sách."
     if result:
-        test_logger.info(f"Test Case 3 PASS: test_click_first_menu_button_choose_detail | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
+        test_logger.info(f"Test Case 3 PASS: test_click_cancel_button | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
-        test_logger.error(f"Test Case 3 FAIL: test_click_first_menu_button_choose_detail | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
+        test_logger.error(f"Test Case 3 FAIL: test_click_cancel_button | Expected: {expected_result} | Actual: {actual_result} | Status: FAIL")
         assert False, f"Expected: {expected_result} | Actual: {actual_result}"        
 
 # Test Case 4: Verify khi cập nhật Tên chi nhánh ở tab Tiếng Việt -> Hệ thống hiển thị thông tin vừa cập nhật
@@ -106,13 +106,13 @@ def test_update_vi_location_name(update_location_base, enter_update_location, ge
     test_logger.info("Bắt đầu Test Case 4: Verify khi cập nhật Tên chi nhánh ở tab Tiếng Việt.")
     update_location_base.perform_tag_operations()
     update_location_base.click_first_name()
-    name = "Tp. Hồ Chí Minh"
+    name = "Tp. Thủ Đức"
     enter_update_location.enter_name(name)
     update_location_base.click_save_button()
     update_location_base.click_first_name()
     result = get_field_update_location.get_name()
     expected_result = "Hệ thống hiển thị thông tin vừa cập nhật."
-    actual_result = expected_result if result == "Tp. Hồ Chí Minh" else "Hệ thống không hiển thị thông tin vừa cập nhật."
+    actual_result = expected_result if result == "Tp. Thủ Đức" else "Hệ thống không hiển thị thông tin vừa cập nhật."
     if result:
         test_logger.info(f"Test Case 4 PASS: test_update_vi_location_name | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
@@ -124,13 +124,13 @@ def test_update_vi_location_address(update_location_base, enter_update_location,
     test_logger.info("Bắt đầu Test Case 5: Verify khi cập nhật Địa chỉ chi nhánh ở tab Tiếng Việt.")
     update_location_base.perform_tag_operations()
     update_location_base.click_first_name()
-    address = "Quận 2"
+    address = "Số 1 VVN"
     enter_update_location.enter_address(address)
     update_location_base.click_save_button()
     update_location_base.click_first_name()
     result = get_field_update_location.get_address()
     expected_result = "Hệ thống hiển thị thông tin vừa cập nhật."
-    actual_result = expected_result if result == "Quận 2" else "Hệ thống không hiển thị thông tin vừa cập nhật."
+    actual_result = expected_result if result == "Số 1 VVN" else "Hệ thống không hiển thị thông tin vừa cập nhật."
     if result:
         test_logger.info(f"Test Case 5 PASS: test_update_vi_location_address | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
@@ -142,13 +142,13 @@ def test_update_vi_location_content(update_location_base, enter_update_location,
     test_logger.info("Bắt đầu Test Case 6: Verify khi cập nhật Địa chỉ chi nhánh ở tab Tiếng Việt.")
     update_location_base.perform_tag_operations()
     update_location_base.click_first_name()
-    content = "31D, An Phú 2"
+    content = "DHSPKT"
     enter_update_location.enter_content(content)
     update_location_base.click_save_button()
     update_location_base.click_first_name()
     result = get_field_update_location.get_content()
     expected_result = "Hệ thống hiển thị thông tin vừa cập nhật."
-    actual_result = expected_result if result == "31D, An Phú 2" else "Hệ thống không hiển thị thông tin vừa cập nhật."
+    actual_result = expected_result if result == "DHSPKT" else "Hệ thống không hiển thị thông tin vừa cập nhật."
     if result:
         test_logger.info(f"Test Case 6 PASS: test_update_vi_location_content | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
@@ -163,14 +163,14 @@ def test_update_en_location_name(update_location_base, enter_update_location, ge
     update_location_base.click_english_tab()
     update_location_base.click_translate_button()
     time.sleep(0.5)
-    name = "Ho Chi Minh City"
+    name = "Thu Duc City"
     enter_update_location.enter_en_name(name)
     update_location_base.click_save_button()
     update_location_base.click_first_name()
     update_location_base.click_english_tab()
     result = get_field_update_location.get_en_name()
     expected_result = "Hệ thống hiển thị thông tin vừa cập nhật."
-    actual_result = expected_result if result == "Ho Chi Minh City" else "Hệ thống không hiển thị thông tin vừa cập nhật."
+    actual_result = expected_result if result == "Thu Duc City" else "Hệ thống không hiển thị thông tin vừa cập nhật."
     if result:
         test_logger.info(f"Test Case 7 PASS: test_update_en_location_name | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
@@ -185,14 +185,14 @@ def test_update_en_location_address(update_location_base, enter_update_location,
     update_location_base.click_english_tab()
     update_location_base.click_translate_button()
     time.sleep(0.5)
-    address = "2 District"
+    address = "1 VVN Street"
     enter_update_location.enter_en_address(address)
     update_location_base.click_save_button()
     update_location_base.click_first_name()
     update_location_base.click_english_tab()
     result = get_field_update_location.get_en_address()
     expected_result = "Hệ thống hiển thị thông tin vừa cập nhật."
-    actual_result = expected_result if result == "2 District" else "Hệ thống không hiển thị thông tin vừa cập nhật."
+    actual_result = expected_result if result == "1 VVN Street" else "Hệ thống không hiển thị thông tin vừa cập nhật."
     if result:
         test_logger.info(f"Test Case 8 PASS: test_update_en_location_address | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
     else:
@@ -208,14 +208,14 @@ def test_update_en_location_address(update_location_base, enter_update_location,
 #     update_location_base.click_english_tab()
 #     update_location_base.click_translate_button()
 #     time.sleep(2)
-#     content = "31D, An Phu 2"
+#     content = "UTE"
 #     enter_update_location.enter_en_content(content)
 #     update_location_base.click_save_button()
 #     update_location_base.click_first_name()
 #     update_location_base.click_english_tab()
 #     result = get_field_update_location.get_en_content()
 #     expected_result = "Hệ thống hiển thị thông tin vừa cập nhật."
-#     actual_result = expected_result if result == "31D, An Phu 2" else "Hệ thống không hiển thị thông tin vừa cập nhật."
+#     actual_result = expected_result if result == "UTE" else "Hệ thống không hiển thị thông tin vừa cập nhật."
 #     if result:
 #         test_logger.info(f"Test Case 9 PASS: test_update_en_location_content | Expected: {expected_result} | Actual: {actual_result} | Status: PASS")
 #     else:
@@ -353,7 +353,7 @@ def test_update_email(update_location_base, enter_update_location, get_field_upd
     update_location_base.perform_tag_operations()
     update_location_base.click_first_name()
     update_location_base.click_general_information_tab()
-    email = "example@domain.com"
+    email = "diep@domain.com"
     enter_update_location.enter_email(email)
     update_location_base.click_save_button()
     update_location_base.click_first_name()
